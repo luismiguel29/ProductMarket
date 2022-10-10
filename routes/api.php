@@ -20,3 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/listaproducto', 'App\Http\Controllers\ConsultaLista@index');
+Route::post('/listaproducto', 'App\Http\Controllers\ConsultaLista@store');
+//Route::get('/listaarticulos', 'App\Http\Controllers\ArticulosLista@index');
+//Route::post('/listaarticulos', 'App\Http\Controllers\ArticulosLista@store');
+//Route::delete('/listaarticulos/{id}', 'App\Http\Controllers\ArticulosLista@destroy');
