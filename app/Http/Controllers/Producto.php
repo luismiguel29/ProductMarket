@@ -69,9 +69,10 @@ class Producto extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::select('call moddatosprod(?,?,?,?,?,?,?)',array($request->idprod,$request->nombreprod,$request->precionormal,
+        $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
     }
 
     /**
@@ -80,8 +81,8 @@ class Producto extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        DB::select('call delprod("'.$request->idprod.'")');
     }
 }
