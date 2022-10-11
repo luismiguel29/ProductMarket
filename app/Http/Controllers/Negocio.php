@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class AddArticulo extends Controller
+class Negocio extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class AddArticulo extends Controller
      */
     public function index()
     {
-
+        $datos = DB::select('call datosneg');
+        return $datos;
     }
 
     /**
@@ -66,9 +68,10 @@ class AddArticulo extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::select('call moddatosneg(?,?,?,?,?)',array($request->id,$request->nombre,$request->direccion,
+        $request->horario,$request->telefono));
     }
 
     /**

@@ -19,8 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/listaproducto', 'App\Http\Controllers\ConsultaLista@index');
-Route::post('/listaproducto', 'App\Http\Controllers\ConsultaLista@store');
-//Route::get('/listaarticulos', 'App\Http\Controllers\ArticulosLista@index');
-//Route::post('/listaarticulos', 'App\Http\Controllers\ArticulosLista@store');
-//Route::delete('/listaarticulos/{id}', 'App\Http\Controllers\ArticulosLista@destroy');
+Route::get('/producto', 'App\Http\Controllers\Producto@index');
+Route::post('/producto', 'App\Http\Controllers\Producto@store');
+
+Route::get('/negocio', 'App\Http\Controllers\Negocio@index');
+Route::put('/negocio', 'App\Http\Controllers\Negocio@update');
+
+Route::get('/listaarticulos', 'App\Http\Controllers\ArticulosLista@index');
+Route::post('/listaarticulos', 'App\Http\Controllers\ArticulosLista@store');
+Route::delete('/listaarticulos/{id}', 'App\Http\Controllers\ArticulosLista@destroy');

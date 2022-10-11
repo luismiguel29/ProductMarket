@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ConsultaLista extends Controller
+class Producto extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class ConsultaLista extends Controller
      */
     public function index()
     {
-        
+        $users = DB::select('call consulta');
+        return $users;
     }
 
     /**
@@ -35,7 +36,8 @@ class ConsultaLista extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
+        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
     }
 
     /**
