@@ -15,7 +15,7 @@ class Producto extends Controller
     public function index()
     {
         $users = DB::select('call consulta');
-        return $users;
+        return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
     }
 
     /**
