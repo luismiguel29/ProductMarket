@@ -1,16 +1,21 @@
 ### Repositorio Product Marcket 
 
-**Instalación de herramientas **
+**Instalación de herramientas**
 
 * Composer 2.4.3
+
   Descar de la siguiente dirección https://getcomposer.org/ e instalar como cualquier otro programa
 * Laravel 8 
+
   Utiliza el comando*"composer global require laravel/installer"*  en    dirección XAMPP/htdocs para la instalacion de Laravel 
 * XAMPP 8.1.10
+
   Descargar la ultima versión para este proyecto la cual esta en el siguiente link https://www.apachefriends.org/es/download.html
 * Visual studio code
+
  Link de descarga https://code.visualstudio.com/download
 * Bootstrap  5 
+
  Dirigirse al siguiente link   https://getbootstrap.com/docs/5.0/getting-started/download/   y buscar el apartado de **CSS y JS compilados** y darle a Descargar 
 
  ### Paso 1 
