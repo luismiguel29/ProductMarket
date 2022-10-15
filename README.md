@@ -17,3 +17,7 @@
 Una vez descargado el repositorio abrirlo con Visual Studio code 
 - Abrir la terminar y definir las dependencias con el comando ***"composer install"***.
 - Generar la APP_KEY escribiendo el comando ***php artisan key:generate***
+### Paso 4
+-Configurar el puerto,nombre de la base de datos y los datos de usuario y    contraseña de tu administrador de base de datos 
+
+[![Base.jpg](https://i.postimg.cc/ydTxkXGs/Base.jpg)](https://postimg.cc/Fd7N6cmB)
