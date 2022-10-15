@@ -7,7 +7,7 @@
   Descargar de la siguiente dirección https://getcomposer.org/ e instalar como cualquier otro programa 
 * Laravel 8 
 
-  Utiliza el comando*"composer global require laravel/installer"*  en    dirección XAMPP/htdocs para la instalacion de Laravel 
+  Utiliza el comando *"composer global require laravel/installer"*  en    dirección XAMPP/htdocs para la instalacion de Laravel 
 * XAMPP 8.1.10
 
   Descargar la última versión para este proyecto la cual está en el siguiente link https://www.apachefriends.org/es/download.html
