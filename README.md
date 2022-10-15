@@ -1,6 +1,7 @@
 ### Repositorio Product Market 
 ------------------[![base2.jpg](https://i.postimg.cc/L60bcJTs/base2.jpg)](https://postimg.cc/kBKs8XLr)-----------------
- **Instalación de herramientas **
+ 
+**Instalación de herramientas**
 
 * Composer 2.4.3
 
@@ -14,8 +15,10 @@
  Link de descarga https://code.visualstudio.com/download
 * Bootstrap  5 
  Dirigirse al siguiente link   https://getbootstrap.com/docs/5.0/getting-started/download/   y buscar el apartado de **CSS y JS compilados** y darle a Descargar 
+
 #Clone
- ### Paso 1 
+
+### Paso 1 
 - Descargar el repositorio de github 
 - Crearse una carpeta,ingresar a git bash y ejecutar 
 ### Paso 2
