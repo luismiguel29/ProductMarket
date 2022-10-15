@@ -13,10 +13,10 @@
   Descargar la ultima versión para este proyecto la cual esta en el siguiente link https://www.apachefriends.org/es/download.html
 * Visual studio code
 
- Link de descarga https://code.visualstudio.com/download
+  Link de descarga https://code.visualstudio.com/download
 * Bootstrap  5 
 
- Dirigirse al siguiente link   https://getbootstrap.com/docs/5.0/getting-started/download/   y buscar el apartado de **CSS y JS compilados** y darle a Descargar 
+  Dirigirse al siguiente link   https://getbootstrap.com/docs/5.0/getting-started/download/   y buscar el apartado de **CSS y JS compilados** y darle a Descargar 
 
  ### Paso 1 
 - Descargar el repositorio de github 
