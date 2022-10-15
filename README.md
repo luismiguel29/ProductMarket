@@ -16,7 +16,7 @@
 * Bootstrap  5 
  Dirigirse al siguiente link   https://getbootstrap.com/docs/5.0/getting-started/download/   y buscar el apartado de **CSS y JS compilados** y darle a Descargar 
 
-#Clone
+###Clone
 
 ### Paso 1 
 - Descargar el repositorio de github 
