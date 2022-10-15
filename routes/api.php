@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //ruta categoria
-Route::get('/categorias', 'App\Http\Controllers\Categoria@index');
+Route::get('/categoria', 'App\Http\Controllers\Categoria@index');
 
 //rutas agregar, editar, eliminar producto
 Route::get('/producto', 'App\Http\Controllers\Producto@index');
