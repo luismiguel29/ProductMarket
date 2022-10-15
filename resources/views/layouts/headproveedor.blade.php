@@ -7,6 +7,7 @@
    
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
     @yield ('style')
 
    <nav class="navbar navbar-light bg-light">
@@ -23,7 +24,7 @@
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: #FFD507;">
       
-      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      
       </div>
       <!-- Copyright -->
   </footer>

@@ -5,12 +5,11 @@
 @endsection
 @section('Contenido')
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="table-responsive bg-white ">
-        <table class="table table-bordered table-striped table-primary caption-top">
-          <caption>Lista de Productos</caption>
+<div class="bg-white border border-dark mt-3 mb-3 overflow-hidden " style="background-color: #FAFAFA; border-radius: 15px; ">
+  <p class="text-center "><b>Lista de Productos</b></p>
+      <div class="table-responsive  p-5 overflow-auto">
+        <table class="table table-bordered border-primary" style="background-color: #9C9C9C; border-radius: 15px; ">
+          
           <thead>
             <tr>
               <th>Nombre</th>
@@ -23,19 +22,27 @@
             @foreach ($productos as $producto)
             <tr>
               <td>{{$producto->NOMBREPROD}}</td>
-              <td> {{$producto->PRECIONORMAL}} </td>
+              <td> {{$producto->PRECIONORMAL}}</td>
               <td>{{$producto->PRECIODESC}}</td>
-              <td>14</td>
-              <td>14</td>
+              <td>{{$producto->STOCKPROD}}</td>
+              <td></td>
             </tr>
+            @endforeach
+            @foreach ($productos as $producto)
+            <tr>
+              <td>{{$producto->NOMBREPROD}}</td>
+              <td> {{$producto->PRECIONORMAL}}</td>
+              <td>{{$producto->PRECIODESC}}</td>
+              <td>{{$producto->STOCKPROD}}</td>
+              <td></td>
+            </tr>
+            
             @endforeach
           </tbody>
         </table>
-        {{var_dump($productos[0])}}
+        
       </div>
 
-    </div>
-  </div>
 </div>
 
 

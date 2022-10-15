@@ -18,4 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/proveedor/listaproducto', [Producto::class,'index']  );
+Route::get('/proveedor/listaproducto', [Producto::class,'index']  ) -> name('listaproducto');
+Route::get('proveedor/paginaprincipal', function (){
+    return view('Proveedor.PaginaPrincipal');
+})->name('paginaprincipal');

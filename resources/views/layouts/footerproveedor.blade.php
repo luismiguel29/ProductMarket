@@ -31,7 +31,6 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: #FFD507;">
         
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
     </footer>
