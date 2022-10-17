@@ -3,7 +3,7 @@
 
 @section('body')
         <div class="container-fluid">
-          <div class="row">
+          <div class="row " style="min-height:600px">
             
             <div class="btn-vertical col d-flex flex-column align-self-center" >
               <div class="my-3 mx-auto"><a class="btn btn-dark btn-lg " style="background-color:#575555; width:200px">Editar</a></div>
