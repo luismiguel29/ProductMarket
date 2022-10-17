@@ -30,6 +30,8 @@ Una vez descargado el repositorio abrirlo con Visual Studio code
 - Generar la APP_KEY escribiendo el comando ***php artisan key:generate***
 ### Paso 4
 -Configurar el puerto,nombre de la base de datos y los datos de usuario y    contraseña de tu administrador de base de datos 
+### Paso 5
+- Encender el servicio php artisan serve
 
 [![Base.jpg](https://i.postimg.cc/ydTxkXGs/Base.jpg)](https://postimg.cc/Fd7N6cmB)
 
