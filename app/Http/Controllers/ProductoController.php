@@ -40,9 +40,9 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-       DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
+      /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
-       /* 
+       */  
         $producto  = new Producto;
         $producto->idneg=$request->input('idneg');
         $producto->nombreprod= $request->input('nombreprod');
@@ -53,7 +53,7 @@ class ProductoController extends Controller
         $producto->descripprod=$request->input('descripprod');
         $producto->save();
         return redirect()->route('producto.index');    
-        */    
+          
     }
 
     /**
@@ -100,5 +100,7 @@ class ProductoController extends Controller
     public function destroy(Request $request)
     {
         DB::select('call delprod("'.$request->idprod.'")');
+    
     }
+
 }
