@@ -20,18 +20,15 @@
     
 
     <div class="d-flex justify-content-around">
-        <section class="d-flex flex-column  align-self-center ">
-            <button type="button" class="btn btn-secondary ">Editar</button> <br>
-            <button type="button" class="btn btn-secondary">Registrar</button><br>
+        <section class="d-flex flex-column  align-self-center gap-4">
+            <button type="button" class="btn btn-secondary ">Editar</button> 
+            <button type="button" class="btn btn-secondary">Registrar</button>
             <button type="button" class="btn btn-secondary">Ver productos</button>
         </section>
 
         <div class="card border-dark mb-3" style="width: 30rem;">
+            <div class="card-body text-dark card-custom-p">
 
-            <div class="card-body text-dark">
-
-                <section class="card-text-center" style="width: 25rem;">
-                    <div class="card-body">
                         <h5 class="text-center fs-5">Información del producto</h5>
 
                         <form action="{{route('producto.store')}}" method="post">
@@ -83,13 +80,16 @@
                                     <option value="3">Detergentes</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-secondary botton1">Registrar</button>
+                             <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
+                             <div class="d-flex justify-content-evenly">
+                             <button type="submit" class="btn btn-primary botton1">Registrar</button>
+                            <a type="button" href="" class="btn btn-danger botton2">Cancelar</a>
+                             </div>
 
+                            
                         </form>
-                        <button type="submit" class="btn btn-secondary botton2">Cancelar</button>
-                    </div>
-                </section>
-
+                        <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
+                       
             </div>
         </div>
     </div>

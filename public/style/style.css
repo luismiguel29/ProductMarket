@@ -42,16 +42,7 @@ body{
     height: 100px;  
 }
 
-.botton1{
-position: absolute;
- left: 20%;
- bottom: 3%;
 
-}
-
-.botton2{
-    position: relative;
-    left: 50%;
-    bottom: 0%;
-    
+.card-custom-p{
+    padding: 40px;
 }
