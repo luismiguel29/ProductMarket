@@ -34,7 +34,11 @@ Una vez descargado el repositorio abrirlo con Visual Studio code
 [![Base.jpg](https://i.postimg.cc/ydTxkXGs/Base.jpg)](https://postimg.cc/Fd7N6cmB)
 
 ### Paso 5
-- Encender el servicio php artisan serve
+- Encender el servicio php ***"artisan serve"***
+
+## Paso 6
+
+- ver la web con el siguiente link http://127.0.0.1:8000/proveedor/paginaprincipal
 
 
 
