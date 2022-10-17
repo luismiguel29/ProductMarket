@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NegocioAnd;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Route::get('/', function () {
 Route::get('/editar', function () {
     return view('editar');
 });
+
+
+Route::resource('/datosNego',NegocioAnd::class);
