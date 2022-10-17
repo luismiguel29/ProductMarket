@@ -1,3 +1,11 @@
+header{
+    background-color: #FAFAFA;
+    width: 100%;
+    /*margin: auto;*/
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
 body {
 
     /* Ubicación de la imagen */
@@ -21,8 +29,15 @@ body {
     /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
     
     background-size: cover;
-    
-    
  }
+
+ .footer{
+    
+    background-color: #FFD507;
+    padding: 1em 0;
+    margin-top: auto;
+    height: 100px;  
+    bottom: 0;
+}
 
  

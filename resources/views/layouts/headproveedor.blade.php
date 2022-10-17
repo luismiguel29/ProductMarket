@@ -6,8 +6,9 @@
     <script src="{{ asset('js/bootstrap.js') }}" defer></script>
    
     <!-- Styles -->
+
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/estilos.css.css') }}" rel="stylesheet">
     @yield ('style')
 
    <nav class="navbar navbar-light bg-light">

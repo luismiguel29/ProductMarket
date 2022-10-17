@@ -1,14 +1,14 @@
 @extends('Proveedor.Paginaproveedor')
 @section('style')
-<link href="{{ asset('css/bodyproveedor.css') }}" rel="stylesheet">
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 @endsection
 @section('Contenido')
 
-<div class="bg-white border border-dark mt-3 mb-3 overflow-hidden " style="background-color: #FAFAFA; border-radius: 15px; ">
+<div class="bg-white border border-dark mt-3 mb-3 overflow-hidden " style="border-radius: 15px; ">
   <p class="text-center "><b>Lista de Productos</b></p>
       <div class="table-responsive  p-5 overflow-auto">
-        <table class="table table-bordered border-primary" style="background-color: #9C9C9C; border-radius: 15px; ">
+        <table class="table table-bordered border-dark" style="background-color: #9C9C9C; border-radius: 15px;">
           
           <thead>
             <tr>

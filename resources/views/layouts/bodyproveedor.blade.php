@@ -1,6 +1,6 @@
-@extends('layouts.headproveedor')
+@extends('layouts.index')
 @section('style')
-<link href="{{ asset('css/bodyproveedor.css') }}" rel="stylesheet">
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 @endsection
 @section('body')
 
