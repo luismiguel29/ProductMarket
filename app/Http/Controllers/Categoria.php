@@ -3,30 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\DatosNegocio;
-use Illuminate\Support\Facades\DB;
-use Http;
 
-class NegocioAnd extends Controller
+class Categoria extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        //$texto=trim($request->get('texto'));
-
-        $datos=DatosNegocio::all();
-        //$datos=DB::table('negocio');
-
-        //return $datos;
-        //$user=Http::get('https://jsonplaceholder.typicode.com/users');
-        //$userArray=$user->json();
-
-        return view('editar',compact('datos'));
-        //return view('editar',compact('userArray'));
+        //
     }
 
     /**
@@ -69,8 +56,7 @@ class NegocioAnd extends Controller
      */
     public function edit($id)
     {
-        //$datos=DatosNegocio::findOrFail(1);
-        //return view
+        //
     }
 
     /**
@@ -82,8 +68,7 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-        //$datos=DatosNegocio::findOrFail($id);
-        //$
+        //
     }
 
     /**

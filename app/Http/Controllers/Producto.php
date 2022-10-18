@@ -14,7 +14,7 @@ class Producto extends Controller
      */
     public function index()
     {
-        $users = DB::select('call consulta');
+        $users = DB::select('call listarprod');
         return $users;
     }
 
@@ -36,8 +36,11 @@ class Producto extends Controller
      */
     public function store(Request $request)
     {
-        DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
-        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
+        DB::select('call regprod(?,?,?,?,?,?,?,?)',array($request->negocioid,$request->categoriaid,
+        $request->nombre,$request->precio,$request->preciodesc,$request->stock,$request->fechaven,$request->descripcion));
+
+        /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
+        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod)); */
     }
 
     /**
@@ -83,6 +86,6 @@ class Producto extends Controller
      */
     public function destroy(Request $request)
     {
-        DB::select('call delprod("'.$request->idprod.'")');
+        DB::select('call delprod("'.$request->idproducto.'")');
     }
 }
