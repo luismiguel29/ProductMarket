@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('editarAll/style.css') }}">
     <title>Product Market 🛒</title>
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    -->
 </head>
 <!--VA LA PARTE DE LOS DATOS DEL NEGOCIO-->
 <body>
@@ -14,9 +20,9 @@
     </header>
 
     <main>
-        <form action="" class="formularioEditar" method="post">
-        @csrf
-        @method('PUT')
+        <form action="{{ route('datosNego.update',$dato->IDNEG) }}" method="post" class="formularioEditar">
+            @csrf
+            @method('PUT')
             <h4>Editar datos del negocio</h4>
 
             <div class="control" for="nombre">
@@ -26,12 +32,12 @@
 
             <div class="control" for="direccion">
                 <span>Dirección</span>
-                <input type="text" name="direnccion" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
+                <input type="text" name="direccion" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
             </div>
 
             <div class="control" for="horario">
                 <span>Horario de atención</span>
-                <input type="text" name="horario" id="horario" autocomplete="" required value="{{$dato->HORARIONEG}}">
+                <input type="time" name="horario" id="horario" autocomplete="" required value="{{$dato->HORARIONEG}}">
             </div>
                 
             <div class="control" for="telefono">
@@ -40,12 +46,10 @@
             </div>
 
             <button type="submit" class="guardar">Guardar</button>
-            <!--<input type="submit" value="Nombre" />-->
         </form>
 
         <section class="botonGral">
-            <!--<button type="submit">Que color te gusta?</button>-->
-            <div class="boton">
+            <div class="boton"> 
                 <button>Editar</button>
             </div>
 
@@ -54,7 +58,8 @@
             </div>
 
             <div class="boton">
-                <button>Ver productos</button>
+                <!--<button>Ver productos</button>-->
+                <a href="/ventana"><button>Ver productos</button></a>
             </div>
         </section>
     </main>

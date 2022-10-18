@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;600;700;800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +12,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Mukta', sans-serif;
 }
 
 header{
@@ -28,8 +31,8 @@ header{
     /*margin: auto;*/
     margin-top: 80px;
     margin-left: 820px;
-    border-radius: 16px;
-    font-family: 'calibri';
+    border-radius: 5px;
+    /*font-family: 'mukta';*/
     color: white;
     box-shadow: 7px 13px 37px #000;
     /*position: absolute;*/
@@ -47,33 +50,32 @@ header{
 .control{
     width: 100%;
     padding: 10px;
-    font-family: 'mukta';
+    /*font-family: 'mukta';*/
     font-size: 18px;
     color: black;
-    
 }
 
 .control input{
     width: 100%;
     background: #FAFAFA;
     padding: 10px;
-    border-radius: 16px;
+    border-radius: 5px;
     margin-bottom: -10px;
     border: 1px solid #7F7A7A;
-    font-family: 'mukta';
+    /*font-family: 'mukta';*/
     font-size: 18px;
     color: black;
 }
 
 .guardar{
     width: 100%;
-    background: #7A7A7A;
+    background: #575555;
     border: none;
     padding: 12px;
     color: white; 
     margin: 16px 0px;
     font-size: 16px;
-    border-radius: 16px;
+    border-radius: 5px;
 }
 
 .botonGral{
@@ -91,8 +93,7 @@ header{
 
 .boton button{
     width: 180px;
-    background: #7A7A7A;
-    /*background: #575555;*/
+    background: #575555;
 
     padding: 12px;
     border-radius: 4px;
@@ -100,7 +101,7 @@ header{
     /*margin-top: 80px;*/
     color: white;
     font-size: 16px;
-    font-family: 'mukta';
+    /*font-family: 'mukta';*/
 }
 
 .boton button:hover{

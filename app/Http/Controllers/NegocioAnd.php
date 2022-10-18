@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DatosNegocio;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class NegocioAnd extends Controller
 {
@@ -23,9 +24,9 @@ class NegocioAnd extends Controller
         //return $datos;
 
         $dato=DatosNegocio::findOrFail(1);
-
+        //return $dato;
         //return view('editar',compact('datos'));
-        return view('editar',compact('dato'));
+            return view('editar',compact('dato'));
     }
 
     /**
@@ -82,13 +83,13 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dato=DatosNegocio::findOrFail($id);
-        $dato->NOMBRENEG=$request->input('nombre');
-        $dato->DIRECCIONNEG=$request->input('direccion');
-        $dato->HORARIONEG=$request->input('horario');
-        $dato->TELEFONONEG=$request->input('telefono');
-        $dato->save();
-        return redirect()->route('editar');
+        $datoup=DatosNegocio::findOrFail($id);
+        $datoup->NOMBRENEG=$request->input('nombre');
+        $datoup->DIRECCIONNEG=$request->input('direccion');
+        $datoup->HORARIONEG=$request->input('horario');
+        $datoup->TELEFONONEG=$request->input('telefono');
+        $datoup->save();
+        return \Redirect::back();
     }
 
     /**

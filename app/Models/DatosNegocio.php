@@ -12,5 +12,5 @@ class DatosNegocio extends Model
     protected $primaryKey="IDNEG";
     protected $fillable = ['NOMBRENEG', 'DIRECIONNEG', 'HORARIONEG', 'TELEFONONEG'];
 
-    //public $timestamps * false;
+    public $timestamps = false;
 }
