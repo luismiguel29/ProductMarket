@@ -18,14 +18,14 @@ class NegocioAnd extends Controller
     {
         //$texto=trim($request->get('texto'));
 
-        $datos=DatosNegocio::find(1);
+        $dato=DatosNegocio::find(1);
         //$datos=DB::table('negocio');
 
         //return $datos;
         //$user=Http::get('https://jsonplaceholder.typicode.com/users');
         //$userArray=$user->json();
 
-        return view('editar',compact('datos'));
+        return view('editar',compact('dato'));
         //return view('editar',compact('userArray'));
     }
 

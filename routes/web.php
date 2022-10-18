@@ -28,3 +28,6 @@ Route::resource('/datosNego',NegocioAnd::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
+//Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
