@@ -21,7 +21,11 @@ class NegocioAnd extends Controller
         //$datos=DB::table('negocio');
 
         //return $datos;
-        return view('editar',compact('datos'));
+
+        $dato=DatosNegocio::findOrFail(1);
+
+        //return view('editar',compact('datos'));
+        return view('editar',compact('dato'));
     }
 
     /**
@@ -64,8 +68,9 @@ class NegocioAnd extends Controller
      */
     public function edit($id)
     {
-        //$datos=DatosNegocio::findOrFail(1);
-        //return view
+        $dato=DatosNegocio::findOrFail($id);
+        return $dato;
+        //return view('editar',compact('dato'));
     }
 
     /**

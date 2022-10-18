@@ -14,28 +14,28 @@
     </header>
 
     <main>
-        
+        <h2>{{$dato->NOMBRENEG}}</h2>
         <form action="" class="formularioEditar">
             <h4>Editar datos del negocio</h4>
 
             <div class="control" for="nombre">
                 <span>Nombre del negocio</span>
-                <input type="text" name="nombre" id="nombre" autocomplete="" required value="">
+                <input type="text" name="nombre" id="nombre" autocomplete="" required value="{{$dato->NOMBRENEG}}">
             </div>
 
             <div class="control" for="direccion">
                 <span>Dirección</span>
-                <input type="text" name="direnccion" id="direccion" autocomplete="address-level1" required>
+                <input type="text" name="direnccion" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
             </div>
 
             <div class="control" for="horario">
                 <span>Horario de atención</span>
-                <input type="time" name="horario" id="horario" autocomplete="" required>
+                <input type="text" name="horario" id="horario" autocomplete="" required value="{{$dato->HORARIONEG}}">
             </div>
                 
             <div class="control" for="telefono">
                 <span>Teléfono</span>
-                <input type="number" name="telefono" id="telefono" autocomplete="" required>
+                <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}">
             </div>
 
             <button class="guardar">Guardar</button>
