@@ -17,11 +17,11 @@
         <img src="./style/logo.png" width="50px" alt="Logo de ProductMarket">
     </header>header
 
-    
+
 
     <div class="d-flex justify-content-around">
         <section class="d-flex flex-column  align-self-center gap-4">
-            <button type="button" class="btn btn-secondary ">Editar</button> 
+            <button type="button" class="btn btn-secondary ">Editar</button>
             <button type="button" class="btn btn-secondary">Registrar</button>
             <button type="button" class="btn btn-secondary">Ver productos</button>
         </section>
@@ -29,67 +29,73 @@
         <div class="card border-dark mb-3" style="width: 30rem;">
             <div class="card-body text-dark card-custom-p">
 
-                        <h5 class="text-center fs-5">Información del producto</h5>
+                <h5 class="text-center fs-5">Información del producto</h5>
 
-                        <form action="{{route('producto.store')}}" method="post">
-                            @csrf
-                            <div class=" mb-3 input-group">
+                <form action="{{route('producto.store')}}" method="post">
+                    @csrf
+                    <!--<div class=" mb-3 input-group">
                                 <input type="file" class="form-control" id="inputImg">
                                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                            </div>
+                            </div>-->
 
-                            <div class="mb-3">
-                                <label for="" class="form-label">Nombre del producto</label>
-                                <input type="text" class="form-control" name="nombreprod" id="categoria">
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Precio antes</label>
-                                <input type="number" step="any" class="form-control" name="preciodesc" id="pantes">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
-                                <input type="number" step="any" class="form-control" name="precionormal" id="pahora">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
-                                <input type="date" class="form-control" name="fechavenprod" id="fvenc">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="" class="form-label">Stock</label>
-                                <input type="number" class="form-control" name="stockprod" id="stock">
-                            </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" name="nombreprod" id="categoria">
+                    </div>
 
 
-                            <div class="mb-3">
-                                <label for="floatingTextarea2">Descripción</label>
-                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" id="descripcion" style="height: 100px"></textarea>
-                            </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Precio antes</label>
+                        <input type="number" step="any" class="form-control" name="preciodesc" id="pantes">
+                    </div>
 
-                            <div class="mb-3">
-                                <label for="">Categorías</label>
-                                <select class="form-select" id="seleccionarCategoría" name="categprod" aria-label="Floating label select example">
-                                    <option selected>Seleccionar una categoría</option>
-                                    <option value="1">Lacteos</option>
-                                    <option value="2">Refrescos</option>
-                                    <option value="3">Cereales</option>
-                                    <option value="3">Detergentes</option>
-                                </select>
-                            </div>
-                             <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
-                             <div class="d-flex justify-content-evenly">
-                             <button type="submit" class="btn btn-primary botton1">Registrar</button>
-                            <a type="button" href="" class="btn btn-danger botton2">Cancelar</a>
-                             </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
+                        <input type="number" step="any" class="form-control" name="precionormal" id="pahora">
+                    </div>
 
-                            
-                        </form>
-                        <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
-                       
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
+                        <input type="date" class="form-control" name="fechavenprod" id="fvenc">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Stock</label>
+                        <input type="number" class="form-control" name="stockprod" id="stock">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="floatingTextarea2">Descripción</label>
+                        <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" id="descripcion" style="height: 100px"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="">Categorías</label>
+                        <select class="form-select" id="seleccionarCategoría" name="categprod" aria-label="Floating label select example">
+                            <option selected>Seleccionar una categoría</option>
+                            <option value="1">Lacteos</option>
+                            <option value="2">Refrescos</option>
+                            <option value="3">Cereales</option>
+                            <option value="3">Detergentes</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Insertar link de la imágen</label>
+                        <input type="text" class="form-control" name="nombreprod" id="categoria">
+                    </div>
+
+                    <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
+                    <div class="d-flex justify-content-evenly">
+                        <button type="submit" class="btn btn-primary botton1">Registrar</button>
+                        <a type="button" href="" class="btn btn-danger botton2">Cancelar</a>
+                    </div>
+
+
+                </form>
+                <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
+
             </div>
         </div>
     </div>
