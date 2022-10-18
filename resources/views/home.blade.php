@@ -16,7 +16,7 @@
 
                     <table>
                         <tr>
-                            <td>{{ $otros['NOMBRENEG'] }}</td>
+                            <td>{{ $otros->DIRECCIONNEG}}</td>
                         </tr>
                     </table>
                 </div>
