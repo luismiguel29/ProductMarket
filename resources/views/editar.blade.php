@@ -14,8 +14,9 @@
     </header>
 
     <main>
-        <h2>{{$dato->NOMBRENEG}}</h2>
-        <form action="" class="formularioEditar">
+        <form action="" class="formularioEditar" method="post">
+        @csrf
+        @method('PUT')
             <h4>Editar datos del negocio</h4>
 
             <div class="control" for="nombre">
@@ -38,7 +39,8 @@
                 <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}">
             </div>
 
-            <button class="guardar">Guardar</button>
+            <button type="submit" class="guardar">Guardar</button>
+            <!--<input type="submit" value="Nombre" />-->
         </form>
 
         <section class="botonGral">

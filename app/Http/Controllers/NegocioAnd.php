@@ -69,8 +69,8 @@ class NegocioAnd extends Controller
     public function edit($id)
     {
         $dato=DatosNegocio::findOrFail($id);
-        return $dato;
-        //return view('editar',compact('dato'));
+        //return $dato;
+        return view('editar',compact('dato'));
     }
 
     /**
@@ -82,8 +82,13 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-        //$datos=DatosNegocio::findOrFail($id);
-        //$
+        $dato=DatosNegocio::findOrFail($id);
+        $dato->NOMBRENEG=$request->input('nombre');
+        $dato->DIRECCIONNEG=$request->input('direccion');
+        $dato->HORARIONEG=$request->input('horario');
+        $dato->TELEFONONEG=$request->input('telefono');
+        $dato->save();
+        return redirect()->route('editar');
     }
 
     /**
