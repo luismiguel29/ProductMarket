@@ -51,6 +51,7 @@ class ProductoController extends Controller
         $producto->stockprod=$request->input('stockprod');
         $producto->fechavenprod=$request->input('fechavenprod');
         $producto->descripprod=$request->input('descripprod');
+        $producto->url_img=$request->input('url_img');
         $producto->save();
         return redirect()->route('producto.index');    
           
@@ -88,7 +89,7 @@ class ProductoController extends Controller
     public function update(Request $request)
     {
         DB::select('call moddatosprod(?,?,?,?,?,?,?)',array($request->idprod,$request->nombreprod,$request->precionormal,
-        $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
+        $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod,$request->url_img));
     }
 
     /**

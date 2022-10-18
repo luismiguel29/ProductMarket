@@ -71,19 +71,21 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="">Categorías</label>
+                        <label for="">Categoría</label>
                         <select class="form-select" id="seleccionarCategoría" name="categprod" aria-label="Floating label select example">
+                
                             <option selected>Seleccionar una categoría</option>
                             <option value="1">Lacteos</option>
                             <option value="2">Refrescos</option>
                             <option value="3">Cereales</option>
                             <option value="3">Detergentes</option>
+                         
                         </select>
                     </div>
 
                     <div class="mb-3">
-                        <label for="" class="form-label">Insertar link de la imágen</label>
-                        <input type="text" class="form-control" name="nombreprod" id="categoria">
+                        <label for="" class="form-label">URL de la imágen</label>
+                        <input type="text" class="form-control" name="url_img" id="url_img">
                     </div>
 
                     <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
