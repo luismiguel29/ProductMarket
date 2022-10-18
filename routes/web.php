@@ -23,5 +23,13 @@ Route::get('/editar', function () {
     return view('editar');
 });
 
+Route::get('/editarini', function () {
+    return view('editarini');
+});
+
 
 Route::resource('/datosNego',NegocioAnd::class);
+
+//Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
+//Route::put('/editar', [App\Http\Controllers\NegocioAnd::class, 'update'])->name('updatedatos');
+//Route::edit('/editar', [App\Http\Controllers\NegocioAnd::class, 'edit'])->name('editardatos');
