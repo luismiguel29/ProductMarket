@@ -21,9 +21,9 @@
 
     <div class="d-flex justify-content-around">
         <section class="d-flex flex-column  align-self-center gap-4">
-            <button type="button" class="btn btn-secondary ">Editar</button>
-            <a type="button" class="btn btn-secondary btn-2">Registrar</a>
-            <button type="button" class="btn btn-secondary">Ver productos</button>
+            <button type="button" class="btn btn-dark ">Editar</button>
+            <a type="button" class="btn btn-dark btn-2 " style="background-color: #575555;">Registrar</a>
+            <button type="button" class="btn btn-dark">Ver productos</button>
         </section>
 
         <div class="card border-dark mb-3" style="width: 30rem;">
