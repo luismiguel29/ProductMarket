@@ -53,7 +53,8 @@ class ProductoController extends Controller
         $producto->descripprod=$request->input('descripprod');
         $producto->url_img=$request->input('url_img');
         $producto->save();
-        return redirect()->route('producto.index');    
+        //return redirect()->route('producto.index');
+        return \Redirect::back();    
           
     }
 
