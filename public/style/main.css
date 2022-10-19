@@ -45,3 +45,8 @@ body{
 .card-custom-p{
     padding: 40px;
 }
+
+.btnb{
+    background-color: var(--silver-black-prod);
+    border: none;
+}

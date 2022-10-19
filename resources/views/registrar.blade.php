@@ -20,10 +20,16 @@
 
 
     <div class="d-flex justify-content-around">
-        <section class="d-flex flex-column  align-self-center gap-4">
+        <!--<section class="d-flex flex-column  align-self-center gap-4">
             <button type="button" class="btn btn-secondary fs-5">Editar</button>
             <a type="button" class="btn btn-secondary fs-5">Registrar</a>
             <button type="button" class="btn btn-secondary fs-5">Ver productos</button>
+        </section>-->
+
+        <section class="d-flex flex-column  align-self-center gap-4">
+            <button type="button" class="btn btn-dark fs-5 btnb">Editar</button>
+            <a type="button" class="btn btn-dark fs-5  btnb">Registrar</a>
+            <button type="button" class="btn btn-dark fs-5  btnb">Ver productos</button>
         </section>
 
         <div class="card border-dark mb-3" style="width: 30rem;">
@@ -90,8 +96,8 @@
 
                     <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
                     <div class="d-flex justify-content-evenly ">
-                        <button type="submit" class="btn btn-secondary fs-5 ">Registrar</button>
-                       <a type="button" href="" class="btn btn-secondary fs-5">Cancelar</a>
+                        <button type="submit" class="btn btn-dark fs-5 ">Registrar</button>
+                       <a type="button" href="" class="btn btn-dark fs-5">Cancelar</a>
                     </div>
 
 
