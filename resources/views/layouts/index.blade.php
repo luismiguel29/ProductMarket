@@ -18,7 +18,7 @@
     <header>
         <img src="{{ asset('imagenes/logo.png') }}" width="70px" alt="Logo de ProductMarket">
     </header>
-    <img src="/fondo.png" alt="">
+    <img src="/fondo10.png" alt="">
    <div style="height: 600px">@yield('body')</div> 
     <div class="footer"></div>
 

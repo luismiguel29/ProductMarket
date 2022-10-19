@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
+
 class Producto extends Controller
 {
     /**
@@ -17,6 +19,8 @@ class Producto extends Controller
         $users = DB::select('call consulta');
         return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
