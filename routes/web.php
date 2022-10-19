@@ -19,4 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test',function(){
+    return view('test');
+});  
+
+Route::get('/registrar', function () {
+    return view('registrar');
+});
+
+Route::resource('/producto', ProductoYohanaController::class);
+
+
+
+Route::get('/proveedor/listaproducto', [ProductoVilmaController::class,'index']  ) -> name('listaproducto');
+Route::get('proveedor/paginaprincipal', function (){
+    return view('Proveedor.PaginaPrincipal');
+})->name('paginaprincipal');
 
