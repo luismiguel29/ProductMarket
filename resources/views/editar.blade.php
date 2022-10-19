@@ -27,33 +27,33 @@
 
             <div class="control" for="nombre">
                 <span>Nombre del negocio</span>
-                <input type="text" name="nombre" id="nombre" autocomplete="" required value="{{$dato->NOMBRENEG}}">
+                <input type="text" name="nombre" required="" pattern="[a-zA-Z]{1,50}" id="nombre"  autocomplete="" required value="{{$dato->NOMBRENEG}}" >
             </div>
 
             <div class="control" for="direccion">
                 <span>Dirección</span>
-                <input type="text" name="direccion" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
+                <input type="text" name="direccion" required="" pattern="{1,50}" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
             </div>
 
             <div class="control" for="horario">
                 <span>Horario de atención</span>
-                <input type="time" name="horario" id="horario" autocomplete="" required value="{{$dato->HORARIONEG}}">
+                <input type="time" name="horario" required="" id="horario" autocomplete="" required value="{{$dato->HORARIONEG}}">
             </div>
-                
+
             <div class="control" for="telefono">
                 <span>Teléfono</span>
-                <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}">
+                <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}" min="40000000" max="79999999">
             </div>
 
             <div>
                 <button type="submit" class="guardar">Guardar</button>
                 <button type="reset" class="guardar">Cancelar</button>
             </div>
-            
+
         </form>
 
         <section class="botonGral">
-            <div class="boton"> 
+            <div class="boton">
                 <button>Editar</button>
             </div>
 
