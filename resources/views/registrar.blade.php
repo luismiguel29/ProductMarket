@@ -15,7 +15,7 @@
 <body class="d-flex flex-column">
     <header>
         <img src="./style/logo.png" width="50px" alt="Logo de ProductMarket">
-    </header>header
+    </header>
 
 
 
