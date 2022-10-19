@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Producto;
-use App\Models\producto as ModelsProducto;
 
-class ProductoController extends Controller
+class ProductoYohanaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +13,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $users = DB::select('call consulta');
-        return $users;
-        $productos=Producto::all();
-        return $productos;
+        //
     }
 
     /**
@@ -29,7 +23,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('producto.create'); 
+        //
     }
 
     /**
@@ -40,9 +34,6 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-      /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
-        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
-       */  
         $producto  = new Producto;
         $producto->idneg=$request->input('idneg');
         $producto->nombreprod= $request->input('nombreprod');
@@ -52,8 +43,7 @@ class ProductoController extends Controller
         $producto->fechavenprod=$request->input('fechavenprod');
         $producto->descripprod=$request->input('descripprod');
         $producto->save();
-        return redirect()->route('producto.index');    
-          
+        return redirect()->route('producto.index');   
     }
 
     /**
@@ -85,10 +75,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        DB::select('call moddatosprod(?,?,?,?,?,?,?)',array($request->idprod,$request->nombreprod,$request->precionormal,
-        $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
+        //
     }
 
     /**
@@ -97,10 +86,8 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        DB::select('call delprod("'.$request->idprod.'")');
-    
+        //
     }
-
 }
