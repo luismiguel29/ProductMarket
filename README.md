@@ -38,7 +38,7 @@ Una vez descargado el repositorio abrirlo con Visual Studio code
 
 ## Paso 6
 
-- ver la web con el siguiente link http://127.0.0.1:8000/proveedor/paginaprincipal
+- Ver la web con el siguiente link http://127.0.0.1:8000/proveedor/paginaprincipal
 
 
 
