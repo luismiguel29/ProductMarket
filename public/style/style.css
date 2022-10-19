@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;600;700;800&display=swap');
+
+*{
+        margin: 0px;
+        padding: 0px;
+}
+:root{
+    --yellow-prod: #FFD507;
+    --silver-light-prod: #575555;
+    --silver-black-prod: #2D2D2D;
+    --gray-black-prod: #9C9C9C;
+    --gray-light-prod: #F3F3F3;
+    --white--prod: #ffffff; 
+}
+header{
+    width: 100%;
+    height: 60px;
+    background-color: var(--white--prod);
+}
+
+
+
+
+body{
+    font-family: 'Mukta', sans-serif;
+    background-image: url(./logo2.jpeg);
+    width: 100%;
+    /*flex-direction: column;
+    min-height: 100vh;*/
+   background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.footer{
+    
+    background-color: #FFD507;
+    padding: 1em 0;
+    margin-top: auto;
+    height: 100px;  
+}
+
+
+.card-custom-p{
+    padding: 40px;
+}
