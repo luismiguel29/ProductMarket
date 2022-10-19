@@ -54,16 +54,18 @@
 
         <section class="botonGral">
             <div class="boton"> 
-                <button>Editar</button>
+                <!--<button>Editar</button>-->
+                <a href="datosNego"><button>Editar</button></a>
             </div>
 
             <div class="boton">
-                <button>Registrar producto</button>
+                <!--<button>Registrar producto</button>-->
+                <a href="registrar"><button>Registrar producto</button></a>
             </div>
 
             <div class="boton">
                 <!--<button>Ver productos</button>-->
-                <a href="/ventana"><button>Ver productos</button></a>
+                <a href="proveedor/listaproducto"><button>Ver producto</button></a>
             </div>
         </section>
     </main>
