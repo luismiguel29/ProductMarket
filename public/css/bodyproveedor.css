@@ -1,0 +1,43 @@
+header{
+    background-color: #FAFAFA;
+    width: 100%;
+    /*margin: auto;*/
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+body {
+
+    /* Ubicación de la imagen */
+    
+    background-image: url(http://127.0.0.1:8000/imagenes/super1.jpeg);
+    
+    /* Para dejar la imagen de fondo centrada, vertical y
+    
+    horizontalmente */
+    
+    background-position: center center;
+    
+    /* Para que la imagen de fondo no se repita */
+    
+    background-repeat: no-repeat;
+    
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    
+    background-attachment: fixed;
+    
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    
+    background-size: cover;
+ }
+
+ .footer{
+    
+    background-color: #FFD507;
+    padding: 1em 0;
+    margin-top: auto;
+    height: 100px;  
+    bottom: 0;
+}
+
+ 
