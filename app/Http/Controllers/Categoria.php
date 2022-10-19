@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-
+use Illuminate\Support\Facades\DB;
 
 class Categoria extends Controller
-
-//class ProductoVilmaController extends Controller
-
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +14,8 @@ class Categoria extends Controller
      */
     public function index()
     {
-
         $nomCat = DB::select('call categ');
         return $nomCat;
-
-        $users = DB::select('call consulta');
-        return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
-
     }
 
     /**
