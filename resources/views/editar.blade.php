@@ -47,7 +47,7 @@
 
             <div>
                 <button type="submit" class="guardar">Guardar</button>
-                <button type="reset" class="guardar">Cancelar</button>
+                <a href="proveedor/paginaprincipal" type="reset" class="guardar">Cancelar</a>
             </div>
 
         </form>
@@ -58,12 +58,12 @@
             </div>
 
             <div class="boton">
-                <button>Registrar producto</button>
+                <a href="registrar"><button>Registrar producto</button></a>
             </div>
 
             <div class="boton">
                 <!--<button>Ver productos</button>-->
-                <a href="/ventana"><button>Ver productos</button></a>
+                <a href="proveedor/listaproducto"><button>Ver producto</button></a>
             </div>
         </section>
     </main>
