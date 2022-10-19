@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### Repositorio Product Market 
 ------------------[![base2.jpg](https://i.postimg.cc/L60bcJTs/base2.jpg)](https://postimg.cc/kBKs8XLr)-----------------
  
@@ -39,33 +38,4 @@ Una vez descargado el repositorio abrirlo con Visual Studio code
 
 ## Paso 6
 
-- ver la web con el siguiente link http://127.0.0.1:8000/proveedor/paginaprincipal
-
-
-
-
-=======
-### Repositorio Product Marcket 
-
-**Instalacion de herramientas **
-
-* Laravel 8 
-* Composer 2.4.3
-* XAMPP 8.1.10
-* Visual studio code
-
- ### Paso 1 
-- Descargar el repositorio de github 
-- Crearse una carpeta,ingresar a git bash y ejecutar 
-### Paso 2
-- Crear una base de datos con el nombre de **productmarket**
-- Luego restaurar la base de tatos **proyecto.sql**
-### Paso 3
-Una vez descargado el repositorio abrirlo con Visual Studio code 
-- Abrir la terminar y definir las dependencias con el comando ***"composer install"***.
-- Generar la APP_KEY escribiendo el comando ***php artisan key:generate***
-### Paso 4
--Configurar el puerto,nombre de la base de datos y los datos de usuario y    contraseña de tu administrador de base de datos 
-
-[![Base.jpg](https://i.postimg.cc/ydTxkXGs/Base.jpg)](https://postimg.cc/Fd7N6cmB)
->>>>>>> 9ea90925dfe41ca1fc319ea0b3df884c218198da
+- Ver la web con el siguiente link http://127.0.0.1:8000/proveedor/paginaprincipal
