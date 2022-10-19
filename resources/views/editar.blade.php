@@ -14,7 +14,6 @@
     </header>
 
     <main>
-        <h2>{{$dato->NOMBRENEG}}</h2>
         <form action="" class="formularioEditar">
             <h4>Editar datos del negocio</h4>
 
@@ -44,7 +43,7 @@
         <section class="botonGral">
             <!--<button type="submit">Que color te gusta?</button>-->
             <div class="boton">
-                <button>Editar</button>
+                <a href="datosNego"><button>Editar</button></a>
             </div>
 
             <div class="boton">
@@ -53,7 +52,7 @@
             </div>
 
             <div class="boton">
-                <button>Ver productos</button>
+                <a href="proveedor/listaproducto"><button>Ver producto</button></a>
             </div>
         </section>
     </main>

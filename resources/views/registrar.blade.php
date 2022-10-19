@@ -21,9 +21,9 @@
 
     <div class="d-flex justify-content-around">
         <section class="d-flex flex-column  align-self-center gap-4">
-            <button type="button" class="btn btn-secondary ">Editar</button>
-            <button type="button" class="btn btn-secondary">Registrar</button>
-            <button type="button" class="btn btn-secondary">Ver productos</button>
+            <a href="datosNego" type="button" class="btn btn-secondary ">Editar</a>
+            <a href="registrar" type="button" class="btn btn-secondary">Registrar</a>
+            <a href="proveedor/listaproducto" type="button" class="btn btn-secondary">Ver productos</a>
         </section>
 
         <div class="card border-dark mb-3" style="width: 30rem;">
