@@ -17,11 +17,3 @@ use App\Http\Controllers\NegocioAnd;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-Route::get('/editar', function () {
-    return view('editar');
-});
-
-
-Route::resource('/datosNego',NegocioAnd::class);
