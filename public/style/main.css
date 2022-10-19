@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;600;700;800&display=swap');
 
 *{
@@ -45,4 +44,9 @@ body{
 
 .card-custom-p{
     padding: 40px;
+}
+
+.btnb{
+    background-color: var(--silver-black-prod);
+    border: none;
 }
