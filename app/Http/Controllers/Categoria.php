@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+<<<<<<<< HEAD:app/Http/Controllers/ProductoVilmaController.php
 class ProductoVilmaController extends Controller
+========
 class Categoria extends Controller
 >>>>>>>> copiayohana:app/Http/Controllers/Categoria.php
 {
