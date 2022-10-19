@@ -23,7 +23,7 @@
 - Crearse una carpeta,ingresar a git bash y ejecutar 
 ### Paso 2
 - Crear una base de datos con el nombre de **productmarket**
-- Luego restaurar la base de tatos **proyecto.sql**
+- Luego restaurar la base de tatos **proyecto2.sql**
 ### Paso 3
 Una vez descargado el repositorio abrirlo con Visual Studio code 
 - Abrir la terminar y definir las dependencias con el comando ***"composer install"***.
