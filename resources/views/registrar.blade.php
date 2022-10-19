@@ -44,37 +44,38 @@
                                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
                             </div>-->
 
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nombre del producto</label>
-                        <input type="text" class="form-control" name="nombreprod" id="categoria">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Precio antes</label>
-                        <input type="number" step="any" class="form-control" name="preciodesc" id="pantes">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
-                        <input type="number" step="any" class="form-control" name="precionormal" id="pahora">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
-                        <input type="date" class="form-control" name="fechavenprod" id="fvenc">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="" class="form-label">Stock</label>
-                        <input type="number" class="form-control" name="stockprod" id="stock">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="floatingTextarea2">Descripción</label>
-                        <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" id="descripcion" style="height: 100px"></textarea>
-                    </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Nombre del producto</label>
+                                <input type="text" class="form-control" name="nombreprod" required="" id="categoria" pattern="[a-zA-Z]{1,50}">
+                            </div>
+        
+        
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Precio antes</label>
+                                <input type="number" step="any" class="form-control" name="preciodesc" required="" id="pantes" min="1" max="1000">
+                            </div>
+        
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
+                                <input type="number" step="any" class="form-control" name="precionormal" required="" id="pahora" min="1" max="1000">
+                            </div>
+        
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
+                                <input type="date" class="form-control" name="fechavenprod" required="" id="fvenc">
+                            </div>
+        
+                            <div class="mb-3">
+                                <label for="" class="form-label">Stock</label>
+                                <input type="number" class="form-control" name="stockprod" required="" id="stock" min="1" max="1000">
+                            </div>
+        
+        
+                            <div class="mb-3">
+                                <label for="floatingTextarea2">Descripción</label>
+                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{1,50}" style="height: 100px"></textarea>
+                            </div>
+        
 
                    <!-- <div class="mb-3">
                         <label for="">Categoría</label>
@@ -91,7 +92,7 @@
                     -->
                     <div class="mb-3">
                         <label for="" class="form-label">URL de la imágen</label>
-                        <input type="text" class="form-control" name="url_img" id="url_img">
+                        <input type="url" class="form-control" name="url_img" required="" id="url_img">
                     </div>
 
                     <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
