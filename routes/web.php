@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoVilmaController;
-use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\ProductoYohanaController;
 use App\Http\Controllers\NegocioAnd;
 
 /*
@@ -36,4 +36,11 @@ Route::get('/proveedor/listaproducto', [ProductoVilmaController::class,'index'] 
 Route::get('proveedor/paginaprincipal', function (){
     return view('Proveedor.PaginaPrincipal');
 })->name('paginaprincipal');
+
+Route::get('/editar', function () {
+    return view('editar');
+});
+
+
+Route::resource('/datosNego',NegocioAnd::class);
 

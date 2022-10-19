@@ -48,7 +48,8 @@
             </div>
 
             <div class="boton">
-                <button>Registrar producto</button>
+                
+                <a href="registrar"><button>Registrar producto</button></a>
             </div>
 
             <div class="boton">
