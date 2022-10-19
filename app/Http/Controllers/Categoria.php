@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class Producto extends Controller
+class Categoria extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class Producto extends Controller
      */
     public function index()
     {
-        $users = DB::select('call listarprod');
-        return $users;
+        //
     }
 
     /**
@@ -36,11 +34,7 @@ class Producto extends Controller
      */
     public function store(Request $request)
     {
-        DB::select('call regprod(?,?,?,?,?,?,?,?)',array($request->negocioid,$request->categoriaid,
-        $request->nombre,$request->precio,$request->preciodesc,$request->stock,$request->fechaven,$request->descripcion));
-
-        /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
-        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod)); */
+        //
     }
 
     /**
@@ -72,10 +66,9 @@ class Producto extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        DB::select('call moddatosprod(?,?,?,?,?,?,?)',array($request->idprod,$request->nombreprod,$request->precionormal,
-        $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
+        //
     }
 
     /**
@@ -84,8 +77,8 @@ class Producto extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        DB::select('call delprod("'.$request->idproducto.'")');
+        //
     }
 }

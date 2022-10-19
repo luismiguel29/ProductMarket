@@ -30,7 +30,9 @@ Route::post('/negocio', 'App\Http\Controllers\Negocio@store');
 Route::put('/negocio', 'App\Http\Controllers\Negocio@update');
 Route::delete('/negocio', 'App\Http\Controllers\Negocio@destroy');
 
+Route::get('/dnegocio', 'App\Http\Controllers\NegocioAnd@index');
+
 //ruta prueba de articulos
-Route::get('/listaarticulos', 'App\Http\Controllers\ArticulosLista@index');
+/* Route::get('/listaarticulos', 'App\Http\Controllers\ArticulosLista@index');
 Route::post('/listaarticulos', 'App\Http\Controllers\ArticulosLista@store');
-Route::delete('/listaarticulos/{id}', 'App\Http\Controllers\ArticulosLista@destroy');
+Route::delete('/listaarticulos/{id}', 'App\Http\Controllers\ArticulosLista@destroy'); */

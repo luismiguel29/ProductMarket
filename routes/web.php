@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NegocioAnd;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/editar', function () {
+    return view('editar');
+});
+
+
+Route::resource('/datosNego',NegocioAnd::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
+//Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');

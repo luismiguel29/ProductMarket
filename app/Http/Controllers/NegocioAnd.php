@@ -3,19 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DatosNegocio;
 use Illuminate\Support\Facades\DB;
+use Http;
 
-class Producto extends Controller
+class NegocioAnd extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = DB::select('call listarprod');
-        return $users;
+        //$texto=trim($request->get('texto'));
+
+        $dato=DatosNegocio::find(1);
+        //$datos=DB::table('negocio');
+
+        //return $datos;
+        //$user=Http::get('https://jsonplaceholder.typicode.com/users');
+        //$userArray=$user->json();
+
+        return view('editar',compact('dato'));
+        //return view('editar',compact('userArray'));
     }
 
     /**
@@ -36,11 +47,7 @@ class Producto extends Controller
      */
     public function store(Request $request)
     {
-        DB::select('call regprod(?,?,?,?,?,?,?,?)',array($request->negocioid,$request->categoriaid,
-        $request->nombre,$request->precio,$request->preciodesc,$request->stock,$request->fechaven,$request->descripcion));
-
-        /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
-        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod)); */
+        //
     }
 
     /**
@@ -62,7 +69,8 @@ class Producto extends Controller
      */
     public function edit($id)
     {
-        //
+        //$datos=DatosNegocio::findOrFail(1);
+        //return view
     }
 
     /**
@@ -72,10 +80,10 @@ class Producto extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        DB::select('call moddatosprod(?,?,?,?,?,?,?)',array($request->idprod,$request->nombreprod,$request->precionormal,
-        $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
+        //$datos=DatosNegocio::findOrFail($id);
+        //$
     }
 
     /**
@@ -84,8 +92,8 @@ class Producto extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        DB::select('call delprod("'.$request->idproducto.'")');
+        //
     }
 }
