@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Producto;
+use App\Http\Controllers\ProductoVilma;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/proveedor/listaproducto', [Producto::class,'index']  ) -> name('listaproducto');
+Route::get('/proveedor/listaproducto', [ProductoVilma::class,'index']  ) -> name('listaproducto');
 Route::get('proveedor/paginaprincipal', function (){
     return view('Proveedor.PaginaPrincipal');
 })->name('paginaprincipal');
