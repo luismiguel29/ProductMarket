@@ -37,7 +37,7 @@
                 <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}">
             </div>
 
-            <button class="guardar">Guardar</button>
+            <button type="submit" class="guardar">Guardar</button>
         </form>
 
         <section class="botonGral">
