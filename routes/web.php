@@ -52,3 +52,5 @@ Route::get('/proveedor/listaproducto', [ProductoVilmaController::class,'index'] 
 Route::get('proveedor/paginaprincipal', function (){
     return view('Proveedor.PaginaPrincipal');
 })->name('paginaprincipal');
+
+Route::resource('/verproductos', ProductoVilmaController::class);

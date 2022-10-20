@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
 use DB;
 
 class ProductoVilmaController extends Controller
@@ -14,8 +15,15 @@ class ProductoVilmaController extends Controller
      */
     public function index()
     {
-        $users = DB::select('call consulta');
-        return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
+        /* $users = DB::select('call consulta');
+        return view ('Proveedor.Verlistaproductos', ['productos'=> $users]); */
+        $productos = DB::table('producto')
+        ->select('NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD')
+        ->orderByRaw('NOMBREPROD ASC')
+        ->get();
+        //return view('Proveedor.Verlistaproductos', compact('productos'));
+        //$productos = Producto::all();
+        return view('Proveedor.Verlistaproductos', compact('productos'));
     }
 
     /**
