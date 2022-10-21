@@ -26,7 +26,7 @@
             <h4>Editar datos del negocio</h4>
 
             <div class="control" for="nombre">
-                <span>Nombre del negocio</span>
+                <span>Nombre del negocio </span>
                 <input type="text" name="nombre" required="" pattern="{1,50}" id="nombre"  autocomplete="" required value="{{$dato->NOMBRENEG}}" >
             </div>
 
