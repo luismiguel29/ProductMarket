@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\NegocioAnd;
+use App\Http\Controllers\ProductoVilmaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test',function(){
+    return view('test');
+});  
+
+Route::get('/registrar', function () {
+    return view('registrar');
+});
+
+Route::resource('/producto', ProductoController::class);
 
 Route::get('/editar', function () {
     return view('editar');
@@ -37,3 +48,9 @@ Route::get('/ventana', function () {
 //Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
 //Route::put('/editar', [App\Http\Controllers\NegocioAnd::class, 'update'])->name('updatedatos');
 //Route::edit('/editar', [App\Http\Controllers\NegocioAnd::class, 'edit'])->name('editardatos');
+Route::get('/proveedor/listaproducto', [ProductoVilmaController::class,'index']  ) -> name('listaproducto');
+Route::get('proveedor/paginaprincipal', function (){
+    return view('Proveedor.PaginaPrincipal');
+})->name('paginaprincipal');
+
+Route::resource('/verproductos', ProductoVilmaController::class);

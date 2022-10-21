@@ -67,23 +67,11 @@ header{
     color: black;
 }
 
-.guardar{
-    width: 40%;
-    background: #575555;
-    border: none;
-    padding: 12px;
-    color: white; 
-    margin: 16px 0px;
-    font-size: 16px;
-    border-radius: 5px;
-    /*justify-content: center;*/
-    margin-right: 17px;
-    margin-left: 15px;
-}
+
 
 .guardar{
     width: 40%;
-    background: #575555;
+    background: #212529;
     border: none;
     padding: 12px;
     color: white; 
@@ -110,7 +98,7 @@ header{
 
 .boton button{
     width: 180px;
-    background: #575555;
+    background: #212529;
 
     padding: 12px;
     border-radius: 4px;
@@ -122,7 +110,7 @@ header{
 }
 
 .boton button:hover{
-    color: #000;
+    color: #FFF;
 }
 
 footer{
@@ -133,7 +121,6 @@ footer{
     bottom: 0;
     padding: 40px;
 }
-
 a{
     text-decoration: none; 
 }
