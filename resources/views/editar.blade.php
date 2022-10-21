@@ -33,7 +33,7 @@
 
             <div class="control" for="direccion">
                 <span>Dirección</span>
-                <input type="text" name="direccion" required="" pattern="{1,50}" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
+                <input type="text" name="direccion" required="" pattern="(a-z,A-Z, ,0-9){10,70}" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
             </div>
 
             <div class="control" for="horario">
