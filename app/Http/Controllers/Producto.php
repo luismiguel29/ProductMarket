@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 
 
 
@@ -14,10 +17,27 @@ class Producto extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $users = DB::select('call consulta');
+        $users = $this->arrayPaginator($users, $request);
         return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
+        $productos = DB::table('producto')
+        ->select('NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD')
+        ->orderByRaw('NOMBREPROD ASC')
+        ->get();
+        return view('Proveedor.Verlistaproductos', compact('productos'));
+    }
+
+    public function arrayPaginator($array, $request)
+    {
+        $page = $request -> input('page', 1);
+        $perPage = 5;
+
+        $offset = ($page * $perPage) - $perPage;
+
+        return new LengthAwarePaginator(array_slice($array, $offset, $perPage, true), count($array), $perPage, $page,
+            ['path' => $request->url(), 'query' => $request->query()]);
     }
 
     

@@ -1,7 +1,8 @@
 <?php
-
+namespace App\Providers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Producto;
+use Illuminate\Pagination\Paginator;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/proveedor/listaproducto', [Producto::class,'index']  ) -> name('lis
 Route::get('proveedor/paginaprincipal', function (){
     return view('Proveedor.PaginaPrincipal');
 })->name('paginaprincipal');
+
+Route::resource('/verproductos', Producto::class);

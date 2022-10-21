@@ -31,7 +31,7 @@
       
           </tbody>
         </table>
-        
+        <div class="d-flex justify-content-end">{!!$productos->links()!!}</div>
       </div>
 
 </div>
