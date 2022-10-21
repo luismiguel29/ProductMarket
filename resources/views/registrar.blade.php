@@ -60,6 +60,8 @@
                                 <input type="number" step="any" class="form-control" name="precionormal" required="" id="pahora" min="1" max="1000">
                             </div>
         
+
+                            <!--update date-->
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
                                 <input type="date" class="form-control" name="fechavenprod" required="" id="fvenc">
