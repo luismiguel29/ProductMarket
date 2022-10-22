@@ -48,47 +48,47 @@
                                 <label for="" class="form-label">Nombre del producto</label>
                                 <input type="text" class="form-control" name="nombreprod" required="" id="categoria" pattern="[a-zA-Z]{1,50}">
                             </div>
-        
-        
+
+
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio antes</label>
                                 <input type="number" step="any" class="form-control" name="preciodesc" required="" id="pantes" min="1" max="1000">
                             </div>
-        
+
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
                                 <input type="number" step="any" class="form-control" name="precionormal" required="" id="pahora" min="1" max="1000">
                             </div>
-        
+
 
                             <!--update date-->
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
                                 <input type="date" class="form-control" name="fechavenprod" required="" id="fvenc">
                             </div>
-        
+
                             <div class="mb-3">
                                 <label for="" class="form-label">Stock</label>
-                                <input type="number" class="form-control" name="stockprod" required="" id="stock" min="1" max="1000">
+                                <input type="number" class="form-control" name="stockprod" required="" id="stock" min="1" max="1000" pattern="{1,15}">
                             </div>
-        
-        
+
+
                             <div class="mb-3">
                                 <label for="floatingTextarea2">Descripción</label>
-                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{1,50}" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{1,50}" minlength="20" style="height: 100px"></textarea>
                             </div>
-        
+
 
                    <!-- <div class="mb-3">
                         <label for="">Categoría</label>
                         <select class="form-select" id="seleccionarCategoría" name="categprod" aria-label="Floating label select example">
-                
+
                             <option selected>Seleccionar una categoría</option>
                             <option value="1">Lacteos</option>
                             <option value="2">Refrescos</option>
                             <option value="3">Cereales</option>
                             <option value="3">Detergentes</option>
-                         
+
                         </select>
                     </div>
                     -->
