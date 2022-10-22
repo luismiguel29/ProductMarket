@@ -42,7 +42,7 @@
 
             <div class="control" for="telefono">
                 <span>Teléfono</span>
-                <input  type="tel" name="telefono" id="telefono" required="" pattern="^[4|6|7]\d{6,7}$" minlength="7" maxlength="8" autocomplete="" required value="{{$dato->TELEFONONEG}} " onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" >
+                <input  type="tel" name="telefono" id="telefono" required="" pattern="^[6|7]\d{7}$" minlength="8" maxlength="8" autocomplete="" required value="{{$dato->TELEFONONEG}} " onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" >
             </div>
 
             <div>
