@@ -46,45 +46,47 @@
                                 <label for="" class="form-label">Nombre del producto</label>
                                 <input class="form-control" name="nombreprod"  required="" id="categoria"  type="text" onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) )" minlength="3" maxlength="50">
                             </div>
-        
-        
+
+
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio antes</label>
                                 <input type="number" step="any" class="form-control" name="preciodesc" required="" id="pantes" min="1" max="1000">
                             </div>
-        
+
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
                                 <input type="number" step="any" class="form-control" name="precionormal" required="" id="pahora" min="1" max="1000">
                             </div>
-        
+
+
+                            <!--update date-->
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
                                 <input type="date" class="form-control" name="fechavenprod" max="2023-01-22" required="" placeholder="Introduce una fecha" required min=<?php $hoy=date("Y-m-d"); echo $hoy;?>  id="fvenc">
                             </div>
-        
+
                             <div class="mb-3">
                                 <label for="" class="form-label">Stock</label>
                                 <input type="number" class="form-control" name="stockprod" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required="" id="stock" min="1" max="999">
                             </div>
-        
-        
+
+
                             <div class="mb-3">
                                 <label for="floatingTextarea2">Descripción</label>
                                 <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{1,50}" minlength="3" maxlength="50" style="height: 100px"></textarea>
                             </div>
-        
+
 
                    <!-- <div class="mb-3">
                         <label for="">Categoría</label>
                         <select class="form-select" id="seleccionarCategoría" name="categprod" aria-label="Floating label select example">
-                
+
                             <option selected>Seleccionar una categoría</option>
                             <option value="1">Lacteos</option>
                             <option value="2">Refrescos</option>
                             <option value="3">Cereales</option>
                             <option value="3">Detergentes</option>
-                         
+
                         </select>
                     </div>
                     -->
