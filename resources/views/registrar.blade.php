@@ -17,22 +17,20 @@
         <img src="./style/logo.png" width="50px" alt="Logo de ProductMarket">
     </header>
 
-
-
-    <div class="d-flex justify-content-around">
+    <div class="d-flex justify-content-around " style="padding-top: 50px;">
         <!--<section class="d-flex flex-column  align-self-center gap-4">
             <button type="button" class="btn btn-secondary fs-5">Editar</button>
             <a type="button" class="btn btn-secondary fs-5">Registrar</a>
             <button type="button" class="btn btn-secondary fs-5">Ver productos</button>
         </section>-->
 
-        <section class="d-flex flex-column  align-self-center gap-4">
+        <section class="d-flex flex-column   gap-4" style="padding-top: 150px;">
             <a href="datosNego" type="button" class="btn btn-dark fs-5 btnb">Editar</a>
             <a href="registrar" type="button" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" type="button" class="btn btn-dark fs-5  btnb">Ver productos</a>
         </section>
 
-        <div class="card border-dark mb-3" style="width: 30rem;">
+        <div class="card border-dark mb-3" style="width: 25rem;">
             <div class="card-body text-dark card-custom-p">
 
                 <h5 class="text-center fs-5">Información del producto</h5>
@@ -46,7 +44,7 @@
 
                             <div class="mb-3">
                                 <label for="" class="form-label">Nombre del producto</label>
-                                <input type="text" class="form-control" name="nombreprod" required="" id="categoria" pattern="[a-zA-Z]{1,50}">
+                                <input class="form-control" name="nombreprod"  required="" id="categoria"  type="text" onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) )" minlength="3" maxlength="50">
                             </div>
         
         
@@ -62,18 +60,18 @@
         
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
-                                <input type="date" class="form-control" name="fechavenprod" required="" id="fvenc">
+                                <input type="date" class="form-control" name="fechavenprod" max="2023-01-22" required="" placeholder="Introduce una fecha" required min=<?php $hoy=date("Y-m-d"); echo $hoy;?>  id="fvenc">
                             </div>
         
                             <div class="mb-3">
                                 <label for="" class="form-label">Stock</label>
-                                <input type="number" class="form-control" name="stockprod" required="" id="stock" min="1" max="1000">
+                                <input type="number" class="form-control" name="stockprod" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required="" id="stock" min="1" max="999">
                             </div>
         
         
                             <div class="mb-3">
                                 <label for="floatingTextarea2">Descripción</label>
-                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{1,50}" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{1,50}" minlength="3" maxlength="50" style="height: 100px"></textarea>
                             </div>
         
 
