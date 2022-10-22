@@ -14,9 +14,11 @@
     --white--prod: #ffffff; 
 }
 header{
+    background-color: #FAFAFA;
     width: 100%;
-    height: 80px;
-    background-color: var(--white--prod);
+    /*margin: auto;*/
+    padding: 10px;
+    padding-bottom: 0px;
 }
 
 

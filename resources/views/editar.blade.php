@@ -41,7 +41,7 @@
 
 <body class="d-flex flex-column">
     <header>
-        <img src="./editarAll/img/Group 33.png" width="50x" alt="Logo de ProductMarket">
+        <img src="./editarAll/img/Group 33.png" width="60px" alt="Logo de ProductMarket">
     </header>
 
     <!-- id="espacio"-->
@@ -87,7 +87,7 @@
                     <!--onkeypress="return( event.charCode != 32 || event.charCode != 39 || event.charCode != 34 || event.charCode != 44 || event.charCode != 46 ||  event.charCode != 47 || event.charCode != 92 || event.charCode != 64 || event.charCode !=209 || event.charCode !=241)"-->
                     <div class="mb-3">
                         <span>Teléfono</span>
-                        <input class="form-control" type="tel" name="telefono" id="telefono" autocomplete="" required autocomplete="off" title="Ingresa el número correcto" value="{{$dato->TELEFONONEG}}" onkeypress="return ( (event.charCode >= 48 && event.charCode <= 57) && (prueba(event)) )" minlength="7" maxlength="8" >
+                        <input class="form-control" type="tel" name="telefono" id="telefono" required="" pattern="^[6|7]\d{7}$" minlength="8" maxlength="8" autocomplete="" required value="{{$dato->TELEFONONEG}} " onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" >
                     </div>
                     
                     <div class="d-flex justify-content-evenly ">
@@ -101,10 +101,9 @@
 
         </div>
 
-        <footer>
-
-        </footer>
+       
     </div>
+    <div class="footer"></div>
 </body>
 
 </html>

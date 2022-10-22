@@ -14,7 +14,7 @@
 
 <body class="d-flex flex-column">
     <header>
-        <img src="./style/logo.png" width="50px" alt="Logo de ProductMarket">
+        <img src="./style/logo.png" width="60px" alt="Logo de ProductMarket">
     </header>
 
     <div class="d-flex justify-content-around " style="padding-top: 50px;">
@@ -24,7 +24,7 @@
             <button type="button" class="btn btn-secondary fs-5">Ver productos</button>
         </section>-->
 
-        <section class="d-flex flex-column   gap-4" style="padding-top: 150px;">
+        <section class="d-flex flex-column   gap-4" style="padding-top: 171px;">
             <a href="datosNego" type="button" class="btn btn-dark fs-5 btnb">Editar</a>
             <a href="registrar" type="button" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" type="button" class="btn btn-dark fs-5  btnb">Ver productos</a>
@@ -73,7 +73,7 @@
 
                             <div class="mb-3">
                                 <label for="floatingTextarea2">Descripción</label>
-                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{1,50}" minlength="3" maxlength="50" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required="" id="descripcion"  pattern="[a-zA-Z]{3,50}" minlength="3" maxlength="50" style="height: 100px"    onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) || (event.charCode >= 48 && event.charCode <= 57)|| (event.charCode == 164) || (event.charCode == 165)|| (event.charCode == 239))"></textarea>
                             </div>
 
 
