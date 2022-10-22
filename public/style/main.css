@@ -46,7 +46,6 @@ body{
     padding: 40px;
 }
 
-.btnb{
-    background-color: var(--silver-black-prod);
-    border: none;
+.pagination>li.active>a {
+  background-color: orange !important;
 }
