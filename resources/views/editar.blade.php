@@ -32,17 +32,17 @@
 
             <div class="control" for="direccion">
                 <span>Dirección</span>
-                <input type="text" name="direccion" required="" pattern="{1,50}" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
+                <input type="text" name="direccion" required=""  pattern="{1,50}" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
             </div>
 
             <div class="control" for="horario">
                 <span>Horario de atención</span>
-                <input type="time" name="horario" required="" id="horario" autocomplete="" required value="{{$dato->HORARIONEG}}">
+                <input type="time" name="horario" required="" id="horario" autocomplete=""  required value="{{$dato->HORARIONEG}}">
             </div>
 
             <div class="control" for="telefono">
                 <span>Teléfono</span>
-                <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}" min="40000000" max="79999999">
+                <input  type="tel" name="telefono" id="telefono" required="" pattern="^[4|6|7]\d{6,7}$" minlength="7" maxlength="8" autocomplete="" required value="{{$dato->TELEFONONEG}} " onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" >
             </div>
 
             <div>

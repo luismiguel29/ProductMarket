@@ -53,12 +53,12 @@
         
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio antes</label>
-                                <input type="number" step="any" class="form-control" name="preciodesc" required="" id="pantes" min="1" max="1000">
+                                <input type="number" step="any" class="form-control" name="preciodesc" required="" id="pantes" minlength="1" maxlength="5" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
                             </div>
         
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
-                                <input type="number" step="any" class="form-control" name="precionormal" required="" id="pahora" min="1" max="1000">
+                                <input type="number" step="any" class="form-control" name="precionormal" required="" id="pahora" minlength="1" maxlength="5" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
                             </div>
         
                             <div class="mb-3">
@@ -68,7 +68,7 @@
         
                             <div class="mb-3">
                                 <label for="" class="form-label">Stock</label>
-                                <input type="number" class="form-control" name="stockprod" required="" id="stock" min="1" max="1000">
+                                <input type="number" class="form-control" name="numero" required="" id="stock" min="1" minlength="1" maxlength="4" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
                             </div>
         
         
@@ -102,7 +102,7 @@
                         <a type="button" href="proveedor/paginaprincipal" class="btn btn-dark fs-5">Cancelar</a>
                     </div>
 
-
+<!-- --!>
                 </form>
                 <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
 
