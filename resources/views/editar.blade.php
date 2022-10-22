@@ -1,10 +1,34 @@
+<script>
+    function prueba(e){
+        key=e.keyCode
+        if(key.charAt(0) === 49){
+            return true;
+        }
+
+        return false;
+    }
+
+/*
+    function validarSiNumero(e){
+        var key = window.event ? e.keyCode : e.which;
+        if ((48 <= key && key <= 57) || (key == 0) || (key == 8)) 
+        { return true; } else { return false; } // -
+    }*/
+
+</script>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('editarAll/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <title>Product Market 🛒</title>
     <!--
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
@@ -14,62 +38,73 @@
     -->
 </head>
 <!--VA LA PARTE DE LOS DATOS DEL NEGOCIO-->
-<body>
+
+<body class="d-flex flex-column">
     <header>
         <img src="./editarAll/img/Group 33.png" width="50x" alt="Logo de ProductMarket">
     </header>
 
-    <main>
-        <form action="{{ route('datosNego.update',$dato->IDNEG) }}" method="post" class="formularioEditar">
-            @csrf
-            @method('PUT')
-            <h4>Editar datos del negocio</h4>
-
-            <div class="control" for="nombre">
-                <span>Nombre del negocio </span>
-                <input type="text" name="nombre" required="" pattern="{1,50}" id="nombre"  autocomplete="" required value="{{$dato->NOMBRENEG}}" >
-            </div>
-
-            <div class="control" for="direccion">
-                <span>Dirección</span>
-                <input type="text" name="direccion" required="" pattern="{1,50}" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}">
-            </div>
-
-            <div class="control" for="horario">
-                <span>Horario de atención</span>
-                <input type="time" name="horario" required="" id="horario" autocomplete="" required value="{{$dato->HORARIONEG}}">
-            </div>
-
-            <div class="control" for="telefono">
-                <span>Teléfono</span>
-                <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}" min="40000000" max="79999999">
-            </div>
-
-            <div>
-                <button type="submit" class="guardar">Guardar</button>
-                <a href="proveedor/paginaprincipal" type="reset" class="guardar">Cancelar</a>
-            </div>
-
-        </form>
-
-        <section class="botonGral">
-            <div class="boton">
-                <button>Editar</button>
-            </div>
-
-            <div class="boton">
-                <a href="registrar"><button>Registrar producto</button></a>
-            </div>
-
-            <div class="boton">
-                <!--<button>Ver productos</button>-->
-                <a href="proveedor/listaproducto"><button>Ver producto</button></a>
-            </div>
+    <!-- id="espacio"-->
+    <div class="d-flex justify-content-around" style="padding-top: 50px;">
+        <section class="d-flex flex-column  align-self-center gap-4">
+            <button class="btn btn-dark fs-5 btnb">Editar</button>
+            <a href="registrar" class="btn btn-dark fs-5 btnb">Registrar producto</a>
+            <a href="proveedor/listaproducto" class="btn btn-dark fs-5 btnb">Ver producto</a>
         </section>
-    </main>
 
-    <footer>
 
-    </footer>
+        <div class="card border-dark mb-3" style="width: 25rem;">
+            <div class="card-body text-dark card-custom-p">
+
+                <form action="{{ route('datosNego.update',$dato->IDNEG) }}" method="post" class="formularioEditar">
+                    @csrf
+                    @method('PUT')
+                    <h5 class="text-center fs-5">Editar datos del negocio</h5>
+
+                    <!--pattern="[A-Z][A-Z,a-z, ,ñ,á,í,é,ó,ú]+"-->
+                    <div class="mb-3">
+                        <span>Nombre del negocio</span>
+                        <input class="form-control" type="text" name="nombre" required="" minlength="1" maxlength="30" id="nombre" autocomplete="" required value="{{$dato->NOMBRENEG}}">
+                    </div>
+
+                    <!--pattern="[A-Z][A-Z,a-z,0-9, ,ñ,á,í,é,ó,ú]+"  minlength="10">-->
+                    <div class="mb-3">
+                        <span>Dirección</span>
+                        <input class="form-control" type="text" name="direccion" required="" pattern="{1,50}" maxlength="50" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}" onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32 || event.charCode == 44 || event.charCode == 46) )">
+                    </div>                                                            
+
+                    <div class="mb-3">
+                        <span>Horario de atención/apertura</span>
+                        <input class="form-control" type="time" name="horario1" required="" id="horario1" autocomplete="" required value="{{$dato->HORARIOAPERTURA}}">
+                    </div>
+
+                    <div class="mb-3">
+                        <span>Horario de atención/cierre</span>
+                        <input class="form-control" type="time" name="horario2" required="" id="horario2" autocomplete="" required value="{{$dato->HORARIOCIERRE}}">
+                    </div>
+
+                    <!--TC-66-->
+                    <!--onkeypress="return( event.charCode != 32 || event.charCode != 39 || event.charCode != 34 || event.charCode != 44 || event.charCode != 46 ||  event.charCode != 47 || event.charCode != 92 || event.charCode != 64 || event.charCode !=209 || event.charCode !=241)"-->
+                    <div class="mb-3">
+                        <span>Teléfono</span>
+                        <input class="form-control" type="tel" name="telefono" id="telefono" autocomplete="" required autocomplete="off" title="Ingresa el número correcto" value="{{$dato->TELEFONONEG}}" onkeypress="return ( (event.charCode >= 48 && event.charCode <= 57) && (prueba(event)) )" minlength="7" maxlength="8" >
+                    </div>
+                    
+                    <div class="d-flex justify-content-evenly ">
+                        <button type="submit" class="btn btn-dark fs-5 ">Guardar</button>
+                        <a href="proveedor/paginaprincipal" type="reset" class="btn btn-dark fs-5 ">Cancelar</a>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <footer>
+
+        </footer>
+    </div>
 </body>
+
 </html>
