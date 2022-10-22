@@ -10,7 +10,7 @@ class DatosNegocio extends Model
     //use HasFactory;
     protected $table="negocio";
     protected $primaryKey="IDNEG";
-    protected $fillable = ['NOMBRENEG', 'DIRECIONNEG', 'HORARIONEG', 'TELEFONONEG'];
+    protected $fillable = ['NOMBRENEG', 'DIRECIONNEG', 'HORARIOAPERTURA', 'TELEFONONEG', 'HORARIOCIERRE'];
 
     public $timestamps = false;
 }

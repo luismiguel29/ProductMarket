@@ -86,8 +86,9 @@ class NegocioAnd extends Controller
         $datoup=DatosNegocio::findOrFail($id);
         $datoup->NOMBRENEG=$request->input('nombre');
         $datoup->DIRECCIONNEG=$request->input('direccion');
-        $datoup->HORARIONEG=$request->input('horario');
+        $datoup->HORARIOAPERTURA=$request->input('horario1');
         $datoup->TELEFONONEG=$request->input('telefono');
+        $datoup->HORARIOCIERRE=$request->input('horario2');
         $datoup->save();
         return \Redirect::back();
     }
