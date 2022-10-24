@@ -90,7 +90,7 @@ class NegocioAnd extends Controller
         $datoup->telefono=$request->input('telefono');
         $datoup->horariofin=$request->input('horario2');
         $datoup->save();
-        return \Redirect::back();
+        return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
     }
 
     /**

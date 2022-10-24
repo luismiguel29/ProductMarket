@@ -15,8 +15,10 @@ class CategoriaController extends Controller
     public function index()
     {
         $categoria = DB::table('categoria')
+        ->orderByRaw('nombre ASC')
         ->get();
-        return $categoria;
+        return view('registrar', compact('categoria'));
+        //return $categoria;
     }
 
     /**

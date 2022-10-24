@@ -80,6 +80,16 @@
                             value="{{ old('preciodesc') }}" required="" id="pahora" min="1" max="1000">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Categoria</label>
+                        <select name="categoria" class="form-select" aria-label="Default select example">
+                            <option selected>Selecione una categoria</option>
+                            @foreach ($categoria as $item)
+                                <option value="{{ $item->idcategoria }}" >{{ $item->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
                     <!--update date-->
                     <div class="mb-3">

@@ -23,9 +23,11 @@ class ProductoController extends Controller
             ->orderByRaw('nombre ASC')
             ->get(); */
 
-        $productos = DB::table('producto')
+        /* $productos = DB::table('producto')
         ->where('id_categoria', '=', 5)
         ->orderByRaw('nombre ASC')
+        ->get(); */
+        $productos = DB::table('producto')
         ->get();
 
         return view('ventana', compact('productos'));
@@ -59,7 +61,7 @@ class ProductoController extends Controller
         $url = Storage::url($img);
 
         $producto = new Producto;
-        $producto->id_categoria = 5;
+        $producto->id_categoria = $request->input('categoria');
         $producto->id_negocio = 1;
         $producto->nombre = $request->input('nombreprod');
         $producto->precio = $request->input('precio');
@@ -69,7 +71,7 @@ class ProductoController extends Controller
         $producto->descripcion = $request->input('descripprod');
         $producto->url = $url;
         $producto->save();
-        return redirect('registrar')->with('message', '¡Registro exitoso!!!!!!!');
+        return redirect('categoria')->with('message', '¡Registro exitoso!!!!!!!');
     }
 
     /**
