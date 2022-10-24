@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::get('/test',function(){
     return view('test');
 });
-
+//clave
 Route::get('/registrar', function () {
     $categorias = Categoria::all();
     return view('registrar', compact('categorias'));
