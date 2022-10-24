@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Producto;
-use App\Models\producto as ModelsProducto;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -16,10 +16,20 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $users = DB::select('call consulta');
-        return $users;
-        $productos=Producto::all();
-        return $productos;
+        //$productos = Producto::all();
+
+        /* $productos = DB::table('producto')
+            ->select('nombre', 'precio', 'preciodesc', 'url')
+            ->orderByRaw('nombre ASC')
+            ->get(); */
+
+        $productos = DB::table('producto')
+        ->where('id_categoria', '=', 5)
+        ->orderByRaw('nombre ASC')
+        ->get();
+
+        return view('ventana', compact('productos'));
+        //return $productos;
     }
 
     /**
@@ -29,7 +39,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('producto.create'); 
+        return view('producto.create');
     }
 
     /**
@@ -40,22 +50,26 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-      /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
-        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
-       */  
-        $producto  = new Producto;
-        $producto->idneg=$request->input('idneg');
-        $producto->nombreprod= $request->input('nombreprod');
-        $producto->precionormal=$request->input('precionormal');
-        $producto->preciodesc=$request->input('preciodesc');
-        $producto->stockprod=$request->input('stockprod');
-        $producto->fechavenprod=$request->input('fechavenprod');
-        $producto->descripprod=$request->input('descripprod');
-        $producto->url_img=$request->input('url_img');
+
+        $validator = $request->validate([
+            'url_img' => 'required|image',
+        ]);
+
+        $img = $request->file('url_img')->store('public/imagenes');
+        $url = Storage::url($img);
+
+        $producto = new Producto;
+        $producto->id_categoria = 5;
+        $producto->id_negocio = 1;
+        $producto->nombre = $request->input('nombreprod');
+        $producto->precio = $request->input('precio');
+        $producto->preciodesc = $request->input('preciodesc');
+        $producto->stock = $request->input('stockprod');
+        $producto->fechaven = $request->input('fechavenprod');
+        $producto->descripcion = $request->input('descripprod');
+        $producto->url = $url;
         $producto->save();
-        //return redirect()->route('producto.index');
-        return \Redirect::back();    
-          
+        return redirect('registrar')->with('message', '¡Registro exitoso!!!!!!!');
     }
 
     /**
@@ -89,8 +103,7 @@ class ProductoController extends Controller
      */
     public function update(Request $request)
     {
-        DB::select('call moddatosprod(?,?,?,?,?,?,?)',array($request->idprod,$request->nombreprod,$request->precionormal,
-        $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod,$request->url_img));
+
     }
 
     /**
@@ -101,8 +114,7 @@ class ProductoController extends Controller
      */
     public function destroy(Request $request)
     {
-        DB::select('call delprod("'.$request->idprod.'")');
-    
+
     }
 
 }

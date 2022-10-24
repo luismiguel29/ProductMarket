@@ -24,10 +24,10 @@
         <tbody>
           @foreach ($productos as $producto)
           <tr>
-            <td>{{$producto->NOMBREPROD}}</td>
-            <td> {{$producto->PRECIONORMAL}}</td>
-            <td>{{$producto->PRECIODESC}}</td>
-            <td>{{$producto->STOCKPROD}}</td>
+            <td>{{$producto->nombre}}</td>
+            <td> {{$producto->precio}}</td>
+            <td>{{$producto->preciodesc}}</td>
+            <td>{{$producto->stock}}</td>
           </tr>
           @endforeach
 

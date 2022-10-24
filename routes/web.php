@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\NegocioAnd;
 use App\Http\Controllers\ProductoVilmaController;
+use App\Http\Controllers\ProductoPruebaController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +56,7 @@ Route::get('proveedor/paginaprincipal', function (){
 })->name('paginaprincipal');
 
 Route::resource('/verproductos', ProductoVilmaController::class);
+
+Route::resource('/prueba', ProductoPruebaController::class);
+
+Route::resource('/categoria', CategoriaController::class);

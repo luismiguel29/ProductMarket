@@ -17,18 +17,18 @@ class ProductoVilmaController extends Controller
      */
     public function index(Request $request)
     {
-        /* $users = DB::select('call consulta');
-        return view ('Proveedor.Verlistaproductos', ['productos'=> $users]); */
-        $users = DB::select('call consulta');
+        //$users = DB::select('call consulta');
+        //$users = $this->arrayPaginator($users, $request);
+
+        $users = Producto::all()->toArray();
         $users = $this->arrayPaginator($users, $request);
-        //return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
         $productos = DB::table('producto')
-        ->select('NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD')
-        ->orderByRaw('NOMBREPROD ASC')
+        ->select('nombre', 'precio', 'preciodesc','stock')
+        ->orderByRaw('nombre ASC')
         ->paginate(5);
-        //return view('Proveedor.Verlistaproductos', compact('productos'));
-        //$productos = Producto::all();
+        
         return view('Proveedor.Verlistaproductos', compact('productos'));
+        //return $productos;
     }
 
     public function arrayPaginator($array, $request)

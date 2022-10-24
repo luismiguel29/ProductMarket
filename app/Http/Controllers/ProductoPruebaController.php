@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use DB;
+use App\Models\Producto;
 
-class Categoria extends Controller
+class ProductoPruebaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,10 @@ class Categoria extends Controller
      */
     public function index()
     {
-        $nomCat = DB::select('call categ');
-        return $nomCat;
+        $producto = DB::table('producto')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        return $producto;
     }
 
     /**
