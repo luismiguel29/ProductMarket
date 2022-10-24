@@ -15,6 +15,8 @@ class producto extends Model
     protected $fillable = ['IDNEG','IDCAT','NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD', 'FECHAVENPROD', 'DESCRIPPROD','URL_IMG'];
     public $timestamps = false;
 
+    //enlaceProductoCategoria
+
     public function categoria(){
 
         return $this->belongsTo(Categoria::class,'IDCAT');
