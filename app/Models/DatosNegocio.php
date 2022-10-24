@@ -11,6 +11,5 @@ class DatosNegocio extends Model
     protected $table="negocio";
     protected $primaryKey="IDNEG";
     protected $fillable = ['NOMBRENEG', 'DIRECIONNEG', 'HORARIOAPERTURA', 'TELEFONONEG', 'HORARIOCIERRE'];
-
     public $timestamps = false;
 }
