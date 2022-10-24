@@ -7,9 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class producto extends Model
 {
+
+
     //use HasFactory;
     protected $table = "producto";
     protected $primaryKey = "IDPROD";
-    protected $fillable = ['IDNEG', 'NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD', 'FECHAVENPROD', 'DESCRIPPROD','URL_IMG'];
+    protected $fillable = ['IDNEG','IDCAT','NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD', 'FECHAVENPROD', 'DESCRIPPROD','URL_IMG'];
     public $timestamps = false;
+
+    public function categoria(){
+
+        return $this->belongsTo(Categoria::class,'IDCAT');
+    }
+
+
 }

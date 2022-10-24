@@ -1,5 +1,6 @@
 <?php
-
+use App\Models\Categoria;
+use App\Http\Controllers\CategoriasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\NegocioAnd;
@@ -22,11 +23,13 @@ Route::get('/', function () {
 
 Route::get('/test',function(){
     return view('test');
-});  
+});
 
 Route::get('/registrar', function () {
-    return view('registrar');
+    $categorias = Categoria::all();
+    return view('registrar', compact('categorias'));
 });
+
 
 Route::resource('/producto', ProductoController::class);
 

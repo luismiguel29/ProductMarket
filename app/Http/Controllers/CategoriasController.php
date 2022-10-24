@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class Categoria extends Controller
+class CategoriasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class Categoria extends Controller
      */
     public function index()
     {
-        $nomCat = DB::select('call categ');
-        return $nomCat;
+        //
     }
 
     /**

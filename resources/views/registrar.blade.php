@@ -70,6 +70,16 @@
                                 <input type="number" class="form-control" name="stockprod" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required="" id="stock" min="1" max="999">
                             </div>
 
+                            <div class="mb-3">
+                                <label for="">Categoria</label>
+                                <select name="idcat" id="inputIDCAT" class="form-control">
+                                    @foreach ($categorias as $categoria)
+                                        <option value="{{$categoria ['IDCAT']}}">{{$categoria ['NOMBRE_CAT']}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+
 
                             <div class="mb-3">
                                 <label for="floatingTextarea2">Descripción</label>

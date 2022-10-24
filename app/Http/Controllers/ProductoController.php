@@ -29,7 +29,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('producto.create'); 
+        return view('producto.create');
     }
 
     /**
@@ -42,20 +42,22 @@ class ProductoController extends Controller
     {
       /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
-       */  
+       */
         $producto  = new Producto;
-        $producto->idneg=$request->input('idneg');
-        $producto->nombreprod= $request->input('nombreprod');
-        $producto->precionormal=$request->input('precionormal');
-        $producto->preciodesc=$request->input('preciodesc');
-        $producto->stockprod=$request->input('stockprod');
-        $producto->fechavenprod=$request->input('fechavenprod');
-        $producto->descripprod=$request->input('descripprod');
-        $producto->url_img=$request->input('url_img');
-        $producto->save();
-        //return redirect()->route('producto.index');
-        return \Redirect::back();    
-          
+            $producto->idneg=$request->input('idneg');
+            $producto->idcat=$request->input('idcat');
+            $producto->nombreprod= $request->input('nombreprod');
+            $producto->precionormal=$request->input('precionormal');
+            $producto->preciodesc=$request->input('preciodesc');
+            $producto->stockprod=$request->input('stockprod');
+            $producto->fechavenprod=$request->input('fechavenprod');
+
+            $producto->descripprod=$request->input('descripprod');
+            $producto->url_img=$request->input('url_img');
+            $producto->save();
+            //return redirect()->route('producto.index');
+            return \Redirect::back();
+
     }
 
     /**
@@ -89,10 +91,9 @@ class ProductoController extends Controller
      */
     public function update(Request $request)
     {
-        DB::select('call moddatosprod(?,?,?,?,?,?,?)',array($request->idprod,$request->nombreprod,$request->precionormal,
+        DB::select('call moddatosprod(?,?,?,?,?,?,?,?,?)',array($request->idprod,$request->idcat,$request->nombreprod,$request->precionormal,
         $request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod,$request->url_img));
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -102,7 +103,7 @@ class ProductoController extends Controller
     public function destroy(Request $request)
     {
         DB::select('call delprod("'.$request->idprod.'")');
-    
+
     }
 
 }
