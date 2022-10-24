@@ -12,6 +12,8 @@ class Categoria extends Model
     protected $primaryKey="IDCAT";
     protected $fillable=['NOMBRE_CAT'];
 
+    //enlaceProductoCategoria
+
     public function producto(){
 
         return $this->hasMany(Producto::class,'IDCAT');
