@@ -3,44 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Producto;
 use DB;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\Producto;
 
-class ProductoVilmaController extends Controller
+class ProductoPruebaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        //$users = DB::select('call consulta');
-        //$users = $this->arrayPaginator($users, $request);
-
-        $users = Producto::all()->toArray();
-        $users = $this->arrayPaginator($users, $request);
-        $productos = DB::table('producto')
-        ->select('nombre', 'precio', 'preciodesc','stock')
+        $producto = DB::table('producto')
         ->orderByRaw('nombre ASC')
-        ->paginate(5);
-        
-        return view('Proveedor.Verlistaproductos', compact('productos'));
-        //return $productos;
+        ->get();
+        return $producto;
     }
 
-    public function arrayPaginator($array, $request)
-    {
-        $page = $request -> input('page', 1);
-        $perPage = 5;
-
-        $offset = ($page * $perPage) - $perPage;
-
-        return new LengthAwarePaginator(array_slice($array, $offset, $perPage, true), count($array), $perPage, $page,
-            ['path' => $request->url(), 'query' => $request->query()]);
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -104,7 +84,6 @@ class ProductoVilmaController extends Controller
      */
     public function destroy($id)
     {
-        DB::select('call delprod("'.$request->idprod.'")');
+        //
     }
 }
-

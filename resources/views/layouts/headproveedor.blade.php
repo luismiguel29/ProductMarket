@@ -13,7 +13,7 @@
 
    <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
-         <img src="{{ asset('imagenes/Group 33.png') }}" width="80" height="80" alt="logoProductmarket">
+         <img src="{{ asset('imagenes/Group 33.png') }}" width="50" height="80" alt="logoProductmarket">
       </a>
    </nav>
    </head>

@@ -84,12 +84,13 @@ class NegocioAnd extends Controller
     public function update(Request $request, $id)
     {
         $datoup=DatosNegocio::findOrFail($id);
-        $datoup->NOMBRENEG=$request->input('nombre');
-        $datoup->DIRECCIONNEG=$request->input('direccion');
-        $datoup->HORARIONEG=$request->input('horario');
-        $datoup->TELEFONONEG=$request->input('telefono');
+        $datoup->nombre=$request->input('nombre');
+        $datoup->direccion=$request->input('direccion');
+        $datoup->horarioinicio=$request->input('horario1');
+        $datoup->telefono=$request->input('telefono');
+        $datoup->horariofin=$request->input('horario2');
         $datoup->save();
-        return \Redirect::back();
+        return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
     }
 
     /**
