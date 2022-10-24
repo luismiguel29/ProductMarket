@@ -51,7 +51,6 @@ class ProductoController extends Controller
             $producto->preciodesc=$request->input('preciodesc');
             $producto->stockprod=$request->input('stockprod');
             $producto->fechavenprod=$request->input('fechavenprod');
-
             $producto->descripprod=$request->input('descripprod');
             $producto->url_img=$request->input('url_img');
             $producto->save();
