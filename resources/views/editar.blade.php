@@ -27,13 +27,13 @@
 
             <div class="control" for="nombre">
                 <span>Nombre del negocio</span>
-                <input type="text" name="nombre"  required="" pattern="[A-Z,0-9][A-Z,a-z,0-9, ,ñ,á,í,é,ó,ú]+" id="nombre"  autocomplete="" required value="{{$dato->NOMBRENEG}}" > 
+                <input type="text" name="nombre"  required="" pattern="[A-Z][A-Z,a-z, ,ñ,á,í,é,ó,ú]+" id="nombre"  autocomplete="" required value="{{$dato->NOMBRENEG}}" minlength="2" maxlength="30" > 
                 
             </div>
 
             <div class="control" for="direccion">
                 <span>Dirección</span>
-                <input type="text" name="direccion" required="" pattern="[A-Z][A-Z,a-z,0-9, ,ñ,á,í,é,ó,ú]+" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}" minlength="10" maxlength="60">
+                <input type="text" name="direccion" required="" pattern="[A-Z][A-Z,a-z,0-9, ,ñ,á,í,é,ó,ú]+" id="direccion" autocomplete="address-level1" required value="{{$dato->DIRECCIONNEG}}" minlength="10" maxlength="50">
             </div>
 
             <div class="control" for="horario">
@@ -43,7 +43,7 @@
 
             <div class="control" for="telefono">
                 <span>Teléfono</span>
-                <input type="number" name="telefono" id="telefono" autocomplete="" required value="{{$dato->TELEFONONEG}}" min="40000000" max="79999999">
+                <input type="number" name="telefono" id="telefono" autocomplete="" pattern="(4,6,7)[0-9]{7}" required value="{{$dato->TELEFONONEG}}" min="40000000" max="79999999">
             </div>
 
             <div>
