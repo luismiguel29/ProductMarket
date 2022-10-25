@@ -52,7 +52,7 @@
     <div class="d-flex justify-content-around" style="padding-top: 50px;">
         <section class="d-flex flex-column  align-self-center gap-4">
             <button class="btn btn-dark fs-5 btnb">Editar</button>
-            <a href="registrar" class="btn btn-dark fs-5 btnb">Registrar producto</a>
+            <a href="categoria" class="btn btn-dark fs-5 btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" class="btn btn-dark fs-5 btnb">Ver producto</a>
         </section>
 
