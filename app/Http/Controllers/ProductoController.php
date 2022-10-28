@@ -44,14 +44,15 @@ class ProductoController extends Controller
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
        */  
         $producto  = new Producto;
-        $producto->idneg=$request->input('idneg');
-        $producto->nombreprod= $request->input('nombreprod');
-        $producto->precionormal=$request->input('precionormal');
+        $producto->id_negocio=1; //$request->input('idneg');
+        $producto->nombre= $request->input('nombreprod');
+        $producto->precio=$request->input('precionormal');
         $producto->preciodesc=$request->input('preciodesc');
-        $producto->stockprod=$request->input('stockprod');
-        $producto->fechavenprod=$request->input('fechavenprod');
-        $producto->descripprod=$request->input('descripprod');
-        $producto->url_img=$request->input('url_img');
+        $producto->stock=$request->input('stockprod');
+        $producto->fechaven=$request->input('fechavenprod');
+        $producto->descripcion=$request->input('descripprod');
+        $producto->url=$request->file('file')->store('public/imagenes');
+        $producto->id_categoria=4;
         $producto->save();
         //return redirect()->route('producto.index');
         return \Redirect::back();    

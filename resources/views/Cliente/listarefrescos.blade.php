@@ -32,7 +32,7 @@
           </div>
     </header>
     <!--<img src="/fondo10.png" alt="">-->
-   
+   <h2>{{$categoryName->nombre}}</h2>
    <div class="row row-cols-1 row-cols-md-4 g-4">
     @foreach ( $productos as $producto )
         <div class="col" > 
@@ -40,7 +40,7 @@
             <div class="card-header" style="background-color: #000000">
                 Super oferta
             </div>
-            <img class="card-img-top" src="{{ asset($producto->url)}}" alt="Card image cap">
+            <img class="card-img-top" src="{{ asset (Storage::url($producto->url))}}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">{{$producto->nombre}}</p>
             </div>
@@ -56,6 +56,7 @@
         </div>
     @endforeach                  
         
+        {!!$productos->links()!!}
 </div>
    
             

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Categoria;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -49,7 +50,8 @@ class ProductoVilmaController extends Controller
     public function getByCategory($category)
     {
         $productos = Producto::where('id_categoria', $category)->paginate(3);
-        return view('cliente.listarefrescos', compact('productos'));
+        $categoryName= Categoria::where('idcategoria',$category)->first();
+        return view('cliente.listarefrescos', compact('productos', 'categoryName'));
     }
 
     /**

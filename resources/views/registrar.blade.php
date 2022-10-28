@@ -35,7 +35,7 @@
 
                 <h5 class="text-center fs-5">Información del producto</h5>
 
-                <form action="{{route('producto.store')}}" method="post">
+                <form action="{{route('producto.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <!--<div class=" mb-3 input-group">
                                 <input type="file" class="form-control" id="inputImg">
@@ -92,7 +92,7 @@
                     -->
                     <div class="mb-3">
                         <label for="" class="form-label">URL de la imágen</label>
-                        <input type="url" class="form-control" name="url_img" required="" id="url_img">
+                        <input type="file" class="form-control" name="file" required="" id="url_img">
                     </div>
 
                     <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
