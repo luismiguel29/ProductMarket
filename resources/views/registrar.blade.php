@@ -29,7 +29,7 @@
 
         <section class="d-flex flex-column   gap-4" style="padding-top: 171px;">
             <a href="datosNego" type="button" class="btn btn-dark fs-5 btnb">Editar</a>
-            <a href="registrar" type="button" class="btn btn-dark fs-5  btnb">Registrar producto</a>
+            <a href="categoria" type="button" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" type="button" class="btn btn-dark fs-5  btnb">Ver productos</a>
         </section>
 
@@ -82,7 +82,7 @@
 
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Categoria</label>
-                        <select name="categoria" class="form-select" aria-label="Default select example">
+                        <select name="categoria" class="form-select" aria-label="Default select example" required="">
                             <option selected>Selecione una categoria</option>
                             @foreach ($categoria as $item)
                                 <option value="{{ $item->idcategoria }}" >{{ $item->nombre }}</option>
