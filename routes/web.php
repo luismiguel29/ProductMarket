@@ -54,3 +54,9 @@ Route::get('proveedor/paginaprincipal', function (){
 })->name('paginaprincipal');
 
 Route::resource('/verproductos', ProductoVilmaController::class);
+
+Route::get('/cliente/listarefrescos', function () {
+    return view('Cliente.listarefrescos');
+})->name ('listarefrescos');
+
+Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);

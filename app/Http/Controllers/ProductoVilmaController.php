@@ -46,9 +46,10 @@ class ProductoVilmaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getByCategory($category)
     {
-        //
+        $productos = Producto::where('id_categoria', $category)->paginate(3);
+        return view('cliente.listarefrescos', compact('productos'));
     }
 
     /**
