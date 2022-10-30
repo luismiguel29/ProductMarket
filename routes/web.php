@@ -6,6 +6,7 @@ use App\Http\Controllers\NegocioAnd;
 use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\NovedadesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::get('/test',function(){
 
 Route::get('/registrar', function () {
     return view('registrar');
+});
+
+Route::get('/Cliente/novedades', function () {
+    return view('/Cliente/novedades');
 });
 
 Route::resource('/producto', ProductoController::class);
@@ -60,3 +65,7 @@ Route::resource('/verproductos', ProductoVilmaController::class);
 Route::resource('/prueba', ProductoPruebaController::class);
 
 Route::resource('/categoria', CategoriaController::class);
+
+Route::resource('/userTemplate',NegocioAnd::class);
+
+Route::resource('/novedades',NovedadesController::class);

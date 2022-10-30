@@ -42,3 +42,12 @@ body{
     margin-top: auto;
     height: 100px;  
 }
+
+
+.card-custom-p{
+    padding: 40px;
+}
+
+.pagination>li.active>a {
+  background-color: orange !important;
+}
