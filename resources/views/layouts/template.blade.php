@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column">
     <header>
-        <img src="./logo.png" width="60px" alt="Logo de ProductMarket">
+        <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
     </header >
     <div style="background: #E3E9E6">   
         @yield('content')  -> @section('content')
