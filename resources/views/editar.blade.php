@@ -57,7 +57,7 @@
         </section>
 
 
-        <div class="card border-dark mb-3" style="width: 25rem;">
+        <div class="card border-dark mb-5" style="width: 25rem;">
             <div class="card-body text-dark card-custom-p">
 
                 <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar">
@@ -132,6 +132,7 @@
 
 
     </div>
+
     <div class="footer"></div>
 </body>
 

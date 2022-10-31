@@ -26,7 +26,7 @@ class NegocioAnd extends Controller
         $dato=DatosNegocio::findOrFail(1);
         //return $dato;
         //return view('editar',compact('datos'));
-            return view('editar',compact('dato'));
+        return view('editar',compact('dato'));
     }
 
     /**
@@ -47,7 +47,15 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dato = new DatosNegocio;
+        $dato->nombre=$request->input('nombre');
+        $dato->direccion=$request->input('direccion');
+        $dato->horarioinicio=$request->input('horarioA');
+        $dato->telefono=$request->input('celular');
+        $dato->horariofin=$request->input('horarioC');
+        $dato->save();
+        //return redirect()->route('registroNegocio');
+        return redirect('registroNegocio');
     }
 
     /**

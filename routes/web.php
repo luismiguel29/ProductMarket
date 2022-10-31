@@ -64,4 +64,3 @@ Route::resource('/categoria', CategoriaController::class);
 Route::get('/registroNegocio', function () {
     return view('registroNegocio');
 });
-
