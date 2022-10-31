@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class NovedadesController extends Controller
 {
@@ -13,7 +16,15 @@ class NovedadesController extends Controller
      */
     public function index()
     {
-        //
+        $productos = DB::table('producto')
+        ->get();
+        return view('/Cliente/novedades', compact('productos'));
+        
+        /*$producto = DB::table('producto')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        return $producto;
+        */
     }
 
     /**
@@ -23,7 +34,9 @@ class NovedadesController extends Controller
      */
     public function create()
     {
-        //
+        
+            return view('producto.create');
+        
     }
 
     /**
