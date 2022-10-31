@@ -60,3 +60,8 @@ Route::resource('/verproductos', ProductoVilmaController::class);
 Route::resource('/prueba', ProductoPruebaController::class);
 
 Route::resource('/categoria', CategoriaController::class);
+
+Route::get('/registroNegocio', function () {
+    return view('registroNegocio');
+});
+
