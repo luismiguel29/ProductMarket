@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProductoVilmaController extends Controller
@@ -24,8 +25,8 @@ class ProductoVilmaController extends Controller
         $users = $this->arrayPaginator($users, $request);
         //return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
         $productos = DB::table('producto')
-        ->select('NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD')
-        ->orderByRaw('NOMBREPROD ASC')
+        ->select('nombre', 'precio', 'preciodesc','stock')
+        ->orderByRaw('nombre ASC')
         ->paginate(5);
         //return view('Proveedor.Verlistaproductos', compact('productos'));
         //$productos = Producto::all();
@@ -49,7 +50,7 @@ class ProductoVilmaController extends Controller
      */
     public function getByCategory($category)
     {
-        $productos = Producto::where('id_categoria', $category)->paginate(3);
+        $productos = Producto::where('id_categoria', $category)->paginate(6);
         $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('cliente.listarefrescos', compact('productos', 'categoryName'));
     }
