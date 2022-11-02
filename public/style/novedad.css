@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;600;700;800&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --yellow-prod: #FFD507;
+    --silver-light-prod: #575555;
+    --silver-black-prod: #2D2D2D;
+    --gray-black-prod: #9C9C9C;
+    --gray-light-prod: #F3F3F3;
+    --white--prod: #ffffff; 
+    --black--prod: #000000;
+}
+header{
+    background-color: #FAFAFA;
+    width: 100%;
+    /*margin: auto;*/
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+
+body{
+    background-color: #fcf3f3;
+    font-family: 'Mukta', sans-serif;
+   /* background-image: url(./logo2.jpeg);
+    width: 100%;
+    /*flex-direction: column;
+    min-height: 100vh;*/
+   background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.footer{
+    background-color: #FFD507;
+    padding: 1em 0;
+    margin-top: auto;
+    height: 100px;  
+}
+/*
+.row{
+    position: center;
+    bottom: 0;
+}*/
+.card-custom-p{
+    padding: 40px;
+}
+
+.pagination>li.active>a {
+  background-color: orange !important;
+}
+
+.c-footer{
+    background-color: var(--yellow-prod);
+}
+
+.c-header{
+    background-color: var(--black--prod);
+    color: white;
+    text-align: center;
+}
+.c-navbar{
+    position: start;
+}
+/*
+section{
+    position: center;
+    
+}
+/*
+small{
+    margin: auto;
+    color: var(--white--prod);
+    font-weight:500  ;
+    font-size: medium;
+    text-align: center;
+}

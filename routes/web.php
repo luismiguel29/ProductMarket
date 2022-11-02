@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/novedad',function(){
+    return view('novedad');
+});  
+
 Route::get('/test',function(){
     return view('test');
 });  
