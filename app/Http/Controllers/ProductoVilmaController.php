@@ -20,13 +20,13 @@ class ProductoVilmaController extends Controller
     {
         /* $users = DB::select('call consulta');
         return view ('Proveedor.Verlistaproductos', ['productos'=> $users]); */
-        $users = DB::select('call consulta');
-        $users = $this->arrayPaginator($users, $request);
+        $productos = Producto::orderBy('nombre','ASC')->paginate(5);
+        //$users = $this->arrayPaginator($users, $request);
         //return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
-        $productos = DB::table('producto')
-        ->select('NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD')
-        ->orderByRaw('NOMBREPROD ASC')
-        ->paginate(5);
+        //$productos = DB::table('producto')
+        //->select('NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD')
+        //->orderByRaw('NOMBREPROD ASC')
+        //->paginate(5);
         //return view('Proveedor.Verlistaproductos', compact('productos'));
         //$productos = Producto::all();
         return view('Proveedor.Verlistaproductos', compact('productos'));
@@ -49,7 +49,7 @@ class ProductoVilmaController extends Controller
      */
     public function getByCategory($category)
     {
-        $productos = Producto::where('id_categoria', $category)->paginate(3);
+        $productos = Producto::where('id_categoria', $category)->paginate(6);
         $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('cliente.listarefrescos', compact('productos', 'categoryName'));
     }

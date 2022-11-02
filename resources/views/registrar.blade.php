@@ -77,7 +77,7 @@
                             </div>
 
 
-                   <!-- <div class="mb-3">
+                   <div class="mb-3">
                         <label for="">Categoría</label>
                         <select class="form-select" id="seleccionarCategoría" name="categprod" aria-label="Floating label select example">
 
@@ -89,7 +89,7 @@
 
                         </select>
                     </div>
-                    -->
+                    
                     <div class="mb-3">
                         <label for="" class="form-label">URL de la imágen</label>
                         <input type="file" class="form-control" name="file" required="" id="url_img">
