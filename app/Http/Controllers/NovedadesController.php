@@ -19,7 +19,7 @@ class NovedadesController extends Controller
         $productos = DB::table('producto')
         ->get();
         return view('/Cliente/novedades', compact('productos'));
-        
+
         /*$producto = DB::table('producto')
         ->orderByRaw('nombre ASC')
         ->get();
@@ -34,9 +34,9 @@ class NovedadesController extends Controller
      */
     public function create()
     {
-        
+
             return view('producto.create');
-        
+
     }
 
     /**
