@@ -75,3 +75,6 @@ Route::resource('/list', ListaController::class);
 
 Route::get('/menu', 'App\Http\Controllers\CategoriaController@menu');
 //Route::get('/menu', 'App\Http\Controllers\CategoriaController@catDato');
+Route::get('/registroNegocio', function () {
+    return view('registroNegocio');
+});
