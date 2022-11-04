@@ -64,7 +64,8 @@ class CategoriaController extends Controller
         $categoria->nombre = $request->input('nombre');
         $categoria->url = $url;
         $categoria->save();
-        return redirect('ventana');
+        //return redirect('ventana');
+        return redirect()->back();
     }
 
     /**
