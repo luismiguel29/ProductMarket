@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 
 class ListaController extends Controller
@@ -31,7 +31,7 @@ class ListaController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**

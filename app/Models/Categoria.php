@@ -10,7 +10,7 @@ class Categoria extends Model
     //use HasFactory;
     protected $table="categoria";
     protected $primaryKey="idcategoria";
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre','url'];
 
     public $timestamps = false;
 }

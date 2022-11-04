@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Producto;
 
 class ProductoPruebaController extends Controller
@@ -15,10 +15,10 @@ class ProductoPruebaController extends Controller
      */
     public function index()
     {
-        $producto = DB::table('producto')
+        $productos = DB::table('producto')
         ->orderByRaw('nombre ASC')
         ->get();
-        return $producto;
+        return view('ventana',compact('productos'));
     }
 
     /**
