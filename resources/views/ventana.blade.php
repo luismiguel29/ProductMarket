@@ -15,18 +15,18 @@
 
 <body>
 
-    {{-- <div class="container">
+    <div class="container">
         <form action="{{ route('categoria.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="nombre" id="">
             <input type="file" name="categoria" id="">
             <button type="submit" class="btn btn-primary">Registrar</button>
-    </div> --}}
+    </div>
 
 
 
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{-- <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach ($productos as $item)
             <div class="col">
                 <div class="card">
@@ -38,7 +38,7 @@
                 </div>
             </div>
         @endforeach
-    </div>
+    </div> --}}
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
