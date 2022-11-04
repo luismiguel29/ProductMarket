@@ -55,11 +55,11 @@
                     </div>
                 @endforeach
 
-                    <div class="lis">
-                        {!!$productos->links()!!}
-                    </div>
-                </div>
 
+                </div>
+                <div class="lis">
+                    {!!$productos->links()!!}
+                </div>
 
 
             </body>
