@@ -71,3 +71,7 @@ Route::resource('/verproductos', ProductoVilmaController::class);
 Route::resource('/prueba', ProductoPruebaController::class);
 
 Route::resource('/categoria', CategoriaController::class);
+
+Route::resource('/userTemplate',NegocioAnd::class);
+
+Route::resource('/novedades',NovedadesController::class);
