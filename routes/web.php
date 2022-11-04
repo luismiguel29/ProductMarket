@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::get('/test',function(){
     return view('test');
-});  
+});
 
 Route::get('/registrar', function () {
     return view('registrar');
@@ -75,3 +75,17 @@ Route::resource('/categoria', CategoriaController::class);
 Route::resource('/userTemplate',NegocioAnd::class);
 
 Route::resource('/novedades',NovedadesController::class);
+
+Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
+
+
+
+Route::get('/cliente/listarefrescos', function () {
+    return view('Cliente.listarefrescos');
+})->name ('listarefrescos');
+
+Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);
+
+
+
+

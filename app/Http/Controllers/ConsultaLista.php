@@ -14,7 +14,7 @@ class ConsultaLista extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
