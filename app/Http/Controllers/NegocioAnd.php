@@ -19,7 +19,8 @@ class NegocioAnd extends Controller
         //$texto=trim($request->get('texto'));
 
         $datos=DatosNegocio::all();
-        //$datos=DB::table('negocio');
+        //$datos=DB::table('negocio')
+        //     ->select('idnegocio', 'nombre', 'direccion', 'horarioinicio', 'horariofin', 'telefono');
 
         //return $datos;
 
@@ -55,7 +56,7 @@ class NegocioAnd extends Controller
         $dato->horariofin=$request->input('horarioC');
         $dato->save();
         //return redirect()->route('registroNegocio');
-        return redirect('registroNegocio');
+        return redirect('registroNegocio')->with('message', 'Los datos se guardaron correctamente!');
     }
 
     /**
