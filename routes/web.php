@@ -83,6 +83,6 @@ Route::get('/cliente/listarefrescos', function () {
 
 Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);
 
-
+Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
 
