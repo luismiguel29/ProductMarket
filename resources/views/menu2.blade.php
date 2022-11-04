@@ -19,6 +19,7 @@
     hola mundo
     <div>
       <input type="text">
+      <input type="file">
     </div>
   </div>
 
