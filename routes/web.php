@@ -75,7 +75,7 @@ Route::resource('/categoria', CategoriaController::class);
 Route::resource('/userTemplate',NegocioAnd::class);
 
 Route::resource('/novedades',NovedadesController::class);
-Route::resource('/novedade',NovedadesController::class);
+
 
 Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
