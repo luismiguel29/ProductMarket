@@ -72,6 +72,13 @@ Route::resource('/prueba', ProductoPruebaController::class);
 
 Route::resource('/categoria', CategoriaController::class);
 
+Route::get('/registroNegocio', function () {
+    return view('registroNegocio');
+});
+
+Route::get('/registrar', function () {
+    return view('registrar');
+});
 Route::resource('/userTemplate',NegocioAnd::class);
 
 Route::resource('/novedades',NovedadesController::class);

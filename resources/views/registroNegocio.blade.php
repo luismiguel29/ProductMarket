@@ -27,6 +27,23 @@
                     @csrf
                     <h5 class="text-center fs-5">Registro del negocio</h5>
 
+                    <!--------------------------------------------------->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </div>
+                    @endif
+                    @if (session('message')) 
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>{{ session('message') }}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
+                    <!--------------------------------------------------->
+
                     <div class="col-12">
                         <label for="nombre" class="form-label">Nombre del negocio</label>
                         <input type="text" name="nombre" class="form-control" id="nombre" required maxlength="30">
@@ -56,7 +73,7 @@
 
                     <div class="d-flex justify-content-evenly">
                         <button type="submit" class="btn btn-dark fs-5">Guardar</button>
-                        <a href="proveedor/paginaprincipal" type="reset"
+                        <a href="" type="reset"
                             class="btn btn-dark fs-5">Cancelar</a>
                     </div>
 
