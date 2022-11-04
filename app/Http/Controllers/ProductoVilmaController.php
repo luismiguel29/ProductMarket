@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
-use DB;
+use App\Models\Categoria;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -26,7 +27,7 @@ class ProductoVilmaController extends Controller
         ->select('nombre', 'precio', 'preciodesc','stock')
         ->orderByRaw('nombre ASC')
         ->paginate(5);
-        
+
         return view('Proveedor.Verlistaproductos', compact('productos'));
         //return $productos;
     }
@@ -46,10 +47,16 @@ class ProductoVilmaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getByCategory($category)
     {
-        //
+        $productos = Producto::where('id_categoria', $category)->paginate(6);
+        $categoryName= Categoria::where('idcategoria',$category)->first();
+        return view('cliente.listarefrescos', compact('productos', 'categoryName'));
+        //return $categoryName;
     }
+
+
+
 
     /**
      * Store a newly created resource in storage.
