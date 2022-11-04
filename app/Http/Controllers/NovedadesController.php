@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
-class ConsultaLista extends Controller
+class NovedadesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,15 @@ class ConsultaLista extends Controller
      */
     public function index()
     {
+        $productos = DB::table('producto')
+        ->get();
+        return view('/Cliente/novedades', compact('productos'));
 
+        /*$producto = DB::table('producto')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        return $producto;
+        */
     }
 
     /**
@@ -24,7 +34,9 @@ class ConsultaLista extends Controller
      */
     public function create()
     {
-        //
+
+            return view('producto.create');
+
     }
 
     /**

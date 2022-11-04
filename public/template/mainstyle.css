@@ -11,6 +11,7 @@
     --gray-black-prod: #9C9C9C;
     --gray-light-prod: #F3F3F3;
     --white--prod: #ffffff; 
+    --black--prod: #000000;
 }
 header{
     background-color: #FAFAFA;
@@ -41,4 +42,29 @@ body{
     padding: 1em 0;
     margin-top: auto;
     height: 100px;  
+}
+
+
+.card-custom-p{
+    padding: 40px;
+}
+
+.pagination>li.active>a {
+  background-color: orange !important;
+}
+
+.c-footer{
+    background-color: var(--yellow-prod);
+}
+
+.c-header{
+    background-color: var(--black--prod);
+}
+
+small{
+    margin: auto;
+    color: var(--white--prod);
+    font-weight:500  ;
+    font-size: medium;
+    text-align: center;
 }

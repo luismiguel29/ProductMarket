@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Producto;
 
-class ConsultaLista extends Controller
+class ProductoPruebaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,10 @@ class ConsultaLista extends Controller
      */
     public function index()
     {
-
+        $productos = DB::table('producto')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        return view('ventana',compact('productos'));
     }
 
     /**

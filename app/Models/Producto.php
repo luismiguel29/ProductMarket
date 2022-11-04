@@ -10,6 +10,7 @@ class producto extends Model
     //use HasFactory;
     protected $table = "producto";
     protected $primaryKey = "idproducto";
-    protected $fillable = ['id_categoria', 'id_negocio', 'nombre', 'precio','preciodesc', 'stock', 'descripcion','url', 'fecha','fechainicio','fechafin', 'fechaven'];
+    protected $fillable = ['id_categoria', 'id_negocio', 'nombre', 'precio','preciodesc', 'stock', 
+    'descripcion','url','fecha','fechainicio','fechafin','fechaven'];
     public $timestamps = false;
 }

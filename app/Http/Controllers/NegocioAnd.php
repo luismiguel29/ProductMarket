@@ -18,7 +18,7 @@ class NegocioAnd extends Controller
     {
         //$texto=trim($request->get('texto'));
 
-        $datos=DatosNegocio::all();
+        //$datos=DatosNegocio::all();
         //$datos=DB::table('negocio');
 
         //return $datos;
@@ -26,7 +26,7 @@ class NegocioAnd extends Controller
         $dato=DatosNegocio::findOrFail(1);
         //return $dato;
         //return view('editar',compact('datos'));
-            return view('editar',compact('dato'));
+        return view('editar',compact('dato'));
     }
 
     /**
@@ -47,7 +47,15 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dato = new DatosNegocio;
+        $dato->nombre=$request->input('nombre');
+        $dato->direccion=$request->input('direccion');
+        $dato->horarioinicio=$request->input('horarioA');
+        $dato->telefono=$request->input('celular');
+        $dato->horariofin=$request->input('horarioC');
+        $dato->save();
+        //return redirect()->route('registroNegocio');
+        return redirect('registroNegocio');
     }
 
     /**
@@ -84,13 +92,13 @@ class NegocioAnd extends Controller
     public function update(Request $request, $id)
     {
         $datoup=DatosNegocio::findOrFail($id);
-        $datoup->NOMBRENEG=$request->input('nombre');
-        $datoup->DIRECCIONNEG=$request->input('direccion');
-        $datoup->HORARIOAPERTURA=$request->input('horario1');
-        $datoup->TELEFONONEG=$request->input('telefono');
-        $datoup->HORARIOCIERRE=$request->input('horario2');
+        $datoup->nombre=$request->input('nombre');
+        $datoup->direccion=$request->input('direccion');
+        $datoup->horarioinicio=$request->input('horario1');
+        $datoup->telefono=$request->input('telefono');
+        $datoup->horariofin=$request->input('horario2');
         $datoup->save();
-        return \Redirect::back();
+        return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
     }
 
     /**

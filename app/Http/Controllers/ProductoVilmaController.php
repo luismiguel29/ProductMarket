@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -30,6 +30,7 @@ class ProductoVilmaController extends Controller
         //return view('Proveedor.Verlistaproductos', compact('productos'));
         //$productos = Producto::all();
         return view('Proveedor.Verlistaproductos', compact('productos'));
+        //return $productos;
     }
 
     public function arrayPaginator($array, $request)
@@ -53,6 +54,9 @@ class ProductoVilmaController extends Controller
         $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('cliente.listarefrescos', compact('productos', 'categoryName'));
     }
+
+
+
 
     /**
      * Store a newly created resource in storage.

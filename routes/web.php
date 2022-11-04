@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\NegocioAnd;
 use App\Http\Controllers\ProductoVilmaController;
+use App\Http\Controllers\ProductoPruebaController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,10 +24,14 @@ Route::get('/', function () {
 
 Route::get('/test',function(){
     return view('test');
-});  
+});
 
 Route::get('/registrar', function () {
     return view('registrar');
+});
+
+Route::get('/Cliente/novedades', function () {
+    return view('/Cliente/novedades');
 });
 
 Route::resource('/producto', ProductoController::class);
@@ -36,6 +42,13 @@ Route::get('/editar', function () {
 
 Route::get('/editarini', function () {
     return view('editarini');
+});
+
+Route::get('/menu', function () {
+    return view('menu');
+});
+Route::get('/menu2', function () {
+    return view('menu2');
 });
 
 
@@ -55,8 +68,20 @@ Route::get('proveedor/paginaprincipal', function (){
 
 Route::resource('/verproductos', ProductoVilmaController::class);
 
+Route::resource('/prueba', ProductoPruebaController::class);
+
+Route::resource('/categoria', CategoriaController::class);
+
+Route::resource('/userTemplate',NegocioAnd::class);
+
+Route::resource('/novedades',NovedadesController::class);
+
 Route::get('/cliente/listarefrescos', function () {
     return view('Cliente.listarefrescos');
 })->name ('listarefrescos');
 
 Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);
+
+Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
+
+
