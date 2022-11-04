@@ -30,7 +30,7 @@ class ProductoController extends Controller
         $productos = DB::table('producto')
         ->get();
 
-        return view('ventana', compact('productos'));
+        return view('menu', compact('productos'));
         //return $productos;
     }
 

@@ -1,32 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Producto;
 use Illuminate\Http\Request;
-use App\Models\DatosNegocio;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
+use DB;
 
-class NegocioAnd extends Controller
+
+class ListaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        //$texto=trim($request->get('texto'));
-
-        //$datos=DatosNegocio::all();
-        //$datos=DB::table('negocio');
-
-        //return $datos;
-
-        $dato=DatosNegocio::findOrFail(1);
-        //return $dato;
-        //return view('editar',compact('datos'));
-            return view('editar',compact('dato'));
+        /* $lista = Producto::all();
+        return $lista; */
+        $lista = DB::table('producto')
+        ->select('nombre','stock')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        return view('lista', compact('lista'));
     }
 
     /**
@@ -36,7 +31,7 @@ class NegocioAnd extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -69,9 +64,7 @@ class NegocioAnd extends Controller
      */
     public function edit($id)
     {
-        $dato=DatosNegocio::findOrFail($id);
-        //return $dato;
-        return view('editar',compact('dato'));
+        //
     }
 
     /**
@@ -83,14 +76,7 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-        $datoup=DatosNegocio::findOrFail($id);
-        $datoup->nombre=$request->input('nombre');
-        $datoup->direccion=$request->input('direccion');
-        $datoup->horarioinicio=$request->input('horario1');
-        $datoup->telefono=$request->input('telefono');
-        $datoup->horariofin=$request->input('horario2');
-        $datoup->save();
-        return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
+        //
     }
 
     /**

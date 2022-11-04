@@ -6,6 +6,7 @@ use App\Http\Controllers\NegocioAnd;
 use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ListaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,13 @@ Route::get('/editarini', function () {
     return view('editarini');
 });
 
+Route::get('/menu', function () {
+    return view('menu');
+});
+Route::get('/menu2', function () {
+    return view('menu2');
+});
+
 
 Route::resource('/datosNego',NegocioAnd::class);
 
@@ -60,3 +68,10 @@ Route::resource('/verproductos', ProductoVilmaController::class);
 Route::resource('/prueba', ProductoPruebaController::class);
 
 Route::resource('/categoria', CategoriaController::class);
+
+Route::resource('/list', ListaController::class);
+
+//Route::get('/inicio', [App\Http\Controllers\CategoriaController::class, 'menu'])->name('inicio');
+
+Route::get('/menu', 'App\Http\Controllers\CategoriaController@menu');
+//Route::get('/menu', 'App\Http\Controllers\CategoriaController@catDato');
