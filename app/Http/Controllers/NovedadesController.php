@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Categoria;
 use Illuminate\Support\Facades\Storage;
 
-class CategoriaController extends Controller
+class NovedadesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,27 +16,15 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categoria = DB::table('categoria')
+        $productos = DB::table('producto')
+        ->get();
+        return view('/Cliente/novedades', compact('productos'));
+
+        /*$producto = DB::table('producto')
         ->orderByRaw('nombre ASC')
         ->get();
-        return view('registrar', compact('categoria'));
-        //return $categoria;
-    }
-
-    public function menu()
-    {
-        $categoria = DB::table('categoria')
-        ->orderByRaw('nombre ASC')
-        ->get();
-        return view('menu', compact('categoria'));
-        //return $categoria;
-    }
-
-    public function catDato(Request $request, $id)
-    {
-        $categoria = Categoria::findOrFail($id);
-        //return view('menu', compact('categoria'));
-        return $categoria;
+        return $producto;
+        */
     }
 
     /**
@@ -46,7 +34,9 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+
+            return view('producto.create');
+
     }
 
     /**
@@ -57,15 +47,7 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        $img = $request->file('categoria')->store('public/imagenes');
-        $url = Storage::url($img);
-
-        $categoria = new Categoria;
-        $categoria->nombre = $request->input('nombre');
-        $categoria->url = $url;
-        $categoria->save();
-        //return redirect('ventana');
-        return redirect()->back();
+        //
     }
 
     /**

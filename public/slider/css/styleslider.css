@@ -1,0 +1,100 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mukta', sans-serif;
+}
+body{
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFEFEF;
+}
+.container{
+  width: 90%;
+
+  padding: 10px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide-container{
+  /* max-width: 1120px; */
+
+  width: 90%;
+  padding: 10px 40px;
+}
+.slide-content{
+  /* height: 150px;
+  width: 150px; */
+  margin: 0 5px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+
+.card{
+  /* height: 200px;
+  width: 150px; */
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.card-image{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 20px;
+}
+
+
+.image-content,
+.card-content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 5px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 5px 0;
+}
+
+
+
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* border-radius: 50%; */
+  /* border: 4px solid #4070F4; */
+}
+.name{
+  font-size: 20px;
+  font-weight: 900;
+  color: #333;
+}
+.swiper-button-next{
+  /* right: 100px !important; */
+  position: inherit !important;
+  background-color: black;
+  color: white !important;
+  
+}
+.swiper-button-prev{
+  /* left: 100px !important; */
+  position: inherit !important;  
+  background-color: black;
+  color: white !important;
+}
+
+

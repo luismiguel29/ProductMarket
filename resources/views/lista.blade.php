@@ -15,32 +15,12 @@
 
 <body>
 
-    <div class="container">
-        <form action="{{ route('categoria.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <input type="text" name="nombre" id="">
-            <input type="file" name="categoria" id="">
-            <button type="submit" class="btn btn-primary">Registrar</button>
+    <div class="form-group">
+        <label for=""></label>
+        <input type="text" name="dato" value=""> 
     </div>
 
-
-
-
-    {{-- <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach ($productos as $item)
-            <div class="col">
-                <div class="card">
-                    <img src="{{ $item->url }}" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $item->nombre }}</h5>
-                        <p class="card- text">{{ $item->precio }}</p>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div> --}}
-
-
+    <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>

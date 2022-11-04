@@ -18,7 +18,7 @@ class NegocioAnd extends Controller
     {
         //$texto=trim($request->get('texto'));
 
-        $datos=DatosNegocio::all();
+        //$datos=DatosNegocio::all();
         //$datos=DB::table('negocio')
         //     ->select('idnegocio', 'nombre', 'direccion', 'horarioinicio', 'horariofin', 'telefono');
 
