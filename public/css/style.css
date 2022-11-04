@@ -25,7 +25,9 @@ header{
 
 body{
     font-family: 'Mukta', sans-serif;
-    background-image: url(http://127.0.0.1:8000/imagenes/fondo10.jpeg);
+    /*background-image: url(http://127.0.0.1:8000/imagenes/fondo10.jpeg);*/
+    background-color:#E3E9E6;
+    
     width: 100%;
     /*flex-direction: column;
     min-height: 100vh;*/
