@@ -54,6 +54,10 @@
         </div>
 
     </section>
+
+
+
+   {{--  OFICIAL  SHIFT + ALT + A --}}
     <section class="container-sm">
         <div class=" row row-cols-1 g-5">
             @foreach ($productos as $item)
