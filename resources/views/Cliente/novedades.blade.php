@@ -32,7 +32,7 @@
                     <div class="card-wrapper swiper-wrapper">
                         @foreach ($categoria as $item)
                             <div class="card swiper-slide">
-                                <a href="{{ route('verproductos.show', $item->idcategoria) }}" class="image-content">
+                                <a href="{{ route('verproductosvil.show', $item->idcategoria) }}" class="image-content">
                                     {{-- <span class="overlay"></span> --}}
 
                                     <div class="card-image">

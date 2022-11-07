@@ -70,7 +70,7 @@ Route::get('proveedor/paginaprincipal', function (){
     return view('Proveedor.PaginaPrincipal');
 })->name('paginaprincipal');
 
-Route::resource('/verproductos', ProductoVilmaController::class);
+Route::resource('/verproductosvil', ProductoVilmaController::class);
 
 Route::resource('/prueba', ProductoPruebaController::class);
 
@@ -93,7 +93,6 @@ Route::get('/cliente/listarefrescos', function () {
 
 Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);
 
-Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
 
 
