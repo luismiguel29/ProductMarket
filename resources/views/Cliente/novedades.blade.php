@@ -2,6 +2,9 @@
 
 
 @section('content')
+<div>
+    <h1>CATEGORIAS</h1>
+</div>
 
 <!DOCTYPE html>
 <html lang="en">
