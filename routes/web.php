@@ -7,6 +7,9 @@ use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\NovedadesController;
+use Illuminate\Http\Request;
+use CloudinaryLabs\CloudinaryLaravel\MediaAlly;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -91,5 +94,6 @@ Route::get('/cliente/listarefrescos', function () {
 Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);
 
 Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
+
 
 

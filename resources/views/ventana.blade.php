@@ -16,10 +16,10 @@
 <body>
 
     <div class="container">
-        <form action="{{ route('categoria.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('novedades.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="nombre" id="">
-            <input type="file" name="categoria" id="">
+            <input type="file" name="file" id="">
             <button type="submit" class="btn btn-primary">Registrar</button>
     </div>
 

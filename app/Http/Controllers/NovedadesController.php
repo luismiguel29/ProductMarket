@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use CloudinaryLabs\CloudinaryLaravel\MediaAlly;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class NovedadesController extends Controller
 {
@@ -17,20 +18,20 @@ class NovedadesController extends Controller
     public function index()
     {
         $productos = DB::table('producto')
-        ->get();
+            ->get();
 
         $categoria = DB::table('categoria')
-        ->orderByRaw('nombre ASC')
-        ->get();
+            ->orderByRaw('nombre ASC')
+            ->get();
         //return view('menu', compact('categoria'));
 
         return view('/Cliente/novedades', compact('productos', 'categoria'));
 
         /*$producto = DB::table('producto')
-        ->orderByRaw('nombre ASC')
-        ->get();
-        return $producto;
-        */
+    ->orderByRaw('nombre ASC')
+    ->get();
+    return $producto;
+     */
     }
 
     /**
@@ -41,7 +42,7 @@ class NovedadesController extends Controller
     public function create()
     {
 
-            return view('producto.create');
+        return view('producto.create');
 
     }
 
@@ -53,7 +54,8 @@ class NovedadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $uploadedFileUrl = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+        return $uploadedFileUrl;
     }
 
     /**
