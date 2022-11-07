@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use CloudinaryLabs\CloudinaryLaravel\MediaAlly;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class NovedadesController extends Controller
 {
@@ -54,8 +52,7 @@ class NovedadesController extends Controller
      */
     public function store(Request $request)
     {
-        $uploadedFileUrl = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
-        return $uploadedFileUrl;
+
     }
 
     /**
