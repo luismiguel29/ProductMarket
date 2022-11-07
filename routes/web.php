@@ -70,7 +70,7 @@ Route::get('proveedor/paginaprincipal', function (){
     return view('Proveedor.PaginaPrincipal');
 })->name('paginaprincipal');
 
-Route::resource('/verproductosvil', ProductoVilmaController::class);
+Route::resource('/verproductos', ProductoVilmaController::class);
 
 Route::resource('/prueba', ProductoPruebaController::class);
 
