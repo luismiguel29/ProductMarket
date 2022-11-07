@@ -18,7 +18,13 @@ class NovedadesController extends Controller
     {
         $productos = DB::table('producto')
         ->get();
-        return view('/Cliente/novedades', compact('productos'));
+
+        $categoria = DB::table('categoria')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        //return view('menu', compact('categoria'));
+
+        return view('/Cliente/novedades', compact('productos', 'categoria'));
 
         /*$producto = DB::table('producto')
         ->orderByRaw('nombre ASC')
