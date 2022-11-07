@@ -20,7 +20,7 @@ class ProductoPruebaController extends Controller
         ->get();
         return $producto;
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

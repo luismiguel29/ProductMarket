@@ -13,4 +13,5 @@ class producto extends Model
     protected $fillable = ['id_categoria', 'id_negocio', 'nombre', 'precio','preciodesc', 'stock', 
     'descripcion','url','fecha','fechainicio','fechafin','fechaven'];
     public $timestamps = false;
+
 }
