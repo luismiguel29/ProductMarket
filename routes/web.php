@@ -51,8 +51,8 @@ Route::get('/editarini', function () {
 Route::get('/menu', function () {
     return view('menu');
 });
-Route::get('/menu2', function () {
-    return view('menu2');
+Route::get('/listacategoria', function () {
+    return view('listacategoria');
 });
 
 

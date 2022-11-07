@@ -79,7 +79,7 @@ class ProductoVilmaController extends Controller
     {
         $productos = Producto::where('id_categoria', $category)->paginate(6);
         $categoryName= Categoria::where('idcategoria',$category)->first();
-        return view('cliente.listarefrescos', compact('productos', 'categoryName'));
+        return view('listacategoria', compact('productos', 'categoryName'));
     }
 
     /**
