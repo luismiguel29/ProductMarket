@@ -127,8 +127,8 @@
                             <option value="3">Detergentes</option>
 
                         </select>
-                    </div>
-                    -->
+                    </div>-->
+                    
                     <div class="mb-3">
                         <label for="" class="form-label">URL de la imágen</label>
 

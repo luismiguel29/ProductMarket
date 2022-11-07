@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
+
 class ProductoController extends Controller
 {
     /**
@@ -52,13 +53,16 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-
+      /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
+        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
+       */  
         $validator = $request->validate([
             'url_img' => 'required|image',
         ]);
 
+
         $img = $request->file('url_img')->store('public/imagenes');
-        $url = Storage::url($img);
+        $url = Storage::url($img); 
 
         $producto = new Producto;
         $producto->id_categoria = $request->input('categoria');

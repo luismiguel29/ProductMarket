@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\Storage;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class CategoriaController extends Controller
 {
@@ -57,8 +58,13 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        $img = $request->file('categoria')->store('public/imagenes');
-        $url = Storage::url($img);
+
+
+
+        /* $img = $request->file('categoria')->store('public/imagenes');
+        $url = Storage::url($img); */
+
+        $url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
 
         $categoria = new Categoria;
         $categoria->nombre = $request->input('nombre');
