@@ -58,7 +58,7 @@ class ProductoController extends Controller
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
        */  
         $validator = $request->validate([
-            'url_img' => 'required|image',
+            'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
         ]);
 
         $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
