@@ -31,36 +31,35 @@
                     </div>
                 </header>
 
+                <div class="boton">
+                    <a style="color: #000000" href="/carrusel"><strong>Volver </strong></a>
+                </div>
 
-             <div class="row row-cols-1 row-cols-md-4 g-4">
-                @if($productos-> isNotEmpty())
-                    @foreach ( $productos as $producto )
-                        <div class="col" >
-                            <div class="card" style="width: 18rem;">
-                            <div class="card-header" style="background-color: #000000" >
-                                <div style="color: #ffffff">Super oferta</div>
-                            </div>
-                            <img class="card-img-top" src="{{$producto->url}}" alt="Card image cap">
-                            <div class="card-body">
-                            <p class="card-text">{{$producto->nombre}}</p>
-                            </div>
-                            <div class="card-footer overflow-hidden" style="background-color: #FFD507">
-                                @if ($producto->preciodesc>0)
-                                    <span> <strong>Bs</strong> <s>{{$producto->precio}}</s> /</span>
-                                    <span> <strong>Bs</strong> {{$producto->preciodesc}}</span>
-                                @else
-                                    <span>{{$producto->precio}}</span>
-                                @endif
-                            </div>
-                            </div>
+             <div class="row">
+                @foreach ( $productos as $producto )
+                    <div class="col" >
+                        <div class="card" style="width: 18rem;">
+                        <div class="card-header" style="background-color: #000000" >
+                            <div style="color: #ffffff"><strong>Super oferta</strong></div>
                         </div>
-                    @endforeach
-                @else
-                    <div class="alert alert-dark" role="alert">
-                        No existen productos en la categoria!
+                        <img class="card-img-top" src="{{$producto->url}}" alt="Card image cap">
+                        <div class="card-body">
+                        <p class="card-text"><strong>S{{$producto->nombre}}</strong></p>
+                        </div>
+                        <div class="card-footer overflow-hidden" style="background-color: #FFD507">
+                            @if ($producto->preciodesc>0)
+                                <span> <strong>Bs</strong> <s>{{$producto->preciodesc}}</s> /</span>
+                                <span> <strong>Bs</strong> {{$producto->precio}}</span>
+                            @else
+                                <span>{{$producto->precio}}</span>
+                            @endif
+                        </div>
+                        </div>
                     </div>
-                @endif
-             </div>
+                @endforeach
+
+
+                </div>
                 <div class="lis">
                     {!!$productos->links()!!}
                 </div>
