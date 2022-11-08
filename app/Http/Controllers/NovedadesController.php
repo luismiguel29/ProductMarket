@@ -23,32 +23,7 @@ class NovedadesController extends Controller
 
         $productos = DB::table('producto')
             ->get();
-        /*
-        $a = array();
-
-        for ($var = 9; $var > 0; $var--) {
-            $extraer = Producto::where('id_categoria', $var)->orderBy('idproducto', 'desc')->first();
-            if ($extraer != "") {
-                array_unshift($a, $extraer);
-            }
-        }
-
-        //$b1 = array(); $b2 = array(); $b3 = array();
-        $b = array([], [], []);
-        $aux = 0;
-        foreach ($a as $c) {
-            if (count($a) % 3 != 0) {
-                array_unshift($b[$aux], $c);
-                if (count($b[$aux]) == 3) {
-                    $aux++;
-                }
-            }
-        }
-        $b1 = $b[0];
-        $b2 = $b[1];
-        $b3 = $b[2];
-        //return $b;
-        */
+        
 
         $a = array();
         $a1 = array();
