@@ -20,7 +20,8 @@
 
             <div class="container-fluid">
                 <a href="">
-                    <img src="./style/logo.png" class="logo">
+                    <!--<img src="./style/logo.png" class="logo">-->
+                    <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
@@ -31,7 +32,7 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
