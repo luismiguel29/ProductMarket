@@ -19,7 +19,7 @@
     <nav class="navbar bg-white fixed-top">
 
             <div class="container-fluid">
-                <a href="">
+                <a href="novedades">
                     <!--<img src="./style/logo.png" class="logo">-->
                     <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
                 </a>
