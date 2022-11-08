@@ -36,6 +36,10 @@ body{
     background-attachment: fixed;
 }
 
+.margen{
+    margin: 40px;
+}
+
 .footer{
 
     background-color: #FFD507;
