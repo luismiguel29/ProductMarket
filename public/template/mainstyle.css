@@ -68,3 +68,8 @@ small{
     font-size: medium;
     text-align: center;
 }
+
+.logo{
+    height: 60px;
+    width: 60px;    
+  }
