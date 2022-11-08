@@ -11,7 +11,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{{ asset('template/mainstyle.css') }}">
-    <title>Document</title>
+    <title>Product Market</title>
 
 </head>
 
@@ -37,7 +37,11 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">REGISTRAR</a>
+                                <a href="registroNegocio" class="nav-link active" aria-current="page" href="#">Registra tu negocio</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
                             </li>
                     </div>
                 </div>
@@ -47,15 +51,15 @@
 </header>
 
 <body class="d-flex flex-column">
-    {{-- <header>
+    <!-- <header>
         <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
-    </header> --}}
+    </header> -->
 
     <div style="background: #E3E9E6">
         @yield('content')  @section('content')
-        </div>
-        <div class="footer"></div>
-    </body>
+    </div>
+    <div class="footer"></div>
+</body>
 
-    </html>
+</html>
 
