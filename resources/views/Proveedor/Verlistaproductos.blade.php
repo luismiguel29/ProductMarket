@@ -22,7 +22,7 @@
               <th>Precio Descuento</th>
               <th>Stock</th>
               <th>Fecha de vencimiento</th>
-              <th>Imagen</th>
+              <!--<th>Imagen</th>-->
             </tr>
           </thead>
           <tbody class="table-light">
@@ -34,7 +34,7 @@
               <td>{{$producto->preciodesc}}</td>
               <td>{{$producto->stock}}</td>
               <td>{{$producto->fechaven}}</td>
-              <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
+              <!--<td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"   alt=""></td>-->
 
             </tr>
             @endforeach
