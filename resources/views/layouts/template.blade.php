@@ -15,7 +15,7 @@
 
 </head>
 
-<header>
+{{-- <header>
     <nav class="navbar bg-white fixed-top">
 
         <div class="container-fluid">
@@ -43,6 +43,10 @@
             </div>
         </div>
     </nav>
+</header> --}}
+
+<header>
+    <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
 </header>
 
 <body class="d-flex flex-column">
