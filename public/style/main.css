@@ -11,6 +11,7 @@
     --gray-black-prod: #9C9C9C;
     --gray-light-prod: #F3F3F3;
     --white--prod: #ffffff; 
+    --silver-background: #E3E9E6;
 }
 header{
     background-color: #FAFAFA;
@@ -20,12 +21,15 @@ header{
     padding-bottom: 0px;
 }
 
-
+.c-header{
+    height: 40px;
+    background-color: var(--yellow-prod);
+}
 
 
 body{
     font-family: 'Mukta', sans-serif;
-    background-image: url(./logo2.jpeg);
+    background-color:var(--silver-background);
     width: 100%;
     /*flex-direction: column;
     min-height: 100vh;*/
@@ -39,6 +43,6 @@ body{
     
     background-color: #FFD507;
     padding: 1em 0;
-    margin-top: auto;
+    margin-top: 40px;
     height: 100px;  
 }
