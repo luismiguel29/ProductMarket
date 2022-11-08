@@ -35,7 +35,7 @@
                     <a style="color: #000000" href="/novedades"><strong>Volver </strong></a>
                 </div>
 
-             <div class="row">
+             <div class="row row-cols-2">
                 @foreach ( $productos as $producto )
                     <div class="col" >
                         <div class="card" style="width: 18rem;">
