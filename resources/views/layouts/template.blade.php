@@ -15,8 +15,11 @@
 
 </head>
 
-<header>
-    <nav class="navbar bg-white fixed-top">
+
+<body class="d-flex flex-column">
+
+    <header>
+        <nav class="navbar bg-white fixed-top">
 
             <div class="container-fluid">
                 <a href="">
@@ -43,20 +46,19 @@
                 </div>
             </div>
         </nav>
-    </header> --}}
+    </header> 
 
-<header>
-    <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
-</header>
-
-
-
-
+    <!--
+    <header>
+        <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
+    </header>
+    -->
 
     <div style="background: #E3E9E6">
         @yield('content')  @section('content')
-        </div>
-        <div class="footer"></div>
-    </body>
+    </div>
+    <div class="footer"></div>
 
-    </html>
+</body>
+
+</html>
