@@ -59,6 +59,9 @@
     <div style="background: #E3E9E6">
         @yield('content')  @section('content')
     </div>
+
+    <br></br>
+
     <div class="footer"></div>
 </body>
 
