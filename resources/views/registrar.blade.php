@@ -20,7 +20,7 @@
         <img src="./style/logo.png" width="60px" alt="Logo de ProductMarket">
     </header>
 
-    <div class="d-flex justify-content-around " style="padding-top: 50px;">
+    <div class="d-flex justify-content-evenly" style="padding-top: 50px;">
         <!--<section class="d-flex flex-column  align-self-center gap-4">
             <button type="button" class="btn btn-secondary fs-5">Editar</button>
             <a type="button" class="btn btn-secondary fs-5">Registrar</a>
@@ -28,95 +28,103 @@
         </section>-->
 
         <section class="d-flex flex-column   gap-4" style="padding-top: 171px;">
-            <a href="datosNego" type="button" class="btn btn-dark fs-5 btnb">Editar</a>
+            <a href="datosNego" type="button" class="btn btn-dark fs-5 btnb" style="">Editar</a>
             <a href="categoria" type="button" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" type="button" class="btn btn-dark fs-5  btnb">Ver productos</a>
         </section>
 
-        <div class="card border-dark mb-3" style="width: 25rem;">
-            <div class="card-body text-dark card-custom-p">
+        <div class=" row row-cols-1 g-5">
 
-                <h5 class="text-center fs-5">Información del producto</h5>
-                {{-- @include('components.flash_alerts') --}}
-                <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <!--<div class=" mb-3 input-group">
+            <div class="col-12 col-md-6 col-lg-12">
+                <div class="card h-100">
+                    <div class="card-header c-header" style="#FFD507"> </div>
+                    <div class="card-body text-dark card-custom-p">
+
+                        <h5 class="text-center fs-5">Información del producto</h5>
+                        {{-- @include('components.flash_alerts') --}}
+                        <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <!--<div class=" mb-3 input-group">
                                 <input type="file" class="form-control" id="inputImg">
                                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
                             </div>-->
 
-                    <div class="mb-3">
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                            <div class="mb-3">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </div>
+                                @endif
+                                @if (session('message'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>{{ session('message') }}</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <label for="" class="form-label">Nombre del producto</label>
+                                <input class="form-control" name="nombreprod" required="" id="categoria"
+                                    type="text" value="{{ old('nombreprod') }}"
+                                    onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) )"
+                                    minlength="3" maxlength="50">
                             </div>
-                        @endif
-                        @if (session('message'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>{{ session('message') }}</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
+
+
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Precio antes</label>
+                                <input type="number" step="any" class="form-control" name="precio"
+                                    value="{{ old('precio') }}" required="" id="pantes" min="1"
+                                    max="1000">
                             </div>
-                        @endif
-                        <label for="" class="form-label">Nombre del producto</label>
-                        <input class="form-control" name="nombreprod" required="" id="categoria" type="text"
-                            value="{{ old('nombreprod') }}"
-                            onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) )"
-                            minlength="3" maxlength="50">
-                    </div>
+
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
+                                <input type="number" step="any" class="form-control" name="preciodesc"
+                                    value="{{ old('preciodesc') }}" required="" id="pahora" min="1"
+                                    max="1000">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Categoria</label>
+                                <select name="categoria" class="form-select" aria-label="Default select example"
+                                    required="">
+                                    <option selected>Selecione una categoria</option>
+                                    @foreach ($categoria as $item)
+                                        <option value="{{ $item->idcategoria }}">{{ $item->nombre }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 
 
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Precio antes</label>
-                        <input type="number" step="any" class="form-control" name="precio"
-                            value="{{ old('precio') }}" required="" id="pantes" min="1" max="1000">
-                    </div>
+                            <!--update date-->
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
+                                <input type="date" class="form-control" name="fechavenprod" max="2023-01-22"
+                                    value="{{ old('fechavenprod') }}" required=""
+                                    placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
+                                    echo $hoy; ?> id="fvenc">
+                            </div>
 
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
-                        <input type="number" step="any" class="form-control" name="preciodesc"
-                            value="{{ old('preciodesc') }}" required="" id="pahora" min="1" max="1000">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Categoria</label>
-                        <select name="categoria" class="form-select" aria-label="Default select example" required="">
-                            <option selected>Selecione una categoria</option>
-                            @foreach ($categoria as $item)
-                                <option value="{{ $item->idcategoria }}" >{{ $item->nombre }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Stock</label>
+                                <input type="number" class="form-control" name="stockprod"
+                                    value="{{ old('stockprod') }}"
+                                    onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required=""
+                                    id="stock" min="1" max="999">
+                            </div>
 
 
-                    <!--update date-->
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
-                        <input type="date" class="form-control" name="fechavenprod" max="2023-01-22"
-                            value="{{ old('fechavenprod') }}" required="" placeholder="Introduce una fecha"
-                            required min=<?php $hoy = date('Y-m-d');
-                            echo $hoy; ?> id="fvenc">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="" class="form-label">Stock</label>
-                        <input type="number" class="form-control" name="stockprod" value="{{ old('stockprod') }}"
-                            onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required=""
-                            id="stock" min="1" max="999">
-                    </div>
+                            <div class="mb-3">
+                                <label for="floatingTextarea2">Descripción</label>
+                                <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required=""
+                                    id="descripcion" pattern="[a-zA-Z]{3,50}" minlength="3" maxlength="50" style="height: 100px"
+                                    onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) || (event.charCode >= 48 && event.charCode <= 57)|| (event.charCode == 164) || (event.charCode == 165)|| (event.charCode == 239))"></textarea>
+                            </div>
 
 
-                    <div class="mb-3">
-                        <label for="floatingTextarea2">Descripción</label>
-                        <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required=""
-                            id="descripcion" pattern="[a-zA-Z]{3,50}" minlength="3" maxlength="50" style="height: 100px"
-                            onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) || (event.charCode >= 48 && event.charCode <= 57)|| (event.charCode == 164) || (event.charCode == 165)|| (event.charCode == 239))"></textarea>
-                    </div>
-
-
-                    <!-- <div class="mb-3">
+                            <!-- <div class="mb-3">
                         <label for="">Categoría</label>
                         <select class="form-select" id="seleccionarCategoría" name="categprod" aria-label="Floating label select example">
 
@@ -128,26 +136,30 @@
 
                         </select>
                     </div>-->
-                    
-                    <div class="mb-3">
-                        <label for="" class="form-label">URL de la imágen</label>
 
-                        <input type="file" class="form-control" name="url_img" required="" id="url_img"
-                            accept="image/*">
+                            <div class="mb-3">
+                                <label for="" class="form-label">URL de la imágen</label>
+
+                                <input type="file" class="form-control" name="url_img" required=""
+                                    id="url_img" accept="image/*">
+                            </div>
+
+                            <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
+                            <div class="d-flex justify-content-evenly ">
+                                <button type="submit" class="btn btn-dark fs-5 ">Registrar</button>
+                                <a type="button" href="proveedor/paginaprincipal"
+                                    class="btn btn-dark fs-5">Cancelar</a>
+                            </div>
+
+
+                        </form>
+                        <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
+
                     </div>
-
-                    <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
-                    <div class="d-flex justify-content-evenly ">
-                        <button type="submit" class="btn btn-dark fs-5 ">Registrar</button>
-                        <a type="button" href="proveedor/paginaprincipal" class="btn btn-dark fs-5">Cancelar</a>
-                    </div>
-
-
-                </form>
-                <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
-
+                </div>
             </div>
         </div>
+    </div>
     </div>
     <div>
         <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive"
