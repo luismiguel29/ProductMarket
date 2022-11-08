@@ -30,10 +30,12 @@ body{
     width: 100%;
     /*flex-direction: column;
     min-height: 100vh;*/
-   background-position: center;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    margin: 25px;
 }
 
 .footer{
@@ -51,7 +53,7 @@ body{
 }
 
 .pagination>li.active>a {
-  background-color: orange !important;
+    background-color: orange !important;
 }
 
 .c-footer{

@@ -11,12 +11,9 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{{ asset('template/mainstyle.css') }}">
-    <title>Product Market 🛒</title>
+    <title>Product Market</title>
 
 </head>
-
-
-<body class="d-flex flex-column">
 
 <header>
     <nav class="navbar bg-white fixed-top">
@@ -54,7 +51,7 @@
     </nav>
 </header>
 
-<!--<body class="d-flex flex-column">-->
+<body class="d-flex flex-column">
     <!-- <header>
         <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
     </header> -->
