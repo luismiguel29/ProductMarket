@@ -32,7 +32,7 @@
                 </header>
 
                 <div class="boton">
-                    <a style="color: #000000" href="/carrusel"><strong>Volver </strong></a>
+                    <a style="color: #000000" href="/novedades"><strong>Volver </strong></a>
                 </div>
 
              <div class="row">
@@ -44,7 +44,7 @@
                         </div>
                         <img class="card-img-top" src="{{$producto->url}}" alt="Card image cap">
                         <div class="card-body">
-                        <p class="card-text"><strong>S{{$producto->nombre}}</strong></p>
+                        <p class="card-text"><strong>{{$producto->nombre}}</strong></p>
                         </div>
                         <div class="card-footer overflow-hidden" style="background-color: #FFD507">
                             @if ($producto->preciodesc>0)
