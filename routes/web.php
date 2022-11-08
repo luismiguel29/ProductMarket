@@ -6,6 +6,7 @@ use App\Http\Controllers\NegocioAnd;
 use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\NovedadesController;
 
 /*
 |--------------------------------------------------------------------------
