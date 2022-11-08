@@ -6,10 +6,6 @@ use App\Http\Controllers\NegocioAnd;
 use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\NovedadesController;
-use Illuminate\Http\Request;
-use CloudinaryLabs\CloudinaryLaravel\MediaAlly;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -51,8 +47,8 @@ Route::get('/editarini', function () {
 Route::get('/menu', function () {
     return view('menu');
 });
-Route::get('/listacategoria', function () {
-    return view('listacategoria');
+Route::get('/menu2', function () {
+    return view('menu2');
 });
 
 
@@ -76,16 +72,10 @@ Route::resource('/prueba', ProductoPruebaController::class);
 
 Route::resource('/categoria', CategoriaController::class);
 
-Route::get('/registroNegocio', function () {
-    return view('registroNegocio');
-});
-
-Route::get('/registrar', function () {
-    return view('registrar');
-});
 Route::resource('/userTemplate',NegocioAnd::class);
 
 Route::resource('/novedades',NovedadesController::class);
+
 
 Route::get('/cliente/listarefrescos', function () {
     return view('Cliente.listarefrescos');
@@ -93,6 +83,6 @@ Route::get('/cliente/listarefrescos', function () {
 
 Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);
 
-
+Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
 
