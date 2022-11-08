@@ -23,15 +23,7 @@ class NovedadesController extends Controller
 
         $productos = DB::table('producto')
             ->get();
-
-        $cont = count($productos);
-
-        if ($cont < 10) {
-            $data = 0;
-        } else {
-            $data = count($productos) - 4;
-        }
-
+        /*
         $a = array();
 
         for ($var = 9; $var > 0; $var--) {
@@ -56,15 +48,27 @@ class NovedadesController extends Controller
         $b2 = $b[1];
         $b3 = $b[2];
         //return $b;
+        */
 
-        return view('/Cliente/novedades', compact('b', 'a', 'categoria'));
+        $a = array();
+        $a1 = array();
+        for ($var = 9; $var > 0; $var--) {
+            $extraer = Producto::where('id_categoria', $var)->orderBy('idproducto', 'desc')->first();
+            if ($extraer != "") {
+                array_unshift($a1, $extraer);
+            }
+            if(count($a1) == 3){
+                array_unshift($a, $a1);
+                $a1 = array();
+            }
+        }
+        
+        if(count($a1) == 2 || count($a1) == 1){
+            array_unshift($a, $a1);
+        }
 
-        //return $extraer;
-        /*$producto = DB::table('producto')
-    ->orderByRaw('nombre ASC')
-    ->get();
-    return $producto;
-     */
+
+        return view('/Cliente/novedades', compact('a', 'categoria'));
     }
 
     /**

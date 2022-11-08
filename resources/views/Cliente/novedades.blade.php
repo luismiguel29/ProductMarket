@@ -73,7 +73,7 @@
     <section class="container-sm">
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
-                    @foreach ($b as $item)
+                    @foreach ($a as $item)
                     <div class="carousel-item active" data-bs-interval="5000" >
                         <div class="cards-wrapper" >
                             <div class="card" style="background-color: #E3E9E6">
