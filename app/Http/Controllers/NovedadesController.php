@@ -16,15 +16,55 @@ class NovedadesController extends Controller
      */
     public function index()
     {
-        $productos = DB::table('producto')
-        ->get();
-        return view('/Cliente/novedades', compact('productos'));
 
+        $categoria = DB::table('categoria')
+            ->orderByRaw('nombre ASC')
+            ->get();
+
+        $productos = DB::table('producto')
+            ->get();
+
+        $cont = count($productos);
+
+        if ($cont < 10) {
+            $data = 0;
+        } else {
+            $data = count($productos) - 4;
+        }
+
+        $a = array();
+
+        for ($var = 9; $var > 0; $var--) {
+            $extraer = Producto::where('id_categoria', $var)->orderBy('idproducto', 'desc')->first();
+            if ($extraer != "") {
+                array_unshift($a, $extraer);
+            }
+        }
+
+        //$b1 = array(); $b2 = array(); $b3 = array();
+        $b = array([], [], []);
+        $aux = 0;
+        foreach ($a as $c) {
+            if (count($a) % 3 != 0) {
+                array_unshift($b[$aux], $c);
+                if (count($b[$aux]) == 3) {
+                    $aux++;
+                }
+            }
+        }
+        $b1 = $b[0];
+        $b2 = $b[1];
+        $b3 = $b[2];
+        //return $b;
+
+        return view('/Cliente/novedades', compact('b', 'a', 'categoria'));
+
+        //return $extraer;
         /*$producto = DB::table('producto')
-        ->orderByRaw('nombre ASC')
-        ->get();
-        return $producto;
-        */
+    ->orderByRaw('nombre ASC')
+    ->get();
+    return $producto;
+     */
     }
 
     /**
@@ -35,7 +75,7 @@ class NovedadesController extends Controller
     public function create()
     {
 
-            return view('producto.create');
+        return view('producto.create');
 
     }
 

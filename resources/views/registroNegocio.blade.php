@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Market 🛒</title>
+@extends('layouts.template')
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
-</head>
-<body>
-
+@section('content')
     <!--d-flex justify-content-center align-items-center-->
     <div class="d-flex justify-content-around" style="padding-top: 52px;">
 
@@ -22,7 +9,7 @@
             <div class="card-header" style="background:#FFD507; padding: 25px;"></div>
 
             <div class="card-body text-dark card-custom-p">
-
+    
                 <form action="{{route('datosNego.store')}}" method="post" class="row g-3"> <!--mt-3-->
                     @csrf
                     <h5 class="text-center fs-5">Registro del negocio</h5>
@@ -72,9 +59,9 @@
                     </div>
 
                     <div class="d-flex justify-content-evenly">
-                        <button type="submit" class="btn btn-dark fs-5">Guardar</button>
+                        <button type="submit" class="btn btn-dark fs-5" style="width:140px">Guardar</button>
                         <a href="" type="reset"
-                            class="btn btn-dark fs-5">Cancelar</a>
+                            class="btn btn-dark fs-5" style="width:140px">Cancelar</a>
                     </div>
 
                 </form>
@@ -85,5 +72,4 @@
 
     </div>
 
-</body>
-</html>
+@endsection

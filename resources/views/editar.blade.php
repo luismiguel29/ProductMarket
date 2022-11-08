@@ -43,13 +43,13 @@
 </head>
 <!--VA LA PARTE DE LOS DATOS DEL NEGOCIO-->
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column" style="background: #E3E9E6">
     <header>
         <img src="./editarAll/img/Group 33.png" width="60px" alt="Logo de ProductMarket">
     </header>
 
     <!-- id="espacio"-->
-    <div class="d-flex justify-content-around" style="padding-top: 50px;">
+    <div class="d-flex justify-content-evenly" style="padding-top: 50px;">
         <section class="d-flex flex-column  align-self-center gap-4">
             <button class="btn btn-dark fs-5 btnb">Editar</button>
             <a href="categoria" class="btn btn-dark fs-5 btnb">Registrar producto</a>
@@ -57,7 +57,8 @@
         </section>
 
 
-        <div class="card border-dark mb-5" style="width: 25rem;">
+        <div class="card mb-5" style="width: 25rem;">
+            <div class="card-header c-header" style="background-color: #FFD507; padding:25px"> </div>
             <div class="card-body text-dark card-custom-p">
 
                 <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar">

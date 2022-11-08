@@ -8,10 +8,10 @@
 <div class="d-flex justify-content-around "  >
 
   <div class="bg-white border  mb-3 overflow-auto " style="border-radius: 0px; max-height:550px ">
-    <div class="card-header" style="background-color: #FFD507; width: 100%; padding: 8px" >
+    <div class="card-header" style="background-color: #FFD507; width: 100%; padding: 6px" >
       <p class="text-center mt-3  fs-4"><b>Lista de Productos</b></p>
     </div>
-    <div class="table-responsive pb-3 ps-5 pe-5 overflow-auto ">
+    <div class="table-responsive mt-3 pb-3 ps-5 pe-5 overflow-auto ">
       @if($productos-> isNotEmpty())
         <table class="table table-bordered border-dark table-hover">
 
@@ -21,8 +21,8 @@
               <th>Precio Normal</th>
               <th>Precio Descuento</th>
               <th>Stock</th>
-              <th>Fecha de vencimiento</th>
-              <!--<th>Imagen</th>-->
+              <th>Fecha de promocion</th>
+              <th>Imagen</th>
             </tr>
           </thead>
           <tbody class="table-light">
@@ -33,8 +33,14 @@
               <td> {{$producto->precio}}</td>
               <td>{{$producto->preciodesc}}</td>
               <td>{{$producto->stock}}</td>
-              <td>{{$producto->fechaven}}</td>
-              <!--<td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"   alt=""></td>-->
+              <td> 
+                @if ( is_null ($producto->fechainicio))
+                    Sin fecha
+                @else
+                {{$producto->fechainicio}}/{{$producto->fechafin}} 
+                @endif
+                </td>
+              <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
 
             </tr>
             @endforeach

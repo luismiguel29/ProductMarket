@@ -18,10 +18,11 @@
 <body class="d-flex flex-column">
     <header>
         <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
-    </header >
-    <div style="background: #E3E9E6">   
-        @yield('content')  -> @section('content')
-    </div>
-    <div class="footer"></div>
-</body>
-</html>
+    </header>
+    <div style="background: #E3E9E6">
+        @yield('content') -> @section('content')
+        </div>
+        <div class="footer"></div>
+    </body>
+
+    </html>

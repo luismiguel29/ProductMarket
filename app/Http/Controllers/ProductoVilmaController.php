@@ -75,9 +75,11 @@ class ProductoVilmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($category)
     {
-        //
+        $productos = Producto::where('id_categoria', $category)->paginate(6);
+        $categoryName= Categoria::where('idcategoria',$category)->first();
+        return view('/Cliente/listarefrescos', compact('productos', 'categoryName'));
     }
 
     /**
