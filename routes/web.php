@@ -86,6 +86,9 @@ Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class
 
 Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
-Route::resource('/registroNegocio',NegocioAnd::class);
+
+Route::get('/registroNegocio', function () {
+    return view('registroNegocio');
+});
 
 
