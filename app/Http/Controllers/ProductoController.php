@@ -72,6 +72,8 @@ class ProductoController extends Controller
         $producto->preciodesc = $request->input('preciodesc');
         $producto->stock = $request->input('stockprod');
         $producto->fechaven = $request->input('fechavenprod');
+        $producto->fechainicio = $request->input('fechainiciopromo');
+        $producto->fechafin = $request->input('fechafinpromo');
         $producto->descripcion = $request->input('descripprod');
         $producto->url = $url;
         $producto->save();
