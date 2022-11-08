@@ -51,7 +51,7 @@
     </header> --}}
 
     <div style="background: #E3E9E6">
-        @yield('content') -> @section('content')
+        @yield('content')  @section('content')
         </div>
         <div class="footer"></div>
     </body>
