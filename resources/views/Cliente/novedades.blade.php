@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <h1>Categoria</h1>
+
     <br>
     <div class="container">
 
@@ -73,7 +73,7 @@
     <section class="container-sm">
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
-                    @foreach ($b as $item)   
+                    @foreach ($b as $item)
                     <div class="carousel-item active" data-bs-interval="5000" >
                         <div class="cards-wrapper" >
                             <div class="card" style="background-color: #E3E9E6">
@@ -99,13 +99,13 @@
                                         </div>
                                     @endforeach
                                 </div>
-                            
+
                             </div>
-                            
+
                         </div>
                     </div>
                    @endforeach
-                    
+
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
