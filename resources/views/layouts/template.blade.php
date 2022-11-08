@@ -15,11 +15,8 @@
 
 </head>
 
-
-<body class="d-flex flex-column">
-
-    <header>
-        <nav class="navbar bg-white fixed-top">
+<header>
+    <nav class="navbar bg-white fixed-top">
 
             <div class="container-fluid">
                 <a href="">
@@ -45,20 +42,20 @@
                     </div>
                 </div>
             </div>
-        </nav>
-    </header> 
+        </div>
+    </nav>
+</header>
 
-    <!--
-    <header>
+<body class="d-flex flex-column">
+    {{-- <header>
         <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
-    </header>
-    -->
+    </header> --}}
 
     <div style="background: #E3E9E6">
         @yield('content')  @section('content')
-    </div>
-    <div class="footer"></div>
+        </div>
+        <div class="footer"></div>
+    </body>
 
-</body>
+    </html>
 
-</html>
