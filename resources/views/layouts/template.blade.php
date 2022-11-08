@@ -15,12 +15,12 @@
 
 </head>
 
-{{-- <header>
+<header>
     <nav class="navbar bg-white fixed-top">
 
         <div class="container-fluid">
             <a href="">
-                <img src="./style/logo.png" class="logo">
+                <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -43,11 +43,11 @@
             </div>
         </div>
     </nav>
-</header> --}}
-
-<header>
-    <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
 </header>
+
+{{-- <header>
+    <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
+</header> --}}
 
 <body class="d-flex flex-column">
     {{-- <header>
