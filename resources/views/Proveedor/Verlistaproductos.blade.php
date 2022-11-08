@@ -37,7 +37,7 @@
                 @if ( is_null ($producto->fechainicio))
                     Sin fecha
                 @else
-                {{$producto->fechainicio}}/{{$producto->fechafin}} 
+                {{$producto->fechainicio}} <br/>/ {{$producto->fechafin}} 
                 @endif
                 </td>
               <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
