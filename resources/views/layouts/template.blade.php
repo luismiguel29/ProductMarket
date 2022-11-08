@@ -19,15 +19,16 @@
     <nav class="navbar bg-white fixed-top">
 
             <div class="container-fluid">
-                <a href="{{ route('novedades.index') }}">
-                    <!--<img src="./style/logo.png" class="logo">-->
-                    <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
-                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <a href="{{ route('novedades.index') }}">
+                    <!--<img src="./style/logo.png" class="logo">-->
+                    <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
+                </a>
+                
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
