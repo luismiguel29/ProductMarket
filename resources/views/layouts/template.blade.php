@@ -39,11 +39,11 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a href="registroNegocio" class="nav-link active" aria-current="page" href="#">Registra tu negocio</a>
+                                <a href="/registroNegocio" class="nav-link active" aria-current="page" href="#">Registra tu negocio</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
+                                <a href="/proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
                             </li>
                     </div>
                 </div>
