@@ -43,7 +43,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{ route('proveedor/paginaprincipal') }}" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
+                                <a href="proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
                             </li>
                     </div>
                 </div>
