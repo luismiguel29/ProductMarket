@@ -1,6 +1,4 @@
-@extends('layouts.template')
 
-    @section('content')
         @extends('layouts.index')
 
         @section('body')
@@ -26,5 +24,3 @@
         <div></div>
         </div>
         @endsection
-    </section>
-@endsection
