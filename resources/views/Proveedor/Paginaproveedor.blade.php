@@ -1,5 +1,5 @@
 
-        @extends('layouts.index')
+    @extends('layouts.index')
 
         @section('body')
 
@@ -23,4 +23,4 @@
 
         <div></div>
         </div>
-        @endsection
+    @endsection
