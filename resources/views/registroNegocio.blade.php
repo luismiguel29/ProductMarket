@@ -79,18 +79,18 @@
     function validar(e){
         key = e.keyCode || e.which;
         teclado = String.fromCharCode(key).toLowerCase();
-        letras = " abcdefghijklmnñopqrstuvwxyz";
-        especiales = "8-37-38-46-164";
+        letras = " abcdefghijklmnñopqrstuvwxyz.,";
+        //especiales = "8-37-38-46";
         tecladoEsp = false;
+        /*
         for(var i in especiales){
             if(key==especiales[i]){
                 tecladoEsp = true; break;
             }
         }
-
+        */
         if(letras.indexOf(teclado) == -1 && !tecladoEsp){
             return false;
         }
-
     }
 </script>
