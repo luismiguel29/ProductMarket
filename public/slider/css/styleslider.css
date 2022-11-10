@@ -88,6 +88,7 @@ body{
   position: inherit !important;
   background-color: black;
   color: white !important;
+  border-radius: 31px;
   
 }
 .swiper-button-prev{
