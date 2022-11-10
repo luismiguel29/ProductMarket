@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\DB;
-
 
 class ProductoLuisController extends Controller
 {
@@ -15,7 +15,9 @@ class ProductoLuisController extends Controller
      */
     public function index()
     {
-        //
+        $consulta = DB::table('producto')
+            ->get();
+        return $consulta;
     }
 
     /**
@@ -36,7 +38,7 @@ class ProductoLuisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
     }
 
     /**
@@ -82,5 +84,10 @@ class ProductoLuisController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function ejemplo()
+    {
+        
     }
 }
