@@ -70,7 +70,7 @@ class ProductoVilmaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -83,7 +83,7 @@ class ProductoVilmaController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     *
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
