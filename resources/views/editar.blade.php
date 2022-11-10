@@ -84,7 +84,7 @@
 
                     <!--pattern="[A-Z][A-Z,a-z, ,ñ,á,í,é,ó,ú]+"-->
                     <div class="mb-3">
-                        <span>Nombre del negocio</span>
+                        <span>Nombre del negoci</span>
                         <input class="form-control" type="text" name="nombre" required="" minlength="1"
                             maxlength="30" id="nombre" autocomplete="" required value="{{ $dato->nombre }}">
                     </div>
