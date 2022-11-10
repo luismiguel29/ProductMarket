@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\NovedadesController;
+use App\Http\Controllers\ProductoLuisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,5 +91,7 @@ Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 Route::get('/registroNegocio', function () {
     return view('registroNegocio');
 });
+
+Route::resource('productoluis', ProductoLuisController::class);
 
 
