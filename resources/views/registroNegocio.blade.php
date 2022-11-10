@@ -62,6 +62,8 @@
                         <button type="submit" class="btn btn-dark fs-5" style="width:140px">Guardar</button>
                         <a href="novedades" type="reset"
                             class="btn btn-dark fs-5" style="width:140px">Cancelar</a>
+                        <a href="proveedor/paginaprincipal" type="reset"
+                            class="btn btn-dark fs-5" style="width:140px">Guardar</a>   
                     </div>
 
                 </form>
