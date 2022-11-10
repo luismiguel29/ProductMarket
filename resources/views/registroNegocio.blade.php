@@ -79,7 +79,7 @@
     function validar(e){
         key = e.keyCode || e.which;
         teclado = String.fromCharCode(key).toLowerCase();
-        letras = " abcdefghi";
+        letras = " abcdefghijklmnñopqrstuvwxyz";
         especiales = "8-37-38-46-164";
         tecladoEsp = false;
         for(var i in especiales){
