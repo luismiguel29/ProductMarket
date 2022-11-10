@@ -31,6 +31,7 @@
             <a href="datosNego" type="button" class="btn btn-dark fs-5 btnb" style="">Editar</a>
             <a href="categoria" type="button" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" type="button" class="btn btn-dark fs-5  btnb">Ver productos</a>
+            <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
 
         <div class=" row row-cols-1 g-5">

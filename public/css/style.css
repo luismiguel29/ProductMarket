@@ -11,7 +11,7 @@
     --silver-black-prod: #2D2D2D;
     --gray-black-prod: #9C9C9C;
     --gray-light-prod: #F3F3F3;
-    --white--prod: #ffffff; 
+    --white--prod: #ffffff;
 }
 header{
     background-color: #FAFAFA;
@@ -27,7 +27,7 @@ body{
     font-family: 'Mukta', sans-serif;
     /*background-image: url(http://127.0.0.1:8000/imagenes/fondo10.jpeg);*/
     background-color:#E3E9E6;
-    
+
     width: 100%;
     /*flex-direction: column;
     min-height: 100vh;*/
@@ -38,9 +38,10 @@ body{
 }
 
 .footer{
-    
+
     background-color: #FFD507;
     padding: 1em 0;
     margin-top: auto;
-    height: 100px;  
+    height: 100px;
+    width: 100%;
 }

@@ -30,7 +30,7 @@
                     </a>
                 </div>
 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
@@ -39,11 +39,11 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a href="registroNegocio" class="nav-link active" aria-current="page" href="#">Registra tu negocio</a>
+                                <a href="/registroNegocio" class="nav-link active" aria-current="page" href="#">Registrar mi negocio</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
+                                <a href="/proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
                             </li>
                     </div>
                 </div>

@@ -54,6 +54,7 @@
             <button class="btn btn-dark fs-5 btnb">Editar</button>
             <a href="categoria" class="btn btn-dark fs-5 btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" class="btn btn-dark fs-5 btnb">Ver productos</a>
+            <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
 
 
