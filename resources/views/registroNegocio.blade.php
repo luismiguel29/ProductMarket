@@ -33,7 +33,7 @@
 
                     <div class="col-12">
                         <label for="nombre" class="form-label">Nombre del negocio</label>
-                        <input type="text" name="nombre" class="form-control" id="nombre" required maxlength="30">
+                        <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30">
                     </div>
 
                     <div class="col-12">
