@@ -50,7 +50,7 @@ class ProductoVilmaController extends Controller
      */
     public function getByCategory($category)
     {
-        $productos = Producto::where('id_categoria', $category)->paginate(8);
+        $productos = Producto::where('id_categoria', $category)->orderBy('nombre','ASC')->paginate(8);
         $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('cliente.listarefrescos', compact('productos', 'categoryName'));
     }
@@ -70,20 +70,20 @@ class ProductoVilmaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($category)
     {
-        $productos = Producto::where('id_categoria', $category)->paginate(8);
+        $productos = Producto::where('id_categoria', $category)->orderBy('nombre','ASC')->paginate(8);
         $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('/Cliente/listarefrescos', compact('productos', 'categoryName'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     *
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
