@@ -18,19 +18,9 @@ class ProductoVilmaController extends Controller
      */
     public function index(Request $request)
     {
-        /* $users = DB::select('call consulta');
-        return view ('Proveedor.Verlistaproductos', ['productos'=> $users]); */
-        $productos = Producto::orderBy('nombre','ASC')->paginate(5);
-        //$users = $this->arrayPaginator($users, $request);
-        //return view ('Proveedor.Verlistaproductos', ['productos'=> $users]);
-        //$productos = DB::table('producto')
-        //->select('NOMBREPROD', 'PRECIONORMAL', 'PRECIODESC','STOCKPROD')
-        //->orderByRaw('NOMBREPROD ASC')
-        //->paginate(5);
-        //return view('Proveedor.Verlistaproductos', compact('productos'));
-        //$productos = Producto::all();
+        $productos = Producto::join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.nombre', 'producto.precio','producto.preciodesc','producto.stock','categoria.nombre as catnombre','producto.fechainicio','producto.fechafin','producto.url') -> orderBy('nombre','ASC')->paginate(5);
         return view('Proveedor.Verlistaproductos', compact('productos'));
-        //return $productos;
+        
     }
 
     public function arrayPaginator($array, $request)
