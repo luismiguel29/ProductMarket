@@ -33,7 +33,7 @@
 
                     <div class="col-12">
                         <label for="nombre" class="form-label">Nombre del negocio</label>
-                        <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30">
+                        <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30" onkeypress="return validar(event)" onpaste="return false">
                     </div>
 
                     <div class="col-12">
@@ -73,3 +73,24 @@
     </div>
 
 @endsection
+
+
+<script>
+    function validar(e){
+        key = e.keyCode || e.which;
+        teclado = String.fromCharCode(key).toLowerCase();
+        letras = " abcdefghi";
+        especiales = "8-37-38-46-164";
+        tecladoEsp = false;
+        for(var i in especiales){
+            if(key==especiales[i]){
+                tecladoEsp = true; break;
+            }
+        }
+
+        if(letras.indexOf(teclado) == -1 && !tecladoEsp){
+            return false;
+        }
+
+    }
+</script>
