@@ -62,7 +62,7 @@
                  @else
 
                     <div class="alert alert-dark" role="alert">
-                        No existen productos registrados en categoria!
+                        Esta categoria esta vacia!
                     </div>
                 @endif
 
