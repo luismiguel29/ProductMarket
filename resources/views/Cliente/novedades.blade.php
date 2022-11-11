@@ -83,7 +83,7 @@
                     <div class="carousel-item active" data-bs-interval="5000">
                         <div class="cards-wrapper">
                             <div class="card" style="background-color: #E3E9E6">
-                                <div class=" d-grid {{-- row-cols-2  --}}gap-3">
+                                <div class=" row {{-- row-cols-2  --}}gap-3">
                                     @foreach ($item as $item1)
                                         <div class="col-sm-6 col-lg-4">
                                             <div class="col">
