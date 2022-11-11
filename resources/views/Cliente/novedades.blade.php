@@ -105,7 +105,7 @@
                                         </div> --}}
 
                                         <div class="col" >
-                                            <div class="card" style="width: 18rem;">
+                                            <div class="card" style="width: 15rem;">
                                             <div class="card-header" style="background-color: #000000" >
                                                 <div style="color: #ffffff"><strong>Super oferta</strong></div>
                                             </div>
@@ -114,7 +114,7 @@
                                             <p class="card-text"><strong>{{$item1->nombre}}</strong></p>
                                             <p class="card-text"><strong>{{$item1->descripcion}}</strong></p>
                                             </div>
-                                            <div class="card-footer overflow-hidden" style="background-color: #FFD507">
+                                            <div class="card-footer overflow-hidden d-flex justify-content-evenly" text-center"" style="background-color: #FFD507">
                                                 <s style="color:#5D5D5D"><h4>Bs.{{$item1->precio}}</h4></s>
                                                 <h4 style="color:black"><b>Bs.{{$item1->preciodesc}}</b></h4>
                                             </div>
