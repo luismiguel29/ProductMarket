@@ -79,16 +79,16 @@
                             <div class="card" style="background-color: #E3E9E6">
                                 <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
-                                        <div class="col-12 col-md-2 col-lg-4 ">
+                                        <div class="col-12 col-md-6 col-lg-4 ">
                                             <div class="card h-100">
                                                 <div class="card-header c-header">
-                                                    <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
+                                                    <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="col text-center" style="color:black">
                                                         <img src="{{$item1->url}}" class="card-img-top" alt="">
-                                                        <h5 class=""> {{$item1->nombre}} <h2>
-                                                        <h5 class="" > {{$item1->descripcion}} <h2>
+                                                        <h5 class=""> {{$item1->nombre}} <h5>
+                                                        <h5 class="" > {{$item1->descripcion}} <h5>
                                                     </div>
                                                 </div>
                                                 <div class="card-footer c-footer d-flex justify-content-evenly" text-center">
