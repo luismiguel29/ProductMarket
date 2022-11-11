@@ -107,7 +107,7 @@
                                         <div class="col" >
                                             <div class="card" style="width: 15rem;">
                                             <div class="card-header" style="background-color: #000000" >
-                                                <div style="color: #ffffff"><strong>Super oferta</strong></div>
+                                                <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                             </div>
                                             <img class="card-img-top" src="{{$item1->url}}" alt="Card image cap" style="width:80%">
                                             <div class="card-body">
