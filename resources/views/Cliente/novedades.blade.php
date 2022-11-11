@@ -80,13 +80,13 @@
                                 <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
                                         <div class="col-12 col-md-6 col-lg-4 ">
-                                            <div class="card" style="width: 15rem;">
+                                            <div class="card"   style="width: 15rem;">
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="col text-center" style="color:black">
-                                                        <img src="{{$item1->url}}" class="card-img-top" alt="" style="">
+                                                        <img src="{{$item1->url}}" class="card-img-top" alt="" style=" ">
                                                         <h6 class=""> {{$item1->nombre}} </h6>
                                                         <h6 class="" > {{$item1->descripcion}} </h6>
                                                     </div>
