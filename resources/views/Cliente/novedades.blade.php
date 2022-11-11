@@ -76,7 +76,7 @@
                     @foreach ($a as $item)
                     <div class="carousel-item active" data-bs-interval="5000" >
                         <div class="cards-wrapper" >
-                            <div class="card" style="background-color: #E3E9E6" "width: 16rem;>
+                            <div class="card" style="background-color: #E3E9E6" style="width: 16rem;">
                                 <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
                                         <div class="col-12 col-md-6 col-lg-4 ">
