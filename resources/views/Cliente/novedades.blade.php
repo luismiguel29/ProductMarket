@@ -114,8 +114,10 @@
                                                             alt="Card image cap" style="width:80%">
                                                         <div class="card-body">
                                                             <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
-                                                            <p class="card-text"><strong>{{ $item1->descripcion }}</strong>
-                                                            </p>
+                                                            <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p>
+                                                                <span>Antes <s>Bs.{{$producto->precio}}</s> </span>
+                                                                <span>Ahora <strong>Bs{{$producto->preciodesc}}</strong></span>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="card-footer overflow-hidden d-flex justify-content-evenly"
