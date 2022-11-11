@@ -71,7 +71,7 @@
 
     <section class="container-sm">
         <div><h1 style="text-align: center; padding:40px;">Novedades</h1></div>
-        <div id="carouselExampleControls" class="carousel carousel-dark slide car-out"
+        <div id="carouselExampleControls" class="carousel carousel-dark {{-- slide --}} car-out"
             data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev">
