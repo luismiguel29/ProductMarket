@@ -70,7 +70,7 @@
 
 </html>
 
-    <section class="container">
+    <section class="container-sm">
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
                     @foreach ($a as $item)
