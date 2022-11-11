@@ -97,4 +97,6 @@ body{
   color: white !important;
 }
 
-
+#titulo{
+  text-align: center;
+}

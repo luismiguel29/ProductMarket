@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <h1>Categorias</h1>
+    <h1 id="titulo">Categorias</h1>
     <div class="container">
 
         <div class="swiper-button-prev"></div>
