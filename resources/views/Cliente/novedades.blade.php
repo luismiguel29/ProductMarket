@@ -119,8 +119,8 @@
                                                     </div>
                                                     <div class="card-footer overflow-hidden d-flex justify-content-evenly"
                                                         text-center"" style="background-color: #FFD507">
-                                                        <span>Antes <s>Bs.{{$producto->precio}}</s> </span>
-                                                        <span>Ahora <strong>Bs{{$producto->preciodesc}}</strong></span>
+                                                        <span>Antes <s>Bs.{{$item1->precio}}</s> </span>
+                                                        <span>Ahora <strong>Bs{{$item1->preciodesc}}</strong></span>
                                                     </div>
                                                 </div>
                                             </div>
