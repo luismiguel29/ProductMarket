@@ -21,6 +21,7 @@
               <th>Precio Normal</th>
               <th>Precio Descuento</th>
               <th>Stock</th>
+              <th>Categoria</th>
               <th>Fecha de promocion</th>
               <th>Imagen</th>
             </tr>
@@ -33,6 +34,7 @@
               <td> {{$producto->precio}}</td>
               <td>{{$producto->preciodesc}}</td>
               <td>{{$producto->stock}}</td>
+              <td>{{$producto->catnombre}}</td>
               <td> 
                 @if ( is_null ($producto->fechainicio))
                     Sin fecha
