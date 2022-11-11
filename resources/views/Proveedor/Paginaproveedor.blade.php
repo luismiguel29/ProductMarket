@@ -7,7 +7,7 @@
         <div class="container-fluid">
         <div class="row " style="min-height:600px">
 
-            <div class="col-4 order-lg-2 d-flex  flex-column align-items-center justify-content-center" style="padding:0">
+            <div class="col-sm-4 order-lg-1 d-flex  flex-column align-items-center justify-content-center" style="padding:0">
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5 " href="/datosNego" style="width:185px">Editar</a></div>
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="/categoria" style="width:185px">Registrar producto</a></div>
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="{{route('listaproducto')}}" style="width:185px">Ver productos</a></div>
@@ -15,7 +15,7 @@
             </div>
 
 
-            <div class="col-8 order-lg-1">
+            <div class="col-sm-8 order-lg-2">
             @yield('Contenido')
             </div>
         </div>
