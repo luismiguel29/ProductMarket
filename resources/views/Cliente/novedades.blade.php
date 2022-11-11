@@ -113,7 +113,7 @@
                                                         <img class="card-img-top" src="{{ $item1->url }}"
                                                             alt="Card image cap" style="width:80%">
                                                             <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
-                                                            <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p>
+                                                            {{-- <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p> --}}
                                                         
                                                     </div>
                                                     <div class="card-footer overflow-hidden d-flex justify-content-evenly"
