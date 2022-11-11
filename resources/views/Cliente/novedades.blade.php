@@ -111,7 +111,7 @@
                                                     </div>
                                                     <div class="col text-center" style="color:black">
                                                         <img class="card-img-top" src="{{ $item1->url }}"
-                                                            alt="Card image cap" style="width:80%">
+                                                            alt="Card image cap" style="width:100%">
                                                             <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
                                                             {{-- <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p> --}}
                                                         
