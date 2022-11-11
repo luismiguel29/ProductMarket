@@ -82,7 +82,7 @@
                                         <div class="col-12 col-md-6 col-lg-4 ">
                                             <div class="card h-100">
                                                 <div class="card-header c-header">
-                                                    <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
+                                                    <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="col text-center" style="color:black">
