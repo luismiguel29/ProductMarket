@@ -87,8 +87,8 @@
                                                 <div class="card-body">
                                                     <div class="col text-center" style="color:black">
                                                         <img src="{{$item1->url}}" class="card-img-top" alt="">
-                                                        <h5 class=""> {{$item1->nombre}} <h5>
-                                                        <h5 class="" > {{$item1->descripcion}} <h5>
+                                                        <h6 class=""> {{$item1->nombre}} </h6>
+                                                        <h6 class="" > {{$item1->descripcion}} </h6>
                                                     </div>
                                                 </div>
                                                 <div class="card-footer c-footer d-flex justify-content-evenly" text-center">
