@@ -77,7 +77,7 @@
                     <div class="carousel-item active" data-bs-interval="5000" >
                         <div class="cards-wrapper" >
                             <div class="card" style="background-color: #E3E9E6">
-                                <div class=" row row-cols-1 g-6">
+                                <div class=" row row-cols-1 g-8">
                                     @foreach ($item as $item1)
                                         <div class="col-12 col-md-6 col-lg-4 ">
                                             <div class="card" style="width: 16rem;">
