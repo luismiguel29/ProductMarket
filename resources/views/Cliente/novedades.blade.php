@@ -109,7 +109,7 @@
                                             <div class="card-header" style="background-color: #000000" >
                                                 <div style="color: #ffffff"><strong>Super oferta</strong></div>
                                             </div>
-                                            <img class="card-img-top" src="{{$item1->url}}" alt="Card image cap">
+                                            <img class="card-img-top" src="{{$item1->url}}" alt="Card image cap" style="width:80%">
                                             <div class="card-body">
                                             <p class="card-text"><strong>{{$item1->nombre}}</strong></p>
                                             <p class="card-text"><strong>{{$item1->descripcion}}</strong></p>
