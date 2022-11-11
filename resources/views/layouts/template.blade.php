@@ -57,7 +57,7 @@
         <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
     </header> -->
 
-    <div class="margen" style="background: #E3E9E6">
+    <div class="margen" style="background: #E3E9E6; min-height:700px">
         @yield('content')  @section('content')
     </div>
     
