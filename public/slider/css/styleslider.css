@@ -42,6 +42,7 @@ body{
   width: 150px; */
   border-radius: 15px;
   background-color: #ffffff;
+  border: solid black 2px;
 }
 
 .card-image{
