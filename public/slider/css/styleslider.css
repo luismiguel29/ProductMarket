@@ -86,15 +86,15 @@ body{
 .swiper-button-next{
   /* right: 100px !important; */
   position: inherit !important;
-  background-color: black;
-  color: white !important;
+  /* background-color: black; */
+  color: black !important;
   
 }
 .swiper-button-prev{
   /* left: 100px !important; */
   position: inherit !important;  
-  background-color: black;
-  color: white !important;
+  /* background-color: black; */
+  color: black !important;
 }
 
 #titulo{
