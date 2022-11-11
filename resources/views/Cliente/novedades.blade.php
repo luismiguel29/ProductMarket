@@ -71,11 +71,6 @@
 </html>
 
     <section class="container">
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
                     @foreach ($a as $item)
@@ -84,7 +79,7 @@
                             <div class="card" style="background-color: #E3E9E6">
                                 <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
-                                        <div class="col-12 col-md-6 col-lg-4 ">
+                                        <div class="col-12 col-md-6 col-lg-4">
                                             <div class="card"   style="width: 15rem;">
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
