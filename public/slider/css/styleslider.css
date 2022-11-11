@@ -97,6 +97,8 @@ body{
   color: black !important;
 }
 
-#titulo{
+.titulo{
   text-align: center;
+  color: #FEC373;
+  border-color: black;
 }
