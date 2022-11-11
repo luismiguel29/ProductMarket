@@ -59,8 +59,8 @@
                     </div>
 
                     <div class="d-flex justify-content-evenly">
-                        <a href="novedades" button type="submit" class="btn btn-dark fs-5" style="width:140px">Guardar</button>
-                        <a href="novedades" type="reset"
+                        <button type="submit" class="btn btn-dark fs-5">Guardar</button>
+                        <a href="/novedades" type="reset"
                             class="btn btn-dark fs-5" style="width:140px">Cancelar</a>   
                     </div>
 
