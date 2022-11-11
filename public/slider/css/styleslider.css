@@ -100,5 +100,5 @@ body{
 .titulo{
   text-align: center;
   color: #FEC373;
-  border-color: black;
+  border: black solid;
 }
