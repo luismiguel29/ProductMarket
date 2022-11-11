@@ -21,7 +21,7 @@
 
     <body>
         <br>
-        <h1 class="titulo">Categorias</h1>
+        <h1 class="titulo">CATEGORIAS</h1>
         <div class="container">
 
             <div class="swiper-button-prev"></div>
