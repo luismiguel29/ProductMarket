@@ -105,7 +105,7 @@
                                         </div> --}}
 
                                             <div class="col">
-                                                <div class="card" style="width: 15rem;">
+                                                <div class="card" style="width: 16rem;">
                                                     <div class="card-header" style="background-color: #000000">
                                                         <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
                                                     </div>
