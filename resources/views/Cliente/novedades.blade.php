@@ -71,7 +71,7 @@
 </html>
 
     <section class="container-sm">
-            <div id="carouselExampleControls"  class="carousel slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
+            <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
