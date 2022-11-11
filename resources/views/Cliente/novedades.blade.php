@@ -84,6 +84,7 @@
                             <div class="card" style="background-color: #E3E9E6">
                                 <div class=" row row-cols-2 g-5">
                                     @foreach ($item as $item1)
+                                    <div class="col-12 col-md-6 col-lg-4">
                                         {{-- <div class="col-12 col-md-6 col-lg-4">
                                             <div class="card"   style="width: 15rem;">
                                                 <div class="card-header c-header">
@@ -121,7 +122,7 @@
                                         </div>
 
 
-
+                                    </div> 
                                     @endforeach
                                 </div>
 
