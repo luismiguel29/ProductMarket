@@ -7,7 +7,7 @@
         <div class="container-fluid">
         <div class="row " style="min-height:600px">
 
-            <div class="btn-vertical col-4 d-flex  flex-column align-self-center   d-flex justify-content-start" style="padding-right:15em">
+            <div class="btn-vertical col-4 d-flex  flex-column align-self-center justify-content-start" style="padding-right:15em">
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5 " href="/datosNego" style="width:185px">Editar</a></div>
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="/categoria" style="width:185px">Registrar producto</a></div>
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="{{route('listaproducto')}}" style="width:185px">Ver productos</a></div>
