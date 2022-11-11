@@ -80,7 +80,7 @@
                                 <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
                                         <div class="col-12 col-md-6 col-lg-4 ">
-                                            {{-- <div class="card" > --}}
+                                            <div class="card" >
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                 </div>
@@ -95,7 +95,7 @@
                                                     <s style="color:#5D5D5D"><h4>Bs.{{$item1->precio}}</h4></s>
                                                     <h4 style="color:black"><b>Bs.{{$item1->preciodesc}}</b></h4>
                                                 </div>
-                                            {{-- </div> --}}
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
