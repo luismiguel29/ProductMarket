@@ -89,7 +89,7 @@
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                 </div>
-                                                <div class="card-body">
+                                                <div class="card">
                                                     <div class="col text-center" style="color:black">
                                                         <img src="{{$item1->url}}" class="card-img-top" alt="" style="width:80%">
                                                         <h6 class=""> {{$item1->nombre}} </h6>
