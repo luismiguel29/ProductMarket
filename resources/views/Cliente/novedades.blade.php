@@ -80,7 +80,7 @@
                                 <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
                                         <div class="col-12 col-md-6 col-lg-4 ">
-                                            <div class="card h-100">
+                                            <div class="card style="width: 18rem;">
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                 </div>
