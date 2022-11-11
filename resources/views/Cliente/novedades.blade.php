@@ -115,17 +115,12 @@
                                                         <div class="card-body">
                                                             <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
                                                             <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p>
-                                                                <span>Antes <s>Bs.{{$producto->precio}}</s> </span>
-                                                                <span>Ahora <strong>Bs{{$producto->preciodesc}}</strong></span>
-                                                            
                                                         </div>
                                                     </div>
                                                     <div class="card-footer overflow-hidden d-flex justify-content-evenly"
                                                         text-center"" style="background-color: #FFD507">
-                                                        <s style="color:#5D5D5D">
-                                                            <h4>Bs.{{ $item1->precio }}</h4>
-                                                        </s>
-                                                        <h4 style="color:black"><b>Bs.{{ $item1->preciodesc }}</b></h4>
+                                                        <span>Antes <s>Bs.{{$producto->precio}}</s> </span>
+                                                        <span>Ahora <strong>Bs{{$producto->preciodesc}}</strong></span>
                                                     </div>
                                                 </div>
                                             </div>
