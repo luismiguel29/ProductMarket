@@ -70,7 +70,7 @@
     </html>
 
     <section class="container-sm">
-        <div><h1 style="text-align: center; padding-top:50px; padding-bottom:50px;">Novedades</h1></div>
+        <div><h1 style="text-align: center; padding:40px;">Novedades</h1></div>
         <div id="carouselExampleControls" class="carousel carousel-dark slide car-out"
             data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -85,9 +85,7 @@
                             <div class="card" style="background-color: #E3E9E6">
                                 <div class=" row row-cols-2 g-5">
                                     @foreach ($item as $item1)
-                                        <div class="col-12 col-md-6 col-lg-4">
-                                            
-
+                                        <div class="col-sm-6 col-lg-4">
                                             <div class="col">
                                                 <div class="card" style="width: 17rem;">
                                                     <div class="card-header" style="background-color: #000000">
