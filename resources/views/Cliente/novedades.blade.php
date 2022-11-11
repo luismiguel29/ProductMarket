@@ -71,7 +71,7 @@
 </html>
 
     <section class="container-sm">
-            <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
+            <div id="carouselExampleControls"  class="carousel carousel-dark slide" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <button class="carousel-control-prev"  type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -79,7 +79,7 @@
                 </button>
                 <div class="carousel-inner">
                     @foreach ($a as $item)
-                    <div class="carousel-item active" data-bs-interval="5000" >
+                    <div class="carousel-item active" data-bs-interval="" >
                         <div class="cards-wrapper" >
                             <div class="card" style="background-color: #E3E9E6">
                                 <div class=" row row-cols-2 g-5">
@@ -115,7 +115,7 @@
                
                 <button class="carousel-control-next"   type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" style="background-color: blue" aria-hidden="true"></span>
+                    <span class="carousel-control-next-icon"  aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
