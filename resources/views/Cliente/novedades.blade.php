@@ -84,7 +84,7 @@
                             <div class="card" style="background-color: #E3E9E6">
                                 <div class=" row row-cols-2 g-5">
                                     @foreach ($item as $item1)
-                                        <div class="col-12 col-md-6 col-lg-4">
+                                        {{-- <div class="col-12 col-md-6 col-lg-4">
                                             <div class="card"   style="width: 15rem;">
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
@@ -101,7 +101,31 @@
                                                     <h4 style="color:black"><b>Bs.{{$item1->preciodesc}}</b></h4>
                                                 </div>
                                             </div>
+                                        </div> --}}
+
+                                        <div class="col" >
+                                            <div class="card" style="width: 18rem;">
+                                            <div class="card-header" style="background-color: #000000" >
+                                                <div style="color: #ffffff"><strong>Super oferta</strong></div>
+                                            </div>
+                                            <img class="card-img-top" src="{{$item1->url}}" alt="Card image cap">
+                                            <div class="card-body">
+                                            <p class="card-text"><strong>{{$item1->nombre}}</strong></p>
+                                            <p class="card-text"><strong>{{$item1->descripcion}}</strong></p>
+                                            </div>
+                                            <div class="card-footer overflow-hidden" style="background-color: #FFD507">
+                                                @if ($item1->preciodesc>0)
+                                                    <span>Antes <strong>Bs</strong> <s>{{$producto->precio}}</s> /</span>
+                                                    <span>Ahora <strong>Bs</strong> {{$producto->preciodesc}}</span>
+                                                @else
+                                                    <span>{{$item1->precio}}</span>
+                                                @endif
+                                            </div>
+                                            </div>
                                         </div>
+
+
+
                                     @endforeach
                                 </div>
 
