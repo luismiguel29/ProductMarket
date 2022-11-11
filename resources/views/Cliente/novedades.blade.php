@@ -116,8 +116,8 @@
                 <a class="carousel-control-next" role="button"  type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon"  aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
+                    <span class="visually-hidden">Next</span>
+            </a>
             </div>
 </section>
 @endsection
