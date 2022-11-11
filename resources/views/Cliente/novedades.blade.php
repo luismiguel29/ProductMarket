@@ -91,7 +91,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="col text-center" style="color:black">
-                                                        <img src="{{$item1->url}}" class="card-img-top" alt="" style=" ">
+                                                        <img src="{{$item1->url}}" class="card-img-top" alt="" style="width:80%">
                                                         <h6 class=""> {{$item1->nombre}} </h6>
                                                         <h6 class="" > {{$item1->descripcion}} </h6>
                                                     </div>
