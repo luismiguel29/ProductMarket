@@ -41,8 +41,7 @@ body{
   /* height: 200px;
   width: 150px; */
   border-radius: 15px;
-  background-color: #ffffff;
-  border: solid black;
+  background-color: #FEC373;
 }
 
 .card-image{
@@ -50,7 +49,7 @@ body{
   height: 100%;
   width: 100%;
   border-radius: 20px;
-  background: #ffffff;
+  background: #FEC373;
   padding: 20px;
 }
 
