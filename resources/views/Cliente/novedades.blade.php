@@ -105,13 +105,13 @@
                                         </div> --}}
 
                                             <div class="col">
-                                                <div class="card" style="width: 16rem;">
+                                                <div class="card" style="width: 17rem;">
                                                     <div class="card-header" style="background-color: #000000">
                                                         <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
                                                     </div>
                                                     <div class="col text-center" style="color:black">
                                                         <img class="card-img-top" src="{{ $item1->url }}"
-                                                            alt="Card image cap" style="width:100%">
+                                                            alt="Card image cap" style="width:80%">
                                                             <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
                                                             {{-- <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p> --}}
                                                         
