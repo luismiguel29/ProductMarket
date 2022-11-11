@@ -49,8 +49,8 @@
                                     </div>
                                     <div class="card-footer overflow-hidden" style="background-color: #FFD507">
                                         @if ($producto->preciodesc>0)
-                                            <span>Antes<strong>Bs</strong> <s>{{$producto->precio}}</s> /</span>
-                                            <span>Ahora<strong>Bs</strong> {{$producto->preciodesc}}</span>
+                                            <span>Antes <strong>Bs</strong> <s>{{$producto->precio}}</s> /</span>
+                                            <span>Ahora <strong>Bs</strong> {{$producto->preciodesc}}</span>
                                         @else
                                             <span>{{$producto->precio}}</span>
                                         @endif
