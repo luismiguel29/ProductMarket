@@ -87,7 +87,7 @@
                 </button>
                 <div class="carousel-inner">
                     @foreach ($a as $item)
-                        <div class="carousel-item active" data-bs-interval="5000">
+                        <div class="carousel-item active" {{-- data-bs-interval="5000" --}}>
                             <div class="cards-wrapper">
                                 {{-- <div class="card" style="background-color: #E3E9E6"> --}}
                                 <div class=" row {{-- row-cols-2  --}}g-3">
