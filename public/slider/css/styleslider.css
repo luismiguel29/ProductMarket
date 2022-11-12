@@ -128,8 +128,7 @@ body{
   width: 90%;
 
   padding: 10px 40px;
-  /* display: flex;
-  justify-content: space-between; */
-  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
