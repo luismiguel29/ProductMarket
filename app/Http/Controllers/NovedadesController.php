@@ -32,7 +32,7 @@ class NovedadesController extends Controller
             if ($extraer != "") {
                 array_unshift($a1, $extraer);
             }
-            if(count($a1) == 3){
+            if(count($a1) == 3 || count($a1) == 2){
                 array_unshift($a, $a1);
                 $a1 = array();
             }
