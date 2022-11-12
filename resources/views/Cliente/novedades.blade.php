@@ -75,7 +75,7 @@
                 @foreach ($a as $item)   
                 <div class="carousel-item active" data-bs-interval="5000" >
                     <div class="cards-wrapper" >
-                        <div class="card" style="background-color: #E3E9E6">
+                        {{-- <div class="card" style="background-color: #E3E9E6">
                             <div class=" row row-cols-1 g-5">
                                 @foreach ($item as $item1)
                                     <div class="col-12 col-md-6 col-lg-4 ">
@@ -99,6 +99,30 @@
                                 @endforeach
                             </div>
                         
+                        </div> --}}
+
+                        <div class="row row-cols-2">
+                            @foreach ($item as $item1)
+                                <div class="col" >
+                                    <div class="card" style="width: 18rem;">
+                                    <div class="card-header" style="background-color: #000000" >
+                                        <div style="color: #ffffff"><strong>Super oferta</strong></div>
+                                    </div>
+                                    <img class="card-img-top" src="{{$item1->url}}" alt="Card image cap">
+                                    <div class="card-body">
+                                    <p class="card-text"><strong>{{$item1->nombre}}</strong></p>
+                                    </div>
+                                    <div class="card-footer overflow-hidden" style="background-color: #FFD507">
+                                       
+                                            <span>Antes <strong>Bs</strong> <s>{{$item1->precio}}</s> /</span>
+                                            <span>Ahora <strong>Bs</strong> {{$item1->preciodesc}}</span>
+                                        
+                                            <span>{{$item1->precio}}</span>
+                                        
+                                    </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                         
                     </div>
