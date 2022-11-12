@@ -23,7 +23,7 @@
         
             <br>
             <h1 style="text-align: center">Categorias</h1>
-            <div class="container">
+            <div class="container container-categoria">
 
                 <div class="swiper-button-prev"></div>
                 <div class="slide-container swiper">
