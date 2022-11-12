@@ -85,7 +85,7 @@
                                 <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
                                         <div class="col-12 col-md-6 col-lg-4 ">
-                                            <div class="card h-100">
+                                            <div class="card {{-- h-100 --}} style="width: 15rem;"">
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                 </div>
@@ -93,7 +93,7 @@
                                                     <div class="col text-center" style="color:black">
                                                         <img src="{{$item1->url}}" class="card-img-top" alt="">
                                                         <h5 class=""> {{$item1->nombre}} <h2>
-                                                        <h5 class="" > {{$item1->descripcion}} <h2>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="card-footer c-footer d-flex justify-content-evenly" text-center">
