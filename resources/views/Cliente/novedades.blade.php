@@ -104,7 +104,7 @@
                         <div class="row row-cols-2">
                             @foreach ($item as $item1)
                                 <div class="col" >
-                                    <div class="card" style="width: 18rem;">
+                                    <div class="card" style="width: 16rem;">
                                     <div class="card-header" style="background-color: #000000" >
                                         <div style="color: #ffffff"><strong>Super oferta</strong></div>
                                     </div>
