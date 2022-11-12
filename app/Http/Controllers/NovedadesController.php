@@ -27,12 +27,12 @@ class NovedadesController extends Controller
 
         $a = array();
         $a1 = array();
-        for ($var = 9; $var > 0; $var--) {
+        for ($var = 8; $var > 0; $var--) {
             $extraer = Producto::where('id_categoria', $var)->orderBy('idproducto', 'desc')->first();
             if ($extraer != "") {
                 array_unshift($a1, $extraer);
             }
-            if(count($a1) == 3){
+            if(count($a1) == 4){
                 array_unshift($a, $a1);
                 $a1 = array();
             }
