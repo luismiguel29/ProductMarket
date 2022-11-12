@@ -130,7 +130,7 @@ body{
  .container-novedades {
   width: 90%;
 
-  padding: 1px 30px;
+  padding: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
