@@ -83,10 +83,10 @@
                     <div class="carousel-item active" data-bs-interval="5000" >
                         <div class="cards-wrapper" >
                             <div class="card" style="background-color: #E3E9E6">
-                                <div class=" row g-3">
+                                <div class=" row row-cols-1 g-5">
                                     @foreach ($item as $item1)
                                         <div class="col-12 col-md-6 col-lg-4 ">
-                                            <div class="card h-100" style="width: 15rem; ">
+                                            <div class="card h-100" {{-- style="width: 15rem; "--}}>
                                                 <div class="card-header c-header">
                                                     <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                 </div>
