@@ -93,7 +93,7 @@
                                 <div class=" row {{--  row-cols-2 --}} g-3">
                                     @foreach ($item as $item1)
                                         <div class="col-sm-6 col-lg-4">
-                                            <div class="col">
+                                            {{-- <div class="col"> --}}
                                                 <div class="card cardBody" style="width: 18rem;">
                                                     <div class="card-header card-header-Nov">
                                                         <h6 class="text-center">SUPER OFERTA</h6>
@@ -112,7 +112,7 @@
                                                         <span>Ahora <strong>Bs.{{ $item1->preciodesc }}</strong></span>
                                                     </div>
                                                 </div>
-                                            </div>
+                                          {{--   </div> --}}
 
 
                                         </div>
