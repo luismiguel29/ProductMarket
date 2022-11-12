@@ -91,11 +91,11 @@
                                     @foreach ($item as $item1)
                                         <div class="col-sm-6 col-lg-4">
                                             <div class="col">
-                                                <div class="card" style="width: 18rem;">
+                                                <div class="card cardBody" style="width: 18rem;">
                                                     <div class="card-header card-header-Nov">
                                                         <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
                                                     </div>
-                                                    <div class="col text-center cardBody" style="color:black">
+                                                    <div class="col text-center " style="color:black">
                                                         <img class="card-img-top" src="{{ $item1->url }}"
                                                             alt="Card image cap" style="width:80%">
                                                         <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
