@@ -20,7 +20,7 @@
     </head>
 
     <body>
-        <section>
+        
             <br>
             <h1 style="text-align: center">Categorias</h1>
             <div class="container">
@@ -58,7 +58,7 @@
                 <div class="swiper-button-next"></div>
             </div>
             <br>
-        </section>
+        
 
         <!-- Swiper JS -->
         {{-- <script src="js/swiper-bundle.min.js"></script> --}}
