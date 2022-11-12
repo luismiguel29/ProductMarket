@@ -20,6 +20,7 @@
     </head>
 
     <body>
+        <section>
         <br>
         <h1 style="text-align: center">Categorias</h1>
         <div class="container">
@@ -57,7 +58,8 @@
             <div class="swiper-button-next"></div>
         </div>
         <br>
-    </body>
+    </section>
+    
     <!-- Swiper JS -->
     {{-- <script src="js/swiper-bundle.min.js"></script> --}}
     <script src="{{ asset('slider/js/swiper-bundle.min.js') }}"></script>
@@ -67,7 +69,7 @@
     {{-- <script src="js/script.js"></script> --}}
     <script src="{{ asset('slider/js/script.js') }}"></script>
 
-    
+
 
     <section class="container-sm">
         <div><h1 style="text-align: center; padding:40px;">Novedades</h1></div>
@@ -126,6 +128,7 @@
             </button>
         </div>
     </section>
+</body>
     </html>
 <!--------------------------------------------------->
 
