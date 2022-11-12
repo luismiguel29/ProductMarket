@@ -93,7 +93,7 @@
                                     @foreach ($item as $item1)
                                         <div class="col-sm-6 col-lg-4">
                                             <div class="col">
-                                                <div class="card cardBody" style="width: 19rem;">
+                                                <div class="card cardBody" style="width: 18rem;">
                                                     <div class="card-header card-header-Nov">
                                                         <h6 class="text-center">SUPER OFERTA</h6>
                                                     </div>
