@@ -87,7 +87,7 @@
                                     @foreach ($item as $item1)
                                         <div class="col-sm-6 col-lg-4">
                                             <div class="col">
-                                                <div class="card" style="width: 17rem;">
+                                                <div class="card" style="width: 18rem;">
                                                     <div class="card-header" style="background-color: #000000">
                                                         <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
                                                     </div>
