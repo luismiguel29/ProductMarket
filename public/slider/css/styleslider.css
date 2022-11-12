@@ -123,3 +123,12 @@ body{
 .cardBody{
   background-color: white;
 }
+
+.container-novedades {
+  width: 90%;
+
+  padding: 10px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
