@@ -110,7 +110,8 @@ body{
 /*   font-family: impact; */
 /*   font-size: 40px; */
   letter-spacing: 0;
-  text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000;
+  /* text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000; */
+  text-shadow: black 0.1em 0.1em 0.2em
 }
 
 .card-header-Nov{
