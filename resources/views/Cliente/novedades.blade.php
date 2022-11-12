@@ -21,7 +21,7 @@
 
     <body>
         <br>
-        <h1 class="titulo">CATEGORIAS</h1>
+        <h1 style="text-align: center">Categorias</h1>
         <div class="container">
 
             <div class="swiper-button-prev"></div>
@@ -70,54 +70,62 @@
     </html>
 
     <section class="container-sm">
-        <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
-            <div class="carousel-inner">
-                @foreach ($b as $item)   
-                <div class="carousel-item active" data-bs-interval="5000" >
-                    <div class="cards-wrapper" >
-                        <div class="card" style="background-color: #E3E9E6">
-                            <div class=" row row-cols-1 g-5">
-                                @foreach ($item as $item1)
-                                    <div class="col-12 col-md-6 col-lg-4 ">
-                                        <div class="card h-100">
-                                            <div class="card-header c-header">
-                                                <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="col text-center" style="color:black">
-                                                    <img src="{{$item1->url}}" class="card-img-top" alt="">
-                                                    <h5 class=""> {{$item1->nombre}} <h2>
-                                                    <h5 class="" > {{$item1->descripcion}} <h2>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer c-footer d-flex justify-content-evenly" text-center">
-                                                <s style="color:#5D5D5D"><h4>Bs.{{$item1->precio}}</h4></s>
-                                                <h4 style="color:black"><b>Bs.{{$item1->preciodesc}}</b></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        
-                        </div>
-                        
-                    </div>
-                </div>
-               @endforeach
-                
-            </div>
+        <div><h1 style="text-align: center; padding:40px;">Novedades</h1></div>
+        <div id="carouselExampleControls" class="carousel carousel-dark slide car-out"
+            data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
+            <div class="carousel-inner">
+                @foreach ($a as $item)
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <div class="cards-wrapper">
+                            <div class="card" style="background-color: #E3E9E6">
+                                <div class=" row {{-- row-cols-2  --}}g-3">
+                                    @foreach ($item as $item1)
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="col">
+                                                <div class="card" style="width: 17rem;">
+                                                    <div class="card-header" style="background-color: #000000">
+                                                        <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
+                                                    </div>
+                                                    <div class="col text-center" style="color:black">
+                                                        <img class="card-img-top" src="{{ $item1->url }}"
+                                                            alt="Card image cap" style="width:80%">
+                                                            <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
+                                                            {{-- <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p> --}}
+                                                        
+                                                    </div>
+                                                    <div class="card-footer overflow-hidden d-flex justify-content-evenly"
+                                                        text-center"" style="background-color: #FFD507">
+                                                        <span style="color:#5D5D5D">Antes <s>Bs.{{$item1->precio}}</s> </span>
+                                                        <span>Ahora <strong>Bs.{{$item1->preciodesc}}</strong></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-</section>
+    </section>
 
 <!--------------------------------------------------->
 
