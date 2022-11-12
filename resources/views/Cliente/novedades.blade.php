@@ -132,7 +132,7 @@
     </section>
 
     <!--------------------------------------------------->
-    <section>
+    {{-- <section>
 
         <div class="swiper mySwiper container">
             <div class="swiper-wrapper content">
@@ -206,5 +206,5 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-    </script>
+    </script> --}}
 @endsection
