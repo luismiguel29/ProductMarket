@@ -106,7 +106,7 @@ body{
 .titulo {
   text-align: center;
   color: #fff;
-  font-family: impact;
+/*   font-family: impact; */
   font-size: 40px;
   letter-spacing: 0;
   text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000;
