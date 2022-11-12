@@ -59,7 +59,9 @@
             </div>
             <br>
         
+        </body>
 
+        
         <!-- Swiper JS -->
         {{-- <script src="js/swiper-bundle.min.js"></script> --}}
         <script src="{{ asset('slider/js/swiper-bundle.min.js') }}"></script>
@@ -69,7 +71,7 @@
         {{-- <script src="js/script.js"></script> --}}
         <script src="{{ asset('slider/js/script.js') }}"></script>
 
-
+        </html> 
 
         <section class="container-sm">
             <div>
@@ -131,8 +133,6 @@
                 </button>
             </div>
         </section>
-    </body>
-
-    </html> 
+    
     <!--------------------------------------------------->
 @endsection
