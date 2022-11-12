@@ -75,7 +75,7 @@
 
     <section class="container-sm">
         <div>
-            <h1 style="text-align: center; padding:40px;">NOVEDADES</h1>
+            <h1 class="titulo">NOVEDADES</h1>
         </div>
         <div class="container container-novedades"> 
             <div id="carouselExampleControls" class="carousel carousel-dark slide car-out"
@@ -90,9 +90,8 @@
                         <div class="carousel-item active" {{-- data-bs-interval="5000" --}}>
                             <div class="cards-wrapper">
                                 {{-- <div class="card" style="background-color: #E3E9E6"> --}}
+                                <div class=" row  row-cols-2 g-3">
                                     @foreach ($item as $item1)
-                                    <div class=" row {{-- row-cols-2  --}}g-3">
-                                   
                                         <div class="col-sm-6 col-lg-4">
                                             <div class="col">
                                                 <div class="card cardBody" style="width: 18rem;">
@@ -117,9 +116,9 @@
 
 
                                         </div>
-                                    
+                                    @endforeach
                                 </div>
-                                @endforeach
+
                                 {{--  </div> --}}
 
                             </div>
