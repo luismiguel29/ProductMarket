@@ -29,7 +29,7 @@
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
                         @foreach ($categoria as $item)
-                            <div class="card swiper-slide">
+                            <div class="card swiper-slide cardCategorias">
                                 <a href="{{ route('verproductos.show', $item->idcategoria) }}" class="image-content">
                                     {{-- <span class="overlay"></span> --}}
 
@@ -88,7 +88,7 @@
                                         <div class="col-sm-6 col-lg-4">
                                             <div class="col">
                                                 <div class="card" style="width: 18rem;">
-                                                    <div class="card-header" style="background-color: #000000">
+                                                    <div class="card-header card-header-Nov">
                                                         <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
                                                     </div>
                                                     <div class="col text-center" style="color:black">
@@ -98,8 +98,8 @@
                                                             {{-- <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p> --}}
                                                         
                                                     </div>
-                                                    <div class="card-footer overflow-hidden d-flex justify-content-evenly"
-                                                        text-center"" style="background-color: #FFD507">
+                                                    <div class="card-footer overflow-hidden d-flex justify-content-evenly card-footer-Nov"
+                                                        text-center>
                                                         <span style="color:#5D5D5D">Antes <s>Bs.{{$item1->precio}}</s> </span>
                                                         <span>Ahora <strong>Bs.{{$item1->preciodesc}}</strong></span>
                                                     </div>
