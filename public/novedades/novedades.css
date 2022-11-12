@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;500;600;700;800&display=swap');
+
+*{
+        margin: 0px;
+        padding: 0px;
+}
+:root{
+    --yellow-prod: #FFD507;
+    --silver-light-prod: #575555;
+    --silver-black-prod: #2D2D2D;
+    --gray-black-prod: #9C9C9C;
+    --gray-light-prod: #F3F3F3;
+    --white--prod: #ffffff;
+    --black--prod: #000000;
+}
+
