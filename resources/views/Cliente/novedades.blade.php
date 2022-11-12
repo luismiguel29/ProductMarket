@@ -67,7 +67,7 @@
     {{-- <script src="js/script.js"></script> --}}
     <script src="{{ asset('slider/js/script.js') }}"></script>
 
- 
+    
 
     <section class="container-sm">
         <div><h1 style="text-align: center; padding:40px;">Novedades</h1></div>
