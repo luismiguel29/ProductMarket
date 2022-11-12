@@ -76,6 +76,7 @@
   
     <!--------------------------------------------------->
     <section class="container-sm">
+        <div class="container container-novedades"> 
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
                     @foreach ($a as $item)   
@@ -123,6 +124,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+        </div>
 </section>
 
 
