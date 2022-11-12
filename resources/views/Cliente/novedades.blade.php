@@ -88,7 +88,7 @@
                                         <div class="col-sm-6 col-lg-4">
                                             <div class="col">
                                                 <div class="card" style="width: 18rem;">
-                                                    <div class="card-header card-header-Nov">
+                                                    <div class="card-header card-header-Nov" >
                                                         <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
                                                     </div>
                                                     <div class="col text-center" style="color:black">
