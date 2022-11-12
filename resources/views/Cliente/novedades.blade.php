@@ -75,7 +75,7 @@
 
     <section class="container-sm">
         <div>
-            <h1 class="titulo">NOVEDADES</h1>
+            <h1 style="text-align: center; padding:40px;">NOVEDADES</h1>
         </div>
         <div class="container container-novedades"> 
             <div id="carouselExampleControls" class="carousel carousel-dark slide car-out"
