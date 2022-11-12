@@ -93,7 +93,7 @@
                                             <div class="col">
                                                 <div class="card cardBody" style="width: 18rem;">
                                                     <div class="card-header card-header-Nov">
-                                                        <h6 class="text-center" style="color: white">SUPER OFERTA</h6>
+                                                        <h6 class="text-center">SUPER OFERTA</h6>
                                                     </div>
                                                     <div class="col text-center " style="color:black">
                                                         <img class="card-img-top" src="{{ $item1->url }}"
