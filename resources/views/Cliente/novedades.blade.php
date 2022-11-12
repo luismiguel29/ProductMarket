@@ -127,5 +127,22 @@
         </div>
 </section>
 
+<div class="card cardBody" style="width: 15rem;">
+    <div class="card-header card-header-Nov">
+        <h6 class="text-center">SUPER OFERTA</h6>
+    </div>
+    <div class="col text-center " style="color:black">
+        <img class="card-img-top" src="{{ $item1->url }}" alt="Card image cap"
+            style="width:80%">
+        <p class="card-text"><strong>{{ $item1->nombre }}</strong></p>
+        {{-- <p class="card-text"><strong>{{ $item1->descripcion }}</strong></p> --}}
 
+    </div>
+    <div class="card-footer overflow-hidden d-flex justify-content-evenly card-footer-Nov"
+        text-center>
+        <span style="color:#5D5D5D">Antes <s>Bs.{{ $item1->precio }}</s>
+        </span>
+        <span>Ahora <strong>Bs.{{ $item1->preciodesc }}</strong></span>
+    </div>
+</div>
 @endsection
