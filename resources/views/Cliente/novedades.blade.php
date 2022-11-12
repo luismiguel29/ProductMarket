@@ -75,6 +75,8 @@
 
   
     <!--------------------------------------------------->
+    
+
     <section class="container-sm">
         <div class="container container-novedades"> 
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
@@ -158,7 +160,7 @@
     <title>Bootstrap Example</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="index.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ asset('editarAll/style.css') }}">
 </head>
   
   <body>
