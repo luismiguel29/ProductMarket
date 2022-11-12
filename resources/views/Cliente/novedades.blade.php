@@ -92,7 +92,7 @@
                                 {{-- <div class="card" style="background-color: #E3E9E6"> --}}
                                 <div class=" row {{--  row-cols-2 --}} g-3">
                                     @foreach ($item as $item1)
-                                        <div class=" mx-auto col-sm-6 col-lg-4">
+                                        <div class="mx-auto col-sm-6 col-lg-4" style="width: 200px">
                                             {{-- <div class="col"> --}}
                                                 <div class="card cardBody" style="width: 18rem;">
                                                     <div class="card-header card-header-Nov">
@@ -127,7 +127,7 @@
 
                 </div>
 
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
