@@ -36,7 +36,7 @@
 
         <div class=" row row-cols-1 g-5">
 
-            <div class="col-12 col-md-6 col-lg-12">
+            <div class="col-12 col-md-8 col-lg-12">
                 <div class="card h-100">
                     <div class="card-header c-header" style="#FFD507"> </div>
                     <div class="card-body text-dark card-custom-p">
