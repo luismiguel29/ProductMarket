@@ -79,10 +79,10 @@
     
     <section class="container-sm">
         <div class="container container-novedades"> 
-            <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
+            <div id="carouselExampleInterval"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
                     @foreach ($a as $item)   
-                    <div class="carousel-item active" data-bs-interval="5000" >
+                    <div class="carousel-item active" data-bs-interval="2000" >
                         <div class="cards-wrapper" >
                             <div class="card" style="background-color: #E3E9E6">
                                 <div class=" row row-cols-1 g-5">
@@ -115,18 +115,18 @@
                    @endforeach
                     
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button>
+                  </button>
+                </div>
+                
             </div>
-        </div>
+        </div>  
 </section>
 
 
