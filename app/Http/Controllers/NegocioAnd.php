@@ -48,7 +48,7 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
-        if('horarioA' == 'horarioC'){
+        if($request->input('horarioA') == $request->input('horarioC')){
             return redirect('registroNegocio')->with('messag', 'sgdzgsg');
         }
 
