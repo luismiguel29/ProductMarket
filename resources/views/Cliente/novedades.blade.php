@@ -86,7 +86,7 @@
             <div class="swiper-button-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon " aria-hidden="true"></span>
             </div>
-            <div id="carouselExampleControls" class="carousel  slide car-out"
+            <div id="carouselExampleControls" class="carousel  slide "
                 data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
                     @foreach ($a as $item)
