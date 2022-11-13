@@ -80,7 +80,7 @@
     <section class="container-sm">
 
         <div>
-            <h1 class="titulo">NOVEDADES</h1>
+            <h1 class="titulo1">NOVEDADES</h1>
         </div>
         <div class="container container-novedades"> 
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
