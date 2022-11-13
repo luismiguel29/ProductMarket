@@ -80,7 +80,7 @@
     <section class="container-sm">
 
         <div>
-            <h1 class="titulo1">NOVEDADES</h1>
+            <h1 class="titulo">NOVEDADES</h1>
         </div>
         <div class="container container-novedades">
             <div class="swiper-button-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
