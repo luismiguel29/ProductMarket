@@ -150,15 +150,7 @@ body{
   size: 50px;
 }
 
-.swiper-button-next-nov {
-  /* right: 100px !important; */
-  position: inherit !important;
-  /* background-color: black; */
-  color: black !important;
-  size: 80px;
-  color: #000000;
 
-}
 /* @media (min-width: 768px) {
   .card img {
     height: 11em;
