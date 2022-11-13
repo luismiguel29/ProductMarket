@@ -34,41 +34,33 @@
                     <div class="col-12">
                         <label for="nombre" class="form-label">Nombre del negocio</label>
                         <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30" 
-                                onkeypress="return validar(event)" onpaste="return false" value="{{old('nombre')}}">
+                                onkeypress="return validar(event)" onpaste="return false">
                     </div>
 
                     <div class="col-12">
                         <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" name="direccion" class="form-control" id="direccion" required minlength="5" maxlength="50" value="{{old('direcion')}}">
+                        <input type="text" name="direccion" class="form-control" id="direccion" required minlength="5" maxlength="50">
                     </div>
 
                     <div class="col-12">
                         <label for="horarioA" class="form-label">Horario de apertura</label>
-                        <input type="time" name="horarioA" class="form-control" id="horarioA" required value="{{old('horarioA')}}">
+                        <input type="time" name="horarioA" class="form-control" id="horarioA" required>
                     </div>
 
                     <div class="col-12">
                         <label for="horarioC" class="form-label">Horario de cierre</label>
-                        <input type="time" name="horarioC" class="form-control" id="horarioC" required value="{{old('horarioC')}}">
+                        <input type="time" name="horarioC" class="form-control" id="horarioC" required>
                     </div>
-
-                    @if (session('mensajeHor')) 
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>{{ session('mensajeHor') }}</strong>
-                            <!--<button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>-->
-                        </div>
-                    @endif
 
                     <div class="col-12">
                         <label for="celular" class="form-label">Celular</label>
                         <input type="tel" name="celular" class="form-control" id="celular" required 
                                 onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" 
-                                minlength="8" maxlength="8" pattern="^[6|7]\d{7}$" value="{{old('celular')}}">
+                                minlength="8" maxlength="8" pattern="^[6|7]\d{7}$">
                     </div>
 
                     <div class="d-flex justify-content-evenly">
-                        <button type="submit" class="btn btn-dark fs-5" style="width:140px">Guardar</button>
+                        <button type="submit" class="btn btn-dark fs-5" style="width:140px" onclick="validarHorarios()">Guardar</button>
                         <!--<a href="/novedades" type="submit"
                             class="btn btn-dark fs-5" style="width:140px">Guardar</a>-->
 
@@ -88,9 +80,6 @@
 
 
 <script>
-    const formulario = document.getElementById('formulario');
-    const inputs = document.querySelectorAll('#formulario input');
-
     function validar(e){
         key = e.keyCode || e.which;
         teclado = String.fromCharCode(key).toLowerCase();
@@ -111,44 +100,16 @@
 
     //-------------------------------------------
 
-    function bla = () =>   {
-        const apertura = document.getElementById('horarioA');
-        const cierre = document.getElementById('horarioC');
+    function validarHorarios(){
+        var pass = document.getElementById("horarioC").value;
+        var repass = document.getElementById("horarioA").value;
 
-        if(apertura.value == cierre.value){
-            return true;
-        }
-        return false;
-    }
-
-    //-------------------------------------------
-
-    inputs.forEach((input) => {
-        input.addEventListener('keyup', validarHorario);
-        input.addEventListener('blur', validarHorario);
-    })
-
-    const validarHorario = (e) => {
-        switch(e.target.name){
-            case "horarioA": 
-                prueba();
-            break;
-
-            case "horarioC": 
-                prueba();
-            break;
-        }
-    }
-
-    const prueba = () =>   {
-        const apertura = document.getElementById('horarioA');
-        const cierre = document.getElementById('horarioC');
-
-        if(apertura.value == cierre.value){
-            return true;
+        if (pass==repass){
+            alert("Los horarios deben ser diferentes");
+        }else{
+            document.getElementById("frm").submit();
         }
     }
 
     
-
 </script>
