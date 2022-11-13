@@ -34,27 +34,27 @@
                     <div class="col-12">
                         <label for="nombre" class="form-label">Nombre del negocio</label>
                         <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30" 
-                                onkeypress="return validar(event)" onpaste="return false">
+                                onkeypress="return validar(event)" onpaste="return false" value="{{old('nombre')}}">
                     </div>
 
                     <div class="col-12">
                         <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" name="direccion" class="form-control" id="direccion" required minlength="5" maxlength="50">
+                        <input type="text" name="direccion" class="form-control" id="direccion" required minlength="5" maxlength="50" value="{{old(''direcion)}}">
                     </div>
 
                     <div class="col-12">
                         <label for="horarioA" class="form-label">Horario de apertura</label>
-                        <input type="time" name="horarioA" class="form-control" id="horarioA" required>
+                        <input type="time" name="horarioA" class="form-control" id="horarioA" required value="{{old('horarioA')}}">
                     </div>
 
                     <div class="col-12">
                         <label for="horarioC" class="form-label">Horario de cierre</label>
-                        <input type="time" name="horarioC" class="form-control" id="horarioC" required>
+                        <input type="time" name="horarioC" class="form-control" id="horarioC" required value="{{old('horarioC')}}">
                     </div>
 
-                    @if (session('messag')) 
+                    @if (session('mensajeHor')) 
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>{{ session('messag') }}</strong>
+                            <strong>{{ session('mensajeHor') }}</strong>
                             <button type="button" class="btn-close" data-bs-dismiss="alert"
                                 aria-label="Close"></button>
                         </div>
@@ -64,7 +64,7 @@
                         <label for="celular" class="form-label">Celular</label>
                         <input type="tel" name="celular" class="form-control" id="celular" required 
                                 onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" 
-                                minlength="8" maxlength="8" pattern="^[6|7]\d{7}$">
+                                minlength="8" maxlength="8" pattern="^[6|7]\d{7}$" value="{{old('celular')}}">
                     </div>
 
                     <div class="d-flex justify-content-evenly">
