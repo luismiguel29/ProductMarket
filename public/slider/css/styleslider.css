@@ -131,7 +131,7 @@ body{
 }
 
  .container-novedades {
-  width: 150%;
+  width: 100%;
 
   padding: 0 auto;
   display: flex;
@@ -141,6 +141,13 @@ body{
 .titulo1{
   text-align: center;  
   padding: 40PX;
+}
+.swiper-button-prev-nov {
+  /* left: 100px !important; */
+  position: inherit !important;
+  /* background-color: black; */
+  color: black !important;
+  size: 50px;
 }
 
 .swiper-button-next-nov {
