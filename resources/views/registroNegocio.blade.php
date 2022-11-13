@@ -60,7 +60,8 @@
                     </div>
 
                     <div class="d-flex justify-content-evenly">
-                        <button type="submit" class="btn btn-dark fs-5" style="width:140px" onclick="validarHorarios()">Guardar</button>
+                        <!--onclick="validarHorarios()"-->
+                        <button type="submit" class="btn btn-dark fs-5" style="width:140px">Guardar</button>
                         <!--<a href="/novedades" type="submit"
                             class="btn btn-dark fs-5" style="width:140px">Guardar</a>-->
 
