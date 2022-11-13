@@ -73,55 +73,58 @@
 
     </html>
 
-  
+
     <!--------------------------------------------------->
     <link rel="stylesheet" href="{{ asset('slider/css/swiper-bundle.min.css') }}">
-    
+
     <section class="container-sm">
 
         <div>
             <h1 class="titulo1">NOVEDADES</h1>
         </div>
-        <div class="container container-novedades"> 
-            <div class="swiper-button-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
+        <div class="container container-novedades">
+            <div class="swiper-button-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon " aria-hidden="true"></span>
             </div>
-            <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
+            <div id="carouselExampleControls" class="carousel carousel-dark slide car-out"
+                data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
-                    @foreach ($a as $item)   
-                    <div class="carousel-item active" data-bs-interval="5000" >
-                        <div class="cards-wrapper" >
-                            <div class="card" style="background-color: #E3E9E6">
-                                <div class=" row row-cols-1 g-5">
-                                    @foreach ($item as $item1)
-                                        <div class="col-12 col-md-6 col-lg-4 ">
-                                            <div class="card h-100" {{-- style="width: 15rem; "--}}>
-                                                <div class="card-header c-header">
-                                                    <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="col text-center" style="color:black">
-                                                        <img src="{{$item1->url}}" class="card-img-top" alt="" style= "width:80%">
-                                                        <h5 class=""> {{$item1->nombre}} <h2>
-                                                        
+                    @foreach ($a as $item)
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <div class="cards-wrapper">
+                                <div class="card" style="background-color: #E3E9E6">
+                                    <div class=" row row-cols-1 g-5">
+                                        @foreach ($item as $item1)
+                                            <div class="col-12 col-md-6 col-lg-4 ">
+                                                <div class="card h-100" {{-- style="width: 15rem; " --}}>
+                                                    <div class="card-header c-header">
+                                                        <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="col text-center" style="color:black">
+                                                            <img src="{{ $item1->url }}" class="card-img-top"
+                                                                alt="" style="width:80%">
+                                                            <h5 class=""> {{ $item1->nombre }} <h2>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer c-footer d-flex justify-content-evenly card-footer-Nov"
+                                                        text-center">
+                                                        <span style="color:#5D5D5D">Antes
+                                                            <s>Bs.{{ $item1->precio }}</s></span>
+                                                        <span>Ahora <strong>Bs.{{ $item1->preciodesc }}</strong></span>
                                                     </div>
                                                 </div>
-                                                <div class="card-footer c-footer d-flex justify-content-evenly card-footer-Nov" text-center">
-                                                    <span style="color:#5D5D5D">Antes <s>Bs.{{ $item1->precio }}</s></span>
-                                                    <span>Ahora <strong>Bs.{{ $item1->preciodesc }}</strong></span>
-                                                </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
+                                    </div>
+
                                 </div>
-                            
+
                             </div>
-                            
                         </div>
-                    </div>
-                   @endforeach
-                    
+                    @endforeach
+
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
@@ -134,12 +137,15 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <div class="swiper-button-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </div>
-        
-</section>
+        </div>
+
+    </section>
 
 
 
-{{-- ---------------------------------------------------------------- --}}
-
+    {{-- ---------------------------------------------------------------- --}}
 @endsection
