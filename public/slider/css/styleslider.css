@@ -139,7 +139,7 @@ body{
 } 
 .titulo1{
   text-align: center;  
-
+  padding: 40PX;
 }
 @media (min-width: 768px) {
   .card img {
