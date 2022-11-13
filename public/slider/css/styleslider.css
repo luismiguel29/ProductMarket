@@ -142,6 +142,14 @@ body{
   text-align: center;  
   padding: 40PX;
 }
+
+.swiper-button-next-nov {
+  /* right: 100px !important; */
+  position: inherit !important;
+  /* background-color: black; */
+  color: black !important;
+
+}
 /* @media (min-width: 768px) {
   .card img {
     height: 11em;
