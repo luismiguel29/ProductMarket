@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="d-flex justify-content-evenly">
-                        <button type="submit" class="btn btn-dark fs-5" style="width:140px" onclick="validarPasswords()">Guardar</button>
+                        <button type="submit" class="btn btn-dark fs-5" style="width:140px" onclick="validarHorarios()">Guardar</button>
                         <!--<a href="/novedades" type="submit"
                             class="btn btn-dark fs-5" style="width:140px">Guardar</a>-->
 
@@ -100,13 +100,13 @@
 
     //-------------------------------------------
 
-    function validarPasswords(){
+    function validarHorarios(){
         var pass = document.getElementById("horarioC").value;
         var repass = document.getElementById("horarioA").value;
 
-        if (pass!=repass) 
+        if (pass==repass) 
         {
-            alert("Las Contraseñas no Coinsiden");
+            alert("Los horarios deben ser diferentes");
         }
         else
         {
