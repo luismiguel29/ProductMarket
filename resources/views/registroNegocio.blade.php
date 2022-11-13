@@ -104,12 +104,9 @@
         var pass = document.getElementById("horarioC").value;
         var repass = document.getElementById("horarioA").value;
 
-        if (pass==repass) 
-        {
+        if (pass==repass){
             alert("Los horarios deben ser diferentes");
-        }
-        else
-        {
+        }else{
             document.getElementById("frm").submit();
         }
     }
