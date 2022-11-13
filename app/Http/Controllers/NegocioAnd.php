@@ -48,6 +48,12 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
+        if('horarioA' == 'horarioC'){
+            return redirect('registroNegocio')->with('messag', 'sgdzgsg');
+        }
+
+
+        //----------------------------------
         $dato = new DatosNegocio;
         $dato->nombre=$request->input('nombre');
         $dato->direccion=$request->input('direccion');

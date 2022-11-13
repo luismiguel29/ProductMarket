@@ -10,7 +10,7 @@
 
             <div class="card-body text-dark card-custom-p">
     
-                <form action="{{route('datosNego.store')}}" method="post" class="row g-3"> <!--mt-3-->
+                <form action="{{route('datosNego.store')}}" method="post" class="row g-3" id="formulario"> <!--mt-3-->
                     @csrf
                     <h5 class="text-center fs-5">Registro del negocio</h5>
 
@@ -33,7 +33,8 @@
 
                     <div class="col-12">
                         <label for="nombre" class="form-label">Nombre del negocio</label>
-                        <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30" onkeypress="return validar(event)" onpaste="return false">
+                        <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30" 
+                                onkeypress="return validar(event)" onpaste="return false">
                     </div>
 
                     <div class="col-12">
@@ -50,6 +51,14 @@
                         <label for="horarioC" class="form-label">Horario de cierre</label>
                         <input type="time" name="horarioC" class="form-control" id="horarioC" required>
                     </div>
+
+                    @if (session('messag')) 
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>{{ session('messag') }}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
 
                     <div class="col-12">
                         <label for="celular" class="form-label">Celular</label>
@@ -79,6 +88,9 @@
 
 
 <script>
+    const formulario = document.getElementById('formulario');
+    const inputs = document.querySelectorAll('#formulario input');
+
     function validar(e){
         key = e.keyCode || e.which;
         teclado = String.fromCharCode(key).toLowerCase();
@@ -96,4 +108,47 @@
             return false;
         }
     }
+
+    //-------------------------------------------
+
+    function bla = () =>   {
+        const apertura = document.getElementById('horarioA');
+        const cierre = document.getElementById('horarioC');
+
+        if(apertura.value == cierre.value){
+            return true;
+        }
+        return false;
+    }
+
+    //-------------------------------------------
+
+    inputs.forEach((input) => {
+        input.addEventListener('keyup', validarHorario);
+        input.addEventListener('blur', validarHorario);
+    })
+
+    const validarHorario = (e) => {
+        switch(e.target.name){
+            case "horarioA": 
+                prueba();
+            break;
+
+            case "horarioC": 
+                prueba();
+            break;
+        }
+    }
+
+    const prueba = () =>   {
+        const apertura = document.getElementById('horarioA');
+        const cierre = document.getElementById('horarioC');
+
+        if(apertura.value == cierre.value){
+            return true;
+        }
+    }
+
+    
+
 </script>
