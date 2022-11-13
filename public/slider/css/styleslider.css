@@ -115,6 +115,8 @@ body{
   text-shadow: black 0.1em 0.1em 0.2em
 }
 
+/* ...NOVEDADES.. */
+
 .card-header-Nov{
   background-color: #000000;
   color: white;
@@ -135,7 +137,10 @@ body{
   justify-content: center;
   align-items: center;
 } 
+.titulo1{
+  text-align: center;  
 
+}
 @media (min-width: 768px) {
   .card img {
     height: 11em;
