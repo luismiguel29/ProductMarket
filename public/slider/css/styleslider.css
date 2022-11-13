@@ -122,7 +122,8 @@ body{
   color: white;
 }
 .card-footer-Nov{
-  background-color: #FFD507
+  background-color: #FFD507;
+  font-size: 80px;
 }
 
 .cardBody{
