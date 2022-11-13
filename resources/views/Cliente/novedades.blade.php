@@ -137,7 +137,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <div class="swiper-button-next" data-bs-target="#carouselExampleControls" >
+            <div class="swiper-button-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </div>
         </div>
