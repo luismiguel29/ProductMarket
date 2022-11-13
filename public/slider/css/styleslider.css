@@ -43,7 +43,8 @@ body{
   /* height: 200px;
   width: 150px; */
   border-radius: 15px;
-  background-color: #FEC373;
+  /* background-color: #FEC373; */
+  border: solid black;
 }
 
 .card-image {
@@ -104,31 +105,45 @@ body{
 }
 
 .titulo {
-  text-align: center;
+  text-align: center;  
   color: #fff;
 /*   font-family: impact; */
-  font-size: 40px;
+/*   font-size: 40px; */
   letter-spacing: 0;
-  text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000;
+  /* text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000; */
+  -webkit-text-stroke: 2px black;
+  text-shadow: black 0.1em 0.1em 0.2em
 }
+
+/* ...NOVEDADES.. */
 
 .card-header-Nov{
   background-color: #000000;
   color: white;
 }
 .card-footer-Nov{
-  background-color: #FFD507
+  background-color: #FFD507;
+  font-size: 18px;
 }
 
 .cardBody{
   background-color: white;
 }
 
-.container-novedades {
+ .container-novedades {
   width: 90%;
 
-  padding: 10px 40px;
+  padding: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+} 
+.titulo1{
+  text-align: center;  
+  padding: 40PX;
 }
+/* @media (min-width: 768px) {
+  .card img {
+    height: 11em;
+  }
+} */
