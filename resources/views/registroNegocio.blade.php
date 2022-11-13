@@ -39,7 +39,7 @@
 
                     <div class="col-12">
                         <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" name="direccion" class="form-control" id="direccion" required minlength="5" maxlength="50" value="{{old(''direcion)}}">
+                        <input type="text" name="direccion" class="form-control" id="direccion" required minlength="5" maxlength="50" value="{{old('direcion')}}">
                     </div>
 
                     <div class="col-12">
