@@ -103,7 +103,7 @@
                                                         
                                                     </div>
                                                 </div>
-                                                <div class="card-footer c-footer d-flex justify-content-evenly" text-center">
+                                                <div class="card-footer c-footer d-flex justify-content-evenly card-footer-Nov" text-center">
                                                     <span style="color:#5D5D5D">Antes <s>Bs.{{ $item1->precio }}</s></span>
                                                     <span>Ahora <strong>Bs.{{ $item1->preciodesc }}</strong></span>
                                                 </div>
