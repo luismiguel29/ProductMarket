@@ -131,7 +131,7 @@ body{
 }
 
  .container-novedades {
-  width: 80%;
+  width: 150%;
 
   padding: 0 auto;
   display: flex;
@@ -141,6 +141,15 @@ body{
 .titulo1{
   text-align: center;  
   padding: 40PX;
+}
+
+.swiper-button-next-nov {
+  /* right: 100px !important; */
+  position: inherit !important;
+  /* background-color: black; */
+  color: black !important;
+  size: 50px;
+
 }
 /* @media (min-width: 768px) {
   .card img {
