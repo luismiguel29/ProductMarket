@@ -83,7 +83,10 @@
             <h1 class="titulo1">NOVEDADES</h1>
         </div>
         <div class="container container-novedades"> 
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+                <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            </div>
             <div id="carouselExampleControls"  class="carousel carousel-dark slide car-out" data-ride="carousel"{{--  data-bs-ride="carousel" --}}>
                 <div class="carousel-inner">
                     @foreach ($a as $item)   
