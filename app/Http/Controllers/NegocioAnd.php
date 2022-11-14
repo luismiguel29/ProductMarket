@@ -60,7 +60,7 @@ class NegocioAnd extends Controller
             //return redirect()->route('registroNegocio');
             return redirect('registroNegocio')->with('message', 'Los datos se guardaron correctamente!');
         }else{
-            return redirect('registroNegocio')->with('message', 'El horario de cierre debe ser mayor');
+            return redirect('registroNegocio')->with('message', 'El horario de cierre debe ser mayor')->withInput();
         }
 
 
