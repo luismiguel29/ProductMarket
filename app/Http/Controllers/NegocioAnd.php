@@ -49,11 +49,11 @@ class NegocioAnd extends Controller
     public function store(Request $request)
     {
         $nombre = DatosNegocio::select('*')
-        ->where('nombre', $request->input('nombre'))
-        ->exists();
-        if($nombre){
+            ->where('nombre', $request->input('nombre'))
+            ->exists();
+        if ($nombre) {
             return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!');
-        }else if ($request->input('horarioA') < $request->input('horarioC')) {
+        } else if ($request->input('horarioA') < $request->input('horarioC')) {
             $dato = new DatosNegocio;
             $dato->nombre = $request->input('nombre');
             $dato->direccion = $request->input('direccion');
@@ -63,7 +63,7 @@ class NegocioAnd extends Controller
             $dato->save();
             //return redirect()->route('registroNegocio');
             return redirect('registroNegocio')->with('message', 'Los datos se guardaron correctamente!');
-        }else{
+        } else {
             return redirect('registroNegocio')->with('message', 'El horario de cierre debe ser mayor');
         }
 
@@ -105,14 +105,24 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-        $datoup = DatosNegocio::findOrFail($id);
-        $datoup->nombre = $request->input('nombre');
-        $datoup->direccion = $request->input('direccion');
-        $datoup->horarioinicio = $request->input('horario1');
-        $datoup->telefono = $request->input('telefono');
-        $datoup->horariofin = $request->input('horario2');
-        $datoup->save();
-        return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
+
+        $nombre = DatosNegocio::select('*')
+            ->where('nombre', $request->input('nombre'))
+            ->exists();
+        if ($nombre) {
+            return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!');
+        } else if ($request->input('horario1') < $request->input('horario2')) {
+            $datoup = DatosNegocio::findOrFail($id);
+            $datoup->nombre = $request->input('nombre');
+            $datoup->direccion = $request->input('direccion');
+            $datoup->horarioinicio = $request->input('horario1');
+            $datoup->telefono = $request->input('telefono');
+            $datoup->horariofin = $request->input('horario2');
+            $datoup->save();
+            return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
+        } else {
+            return redirect('registroNegocio')->with('message', 'El horario de cierre debe ser mayor');
+        }
     }
 
     /**
