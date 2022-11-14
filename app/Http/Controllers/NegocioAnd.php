@@ -106,7 +106,12 @@ class NegocioAnd extends Controller
     public function update(Request $request, $id)
     {
 
-        if ($request->input('horario1') < $request->input('horario2')) {
+        $nombre = DatosNegocio::select('*')
+            ->where('nombre', $request->input('nombre'))
+            ->exists();
+        if ($nombre) {
+            return redirect('datosNego')->with('message', 'El nombre de negocio ya existe!');
+        } else if ($request->input('horario1') < $request->input('horario2')) {
             $datoup = DatosNegocio::findOrFail($id);
             $datoup->nombre = $request->input('nombre');
             $datoup->direccion = $request->input('direccion');
