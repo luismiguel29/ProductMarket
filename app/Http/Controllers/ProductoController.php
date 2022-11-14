@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
-
+use Illuminate\Support\Facades\Validator;
 
 class ProductoController extends Controller
 {
@@ -30,7 +30,7 @@ class ProductoController extends Controller
         ->orderByRaw('nombre ASC')
         ->get(); */
         $productos = DB::table('producto')
-        ->get();
+            ->get();
 
         return view('menu', compact('productos'));
         //return $productos;
@@ -54,32 +54,36 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-      /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
+        /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
-       */  
-        $validator = $request->validate([
+       */
+        $validator = Validator::make($request->all(), [
             'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
         ]);
 
-        $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+        if ($validator->fails()) {
+            return redirect('categoria')->withErrors($validator);
+        } else {
+            $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
 
-        /* $img = $request->file('url_img')->store('public/imagenes');
+            /* $img = $request->file('url_img')->store('public/imagenes');
         $url = Storage::url($img);  */
 
-        $producto = new Producto;
-        $producto->id_categoria = $request->input('categoria');
-        $producto->id_negocio = 1;
-        $producto->nombre = $request->input('nombreprod');
-        $producto->precio = $request->input('precio');
-        $producto->preciodesc = $request->input('preciodesc');
-        $producto->stock = $request->input('stockprod');
-        $producto->fechaven = $request->input('fechavenprod');
-        $producto->fechainicio = $request->input('fechainiciopromo');
-        $producto->fechafin = $request->input('fechafinpromo');
-        $producto->descripcion = $request->input('descripprod');
-        $producto->url = $url;
-        $producto->save();
-        return redirect('categoria')->with('message', '¡Registro exitoso!!!!!!!');
+            $producto = new Producto;
+            $producto->id_categoria = $request->input('categoria');
+            $producto->id_negocio = 1;
+            $producto->nombre = $request->input('nombreprod');
+            $producto->precio = $request->input('precio');
+            $producto->preciodesc = $request->input('preciodesc');
+            $producto->stock = $request->input('stockprod');
+            $producto->fechaven = $request->input('fechavenprod');
+            $producto->fechainicio = $request->input('fechainiciopromo');
+            $producto->fechafin = $request->input('fechafinpromo');
+            $producto->descripcion = $request->input('descripprod');
+            $producto->url = $url;
+            $producto->save();
+            return redirect('categoria')->with('message', '¡Registro exitoso!!!!!!!');
+        }
     }
 
     /**
@@ -113,7 +117,6 @@ class ProductoController extends Controller
      */
     public function update(Request $request)
     {
-
     }
 
     /**
@@ -124,7 +127,5 @@ class ProductoController extends Controller
      */
     public function destroy(Request $request)
     {
-
     }
-
 }
