@@ -93,7 +93,7 @@
                     <div class="mb-3">
                         <span>Dirección</span>
                         <input class="form-control" type="text" name="direccion" required=""
-                            pattern="{1,50}" maxlength="50" id="direccion" autocomplete="address-level1"
+                            pattern="{1,50}" minlength="10" maxlength="50" id="direccion" autocomplete="address-level1"
                             required value="{{ $dato->direccion }}"
                             onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32 || event.charCode == 44 || event.charCode == 46) )">
                     </div>
