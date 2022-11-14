@@ -105,13 +105,7 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        //$nombre = DatosNegocio::select('*')
-        //    ->where('nombre', $request->input('nombre'))
-        //    ->exists();
-        //if ($nombre) {
-        //    return redirect('datosNego')->with('message', 'El nombre de negocio ya existe!');
-        //} else if ($request->input('horario1') < $request->input('horario2')) {
+        if ($request->input('horario1') < $request->input('horario2')) {
             $datoup = DatosNegocio::findOrFail($id);
             $datoup->nombre = $request->input('nombre');
             $datoup->direccion = $request->input('direccion');
@@ -120,9 +114,9 @@ class NegocioAnd extends Controller
             $datoup->horariofin = $request->input('horario2');
             $datoup->save();
             return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
-        //} else {
-        //    return redirect('datosNego')->with('message', 'El horario de cierre debe ser mayor');
-        //}
+        } else {
+            return redirect('datosNego')->with('message', 'El horario de cierre debe ser mayor');
+        }
     }
 
     /**
