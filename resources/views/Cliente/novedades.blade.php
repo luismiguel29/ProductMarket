@@ -30,21 +30,21 @@
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
                         @foreach ($categoria as $item)
-                            <div class="card swiper-slide  cardCategorias">
-                                <a href="{{ route('verproductos.show', $item->idcategoria) }}" class="image-content">
+                            <a style="text-decoration: none" href="{{ route('verproductos.show', $item->idcategoria) }}" class="card swiper-slide  cardCategorias">
+                                <div class="image-content">
                                     {{-- <span class="overlay"></span> --}}
 
                                     <div class="card-image">
                                         <img src="{{ $item->url }}" alt="" class="card-img" cli>
                                     </div>
-                                </a>
+                                </div>
 
                                 <div class="card-content">
                                     <h2 class="name">{{ $item->nombre }} </h2>
 
                                     {{-- <button class="button">Ver productos</button> --}}
                                 </div>
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                 </div>
