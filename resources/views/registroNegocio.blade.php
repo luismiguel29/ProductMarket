@@ -33,28 +33,28 @@
 
                     <div class="col-12">
                         <label for="nombre" class="form-label">Nombre del negocio</label>
-                        <input type="text" name="nombre" class="form-control" id="nombre" required minlength="3" maxlength="30" 
+                        <input type="text" name="nombre" class="form-control" id="nombre" value="{{ old('nombre') }}" required minlength="3" maxlength="30" 
                                 onkeypress="return validar(event)" onpaste="return false">
                     </div>
 
                     <div class="col-12">
                         <label for="direccion" class="form-label">Dirección</label>
-                        <input type="text" name="direccion" class="form-control" id="direccion" required minlength="5" maxlength="50">
+                        <input type="text" name="direccion" class="form-control" id="direccion" value="{{ old('direccion') }}" required minlength="5" maxlength="50">
                     </div>
 
                     <div class="col-12">
                         <label for="horarioA" class="form-label">Horario de apertura</label>
-                        <input type="time" name="horarioA" class="form-control" id="horarioA" required>
+                        <input type="time" name="horarioA" class="form-control" id="horarioA" value="{{ old('horarioA') }}" required>
                     </div>
 
                     <div class="col-12">
                         <label for="horarioC" class="form-label">Horario de cierre</label>
-                        <input type="time" name="horarioC" class="form-control" id="horarioC" required>
+                        <input type="time" name="horarioC" class="form-control" id="horarioC" value="{{ old('horarioC') }}" required>
                     </div>
 
                     <div class="col-12">
                         <label for="celular" class="form-label">Celular</label>
-                        <input type="tel" name="celular" class="form-control" id="celular" required 
+                        <input type="tel" name="celular" class="form-control" id="celular" value="{{ old('celular') }}" required 
                                 onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" 
                                 minlength="8" maxlength="8" pattern="^[6|7]\d{7}$">
                     </div>
