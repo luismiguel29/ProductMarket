@@ -62,7 +62,7 @@ class ProductoController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('categoria')->withErrors($validator);
+            return redirect('categoria')->withErrors($validator)->withInput();
         } else {
             $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
 
