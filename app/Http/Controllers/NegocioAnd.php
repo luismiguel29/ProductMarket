@@ -48,9 +48,8 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
-        $nombre = DB::table('Negocio')
-        ->select('nombre')
-        ->where('nombre', '=', $request->input('nombre'))
+        $nombre = DatosNegocio::select('*')
+        ->where('nombre', $request->input('nombre'))
         ->exists();
         if($nombre){
             return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!');
