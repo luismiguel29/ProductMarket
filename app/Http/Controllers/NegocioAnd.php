@@ -48,8 +48,13 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
-
-        if ($request->input('horarioA') < $request->input('horarioC')) {
+        $nombre = DB::table('Negocio')
+        ->select('nombre')
+        ->where('nombre', '=', $request->input('nombre'))
+        ->exists();
+        if($nombre){
+            return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!');
+        }else if ($request->input('horarioA') < $request->input('horarioC')) {
             $dato = new DatosNegocio;
             $dato->nombre = $request->input('nombre');
             $dato->direccion = $request->input('direccion');
