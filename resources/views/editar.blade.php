@@ -38,7 +38,7 @@
         </section>
 
 
-        <div class="d-flex justify-content-around order-2 order-md-1" style="padding-top: 52px;">
+        <div class="d-flex justify-content-around order-1 order-md-2" style="padding-top: 52px;">
 
             <div class="card mb-5" style="width: 25rem;">
             
