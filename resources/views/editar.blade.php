@@ -1,23 +1,3 @@
-<script>
-    function prueba(e) {
-        key = e.keyCode
-        if (key.charAt(0) === 49) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /*
-        function validarSiNumero(e){
-            var key = window.event ? e.keyCode : e.which;
-            if ((48 <= key && key <= 57) || (key == 0) || (key == 8)) 
-            { return true; } else { return false; } // -
-        }*/
-</script>
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
