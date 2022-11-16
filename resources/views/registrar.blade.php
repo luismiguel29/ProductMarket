@@ -20,7 +20,7 @@
         <img src="./style/logo.png" width="60px" alt="Logo de ProductMarket">
     </header>
 
-    <div class="d-flex justify-content-evenly" style="padding-top: 50px;">
+    <div class="d-flex justify-content-evenly flex-column flex-md-row" style="padding-top: 50px;">
         <!--<section class="d-flex flex-column  align-self-center gap-4">
             <button type="button" class="btn btn-secondary fs-5">Editar</button>
             <a type="button" class="btn btn-secondary fs-5">Registrar</a>
