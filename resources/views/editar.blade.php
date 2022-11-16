@@ -29,7 +29,8 @@
     </header>
 
     <!-- id="espacio"-->
-    <div class="d-flex justify-content-evenly flex-column flex-md-row mb-3 mb-md-0" style="padding-top: 50px;">
+    <div class="d-flex justify-content-evenly flex-column flex-md-row" style="padding-top: 50px;">
+
         <section class="d-flex flex-column  align-self-center gap-4 order-2 order-md-1">
             <button class="btn btn-dark fs-5 btnb">Editar</button>
             <a href="categoria" class="btn btn-dark fs-5 btnb">Registrar producto</a>
