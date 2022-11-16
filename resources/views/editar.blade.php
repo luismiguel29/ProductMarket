@@ -58,7 +58,7 @@
         </section>
 
 
-        <div class="d-flex justify-content-around card mb-5 align-self-center order-1 order-md-2" style="width: 25rem;">
+        <div class="d-flex card mb-5 align-self-center order-1 order-md-2" style="width: 25rem;">
             <div class="card-header c-header" style="background-color: #FFD507; padding:25px"> </div>
             <div class="card-body text-dark card-custom-p">
 
