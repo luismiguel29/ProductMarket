@@ -41,23 +41,4 @@ a{
     text-decoration: none; 
 }
 
-@media screen and (max-width: 800px){
-    .seccion1{
-        width: 100%;
-    }
-
-    .seccion2{
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 800px){
-    body{
-        background: pink;
-    }
-
-    .footer{
-        background-color: orangered;  
-    }
-}
 
