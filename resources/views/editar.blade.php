@@ -58,78 +58,75 @@
         </section>
 
 
-        <div class="d-flex align-self-center order-1 order-md-2" style="width: 25rem;">
-            <div class="card mb-5" style="width: 25rem;">
-                <div class="card-header" style="background-color: #FFD507; padding:25px"> </div>
-                <div class="card-body text-dark card-custom-p">
+        <div class="d-flex card mb-5 align-self-center order-1 order-md-2" style="width: 25rem;">
+            <div class="card-header c-header" style="background-color: #FFD507; padding:25px"> </div>
+            <div class="card-body text-dark card-custom-p">
 
-                    <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar">
-                        @csrf
-                        @method('PUT')
-                        <h5 class="text-center fs-5">Editar datos del negocio</h5>
+                <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar">
+                    @csrf
+                    @method('PUT')
+                    <h5 class="text-center fs-5">Editar datos del negocio</h5>
 
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </div>
-                        @endif
-                        @if (session('message'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>{{ session('message') }}</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                        @endif
-
-                        <!--pattern="[A-Z][A-Z,a-z, ,ñ,á,í,é,ó,ú]+"-->
-                        <div class="mb-3">
-                            <span>Nombre del negocio</span>
-                            <input class="form-control" type="text" name="nombre" required="" minlength="1"
-                                maxlength="30" id="nombre" autocomplete="" required value="{{ $dato->nombre }}">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
                         </div>
-
-                        <!--pattern="[A-Z][A-Z,a-z,0-9, ,ñ,á,í,é,ó,ú]+" minlength="10">-->
-                        <div class="mb-3">
-                            <span>Dirección</span>
-                            <input class="form-control" type="text" name="direccion" required=""
-                                pattern="{1,50}" minlength="10" maxlength="50" id="direccion" autocomplete="address-level1"
-                                required value="{{ $dato->direccion }}"
-                                onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32 || event.charCode == 44 || event.charCode == 46) )">
+                    @endif
+                    @if (session('message'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ session('message') }}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
                         </div>
+                    @endif
 
-                        <div class="mb-3">
-                            <span>Horario de apertura</span>
-                            <input class="form-control" type="time" name="horario1" required="" id="horario1"
-                                autocomplete="" required value="{{ $dato->horarioinicio }}">
-                        </div>
+                    <!--pattern="[A-Z][A-Z,a-z, ,ñ,á,í,é,ó,ú]+"-->
+                    <div class="mb-3">
+                        <span>Nombre del negocio</span>
+                        <input class="form-control" type="text" name="nombre" required="" minlength="1"
+                            maxlength="30" id="nombre" autocomplete="" required value="{{ $dato->nombre }}">
+                    </div>
 
-                        <div class="mb-3">
-                            <span>Horario de cierre</span>
-                            <input class="form-control" type="time" name="horario2" required="" id="horario2"
-                                autocomplete="" required value="{{ $dato->horariofin }}">
-                        </div>
+                    <!--pattern="[A-Z][A-Z,a-z,0-9, ,ñ,á,í,é,ó,ú]+" minlength="10">-->
+                    <div class="mb-3">
+                        <span>Dirección</span>
+                        <input class="form-control" type="text" name="direccion" required=""
+                            pattern="{1,50}" minlength="10" maxlength="50" id="direccion" autocomplete="address-level1"
+                            required value="{{ $dato->direccion }}"
+                            onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32 || event.charCode == 44 || event.charCode == 46) )">
+                    </div>
 
-                        <!--TC-66-->
-                        <!--onkeypress="return( event.charCode != 32 || event.charCode != 39 || event.charCode != 34 || event.charCode != 44 || event.charCode != 46 ||  event.charCode != 47 || event.charCode != 92 || event.charCode != 64 || event.charCode !=209 || event.charCode !=241)"-->
-                        <div class="mb-3">
-                            <span>Teléfono</span>
-                            <input class="form-control" type="tel" name="telefono" id="telefono"
-                                required="" pattern="^[6|7]\d{7}$" minlength="8" maxlength="8"
-                                autocomplete="" required value="{{ $dato->telefono }}"
-                                onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
-                        </div>
+                    <div class="mb-3">
+                        <span>Horario de apertura</span>
+                        <input class="form-control" type="time" name="horario1" required="" id="horario1"
+                            autocomplete="" required value="{{ $dato->horarioinicio }}">
+                    </div>
 
-                        <div class="d-flex justify-content-evenly ">
-                            <button type="submit" class="btn btn-dark fs-5 ">Guardar</button>
-                            <a href="proveedor/paginaprincipal" type="reset"
-                                class="btn btn-dark fs-5 ">Cancelar</a>
-                        </div>
+                    <div class="mb-3">
+                        <span>Horario de cierre</span>
+                        <input class="form-control" type="time" name="horario2" required="" id="horario2"
+                            autocomplete="" required value="{{ $dato->horariofin }}">
+                    </div>
 
-                    </form>
+                    <!--TC-66-->
+                    <!--onkeypress="return( event.charCode != 32 || event.charCode != 39 || event.charCode != 34 || event.charCode != 44 || event.charCode != 46 ||  event.charCode != 47 || event.charCode != 92 || event.charCode != 64 || event.charCode !=209 || event.charCode !=241)"-->
+                    <div class="mb-3">
+                        <span>Teléfono</span>
+                        <input class="form-control" type="tel" name="telefono" id="telefono"
+                            required="" pattern="^[6|7]\d{7}$" minlength="8" maxlength="8"
+                            autocomplete="" required value="{{ $dato->telefono }}"
+                            onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+                    </div>
 
-                </div>
+                    <div class="d-flex justify-content-evenly ">
+                        <button type="submit" class="btn btn-dark fs-5 ">Guardar</button>
+                        <a href="proveedor/paginaprincipal" type="reset"
+                            class="btn btn-dark fs-5 ">Cancelar</a>
+                    </div>
+
+                </form>
 
             </div>
 
