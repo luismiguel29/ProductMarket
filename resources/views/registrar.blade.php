@@ -34,14 +34,15 @@
             <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
 
-        <div class="d-flex justify-content-around row row-cols-1 g-5 order-1 order-md-2">
+        <div class="d-flex justify-content-around order-1 order-md-2" style="padding-top: 20px;">
 
-            <div class="col-12 col-md-6 col-lg-12">
-                <div class="card h-100" style="width:350px">
-                    <div class="card-header c-header" style="#FFD507"> </div>
-                    <div class="card-body text-dark card-custom-p">
+            <div class="card mb-5" style="width: 25rem;">
+            
+                <div class="card-header" style="background:#FFD507; padding: 25px;"></div>
 
-                        <h5 class="text-center fs-5">Información del producto</h5>
+                <div class="card-body text-dark card-custom-p">
+        
+                    <h5 class="text-center fs-5">Información del producto</h5>
                         {{-- @include('components.flash_alerts') --}}
                         <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -176,8 +177,6 @@
 
                         </form>
                         <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
-
-                    </div>
                 </div>
             </div>
         </div>
