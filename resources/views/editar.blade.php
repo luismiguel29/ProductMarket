@@ -62,7 +62,7 @@
             <div class="card-header c-header" style="background-color: #FFD507; padding:25px"> </div>
             <div class="card-body text-dark card-custom-p">
 
-                <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar">
+                <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="">
                     @csrf
                     @method('PUT')
                     <h5 class="text-center fs-5">Editar datos del negocio</h5>
