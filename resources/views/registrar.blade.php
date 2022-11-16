@@ -27,10 +27,10 @@
             <button type="button" class="btn btn-secondary fs-5">Ver productos</button>
         </section>-->
 
-        <section class="d-flex flex-column   gap-4" style="padding-top: 171px;">
-            <a href="datosNego" type="button" class="btn btn-dark fs-5 btnb" style="">Editar</a>
-            <a href="categoria" type="button" class="btn btn-dark fs-5  btnb">Registrar producto</a>
-            <a href="proveedor/listaproducto" type="button" class="btn btn-dark fs-5  btnb">Ver productos</a>
+        <section class="d-flex flex-column align-self-center gap-4" style="padding-top: 171px;">
+            <a href="datosNego" class="btn btn-dark fs-5 btnb" style="">Editar</a>
+            <a href="categoria" class="btn btn-dark fs-5  btnb">Registrar producto</a>
+            <a href="proveedor/listaproducto" class="btn btn-dark fs-5  btnb">Ver productos</a>
             <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
 
