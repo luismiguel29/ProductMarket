@@ -27,7 +27,7 @@
             <button type="button" class="btn btn-secondary fs-5">Ver productos</button>
         </section>-->
 
-        <section class="d-flex flex-column align-self-center gap-4 order-2 order-md-1" style="padding-top: 171px;">
+        <section class="d-flex flex-column align-self-center gap-4 order-2 order-md-1">
             <a href="datosNego" class="btn btn-dark fs-5 btnb" style="">Editar</a>
             <a href="categoria" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" class="btn btn-dark fs-5  btnb">Ver productos</a>
