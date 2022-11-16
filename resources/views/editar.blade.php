@@ -58,7 +58,7 @@
         </section>
 
 
-        <div class="card mb-5" style="width: 25rem;">
+        <div class="card mb-5 seccion1" style="width: 25rem;">
             <div class="card-header c-header" style="background-color: #FFD507; padding:25px"> </div>
             <div class="card-body text-dark card-custom-p">
 
