@@ -38,10 +38,14 @@
         </section>
 
 
-        <div class="d-flex card mb-5 align-self-center order-1 order-md-2" style="width: 25rem;">
-            <div class="card-header c-header" style="background-color: #FFD507; padding:25px"> </div>
-            <div class="card-body text-dark card-custom-p">
+        <div class="d-flex justify-content-around" style="padding-top: 52px;">
 
+        <div class="card mb-5" style="width: 25rem;">
+        
+            <div class="card-header" style="background:#FFD507; padding: 25px;"></div>
+
+            <div class="card-body text-dark card-custom-p">
+    
                 <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar">
                     @csrf
                     @method('PUT')
@@ -108,6 +112,7 @@
 
                 </form>
 
+            </div>
             </div>
 
         </div>
