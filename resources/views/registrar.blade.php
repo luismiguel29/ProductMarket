@@ -34,7 +34,7 @@
             <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
 
-        <div class=" row row-cols-1 g-5 order-1 order-md-2">
+        <div class="d-flex justify-content-around row row-cols-1 g-5 order-1 order-md-2">
 
             <div class="col-12 col-md-6 col-lg-12">
                 <div class="card h-100" style="width:350px">
