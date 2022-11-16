@@ -44,6 +44,7 @@
 <!--VA LA PARTE DE LOS DATOS DEL NEGOCIO-->
 
 <body class="d-flex flex-column" style="background: #E3E9E6">
+    <div>
     <header>
         <img src="./editarAll/img/Group 33.png" width="60px" alt="Logo de ProductMarket">
     </header>
@@ -136,6 +137,7 @@
     </div>
 
     <div class="footer"></div>
+    </div>
 </body>
 
 </html>
