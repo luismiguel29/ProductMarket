@@ -55,5 +55,9 @@ a{
     body{
         background: pink;
     }
+
+    .footer{
+        background-color: orangered;  
+    }
 }
 
