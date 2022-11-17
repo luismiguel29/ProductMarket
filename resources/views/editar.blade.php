@@ -31,7 +31,7 @@
     <!-- id="espacio"-->
     <div class="d-flex justify-content-evenly flex-column flex-md-row" style="padding-top: 50px;">
 
-        <section class="d-flex flex-column  align-self-center gap-4 mb-3 mb-md-0 order-2 order-md-1">
+        <section class="d-flex flex-column  align-self-center gap-4 mb-4 mb-md-0 order-2 order-md-1">
             <button class="btn btn-dark fs-5 btnb">Editar</button>
             <a href="categoria" class="btn btn-dark fs-5 btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" class="btn btn-dark fs-5 btnb">Ver productos</a>
