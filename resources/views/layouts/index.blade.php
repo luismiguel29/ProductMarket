@@ -21,7 +21,8 @@
     <img src="/fondo10.png" alt="">
     <div>@yield('body')</div>
     <div class="footer"></div>
-
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
 </body>
 
 
