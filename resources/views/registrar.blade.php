@@ -11,7 +11,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{{ asset('style/main.css') }}">
-    <title>Document</title>
+    <title>Product Market</title>
 
 </head>
 

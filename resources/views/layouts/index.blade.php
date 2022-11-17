@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Product Market</title>
     @yield ('style')
 </head>
 
