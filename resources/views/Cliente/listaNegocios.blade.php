@@ -67,7 +67,9 @@
 
             </div>
 
-
+            <div class="lis">
+                {!!$datos->links()!!}
+            </div>
 
             </body>
 

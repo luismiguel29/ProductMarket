@@ -15,8 +15,8 @@ class ListanegociosController extends Controller
     public function index()
     {
         $datos = DB::table('negocio')
-        ->orderByRaw('nombre ASC')
-        ->get();
+        ->orderByRaw('nombre ASC')->paginate(8);
+
         /* return $datos; */
         return view('Cliente.listaNegocios', compact('datos'));
     }
