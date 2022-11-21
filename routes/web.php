@@ -94,4 +94,6 @@ Route::get('/registroNegocio', function () {
 
 Route::resource('productoluis', ProductoLuisController::class);
 
+Route::resource('/listanegocio',ListanegociosController::class);
+
 
