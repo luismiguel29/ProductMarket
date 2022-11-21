@@ -46,9 +46,9 @@
                                 <a href="/proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
                             </li>
 
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="/listanegocio" class="nav-link active" aria-current="page" href="#">Ver Negocios</a>
-                            </li>
+                            </li> --}}
                     </div>
                 </div>
             </div>
