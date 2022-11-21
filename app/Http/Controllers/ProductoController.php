@@ -54,36 +54,21 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
-        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
-       */
-        $validator = Validator::make($request->all(), [
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
-        } else {
-            $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
-
-            /* $img = $request->file('url_img')->store('public/imagenes');
-        $url = Storage::url($img);  */
-
-            $producto = new Producto;
-            $producto->id_categoria = $request->input('categoria');
-            $producto->id_negocio = 1;
-            $producto->nombre = $request->input('nombreprod');
-            $producto->precio = $request->input('precio');
-            $producto->preciodesc = $request->input('preciodesc');
-            $producto->stock = $request->input('stockprod');
-            $producto->fechaven = $request->input('fechavenprod');
-            $producto->fechainicio = $request->input('fechainiciopromo');
-            $producto->fechafin = $request->input('fechafinpromo');
-            $producto->descripcion = $request->input('descripprod');
-            $producto->url = $url;
-            $producto->save();
-            return redirect('categoria')->with('message', '¡Registro exitoso!!!!!!!');
-        }
+        $producto = new Producto;
+        $producto->id_categoria = $request->input('categoria');
+        $producto->id_negocio = 1;
+        $producto->nombre = $request->input('nombreprod');
+        $producto->precio = $request->input('precio');
+        $producto->preciodesc = $request->input('preciodesc');
+        $producto->stock = $request->input('stockprod');
+        $producto->fechaven = $request->input('fechavenprod');
+        $producto->fechainicio = $request->input('fechainiciopromo');
+        $producto->fechafin = $request->input('fechafinpromo');
+        $producto->descripcion = $request->input('descripprod');
+        $producto->url = $url;
+        $producto->save();
+        return redirect('categoria')->with('message', '¡Registro exitoso!!!!!!!');
+        
     }
 
     /**
