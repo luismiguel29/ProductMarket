@@ -24,7 +24,7 @@
               <th>Categoria</th>
               <th>Fecha de promocion</th>
               <th>Imagen</th>
-              <th>Acciones</th>
+            
             </tr>
           </thead>
           <tbody class="table-light">
