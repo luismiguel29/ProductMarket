@@ -23,7 +23,7 @@
 
                 <header class="bann">
                     <div class="logo">
-                        <img src="\storage\imagenes\tienda.png" width="100px">
+                        <img src="\imagenes\tienda.png" width="100px">
                         <h2 class="nombreCat">
                             <strong>Negocios</strong>
                         </h2>
