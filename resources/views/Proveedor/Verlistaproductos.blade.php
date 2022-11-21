@@ -44,10 +44,7 @@
                 @endif
                 </td>
               <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
-              <div class="row">
-                <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
-                <td><a class="btn"><i data-feather="trash-2"></i></a><a href="/categoria" class="btn"><i data-feather="edit"></i></a></td>
-              </div>
+              
             </tr>
             @endforeach
 
