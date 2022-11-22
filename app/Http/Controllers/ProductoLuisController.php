@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\DB;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class ProductoLuisController extends Controller
 {
@@ -15,9 +17,7 @@ class ProductoLuisController extends Controller
      */
     public function index()
     {
-        $consulta = DB::table('producto')
-            ->get();
-        return $consulta;
+        
     }
 
     /**
@@ -38,7 +38,7 @@ class ProductoLuisController extends Controller
      */
     public function store(Request $request)
     {
-        $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+        
     }
 
     /**
@@ -47,9 +47,12 @@ class ProductoLuisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idproducto, $idcategoria)
     {
-        //
+        $producto = Producto::where('idproducto', $idproducto)->first();
+        $categoria= Categoria::where('idcategoria',$idcategoria)->first();
+        return view('/Cliente/informacionproducto', compact('producto', 'categoria'));
+        //return [$producto, $categoria];
     }
 
     /**

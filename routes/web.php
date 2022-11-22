@@ -92,6 +92,7 @@ Route::get('/registroNegocio', function () {
     return view('registroNegocio');
 });
 
-Route::resource('productoluis', ProductoLuisController::class);
+Route::get('/info/{idproducto}/{idcategoria}', 'App\Http\Controllers\ProductoLuisController@show');
+Route::resource('informacion', ProductoLuisController::class);
 
 

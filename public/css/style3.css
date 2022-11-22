@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.card-container{
+    display: flex;
+}
+
+.header{
+    border: 1px solid black;
+    width: 500px;
+    height: auto;
+}
+
+.description{
+    border: 1px solid black;
+    width: 500px;
+    height: auto;
+}
+
+.header, .description{
+    padding: 20px;
+    text-align: center;
+}
+
+.header a{
+    position: relative;
+    display: block;
+}
+
+.header img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+}
+
+.description p{
+    margin: 20px 30px;
+}
+
+@media (max-width:640px){
+    .card-container{
+        display: block;
+        width: 450px;
+    }
+    .header{
+        padding: 20px 20px 5px 20px;
+        border: none;
+    }
+    .description{
+        padding: 5px 20px 20px 20px;
+    }
+}
