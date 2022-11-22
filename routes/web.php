@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\NovedadesController;
 use App\Http\Controllers\ProductoLuisController;
+use App\Http\Controllers\ListanegociosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,5 +95,7 @@ Route::get('/registroNegocio', function () {
 
 Route::get('/info/{idproducto}/{idcategoria}', 'App\Http\Controllers\ProductoLuisController@show');
 Route::resource('informacion', ProductoLuisController::class);
+
+Route::resource('/listanegocio',ListanegociosController::class);
 
 

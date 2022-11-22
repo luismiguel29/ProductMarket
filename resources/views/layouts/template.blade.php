@@ -45,6 +45,10 @@
                             <li class="nav-item">
                                 <a href="/proveedor/paginaprincipal" class="nav-link active" aria-current="page" href="#">Ingresar como proveedor</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a href="/listanegocio" class="nav-link active" aria-current="page" href="#">Ver Negocios</a>
+                            </li>
                     </div>
                 </div>
             </div>
@@ -60,7 +64,7 @@
     <div class="margen" style="background: #E3E9E6; min-height:700px">
         @yield('content')  @section('content')
     </div>
-    
+
     <div class="footer"></div>
 </body>
 

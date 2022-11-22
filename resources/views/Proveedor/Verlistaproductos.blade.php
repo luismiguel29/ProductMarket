@@ -24,6 +24,7 @@
               <th>Categoria</th>
               <th>Fecha de promocion</th>
               <th>Imagen</th>
+            
             </tr>
           </thead>
           <tbody class="table-light">
@@ -43,7 +44,7 @@
                 @endif
                 </td>
               <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
-
+              
             </tr>
             @endforeach
 
