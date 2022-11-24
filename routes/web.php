@@ -93,7 +93,8 @@ Route::get('/registroNegocio', function () {
     return view('registroNegocio');
 });
 
-Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show');
+Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');
+Route::post('/addcarrito/{id}', 'App\Http\Controllers\ProductoLuisController@store')->name('addcarrito');
 Route::resource('informacion', ProductoLuisController::class);
 
 Route::resource('/listanegocio',ListanegociosController::class);

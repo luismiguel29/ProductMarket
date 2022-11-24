@@ -16,6 +16,9 @@
         <link rel="stylesheet" href="{{ asset('css/styleluis.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('slider/css/styleslider.css') }}">
+        <link rel="stylesheet" href="{{ asset('slider/css/swiper-bundle.min.css') }}">
+
         <link rel="stylesheet" href="style">
         <title>Product Market</title>
         @yield ('style')
@@ -35,45 +38,67 @@
         </header>
 
         <div class="boton">
-            <a style="color: #000000" href="/novedades"><strong>Volver </strong></a>
+            <a style="color: #000000" href="{{ route('verproductos.show', $categoria->idcategoria) }}"><strong>Volver </strong></a>
         </div>
+        @php
+            $id = $producto->idproducto;
+        @endphp
 
+        <form action="{{ route('addcarrito', $id) }}" method="POST">
+            @csrf
+            <div class="container">
+                <div class="card-container">
 
-        <div class="container">
-            <div class="card-container">
+                    <div class="header">
+                        <a href="">
+                            <img src="{{ $producto->url }}" alt="">
+                        </a>
+                    </div>
+                    <div class="description">
+                        {{-- <h5><strong>{{ $producto->descripcion }}</strong></h5>
+                        <h5><span style="color: #7D7D7D">Antes Bs. <s>{{ $producto->precio }}</span></s> / <strong>Ahora Bs. {{ $producto->preciodesc }}</strong></h4>
+                        <h5><strong>Oferta hasta: {{ $producto->fechafin }}</strong></h5>
+                        <h5><span style="color: #7D7D7D">Fecha de venc: {{ $producto->fechaven }}</span></h5>
+                        <h5><span style="color: #7D7D7D">Stock: {{ $producto->stock }}</span></h5>
+                        <hr class="separador">
+                        <h5><strong>{{ $negocio->nombre }}</strong></h5>
+                        <h5><strong>{{ $negocio->direccion }}</strong></h5>
+                        <h5><span style="color: #7D7D7D">Horario: {{ $negocio->horarioinicio }} - {{ $negocio->horariofin }}</span> </h5>
+                        
+                        <div class="botonCarrito">
+                            <button type="submit" class="btn btn-dark fs-5 btn-lg" style="font-size: 40px">Agregar al Carrito</button>
+                        </div> --}}
 
-                <div class="header">
-                    <a href="">
-                        <img src="{{ $producto->url }}" alt="">
-                    </a>
+                        <h5>{{ $producto->descripcion }}</h5>
+                        <h5><span style="color: #7D7D7D">Antes Bs. <s>{{ $producto->precio }}</span></s> / Ahora Bs.
+                            {{ $producto->preciodesc }}</h4>
+                            <h5>Oferta hasta: {{ $producto->fechafin }}</h5>
+                            <h5><span style="color: #7D7D7D">Fecha de venc: {{ $producto->fechaven }}</span></h5>
+                            <h5><span style="color: #7D7D7D">Stock: {{ $producto->stock }}</span></h5>
+                            <hr class="separador">
+                            <h5>{{ $negocio->nombre }}</h5>
+                            <h5>{{ $negocio->direccion }}</h5>
+                            <h5><span style="color: #7D7D7D">Horario: {{ $negocio->horarioinicio }} -
+                                    {{ $negocio->horariofin }}</span> </h5>
+
+                            <div class="botonCarrito">
+                                <button type="submit" class="btn btn-dark fs-5 btn-lg" style="font-size: 40px">Agregar al
+                                    Carrito</button>
+                            </div>
+                    </div>
                 </div>
-                <div class="description">
-                    <h3>{{ $producto->descripcion }}</h3>
-                    <h3>Antes Bs <s>{{ $producto->precio }}</s> / Ahora Bs {{ $producto->preciodesc }}</h3>
-                    <h3>Oferta hasta: {{ $producto->fechafin }}</h3>
-                    <h3>Fecha de venc: {{ $producto->fechaven }}</h3>
-                    <h3>Stock: {{ $producto->stock }}</h3>
-                    <h3>{{ $negocio->nombre }}</h3>
-                    <h3>{{ $negocio->direccion }}</h3>
-                    <h3>Horario: {{ $negocio->horarioinicio }} - {{ $negocio->horariofin }}</h3>
-                    <button type="submit" class="btn btn-dark fs-5 btn-lg" style="">Agregar al Carrito</button>
-                    <div class="producto">
 
-                    </div>
-                    <div class="categoria">
-
-                    </div>
-                    <div class="boton">
-
-                    </div>
-                </div>
             </div>
+        </form>
 
-        </div>
+
+
 
 
     </body>
 
+    <script src="{{ asset('slider/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('slider/js/script.js') }}"></script>
 
     </html>
 

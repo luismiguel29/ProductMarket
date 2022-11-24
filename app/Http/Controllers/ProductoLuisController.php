@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carrito;
 use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\DatosNegocio;
@@ -37,9 +38,14 @@ class ProductoLuisController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        
+        $carrito = new Carrito;
+        $carrito->idproducto = $id;
+        $carrito->cantidad = 1;
+        $carrito->idusuario = 1;
+        $carrito->save();
+        return back();
     }
 
     /**
