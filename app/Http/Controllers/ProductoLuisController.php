@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use App\Models\Categoria;
+use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -47,11 +48,12 @@ class ProductoLuisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($idproducto, $idcategoria)
+    public function show($idproducto)
     {
         $producto = Producto::where('idproducto', $idproducto)->first();
-        $categoria= Categoria::where('idcategoria',$idcategoria)->first();
-        return view('/Cliente/informacionproducto', compact('producto', 'categoria'));
+        $categoria= Categoria::where('idcategoria',$producto->id_categoria)->first();
+        $negocio = DatosNegocio::where('idnegocio', $producto->id_negocio)->first();
+        return view('/Cliente/informacionproducto', compact('producto', 'categoria', 'negocio'));
         //return [$producto, $categoria];
     }
 
