@@ -63,13 +63,15 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Producto</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  ¿Esta seguro de eliminar este producto?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-dark">Eliminar</button>
-                </div>
+                <form action="{{ route('eliminarProductos') }}" method="post">
+                  <div class="modal-body">
+                    ¿Esta seguro de eliminar este producto?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-dark">Eliminar</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
