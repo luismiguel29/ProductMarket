@@ -45,7 +45,7 @@
                 @endif
                 </td>
               <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
-              
+              <td><a class="btn"><i data-feather="edit"></i></a>
             </tr>
             @endforeach
 
