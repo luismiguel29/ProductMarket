@@ -183,6 +183,9 @@
                           if(image !=""){
                             document.getElementById ("uno").src= image
                         }
+                        function preview() {
+                            document.getElementById ("uno").src= URL.createObjectURL(event.target.files[0]);
+                        }
                         </script>
                 </div>
             </div>
