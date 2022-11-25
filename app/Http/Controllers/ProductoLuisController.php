@@ -19,7 +19,6 @@ class ProductoLuisController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -40,12 +39,17 @@ class ProductoLuisController extends Controller
      */
     public function store(Request $request, $id)
     {
-        $carrito = new Carrito;
-        $carrito->idproducto = $id;
-        $carrito->cantidad = 1;
-        $carrito->idusuario = 1;
-        $carrito->save();
-        return back();
+        $verprod = Carrito::where('idproducto', $id)->exists();
+        if ($verprod) {
+            return back()->with('alerta', 'El producto ya se encuentra en el carrito, agregue otro producto!');
+        } else {
+            $carrito = new Carrito;
+            $carrito->idproducto = $id;
+            $carrito->cantidad = 1;
+            $carrito->idusuario = 1;
+            $carrito->save();
+            return back()->with('mensaje', 'El producto se agrego correctamente al carrito!');
+        }
     }
 
     /**
@@ -57,7 +61,7 @@ class ProductoLuisController extends Controller
     public function show($idproducto)
     {
         $producto = Producto::where('idproducto', $idproducto)->first();
-        $categoria= Categoria::where('idcategoria',$producto->id_categoria)->first();
+        $categoria = Categoria::where('idcategoria', $producto->id_categoria)->first();
         $negocio = DatosNegocio::where('idnegocio', $producto->id_negocio)->first();
         return view('/Cliente/informacionproducto', compact('producto', 'categoria', 'negocio'));
         //return [$producto, $categoria];
@@ -99,6 +103,5 @@ class ProductoLuisController extends Controller
 
     public function ejemplo()
     {
-        
     }
 }

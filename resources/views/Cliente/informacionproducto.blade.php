@@ -38,8 +38,22 @@
         </header>
 
         <div class="boton">
-            <a style="color: #000000" href="{{ route('verproductos.show', $categoria->idcategoria) }}"><strong>Volver </strong></a>
+            <a style="color: #000000" href="{{ route('verproductos.show', $categoria->idcategoria) }}"><strong>Volver</strong></a>
+            {{-- <a style="color: #000000" href="{{ url()->previous() }}"><strong>Volver</strong></a> --}}
+            @if (session('alerta'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert" style="width: 100%">
+                    <strong>{{ session('alerta') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session('mensaje'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="width: 100%">
+                    <strong>{{ session('mensaje') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         </div>
+
         @php
             $id = $producto->idproducto;
         @endphp
@@ -70,7 +84,7 @@
                         </div> --}}
 
                         <h5>{{ $producto->descripcion }}</h5>
-                        <h5><span style="color: #7D7D7D">Antes Bs. <s>{{ $producto->precio }}</span></s> / Ahora Bs.
+                        <h5><span style="color: #7D7D7D">Antes Bs. <s >{{ $producto->precio }}</s></span> / Ahora Bs.
                             {{ $producto->preciodesc }}</h4>
                             <h5>Oferta hasta: {{ $producto->fechafin }}</h5>
                             <h5><span style="color: #7D7D7D">Fecha de venc: {{ $producto->fechaven }}</span></h5>

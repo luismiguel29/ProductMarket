@@ -96,7 +96,7 @@
                                     <div class=" row {{-- row-cols-1 --}} g-5">
                                         @foreach ($item as $item1)
                                             <div class="col-12 col-md-6 col-lg-4 ">
-                                                <div class="card h-100" {{-- style="width: 15rem; " --}}>
+                                                <a style="text-decoration: none; color: black" href="{{ route('info', $item1->idproducto) }}" class="card h-100" {{-- style="width: 15rem; " --}}>
                                                     <div class="card-header c-header">
                                                         <h5 class="text-center" style="color: white">SUPER OFERTA</h5>
                                                     </div>
@@ -114,7 +114,7 @@
                                                             <s>Bs.{{ $item1->precio }}</s></span>
                                                         <span>Ahora <strong>Bs.{{ $item1->preciodesc }}</strong></span>
                                                     </div>
-                                                </div>
+                                                </a>
                                             </div>
                                         @endforeach
                                     </div>
