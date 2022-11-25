@@ -99,6 +99,12 @@ class ProductoVilmaController extends Controller
         $validator = Validator::make($request->all(), [
             'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
         ]);
+
+        if ($validator->fails()) {
+            return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+        } else {
+            $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+        }
     }
 
     /**
