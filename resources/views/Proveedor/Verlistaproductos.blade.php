@@ -45,9 +45,10 @@
                 @endif
                 </td>
               <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
-              <td><a class="btn"><i data-feather="edit"></i></a>
-                <button class="btn"><i data-feather="trash-2" ></i></button></td>
-                
+              <div class="d-flex justify-content-between align-items-start">
+                  <td><a class="btn"><i data-feather="edit"></i></a>
+                    <button class="btn"><i data-feather="trash-2" ></i></button></td>
+              </div> 
 
             </tr>
             @endforeach
@@ -64,9 +65,7 @@
 
       <div class="d-flex justify-content-between align-items-start">
         <div style="width:70px"></div>{!!$productos->links()!!}
-        <div class="d-flex justify-content-between align-items-start">
-            <a type="button" href="{{route('paginaprincipal')}}" class="btn btn-dark fs-5" style="width: 70px; height:38px">Salir</a>
-        </div>
+        <a type="button" href="{{route('paginaprincipal')}}" class="btn btn-dark fs-5" style="width: 70px; height:38px">Salir</a>
       </div>
 
     </div>
