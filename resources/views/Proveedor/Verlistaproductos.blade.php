@@ -45,10 +45,10 @@
                 @endif
                 </td>
               <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
-              <div class="d-flex justify-content-evenly align-items-star">
+              
                   <td><a href="{{route('editarProductos',['id'=>$producto->idproducto])}}" class="btn"><i data-feather="edit"></i></a>
                     <button class="btn delete-btn" data-bs-toggle="modal" data-id="{{$producto->idproducto}}" data-bs-target="#deleteModal"><i data-feather="trash-2" ></i></button></td>
-              </div> 
+              
 
             </tr>
             @endforeach
@@ -101,7 +101,7 @@
 
           let id = $(this).attr('data-id');
               $('#id').val(id);
-              
+
         });
     });
   </script>
