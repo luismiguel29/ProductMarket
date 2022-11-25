@@ -91,7 +91,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Precio ahora</label>
                                 <input type="number" step="any" class="form-control" name="preciodesc"
-                                    value="{{ old('preciodesc') }}" required="" id="pahora" min="1"
+                                    value="{{isset($producto)? $producto->preciodesc: old('preciodesc') }}" required="" id="pahora" min="1"
                                     max="1000">
                             </div>
 
