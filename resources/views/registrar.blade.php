@@ -75,7 +75,7 @@
                                 @endif
                                 <label for="" class="form-label">Nombre del producto</label>
                                 <input class="form-control" name="nombreprod" required="" id="categoria"
-                                    type="text" value="{{isset($producto)? producto->nombre: old('nombreprod') }}"
+                                    type="text" value="{{isset($producto)? $producto->nombre: old('nombreprod') }}"
                                     onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) )"
                                     minlength="3" maxlength="50">
                             </div>
