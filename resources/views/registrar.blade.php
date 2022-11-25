@@ -143,7 +143,7 @@
                                 <label for="floatingTextarea2">Descripción</label>
                                 <textarea class="form-control" placeholder="Descripción general del producto" name="descripprod" required=""
                                     id="descripcion" pattern="[a-zA-Z]{3,50}" minlength="3" maxlength="50" style="height: 100px"
-                                    onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) || (event.charCode >= 48 && event.charCode <= 57)|| (event.charCode == 164) || (event.charCode == 165)|| (event.charCode == 239))"></textarea>
+                                    onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) || (event.charCode >= 48 && event.charCode <= 57)|| (event.charCode == 164) || (event.charCode == 165)|| (event.charCode == 239))">{{isset($producto)? $producto->descripcion:''}}</textarea>
                             </div>
 
 
