@@ -80,7 +80,11 @@ class ProductoVilmaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $producto =Producto::find($id);
+        $categoria = DB::table('categoria')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        return view('registrar', compact('producto', 'categoria'));
     }
 
     /**
