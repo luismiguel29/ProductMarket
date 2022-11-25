@@ -178,6 +178,9 @@
 
                         </form>
                         <!--<button type="submit" class="btn btn-secondary botton2">Cancelar</button>-->
+                        <script>
+                          var image="{{isset($producto)? $producto->url:''}}"   
+                        </script>
                 </div>
             </div>
         </div>
