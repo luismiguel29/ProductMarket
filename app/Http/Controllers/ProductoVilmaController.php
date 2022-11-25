@@ -104,6 +104,23 @@ class ProductoVilmaController extends Controller
             return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         } else {
             $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+            
+          $producto = Producto::find($id);
+                $producto->id_categoria = $request->input('categoria');
+                $producto->id_negocio = 1;
+                $producto->nombre = $request->input('nombreprod');
+                $producto->precio = $request->input('precio');
+                $producto->preciodesc = $request->input('preciodesc');
+                $producto->stock = $request->input('stockprod');
+                $producto->fechaven = $request->input('fechavenprod');
+                $producto->fechainicio = $request->input('fechainiciopromo');
+                $producto->fechafin = $request->input('fechafinpromo');
+                $producto->descripcion = $request->input('descripprod');
+                $producto->url = $url;
+                $producto->save();
+                return redirect('categoria')->with('message', '¡Edicion de datos exitoso!!!!!!!');
+        
+        
         }
     }
 
