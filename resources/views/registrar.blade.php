@@ -111,7 +111,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha inicio promo</label>
                                 <input type="date" class="form-control" name="fechainiciopromo" max="2023-01-22"
-                                    value="{{ old('fechainiciopromo') }}" required=""
+                                    value="{{isset($producto)? $producto->fechainicio: old('fechainiciopromo') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
                                     echo $hoy; ?> id="fvenc">
                             </div>
