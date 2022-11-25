@@ -104,3 +104,4 @@ Route::delete('/eliminarProducto',[ProductoVilmaController::class,'destroy'])->n
 Route::post('/producto/{id}',[ProductoVilmaController::class,'update'])->name('producto.update');
 
 
+
