@@ -67,7 +67,7 @@
                   <div class="modal-body">
                     @csrf
                     @method('delete')
-                    
+                    <input id="id" name="id" hidden>
                     ¿Esta seguro de eliminar este producto?
                   </div>
                   <div class="modal-footer">
