@@ -119,8 +119,6 @@ class ProductoVilmaController extends Controller
                 $producto->url = $url;
                 $producto->save();
                 return redirect('categoria')->with('message', '¡Edicion de datos exitoso!!!!!!!');
-        
-        
         }
     }
 
