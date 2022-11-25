@@ -72,7 +72,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-dark">Eliminar</button>
+                    <button  class="btn btn-dark">Eliminar</button>
                   </div>
                 </form>
               </div>
