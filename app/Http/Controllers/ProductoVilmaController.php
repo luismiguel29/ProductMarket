@@ -18,7 +18,7 @@ class ProductoVilmaController extends Controller
      */
     public function index(Request $request)
     {
-        $productos = Producto::join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.nombre', 'producto.precio','producto.preciodesc','producto.stock','categoria.nombre as catnombre','producto.fechainicio','producto.fechafin','producto.url') -> orderBy('nombre','ASC')->paginate(5);
+        $productos = Producto::join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.idproducto', 'producto.nombre', 'producto.precio','producto.preciodesc','producto.stock','categoria.nombre as catnombre','producto.fechainicio','producto.fechafin','producto.url') -> orderBy('nombre','ASC')->paginate(5);
         return view('Proveedor.Verlistaproductos', compact('productos'));
         
     }
