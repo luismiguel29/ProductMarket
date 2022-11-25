@@ -96,7 +96,9 @@
   </div>
   <script>
     $(document).ready(function(){
-      
+      $('.delete-btn').on('click', function(){
+        
+      });
     })
   </script>
 
