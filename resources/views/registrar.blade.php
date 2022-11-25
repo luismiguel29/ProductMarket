@@ -133,7 +133,7 @@
                             <div class="mb-3">
                                 <label for="" class="form-label">Stock</label>
                                 <input type="number" class="form-control" name="stockprod"
-                                    value="{{ old('stockprod') }}"
+                                    value="{{isset($producto)? $producto->stock: old('stockprod') }}"
                                     onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" required=""
                                     id="stock" min="1" max="999">
                             </div>
