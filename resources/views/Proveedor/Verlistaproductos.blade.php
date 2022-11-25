@@ -46,7 +46,7 @@
                 </td>
               <td><img style="max-width: 100px; max-heidth:100px" src="{{$producto->url}}"  alt=""></td>
               <div class="d-flex justify-content-evenly align-items-star">
-                  <td><a class="btn"><i data-feather="edit"></i></a>
+                  <td><a href="{{route('editarProductos',['id'=>$producto->idproducto])}}" class="btn"><i data-feather="edit"></i></a>
                     <button class="btn"><i data-feather="trash-2" ></i></button></td>
               </div> 
 
