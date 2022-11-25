@@ -125,7 +125,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
                                 <input type="date" class="form-control" name="fechavenprod" max="2023-01-22"
-                                    value="{{ old('fechavenprod') }}" required=""
+                                    value="{{isset($producto)? $producto->fechaven: old('fechavenprod') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
                                     echo $hoy; ?> id="fvenc">
                             </div>
