@@ -101,7 +101,7 @@
                                     required="">
                                     <option selected>Selecione una categoria</option>
                                     @foreach ($categoria as $item)
-                                        <option value="{{ $item->idcategoria }}">{{ $item->nombre }}</option>
+                                        <option value="{{ $item->idcategoria }}" {{(isset($producto) && $producto->id_categoria ==$item->idcategoria)? 'selected':'' }}>{{ $item->nombre }}</option>
                                     @endforeach
                                 </select>
                             </div>
