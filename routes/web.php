@@ -101,5 +101,6 @@ Route::resource('/listanegocio',ListanegociosController::class);
 
 Route::get('/editarProducto/{id}', [ProductoVilmaController::class,'edit'])->name('editarProductos');
 Route::delete('/eliminarProducto',[ProductoVilmaController::class,'destroy'])->name('eliminarProductos');
+Route::post('/producto/{id}',[ProductoVilmaController::class,'update'])->name('producto.update');
 
 
