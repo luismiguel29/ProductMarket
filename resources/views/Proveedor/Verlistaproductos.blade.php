@@ -97,7 +97,8 @@
   <script>
     $(document).ready(function(){
       $('.delete-btn').on('click', function(){
-        
+        let id = $(this).attr('data-id');
+             $('#id').val(id);
       });
     })
   </script>
