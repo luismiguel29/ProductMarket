@@ -65,6 +65,9 @@
                 </div>
                 <form action="{{ route('eliminarProductos') }}" method="post">
                   <div class="modal-body">
+                    @csrf
+                    @method('delete')
+                    
                     ¿Esta seguro de eliminar este producto?
                   </div>
                   <div class="modal-footer">
