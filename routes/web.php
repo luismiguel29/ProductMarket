@@ -100,5 +100,6 @@ Route::resource('informacion', ProductoLuisController::class);
 Route::resource('/listanegocio',ListanegociosController::class);
 
 Route::get('/editarProducto/{id}', [ProductoVilmaController::class,'edit'])->name('editarProductos');
+Route::delete('/eliminarProducto',[ProductoVilmaController::class,'destroy'])->name('eliminarProductos');
 
 
