@@ -10,7 +10,7 @@
 
             <div class="card-body text-dark card-custom-p">
     
-                <form action="{{route('datosNego.store')}}" method="post" class="row g-3" id="formulario"> <!--mt-3-->
+                <form action="{{route('datosNego.store')}}" method="post" class="row g-3" id="formulario" enctype="multipart/form-data"> <!--mt-3-->
                     @csrf
                     <h5 class="text-center fs-5">Registro del negocio</h5>
 
@@ -25,6 +25,13 @@
                     @if (session('message')) 
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <strong>{{ session('message') }}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
+                    @if (session('alerta')) 
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>{{ session('alerta') }}</strong>
                             <button type="button" class="btn-close" data-bs-dismiss="alert"
                                 aria-label="Close"></button>
                         </div>
@@ -57,6 +64,14 @@
                         <input type="tel" name="celular" class="form-control" id="" value="{{ old('celular') }}" required 
                                 onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" 
                                 minlength="8" maxlength="8" pattern="^[6|7]\d{7}$">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Logo del negocio</label>
+
+                        <input type="file" class="form-control" name="url" required="" onchange="preview()"
+                            id="url_img" accept="image/*">
+                            <img style="max-width:200px"src="" alt="" id="uno"/>
                     </div>
 
                     <div class="d-flex justify-content-evenly">

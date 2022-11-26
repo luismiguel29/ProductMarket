@@ -43,7 +43,7 @@
                                     <div class="card-header" style="background-color: #FF0000" >
                                         <div style="color: #FF0000"><strong>l</strong></div>
                                     </div>
-                                    {{-- <img class="card-img-top" src="{{$dato->url}}" alt="Card image cap"> --}}
+                                    <img class="card-img-top" src="{{$dato->url}}" alt="Card image cap">
                                     <div class="card-body">
                                     <p class="card-text"><strong>{{$dato->nombre}}</strong></p>
                                     <p class="card-text">{{$dato->direccion}}</p>
