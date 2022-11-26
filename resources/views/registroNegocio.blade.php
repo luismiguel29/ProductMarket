@@ -2,6 +2,9 @@
 
 @section('content')
     <!--d-flex justify-content-center align-items-center-->
+
+    <h1>sdfsdfsg</h1>
+
     <div class="d-flex justify-content-around" style="padding-top: 52px;">
 
         <div class="card mb-5" style="width: 25rem;">
