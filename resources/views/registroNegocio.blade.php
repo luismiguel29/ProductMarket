@@ -77,9 +77,6 @@
 
     </div>
 
-
-    <h1>sdfsdfsg</h1>
-
 @endsection
 
 
