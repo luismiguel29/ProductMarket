@@ -18,7 +18,7 @@ class NegocioAnd extends Controller
      */
     public function index(Request $request)
     {
-        $x = DatosNegocio::all();
+        $x = DatosNegocio::count();
         return $x;
 
         //$texto=trim($request->get('texto'));
