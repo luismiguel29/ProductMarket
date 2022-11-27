@@ -16,6 +16,9 @@ class NegocioAnd extends Controller
      */
     public function index(Request $request)
     {
+        $x = DatosNegocio::all();
+        return $x;
+
         //$texto=trim($request->get('texto'));
 
         //$datos=DatosNegocio::all();
