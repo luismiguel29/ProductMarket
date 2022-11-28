@@ -30,9 +30,14 @@ class CarritoController extends Controller
     }
 
     
-    public function destroy($idcarrito){
+    /*public function destroy($idcarrito){
         $carrito = CarritoModel::findOrFail($idcarrito);
         $carrito->delete();
+        return redirect()->route(('carrito.index')); 
+    }*/
+
+    public function destroy($idcarrito){
+        CarritoModel::truncate();
         return redirect()->route(('carrito.index')); 
     }
 
