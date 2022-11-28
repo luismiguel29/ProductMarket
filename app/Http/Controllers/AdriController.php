@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\adriLista;
 use Illuminate\Http\Request;
 
 class AdriController extends Controller
@@ -13,7 +13,9 @@ class AdriController extends Controller
      */
     public function index()
     {
-        //
+        $datos = adriLista::all();
+        /* return $datos; */
+        return view('Cliente.vistaadri', compact('datos'));
     }
 
     /**
@@ -34,7 +36,12 @@ class AdriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dato = new adriLista;
+            $dato->email = $request->input('nombre');
+            $dato->password = $request->input('contraseña');
+            
+            //$x = $request->input('contraseña');
+            //return $request(); 
     }
 
     /**
