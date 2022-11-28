@@ -12,7 +12,7 @@ class CarritoController extends Controller
     public function index() 
     { 
         $carros = CarritoModel::all(); 
- 
+
         $auxarr = array(); 
         $total = 0; 
         foreach ($carros as $carro) { 
@@ -26,8 +26,7 @@ class CarritoController extends Controller
             $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
         }
         
-       return view('/carrito', compact('auxarr', 'total','carros'));
-       //return $auxarr;
+        return view('/carrito', compact('auxarr', 'total','carros'));
     }
 
     
@@ -51,6 +50,15 @@ class CarritoController extends Controller
         $aux->save();
         return back(); 
     }
-   
-   
+
+    public function eliminarProducto($idcarrito){
+        $carrito = CarritoModel::findOrFail($idcarrito);
+        $carrito->delete();
+        return redirect()->route(('carrito.index')); 
+    }
+
+    public function finCompra(){
+        CarritoModel::truncate();
+        return redirect()->route(('carrito.index')); 
+    }
 }

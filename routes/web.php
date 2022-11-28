@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\NegocioAnd;
+use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\ProductoLuisController;
 use App\Http\Controllers\ListanegociosController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\AdriController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -95,9 +97,7 @@ Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class
 Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
 
-Route::get('/registroNegocio', function () {
-    return view('registroNegocio');
-});
+Route::resource('/registroNegocio',RegistroController::class);
 
 
 
@@ -118,6 +118,7 @@ Route::post('/producto/{id}',[ProductoVilmaController::class,'update'])->name('p
 
 Route::resource('/carrito',CarritoController::class);
 
-
 Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class,'incrementarCantidad'])->name("incrementarCantidad");
 Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class,'decrementarCantidad'])->name("decrementarCantidad");
+Route::get('/eliminar/{id}', [App\Http\Controllers\CarritoController::class,'eliminarProducto'])->name("eliminarProducto");
+Route::get('/endC', [App\Http\Controllers\CarritoController::class,'finCompra'])->name("finCompra");

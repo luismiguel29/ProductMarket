@@ -71,12 +71,16 @@
                                             style="text-decoration: none;color:black"></a>
 
 
-                                        <form action="{{ route('carrito.destroy', $item->idcarrito) }}" method="post">
+                                        <!--<form action="{{ route('carrito.destroy', $item->idcarrito) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="fa-solid fa-trash fa-2x" value="Eliminar"
                                                 style="border:none"> </button>
-                                        </form>
+                                        </form>-->
+
+                                        <a href="/eliminar/{{ $item->idcarrito }}"
+                                            class="fa-solid fa-trash fa-2x"
+                                            style="text-decoration: none;color:black"></a>
 
                                     </div>
                                 </div>
@@ -93,10 +97,16 @@
                 <h5><strong>TOTAL</strong></h5>
                 <H5><strong>Bs. {{ $total }}</strong></H5>
             </div>
-            <div class="botonCompra">
+            <!--<div class="botonCompra">
                 <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
                     style="font-size: 60px" --}}>Finalizar Compra</button>
-            </div>
+            </div>-->
+
+            <a href="/endC"
+                class="btn btn-dark fs-5 {{-- btn-block --}}"
+                style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
+
+            
         </div>
 
     </div>

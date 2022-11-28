@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
-use App\Models\CarritoModel;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,23 +18,18 @@ class NegocioAnd extends Controller
      */
     public function index(Request $request)
     {
-        $carros = CarritoModel::all(); 
-        $auxarr = array(); 
-        $total = 0; 
-        foreach ($carros as $carro) { 
-            $producto = Producto::find($carro->idproducto);
-            $producto->cantidad = ($carro->cantidad);
-            $producto->idcarrito = ($carro->idcarrito);
-            json_encode($producto);
+        //$texto=trim($request->get('texto'));
 
-            array_unshift($auxarr, $producto); 
-            
-            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
-        }
+        //$datos=DatosNegocio::all();
+        //$datos=DB::table('negocio')
+        //     ->select('idnegocio', 'nombre', 'direccion', 'horarioinicio', 'horariofin', 'telefono');
 
+        //return $datos;
 
         $dato = DatosNegocio::findOrFail(1);
-        return view('editar', compact('dato', 'auxarr', 'total'));
+        //return $dato;
+        //return view('editar',compact('datos'));
+        return view('editar', compact('dato'));
     }
 
     /**
@@ -57,8 +50,9 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
-            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=400,min_height=400,max_width=500,max_height=500',
+            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
         ]);
 
         $nombre = DatosNegocio::select('*')
@@ -66,7 +60,7 @@ class NegocioAnd extends Controller
             ->exists();
 
         if($validator->fails()){
-            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 400x400 o 500x500')->withInput();
+            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         }else if ($nombre) {
             return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {
@@ -96,8 +90,9 @@ class NegocioAnd extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
+        //
     }
 
     /**
@@ -122,13 +117,12 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $validator = Validator::make($request->all(), [
-            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=400,min_height=400,max_width=500,max_height=500',
+            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
         ]);
 
         if($validator->fails()){
-            return redirect('datosNego')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 400x400 o 500x500')->withInput();
+            return redirect('datosNego')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         }else if ($request->input('horario1') < $request->input('horario2')) {
             $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
             $datoup = DatosNegocio::findOrFail($id);
