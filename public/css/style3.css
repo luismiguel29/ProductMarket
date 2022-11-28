@@ -48,7 +48,7 @@ body{
 }
 
 
-.col .card-body{
+.col .card .card-body{
     white-space:nowrap;
 }
 
