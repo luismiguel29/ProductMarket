@@ -106,13 +106,6 @@
                 class="btn btn-dark fs-5 {{-- btn-block --}}"
                 style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
 
-            <form action="{{ route(finCompra) }}" method="post">
-                @csrf
-                @method('PUT')
-                <button type="submit" class="btn btn-dark fs-5" style="width: 300px"
-                    style="font-size: 60px">Finalizar Compra</button>
-            </form>
-
             
         </div>
 
