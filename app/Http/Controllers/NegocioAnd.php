@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
+use App\Models\CarritoModel;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,18 +20,23 @@ class NegocioAnd extends Controller
      */
     public function index(Request $request)
     {
-        //$texto=trim($request->get('texto'));
+        $carros = CarritoModel::all(); 
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $producto->cantidad = ($carro->cantidad);
+            $producto->idcarrito = ($carro->idcarrito);
+            json_encode($producto);
 
-        //$datos=DatosNegocio::all();
-        //$datos=DB::table('negocio')
-        //     ->select('idnegocio', 'nombre', 'direccion', 'horarioinicio', 'horariofin', 'telefono');
+            array_unshift($auxarr, $producto); 
+            
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
 
-        //return $datos;
 
         $dato = DatosNegocio::findOrFail(1);
-        //return $dato;
-        //return view('editar',compact('datos'));
-        return view('editar', compact('dato'));
+        return view('editar', compact('dato', 'auxarr', 'total'));
     }
 
     /**
@@ -50,7 +57,6 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'url' => 'required|image|mimes:png,jpg|dimensions:min_width=400,min_height=400,max_width=500,max_height=500',
         ]);
@@ -90,9 +96,8 @@ class NegocioAnd extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
     }
 
     /**
@@ -117,6 +122,7 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make($request->all(), [
             'url' => 'required|image|mimes:png,jpg|dimensions:min_width=400,min_height=400,max_width=500,max_height=500',
         ]);
