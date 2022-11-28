@@ -18,10 +18,23 @@ class AdriController extends Controller
      */
     public function index()
     {
+      //-----------------------------------------------------
+      $carros = CarritoModel::all(); 
+      $auxarr = array(); 
+      $total = 0; 
+      foreach ($carros as $carro) { 
+          $producto = Producto::find($carro->idproducto);
+          $producto->cantidad = ($carro->cantidad);
+          $producto->idcarrito = ($carro->idcarrito);
+          json_encode($producto);
+          array_unshift($auxarr, $producto);             
+          $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+      }
+      //-----------------------------------------------------
 
         $datos = DB::table('negocio');
         /* return $datos; */
-        return view('Cliente.vistaadri'); 
+        return view('Cliente.vistaadri', compact('auxarr', 'total')); 
     }
 
     /**
