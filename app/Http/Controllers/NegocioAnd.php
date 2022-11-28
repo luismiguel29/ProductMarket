@@ -20,18 +20,23 @@ class NegocioAnd extends Controller
      */
     public function index(Request $request)
     {
-        //$texto=trim($request->get('texto'));
+        $carros = CarritoModel::all(); 
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $producto->cantidad = ($carro->cantidad);
+            $producto->idcarrito = ($carro->idcarrito);
+            json_encode($producto);
 
-        //$datos=DatosNegocio::all();
-        //$datos=DB::table('negocio')
-        //     ->select('idnegocio', 'nombre', 'direccion', 'horarioinicio', 'horariofin', 'telefono');
+            array_unshift($auxarr, $producto); 
+            
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
 
-        //return $datos;
 
         $dato = DatosNegocio::findOrFail(1);
-        //return $dato;
-        //return view('editar',compact('datos'));
-        return view('editar', compact('dato'));
+        return view('editar', compact('dato', 'auxarr', 'total'));
     }
 
     /**
