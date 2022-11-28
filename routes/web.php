@@ -121,4 +121,4 @@ Route::resource('/carrito',CarritoController::class);
 Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class,'incrementarCantidad'])->name("incrementarCantidad");
 Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class,'decrementarCantidad'])->name("decrementarCantidad");
 Route::get('/eliminar/{id}', [App\Http\Controllers\CarritoController::class,'eliminarProducto'])->name("eliminarProducto");
-Route::put('/endC', [App\Http\Controllers\CarritoController::class,'finCompra'])->name("finCompra");
+Route::get('/endC', [App\Http\Controllers\CarritoController::class,'finCompra'])->name("finCompra");
