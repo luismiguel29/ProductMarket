@@ -64,7 +64,7 @@ class NegocioAnd extends Controller
         }else if ($nombre) {
             return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {
-            $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+            $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
             $dato = new DatosNegocio;
             $dato->nombre = $request->input('nombre');
             $dato->direccion = $request->input('direccion');
