@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
+use App\Models\CarritoModel;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -50,7 +52,6 @@ class NegocioAnd extends Controller
      */
     public function store(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'url' => 'required|image|mimes:png,jpg|dimensions:min_width=400,min_height=400,max_width=500,max_height=500',
         ]);
@@ -90,9 +91,8 @@ class NegocioAnd extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
     }
 
     /**
@@ -117,6 +117,7 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $validator = Validator::make($request->all(), [
             'url' => 'required|image|mimes:png,jpg|dimensions:min_width=400,min_height=400,max_width=500,max_height=500',
         ]);

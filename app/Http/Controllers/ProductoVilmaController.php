@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
+use App\Models\CarritoModel;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -67,9 +68,22 @@ class ProductoVilmaController extends Controller
      */
     public function show($category)
     {
+
+        $carros = CarritoModel::all();  
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $producto->cantidad = ($carro->cantidad);
+            $producto->idcarrito = ($carro->idcarrito);
+            json_encode($producto);
+            array_unshift($auxarr, $producto);             
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
+
         $productos = Producto::where('id_categoria', $category)->orderBy('nombre','ASC')->paginate(8);
         $categoryName= Categoria::where('idcategoria',$category)->first();
-        return view('/Cliente/listarefrescos', compact('productos', 'categoryName'));
+        return view('/Cliente/listarefrescos', compact('productos', 'categoryName', 'auxarr', 'total'));
     }
 
     /**
