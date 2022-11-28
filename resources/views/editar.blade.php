@@ -66,6 +66,13 @@
                                     aria-label="Close"></button>
                             </div>
                         @endif
+                        @if (session('alerta'))
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>{{ session('alerta') }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
 
                         <!--pattern="[A-Z][A-Z,a-z, ,ñ,á,í,é,ó,ú]+"-->
                         <div class="mb-3">
@@ -103,6 +110,13 @@
                                 required="" pattern="^[6|7]\d{7}$" minlength="8" maxlength="8"
                                 autocomplete="" required value="{{ $dato->telefono }}"
                                 onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Logo del negocio</label>
+    
+                            <input type="file" class="form-control" name="url" required="" onchange="preview()"
+                                id="url_img" accept="image/*">
+                                <img style="max-width:200px"src="" alt="" id="uno"/>
                         </div>
 
                         <div class="d-flex justify-content-evenly ">

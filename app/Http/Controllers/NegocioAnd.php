@@ -60,7 +60,7 @@ class NegocioAnd extends Controller
             ->exists();
 
         if($validator->fails()){
-            return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         }else if ($nombre) {
             return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {
@@ -117,13 +117,21 @@ class NegocioAnd extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->input('horario1') < $request->input('horario2')) {
+        $validator = Validator::make($request->all(), [
+            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+        ]);
+
+        if($validator->fails()){
+            return redirect('datosNego')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+        }else if ($request->input('horario1') < $request->input('horario2')) {
+            $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
             $datoup = DatosNegocio::findOrFail($id);
             $datoup->nombre = $request->input('nombre');
             $datoup->direccion = $request->input('direccion');
             $datoup->horarioinicio = $request->input('horario1');
             $datoup->telefono = $request->input('telefono');
             $datoup->horariofin = $request->input('horario2');
+            $datoup->url = $url;
             $datoup->save();
             return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
         } else {
