@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\NegocioAnd;
+use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProductoVilmaController;
 use App\Http\Controllers\ProductoPruebaController;
 use App\Http\Controllers\CategoriaController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\NovedadesController;
 use App\Http\Controllers\ProductoLuisController;
 use App\Http\Controllers\ListanegociosController;
 use App\Http\Controllers\CarritoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -94,9 +96,7 @@ Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class
 Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
 
-Route::get('/registroNegocio', function () {
-    return view('registroNegocio');
-});
+Route::resource('/registroNegocio',RegistroController::class);
 
 Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');
 Route::post('/addcarrito/{id}', 'App\Http\Controllers\ProductoLuisController@store')->name('addcarrito');
