@@ -47,6 +47,12 @@ body{
 
 }
 
+
+.col .card-body{
+    white-space:nowrap;
+}
+
+
 .col .card:hover{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
