@@ -78,6 +78,10 @@
                                                 style="border:none"> </button>
                                         </form>
 
+                                        <a href="/eliminar/{{ $item->idcarrito }}"
+                                            class="fa-solid fa-trash fa-2x"
+                                            style="text-decoration: none;color:black"></a>
+
                                     </div>
                                 </div>
 
