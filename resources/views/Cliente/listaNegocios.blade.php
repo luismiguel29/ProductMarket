@@ -40,8 +40,8 @@
                             @foreach ( $datos as $dato )
                                 <div class="col" >
                                     <div class="card" style="width: 18rem;">
-                                    <div class="card-header" style="background-color: #FF0000" >
-                                        <div style="color: #FF0000"><strong>l</strong></div>
+                                    <div class="card-header" style="background-color: #000000" >
+                                        <div style="color: #000000"><strong>l</strong></div>
                                     </div>
                                     <img class="card-img-top" src="{{$dato->url}}" alt="Card image cap">
                                     <div class="card-body">
