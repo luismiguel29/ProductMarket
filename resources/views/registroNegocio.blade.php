@@ -92,6 +92,8 @@
 
     </div>
 
+    @extends('carrito')
+
 @endsection
 
 
