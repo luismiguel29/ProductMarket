@@ -27,6 +27,7 @@ class CarritoController extends Controller
         }
         
        return view('/carrito', compact('auxarr', 'total','carros'));
+       //return $auxarr;
     }
 
     
@@ -40,7 +41,8 @@ class CarritoController extends Controller
         $aux = CarritoModel::findOrFail($request->id); 
         $aux->increment('cantidad');
         $aux->save();
-        return redirect()->route(('carrito.index')); 
+        return back();
+        //return redirect()->route(('carrito.index')); 
     }
     
     public function decrementarCantidad(Request $request){

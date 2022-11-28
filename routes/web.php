@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\NovedadesController;
 use App\Http\Controllers\ProductoLuisController;
 use App\Http\Controllers\ListanegociosController;
+use App\Http\Controllers\CarritoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,10 @@ Route::get('/registrar', function () {
 
 Route::get('/Cliente/novedades', function () {
     return view('/Cliente/novedades');
+});
+
+Route::get('/templa', function () {
+    return view('/layouts/template');
 });
 
 Route::resource('/producto', ProductoController::class);
@@ -95,6 +100,7 @@ Route::get('/registroNegocio', function () {
 
 Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');
 Route::post('/addcarrito/{id}', 'App\Http\Controllers\ProductoLuisController@store')->name('addcarrito');
+Route::get('/car', 'App\Http\Controllers\ProductoLuisController@index')->name('car');
 Route::resource('informacion', ProductoLuisController::class);
 
 Route::resource('/listanegocio',ListanegociosController::class);
@@ -106,6 +112,7 @@ Route::post('/producto/{id}',[ProductoVilmaController::class,'update'])->name('p
 
 
 Route::resource('/carrito',CarritoController::class);
+
 
 Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class,'incrementarCantidad'])->name("incrementarCantidad");
 Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class,'decrementarCantidad'])->name("decrementarCantidad");
