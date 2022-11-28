@@ -27,6 +27,8 @@
                     <h5 class="text-center fs-5">Bienvenido a Product Market</h5>
 
                     <!--------------------------------------------------->
+                    
+                    
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             @foreach ($errors->all() as $error)
@@ -47,12 +49,13 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert"
                                 aria-label="Close"></button>
                         </div>
-                    @endif
+                    @endif 
+                    
                     <!--------------------------------------------------->
 
                     <div class="col-12">
-                        <label for="nombre" class="form-label">Correo Electronico</label>
-                        <input type="text" name="nombre" class="form-control" id="" value="" required  >
+                        <label for="email" class="form-label">Correo Electronico</label>
+                        <input type="text" name="email" class="form-control" id="" value="" required  >
                     </div>
 
                     <div class="col-12">
@@ -65,6 +68,8 @@
                         <button type="submit" class="btn btn-dark fs-10" style="width:140px">Iniciar Sesión</button>
                         <!--<a href="/novedades" type="submit"
                             class="btn btn-dark fs-5" style="width:140px">Guardar</a>-->
+                        <!--<a href="proveedor/paginaprincipal" type="submit"
+                            class="btn btn-dark fs-5" style="width:140px">Inci</a>-->
 
                     </div>
 
