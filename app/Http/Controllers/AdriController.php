@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 use App\Models\adriLista;
 use Illuminate\Http\Request;
+use Validator, Hash, Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use App\Models\CarritoModel;
+use App\Models\Producto;
 
 class AdriController extends Controller
 {
@@ -13,9 +18,10 @@ class AdriController extends Controller
      */
     public function index()
     {
-        $datos = adriLista::all();
+
+        $datos = DB::table('negocio');
         /* return $datos; */
-        return view('Cliente.vistaadri', compact('datos'));
+        return view('Cliente.vistaadri'); 
     }
 
     /**
@@ -37,11 +43,29 @@ class AdriController extends Controller
     public function store(Request $request)
     {
         $dato = new adriLista;
-            $dato->email = $request->input('nombre');
+            $dato->email = $request->input('email');
             $dato->password = $request->input('contraseña');
-            
-            //$x = $request->input('contraseña');
-            //return $request(); 
+         return redirect ('proveedor/paginaprincipal');
+        //$rules=[
+          //  'email' => 'required|email',
+            //'password' =>'required|max:8',
+         //];    
+         //$messages=[
+           //'email.required'=> 'Su correo electronico es requerido.',
+           //'email.email'=> 'El formato de su correo electronico es invalido.',
+           //'password.required'=> 'Por favor escriba una contraseña.',
+           //'password.max'=> 'La contraseña debe tener maximo 8 caracteres.',
+         //];
+         //$validator= Validator::make ($request->all(),  $messages);
+         //if($validator->fails()):
+           // return back()-> withErrors($validator)->with ('message', 'Se ha producido un error.')->with('typealert', 'danger');
+         //else:
+           // if(Auth::attempt(['email' => $request->input('email'),'password'=> $request->input('contraseña')], true)):
+            //return redirect ('proveedor/paginaprincipal');
+            //else:
+              //  return back()->with ('alerta', 'Se ha producido un error.')->with('typealert', 'danger');
+            //endif;
+        //endif;   
     }
 
     /**
