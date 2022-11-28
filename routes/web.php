@@ -11,6 +11,7 @@ use App\Http\Controllers\NovedadesController;
 use App\Http\Controllers\ProductoLuisController;
 use App\Http\Controllers\ListanegociosController;
 use App\Http\Controllers\CarritoController;
+use App\Http\Controllers\AdriController;
 
 
 /*
@@ -97,6 +98,10 @@ Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
 
 Route::resource('/registroNegocio',RegistroController::class);
+
+
+
+Route::resource('/login',AdriController::class);
 
 Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');
 Route::post('/addcarrito/{id}', 'App\Http\Controllers\ProductoLuisController@store')->name('addcarrito');
