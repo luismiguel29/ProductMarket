@@ -136,6 +136,8 @@
     </div>
 
     <div class="footer"></div>
+
+    @extends('carrito')
 </body>
 
 </html>
