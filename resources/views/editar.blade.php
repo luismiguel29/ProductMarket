@@ -42,11 +42,11 @@
         <div class="d-flex justify-content-around order-1 order-md-2" style="padding-top: 20px;">
 
             <div class="card mb-5" style="width: 25rem;">
-            
+
                 <div class="card-header" style="background:#FFD507; padding: 25px;"></div>
 
                 <div class="card-body text-dark card-custom-p">
-        
+
                     <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -112,8 +112,8 @@
                                 onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
                         </div>
                         <div class="mb-3">
-                            <label for="" class="form-label">Logo del negocio</label>
-    
+                            <label for="" class="form-label">Modificar Logo</label>
+
                             <input type="file" class="form-control" name="url" required="" onchange="preview()"
                                 id="url_img" accept="image/*">
                                 <img style="max-width:200px"src="" alt="" id="uno"/>
