@@ -71,12 +71,12 @@
                                             style="text-decoration: none;color:black"></a>
 
 
-                                        <form action="{{ route('carrito.destroy', $item->idcarrito) }}" method="post">
+                                        <!--<form action="{{ route('carrito.destroy', $item->idcarrito) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="fa-solid fa-trash fa-2x" value="Eliminar"
                                                 style="border:none"> </button>
-                                        </form>
+                                        </form>-->
 
                                         <a href="/eliminar/{{ $item->idcarrito }}"
                                             class="fa-solid fa-trash fa-2x"
@@ -101,6 +101,14 @@
                 <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
                     style="font-size: 60px" --}}>Finalizar Compra</button>
             </div>
+
+            <form action="{{ route('carrito.destroy', $item->idcarrito) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-dark fs-5" style="width: 300px"
+                    style="font-size: 60px">Finalizar Compra</button>
+            </form>
+
         </div>
 
     </div>
