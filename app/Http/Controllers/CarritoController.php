@@ -25,8 +25,6 @@ class CarritoController extends Controller
             
             $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
         }
-
-        CarritoModel::all()->delete(); 
         
         return view('/carrito', compact('auxarr', 'total','carros'));
     }
