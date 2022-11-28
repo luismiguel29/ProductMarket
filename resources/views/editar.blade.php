@@ -47,7 +47,7 @@
 
                 <div class="card-body text-dark card-custom-p">
         
-                    <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar">
+                    <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <h5 class="text-center fs-5">Editar datos del negocio</h5>
