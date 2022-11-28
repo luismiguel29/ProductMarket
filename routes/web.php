@@ -9,7 +9,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\NovedadesController;
 use App\Http\Controllers\ProductoLuisController;
 use App\Http\Controllers\ListanegociosController;
-
+use App\Http\Controllers\CarritoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
