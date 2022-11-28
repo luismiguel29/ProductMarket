@@ -102,13 +102,11 @@
                     style="font-size: 60px" --}}>Finalizar Compra</button>
             </div>
 
-            <form action="{{ route('carrito.destroy', $item->idcarrito) }}" method="post">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-dark fs-5" style="width: 300px"
-                    style="font-size: 60px">Finalizar Compra</button>
-            </form>
+            <a href="/endC"
+                class="btn btn-dark fs-5 {{-- btn-block --}}"
+                style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
 
+            
         </div>
 
     </div>
