@@ -112,9 +112,9 @@ Route::resource('informacion', ProductoLuisController::class);
 
 Route::resource('/listanegocio', ListanegociosController::class);
 
-Route::get('/editarProducto/{id}', [ProductoVilmaController::class, 'edit'])->name('editarProductos');
+Route::get('/editarProducto/{id}/{idneg}', [ProductoVilmaController::class, 'edit'])->name('editarProductos');
 Route::delete('/eliminarProducto', [ProductoVilmaController::class, 'destroy'])->name('eliminarProductos');
-Route::put('/updateproducto/{id}', [ProductoVilmaController::class, 'update'])->name('producto.update');
+Route::put('/updateproducto/{id}/{idneg}', [ProductoVilmaController::class, 'update'])->name('producto.update');
 
 
 

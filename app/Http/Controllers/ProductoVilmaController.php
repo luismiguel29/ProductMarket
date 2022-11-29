@@ -104,13 +104,14 @@ class ProductoVilmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $idneg)
     {
+        $verificar = DatosNegocio::where('idnegocio', $idneg)->first();
         $producto =Producto::find($id);
         $categoria = DB::table('categoria')
         ->orderByRaw('nombre ASC')
         ->get();
-        return view('registrar', compact('producto', 'categoria'));
+        return view('registrar', compact('producto', 'categoria', 'verificar'));
     }
 
     /**
@@ -120,7 +121,7 @@ class ProductoVilmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $idneg)
     {
         $validator = Validator::make($request->all(), [
             'url_img' => 'nullable|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
@@ -135,7 +136,7 @@ class ProductoVilmaController extends Controller
                 $producto->url=$url;
             }
                 $producto->id_categoria = $request->input('categoria');
-                $producto->id_negocio = 1;
+                $producto->id_negocio = $idneg;
                 $producto->nombre = $request->input('nombreprod');
                 $producto->precio = $request->input('precio');
                 $producto->preciodesc = $request->input('preciodesc');
