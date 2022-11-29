@@ -152,7 +152,7 @@
                                 style="font-size: 60px" --}}>Finalizar Compra</button>
                         </div>
                         <a href="/endC"
-                                class="btn btn-dark fs-5 {{-- btn-block --}}" class="botonCompra">
+                                class="btn btn-dark fs-5 {{-- btn-block --}}" class="botonCompra"
                                 style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
 
                     </div>
