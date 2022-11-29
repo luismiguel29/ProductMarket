@@ -25,7 +25,7 @@
 
 <body class="d-flex flex-column" style="background: #E3E9E6">
     <header>
-        <img src="./editarAll/img/Group 33.png" width="60px" alt="Logo de ProductMarket">
+        <img src="{{ asset('Imagenes/logo.png') }}" width="60px" alt="Logo de ProductMarket">
     </header>
 
     <!-- id="espacio"-->
@@ -33,8 +33,8 @@
 
         <section class="d-flex flex-column  align-self-center gap-4 mb-4 mb-md-0 order-2 order-md-1">
             <button class="btn btn-dark fs-5 btnb">Editar</button>
-            <a href="categoria" class="btn btn-dark fs-5 btnb">Registrar producto</a>
-            <a href="proveedor/listaproducto" class="btn btn-dark fs-5 btnb">Ver productos</a>
+            <a href="{{ route('categoria.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5 btnb">Registrar producto</a>
+            <a href="{{route('lista', $verificar->idnegocio)}}" class="btn btn-dark fs-5 btnb">Ver productos</a>
             <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
 

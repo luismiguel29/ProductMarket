@@ -45,6 +45,7 @@ Route::get('/templa', function () {
     return view('/layouts/template');
 });
 
+Route::post('/registro/{id}', 'App\Http\Controllers\ProductoController@registro')->name('registro');
 Route::resource('/producto', ProductoController::class);
 
 Route::get('/editar', function () {
@@ -62,7 +63,7 @@ Route::get('/menu2', function () {
     return view('menu2');
 });
 
-
+Route::get('/datosNegocio/{id}', 'App\Http\Controllers\NegocioAnd@index')->name('datosNegocio');
 Route::resource('/datosNego',NegocioAnd::class);
 
 Route::get('/ventana', function () {
@@ -73,6 +74,7 @@ Route::get('/ventana', function () {
 //Route::put('/editar', [App\Http\Controllers\NegocioAnd::class, 'update'])->name('updatedatos');
 //Route::edit('/editar', [App\Http\Controllers\NegocioAnd::class, 'edit'])->name('editardatos');
 Route::get('/proveedor/listaproducto', [ProductoVilmaController::class,'index']  ) -> name('listaproducto');
+Route::get('/lista/{id}', 'App\Http\Controllers\ProductoVilmaController@lista')->name('lista');
 Route::get('proveedor/paginaprincipal', function (){
     return view('Proveedor.PaginaPrincipal');
 })->name('paginaprincipal');

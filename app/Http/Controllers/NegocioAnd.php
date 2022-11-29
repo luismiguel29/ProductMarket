@@ -16,20 +16,10 @@ class NegocioAnd extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+
+    public function index()
     {
-        //$texto=trim($request->get('texto'));
 
-        //$datos=DatosNegocio::all();
-        //$datos=DB::table('negocio')
-        //     ->select('idnegocio', 'nombre', 'direccion', 'horarioinicio', 'horariofin', 'telefono');
-
-        //return $datos;
-
-        $dato = DatosNegocio::findOrFail(1);
-        //return $dato;
-        //return view('editar',compact('datos'));
-        return view('editar', compact('dato'));
     }
 
     /**
@@ -39,7 +29,7 @@ class NegocioAnd extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -60,9 +50,9 @@ class NegocioAnd extends Controller
             ->exists();
 
         if($validator->fails()){
-            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         }else if ($nombre) {
-            return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!')->withInput();
+            return back()->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {
             $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
             $dato = new DatosNegocio;
@@ -74,9 +64,9 @@ class NegocioAnd extends Controller
             $dato->url = $url;
             $dato->save();
             //return redirect()->route('registroNegocio');
-            return redirect('registroNegocio')->with('message', 'Los datos se guardaron correctamente!');
+            return back()->with('message', 'Los datos se guardaron correctamente!');
         } else {
-            return redirect('registroNegocio')->with('message', 'El horario de cierre debe ser mayor')->withInput();
+            return back()->with('message', 'El horario de cierre debe ser mayor')->withInput();
         }
 
 
@@ -92,7 +82,11 @@ class NegocioAnd extends Controller
      */
     public function show($id)
     {
-        //
+        $verificar = DatosNegocio::where('idnegocio', $id)->first();
+        $dato = DatosNegocio::where('idnegocio', $id)->first();
+        //return $dato;
+        //return view('editar',compact('datos'));
+        return view('editar', compact('dato', 'verificar'));
     }
 
     /**
@@ -122,7 +116,7 @@ class NegocioAnd extends Controller
         ]);
 
         if($validator->fails()){
-            return redirect('datosNego')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         }else if ($request->input('horario1') < $request->input('horario2')) {
             $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
             $datoup = DatosNegocio::findOrFail($id);
@@ -133,9 +127,9 @@ class NegocioAnd extends Controller
             $datoup->horariofin = $request->input('horario2');
             $datoup->url = $url;
             $datoup->save();
-            return redirect('datosNego')->with('message', '¡Actualizacion exitosa!!!!!!!');
+            return back()->with('message', '¡Actualizacion exitosa!!!!!!!');
         } else {
-            return redirect('datosNego')->with('message', 'El horario de cierre debe ser mayor');
+            return back()->with('message', 'El horario de cierre debe ser mayor');
         }
     }
 
@@ -147,6 +141,9 @@ class NegocioAnd extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dato = DatosNegocio::where('idnegocio', $id)->first();
+        //return $dato;
+        //return view('editar',compact('datos'));
+        return view('editar', compact('dato'));
     }
 }

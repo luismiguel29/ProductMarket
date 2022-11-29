@@ -17,21 +17,6 @@
 
                     <!--------------------------------------------------->
                     
-                    
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </div>
-                    @endif
-                    @if (session('message')) 
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>{{ session('message') }}</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
-                        </div>
-                    @endif
                     @if (session('alerta')) 
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <strong>{{ session('alerta') }}</strong>
@@ -44,12 +29,12 @@
 
                     <div class="col-12">
                         <label for="email" class="form-label">Correo Electronico</label>
-                        <input type="text" name="email" class="form-control" id="" value="" required  >
+                        <input type="text" name="email" class="form-control" id="" value="{{ old('email') }}" required  >
                     </div>
 
                     <div class="col-12">
                         <label for="contraseña" class="form-label">Contraseña</label>
-                        <input type="text" name="contraseña" class="form-control" id="" value="" required >
+                        <input type="text" name="password" class="form-control" id="" value="" required >
                     </div>
 
                     <div class="d-flex justify-content-evenly">

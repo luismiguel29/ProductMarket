@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Categoria;
 use Illuminate\Support\Facades\Storage;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
@@ -82,7 +83,11 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        $verificar = DatosNegocio::where('idnegocio', $id)->first();
+        $categoria = DB::table('categoria')
+        ->orderByRaw('nombre ASC')
+        ->get();
+        return view('registrar', compact('categoria', 'verificar'));
     }
 
     /**
