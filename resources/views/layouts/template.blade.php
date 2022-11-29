@@ -90,7 +90,7 @@
 
                 @if($total == 0)
                     <div class="botonCompra">
-                        <img src="{{ asset('editarAll/img/carritovacio.png') }}" style="width: 110px; height: 110px; padding-top: 50px;">
+                        <img src="{{ asset('editarAll/img/carritovacio.png') }}" style="width: 100px; height: 100px;">
                     </div>
 
                     <p class="fs-4 text-center">Tu carrito está vacio</p>
@@ -98,7 +98,7 @@
                     <div class="botonCompra">
                         <a href="/novedades"
                             class="btn btn-dark fs-5"
-                            style="width: 300px padding-top: 100px;" style="font-size: 60px">ELEGIR PRODUCTOS</a>
+                            style="width: 300px" style="font-size: 60px">ELEGIR PRODUCTOS</a>
                     </div>
                 @else
                     <div class="offcanvas-body">
