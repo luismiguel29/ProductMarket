@@ -90,7 +90,7 @@
 
                 @if($total == 0)
                     <div class="col-md-4 d-md-none justify-content-center">
-                        <img src="{{ asset('editarAll/img/carritovacio.png') }}" width="350" class="my-4">
+                        <img src="{{ asset('editarAll/img/carritovacio.png') }}" class="my-4">
                     </div>
 
                     <p class="fs-3 text-center">Tu carrito está vacio</p>
