@@ -54,7 +54,7 @@ class CarritoController extends Controller
     public function eliminarProducto($idcarrito){
         $carrito = CarritoModel::findOrFail($idcarrito);
         $carrito->delete();
-        return redirect()->route(('carrito.index')); 
+        return back(); 
     }
 
     public function finCompra(){
