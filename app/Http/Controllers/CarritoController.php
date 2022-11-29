@@ -33,7 +33,7 @@ class CarritoController extends Controller
     public function destroy($idcarrito){
         $carrito = CarritoModel::findOrFail($idcarrito);
         $carrito->delete();
-        return redirect()->route(('carrito.index')); 
+        return back();
     }
 
     public function incrementarCantidad(Request $request){
@@ -59,6 +59,6 @@ class CarritoController extends Controller
 
     public function finCompra(){
         CarritoModel::truncate();
-        return redirect()->route(('carrito.index')); 
+        return back();
     }
 }
