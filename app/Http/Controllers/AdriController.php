@@ -62,7 +62,7 @@ class AdriController extends Controller
     $verificar = DatosNegocio::where('email', $request->input('email'))->where('password', $request->input('password'))->first();
     if ($email) {
       if ($password) {
-        return view('/inicio', compact('verificar'));
+        return view('/Proveedor/PaginaPrincipal', compact('verificar'));
       } else {
         return back()->with('alerta', 'Contraseña incorrecta!')->withInput();
       }
