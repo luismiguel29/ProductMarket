@@ -20,7 +20,9 @@ class ProductoLuisController extends Controller
      */
     public function index()
     {
-        return view('layouts.template');
+        // return view('layouts.template');
+        $categoria = Categoria::all();
+        return $categoria;
     }
 
     /**
@@ -30,7 +32,8 @@ class ProductoLuisController extends Controller
      */
     public function create()
     {
-        //
+        $categoria = Categoria::all();
+        return $categoria;
     }
 
     /**
