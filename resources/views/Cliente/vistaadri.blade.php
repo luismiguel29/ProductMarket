@@ -39,7 +39,9 @@
 
                     <div class="d-flex justify-content-evenly">
                         <!--onclick="validarHorarios()"-->
-                        <button type="submit" class="btn btn-dark fs-10" style="width:140px">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-dark fs-5" style="width:140px">Iniciar Sesión</button>
+                        <a href="novedades" type="reset"
+                                class="btn btn-dark fs-5 ">Cancelar</a>
                         <!--<a href="/novedades" type="submit"
                             class="btn btn-dark fs-5" style="width:140px">Guardar</a>-->
                         <!--<a href="proveedor/paginaprincipal" type="submit"
