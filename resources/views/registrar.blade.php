@@ -163,7 +163,7 @@
                             <div class="mb-3">
                                 <label for="" class="form-label">URL de la imágen</label>
 
-                                <input type="file" class="form-control" name="url_img" required="" onchange="preview()"
+                                <input type="file" class="form-control" name="url_img" {{isset($producto)? "": "required"}} onchange="preview()"
                                     id="url_img" accept="image/*">
                                     <img style="max-width:200px"src="" alt="" id="uno"/>
                             </div>
