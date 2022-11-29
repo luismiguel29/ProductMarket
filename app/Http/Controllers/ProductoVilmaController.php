@@ -111,7 +111,7 @@ class ProductoVilmaController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url_img' => 'nullable|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
         ]);
 
         if ($validator->fails()) {
