@@ -80,7 +80,7 @@
                 <div class=" header-carrito d-flex justify-content-between offcanvas-header">
                     <div class="d-flex flex-column center">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tu carrito</h5>
-                        <span class="fa-solid fa-cart-shopping fa-2x"></span>
+                        {{-- <span class="fa-solid fa-cart-shopping fa-2x"></span> --}}
                     </div>
 
                     <span type="submit" class="fa-sharp fa-solid fa-circle-xmark fa-2x"
