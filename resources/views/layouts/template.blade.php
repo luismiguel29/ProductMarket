@@ -64,7 +64,7 @@
             </div>
 
         
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarRR"
+            <div class="offcanvas offcanvas{{-- -end --}}" tabindex="-1" id="offcanvasNavbarRR"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class=" header-carrito d-flex justify-content-between offcanvas-header">
                     <div class="d-flex flex-column center">
