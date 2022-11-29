@@ -19,20 +19,6 @@
 </head>
 
 <body>
-    @if($total == 0)
-        <img src="{{ asset('editarAll/img/carritovacio.png') }}" alt="">
-
-        <p>Tu carrito está vacio</p>
-
-        <a href=""
-                class="btn btn-dark fs-5"
-                style="width: 300px" style="font-size: 60px">ELEGIR PRODUCTOS</a>
-    @else
-
-    @endif
-
-
-
     {{-- INICIO CARRITO DE COMPRAS --}}
     <div>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarRR"

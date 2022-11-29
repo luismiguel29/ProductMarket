@@ -91,7 +91,7 @@
                 @if($total == 0)
                     <img src="{{ asset('editarAll/img/carritovacio.png') }}" alt="">
 
-                    <p>Tu carrito está vacio</p>
+                    <p class="fs-2 text-center">Tu carrito está vacio</p>
 
                     <div class="botonCompra">
                         <a href="/novedades"
