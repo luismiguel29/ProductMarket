@@ -151,9 +151,11 @@
                             <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
                                 style="font-size: 60px" --}}>Finalizar Compra</button>
                         </div>
-                        <a href="/endC"
+                        <div class="botonCompra">
+                            <a href="/endC"
                                 class="btn btn-dark fs-5 {{-- btn-block --}}" 
-                                style="width: 300px; text-align: center;" style="font-size: 60px">Finalizar Compra</a>
+                                style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
+                        </div>
 
                     </div>
                 @endif
