@@ -44,7 +44,7 @@
         
                     <h5 class="text-center fs-5">Información del producto</h5>
                         {{-- @include('components.flash_alerts') --}}
-                        <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ isset($producto)? }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <!--<div class=" mb-3 input-group">
                                 <input type="file" class="form-control" id="inputImg">
