@@ -89,9 +89,11 @@
 
 
                 @if($total == 0)
-                    <img src="{{ asset('editarAll/img/carritovacio.png') }}" style="width: 300px; height: 300px;">
+                    <div class="botonCompra">
+                        <img src="{{ asset('editarAll/img/carritovacio.png') }}" style="width: 100px; height: 100px;">
+                    </div>
 
-                    <p class="fs-3 text-center">Tu carrito está vacio</p>
+                    <p class="fs-4 text-center">Tu carrito está vacio</p>
 
                     <div class="botonCompra">
                         <a href="/novedades"
