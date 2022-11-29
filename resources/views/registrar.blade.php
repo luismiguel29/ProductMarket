@@ -46,6 +46,9 @@
                         {{-- @include('components.flash_alerts') --}}
                         <form action="{{ isset($producto)? route('producto.update',['id'=>$producto->idproducto]): route('producto.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            @if(isset($producto))
+                                @method('put')
+                            @endif
                             <!--<div class=" mb-3 input-group">
                                 <input type="file" class="form-control" id="inputImg">
                                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
