@@ -132,7 +132,7 @@ class ProductoVilmaController extends Controller
                 $producto->fechainicio = $request->input('fechainiciopromo');
                 $producto->fechafin = $request->input('fechafinpromo');
                 $producto->descripcion = $request->input('descripprod');
-                $producto->url = $url;
+                
                 $producto->save();
                 return redirect('categoria')->with('message', '¡Edicion de datos exitoso!!!!!!!');
         }
