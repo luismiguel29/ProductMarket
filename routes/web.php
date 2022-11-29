@@ -41,6 +41,10 @@ Route::get('/Cliente/novedades', function () {
     return view('/Cliente/novedades');
 });
 
+Route::get('/inicio', function () {
+    return view('/Proveedor/PaginaPrincipal');
+});
+
 Route::get('/templa', function () {
     return view('/layouts/template');
 });
