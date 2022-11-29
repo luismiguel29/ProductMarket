@@ -93,9 +93,11 @@
 
                     <p>Tu carrito está vacio</p>
 
-                    <a href="/novedades"
-                        class="btn btn-dark fs-5"
-                        style="width: 300px" style="font-size: 60px">ELEGIR PRODUCTOS</a>
+                    <div class="botonCompra">
+                        <a href="/novedades"
+                            class="btn btn-dark fs-5"
+                            style="width: 300px" style="font-size: 60px">ELEGIR PRODUCTOS</a>
+                    </div>
                 @else
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -147,10 +149,10 @@
                             <h5><strong>TOTAL</strong></h5>
                             <H5><strong>Bs. {{ $total }}</strong></H5>
                         </div>
-                        <div class="botonCompra">
+                        <!--<div class="botonCompra">
                             <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
                                 style="font-size: 60px" --}}>Finalizar Compra</button>
-                        </div>
+                        </div>-->
                         <div class="botonCompra">
                             <a href="/endC"
                                 class="btn btn-dark fs-5 {{-- btn-block --}}" 
