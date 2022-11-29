@@ -26,6 +26,7 @@
 
     <body class="d-flex flex-column">
 
+{{-- header para mostrar la categoria a la que pertenece el producto --}}
 
         <header class="bann">
             <div class="logo">
@@ -37,8 +38,11 @@
             </div>
         </header>
 
+{{-- boton volver, una vez selecionado un producto cuando se presione el link volver este nos redirecionara a la ventana de categorias del producto --}}
+
         <div class="boton">
             <a style="color: #000000" href="{{ route('verproductos.show', $categoria->idcategoria) }}"><strong>Volver</strong></a>
+            {{-- <a style="color: #000000" href="/novedades"><strong>Volver</strong></a> --}}
             {{-- <a style="color: #000000" href="{{ url()->previous() }}"><strong>Volver</strong></a> --}}
             @if (session('alerta'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert" style="width: 100%">
@@ -54,9 +58,14 @@
             @endif
         </div>
 
+
+        {{-- variable donde recuperamos el id del producto --}}
+
         @php
             $id = $producto->idproducto;
         @endphp
+
+        {{-- etiqueta form donde la accion es almacenar el producto en la ventana de carrito segun el id de producto que se recupero en el anterior paso --}}
 
         <form action="{{ route('addcarrito', $id) }}" method="POST">
             @csrf
@@ -64,9 +73,9 @@
                 <div class="card-container">
 
                     <div class="header">
-                        <a href="">
+                        <div href="">
                             <img src="{{ $producto->url }}" alt="">
-                        </a>
+                        </div>
                     </div>
                     <div class="description">
                         {{-- <h5><strong>{{ $producto->descripcion }}</strong></h5>
@@ -83,6 +92,9 @@
                             <button type="submit" class="btn btn-dark fs-5 btn-lg" style="font-size: 40px">Agregar al Carrito</button>
                         </div> --}}
 
+                        {{-- capturamos los datos que se envian a la vista para luego mostrar la informacion del producto --}}
+
+                        <h5>{{ $producto->nombre }}</h5>
                         <h5>{{ $producto->descripcion }}</h5>
                         <h5><span style="color: #7D7D7D">Antes Bs. <s >{{ $producto->precio }}</s></span> / Ahora Bs.
                             {{ $producto->preciodesc }}</h4>
@@ -95,6 +107,7 @@
                             <h5><span style="color: #7D7D7D">Horario: {{ $negocio->horarioinicio }} -
                                     {{ $negocio->horariofin }}</span> </h5>
 
+                            {{-- boton agregar a carrito que activa la accion del formulario para que se pueda gurdar el producto en el carrito --}}
                             <div class="botonCarrito">
                                 <button type="submit" class="btn btn-dark fs-5 btn-lg" style="font-size: 40px">Agregar al
                                     Carrito</button>

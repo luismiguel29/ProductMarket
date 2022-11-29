@@ -47,6 +47,12 @@ body{
 
 }
 
+
+.col .card .card-body{
+    white-space:nowrap;
+}
+
+
 .col .card:hover{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
@@ -54,7 +60,7 @@ body{
 
 .col .card .card-img-top{
     width: 100%;
-    height: 286px;
+    height: 250px;
 }
 
 .lis{
@@ -69,7 +75,7 @@ body{
 .bann{
     display: flex;
     height: 200px;
-    background-color: #DBF922;
+    background-color: #FEC373;
     margin-bottom: 5px;
     justify-content: space-between;
     align-items: center;

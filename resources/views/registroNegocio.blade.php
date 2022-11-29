@@ -10,7 +10,7 @@
 
             <div class="card-body text-dark card-custom-p">
     
-                <form action="{{route('datosNego.store')}}" method="post" class="row g-3" id="formulario" enctype="multipart/form-data"> <!--mt-3-->
+                <form action="{{route('registroNegocio.store')}}" method="post" class="row g-3" id="formulario" enctype="multipart/form-data"> <!--mt-3-->
                     @csrf
                     <h5 class="text-center fs-5">Registro del negocio</h5>
 

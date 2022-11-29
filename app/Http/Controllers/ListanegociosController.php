@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Producto;
+use App\Models\CarritoModel;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,11 +16,24 @@ class ListanegociosController extends Controller
      */
     public function index()
     {
+
+        $carros = CarritoModel::all();  
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $producto->cantidad = ($carro->cantidad);
+            $producto->idcarrito = ($carro->idcarrito);
+            json_encode($producto);
+            array_unshift($auxarr, $producto);             
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
+
         $datos = DB::table('negocio')
         ->orderByRaw('nombre ASC')->paginate(8);
 
         /* return $datos; */
-        return view('Cliente.listaNegocios', compact('datos'));
+        return view('Cliente.listaNegocios', compact('datos', 'auxarr', 'total'));
     }
 
     /**
