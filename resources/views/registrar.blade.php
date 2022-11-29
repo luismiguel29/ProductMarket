@@ -28,7 +28,7 @@
         </section>-->
 
         <section class="d-flex flex-column align-self-center gap-4 order-2 order-md-1">
-            <a href="datosNego" class="btn btn-dark fs-5 btnb" style="">Editar</a>
+            <a href="{{route('datosNego.index')}}" class="btn btn-dark fs-5 btnb" style="">Editar</a>
             <a href="categoria" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="proveedor/listaproducto" class="btn btn-dark fs-5  btnb">Ver productos</a>
             <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
@@ -44,8 +44,11 @@
         
                     <h5 class="text-center fs-5">Información del producto</h5>
                         {{-- @include('components.flash_alerts') --}}
-                        <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ isset($producto)? route('producto.update',['id'=>$producto->idproducto]): route('producto.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            @if(isset($producto))
+                                @method('put')
+                            @endif
                             <!--<div class=" mb-3 input-group">
                                 <input type="file" class="form-control" id="inputImg">
                                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
