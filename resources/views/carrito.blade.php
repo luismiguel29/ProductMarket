@@ -19,6 +19,13 @@
 </head>
 
 <body>
+    @if($total == 0)
+        <img src="{{ asset('editarAll/img/carritovacio.png') }}" alt="">
+    @else
+
+    @endif
+
+
 
     {{-- INICIO CARRITO DE COMPRAS --}}
     <div>
