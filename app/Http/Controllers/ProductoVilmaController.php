@@ -117,9 +117,11 @@ class ProductoVilmaController extends Controller
         if ($validator->fails()) {
             return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         } else {
+            $producto = Producto::find($id);
+            
             $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
             
-          $producto = Producto::find($id);
+         
                 $producto->id_categoria = $request->input('categoria');
                 $producto->id_negocio = 1;
                 $producto->nombre = $request->input('nombreprod');
