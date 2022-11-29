@@ -76,7 +76,7 @@ Route::get('/ventana', function () {
 Route::get('/proveedor/listaproducto', [ProductoVilmaController::class, 'index'])->name('listaproducto');
 Route::get('/lista/{id}', 'App\Http\Controllers\ProductoVilmaController@lista')->name('lista');
 Route::get('/proveedor/paginaprincipal', function () {
-    return view('Proveedor.PaginaPrincipal');
+    return view('/Proveedor/PaginaPrincipal');
 })->name('paginaprincipal');
 
 Route::resource('/verproductos', ProductoVilmaController::class);
