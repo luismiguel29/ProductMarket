@@ -63,7 +63,18 @@
                 </div>
             </div>
 
-        
+            <div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbarRR" aria-controls="offcanvasNavbaR">
+                    <span class="fa-solid fa-cart-shopping fa-2x"></span>
+            
+                </button>
+                <a href="{{ route('novedades.index') }}">
+                    <!--<img src="./style/logo.png" class="logo">-->
+            
+                </a>
+            </div>
+            
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarRR"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class=" header-carrito d-flex justify-content-between offcanvas-header">
