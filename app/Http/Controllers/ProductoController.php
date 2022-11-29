@@ -43,11 +43,12 @@ class ProductoController extends Controller
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
        */
         $validator = Validator::make($request->all(), [
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            //'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
         if ($validator->fails()) {
-            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 5maximo 600x600 px')->withInput();
         } else {
             $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
 
@@ -93,11 +94,12 @@ class ProductoController extends Controller
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
        */
         $validator = Validator::make($request->all(), [
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            //'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
         if ($validator->fails()) {
-            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         } else {
             $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
 

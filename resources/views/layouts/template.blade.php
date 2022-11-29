@@ -52,8 +52,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/proveedor/paginaprincipal" class="nav-link active" aria-current="page"
-                                href="#">Ingresar como proveedor</a>
+                            <a href="{{ route('login.index') }}" class="nav-link active" aria-current="page"
+                                href="#">Iniciar Sesion</a>
                         </li>
 
                         <li class="nav-item">

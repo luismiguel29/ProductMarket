@@ -42,7 +42,8 @@ class NegocioAnd extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            //'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
         $nombre = DatosNegocio::select('*')
@@ -50,7 +51,7 @@ class NegocioAnd extends Controller
             ->exists();
 
         if($validator->fails()){
-            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         }else if ($nombre) {
             return back()->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {
@@ -112,11 +113,11 @@ class NegocioAnd extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
         if($validator->fails()){
-            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         }else if ($request->input('horario1') < $request->input('horario2')) {
             $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
             $datoup = DatosNegocio::findOrFail($id);
