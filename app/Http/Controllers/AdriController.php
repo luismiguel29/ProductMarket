@@ -58,7 +58,7 @@ class AdriController extends Controller
   public function store(Request $request)
   {
     $email = DatosNegocio::where('email', $request->input('email'))->exists();
-    $password = DatosNegocio::where('password', $request->input('password'))->exists();
+    $password = DatosNegocio::where('email', $request->input('email'))->where('password', $request->input('password'))->exists();
     $verificar = DatosNegocio::where('email', $request->input('email'))->where('password', $request->input('password'))->first();
     if ($email) {
       if ($password) {
