@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductoVilmaController extends Controller
 {
@@ -111,15 +116,17 @@ class ProductoVilmaController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url_img' => 'nullable|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
         ]);
 
         if ($validator->fails()) {
             return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
         } else {
-            $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
-            
-          $producto = Producto::find($id);
+            $producto = Producto::find($id);
+            if($request->file('url_img')!= null){
+                $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+                $producto->url=$url;
+            }
                 $producto->id_categoria = $request->input('categoria');
                 $producto->id_negocio = 1;
                 $producto->nombre = $request->input('nombreprod');
@@ -130,7 +137,7 @@ class ProductoVilmaController extends Controller
                 $producto->fechainicio = $request->input('fechainiciopromo');
                 $producto->fechafin = $request->input('fechafinpromo');
                 $producto->descripcion = $request->input('descripprod');
-                $producto->url = $url;
+                
                 $producto->save();
                 return redirect('categoria')->with('message', '¡Edicion de datos exitoso!!!!!!!');
         }
