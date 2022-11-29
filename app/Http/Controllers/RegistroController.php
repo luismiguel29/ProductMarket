@@ -41,7 +41,7 @@ class RegistroController extends Controller
             ->exists();
 
         if($validator->fails()){
-            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         }else if ($nombre) {
             return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {
