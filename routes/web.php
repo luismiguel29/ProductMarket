@@ -41,10 +41,6 @@ Route::get('/Cliente/novedades', function () {
     return view('/Cliente/novedades');
 });
 
-Route::get('/Proveedor/PaginaPrincipal', function () {
-    return view('/Proveedor/PaginaPrincipal');
-});
-
 Route::get('/templa', function () {
     return view('/layouts/template');
 });
@@ -79,9 +75,9 @@ Route::get('/ventana', function () {
 //Route::edit('/editar', [App\Http\Controllers\NegocioAnd::class, 'edit'])->name('editardatos');
 Route::get('/proveedor/listaproducto', [ProductoVilmaController::class, 'index'])->name('listaproducto');
 Route::get('/lista/{id}', 'App\Http\Controllers\ProductoVilmaController@lista')->name('lista');
-/* Route::get('/proveedor/paginaprincipal', function () {
+Route::get('/proveedor/paginaprincipal', function () {
     return view('/Proveedor/PaginaPrincipal');
-}); */
+})->name('paginaprincipal');
 
 Route::resource('/verproductos', ProductoVilmaController::class);
 
