@@ -46,7 +46,7 @@ class AdriController extends Controller
    */
   public function create()
   {
-    //
+    
   }
 
   /**
@@ -77,9 +77,10 @@ class AdriController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show($idneg)
   {
-    //
+    $verificar = DatosNegocio::where('idnegocio', $idneg)->first();
+    return view('/Proveedor/PaginaPrincipal', compact('verificar'));
   }
 
   /**

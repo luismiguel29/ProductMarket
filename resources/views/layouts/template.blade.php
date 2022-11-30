@@ -40,7 +40,7 @@
 
             
             <div class="busqueda">
-          <form class="example" action="{{asset('buscar')}}">
+          <form class="example" action="{{route('buscar')}}">
             <input type="text" placeholder="Encuentra Lo Que Buscas de forma Rapida" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
@@ -123,7 +123,7 @@
                                                     {{--  <span class="card-title"><b>Stock {{ $item->stock}}</b></span> --}}
                                                     <h6 class="card-title"><b>{{ $item->nombre }}</b></h6>
                                                     {{--  <span style="color:#5D5D5D">Antes <s>Bs.{{ $item->precio }}</s></span> --}}
-                                                    <span>Ahora <strong>Bs. {{ $item->preciodesc }}</strong></spa </div>
+                                                    <span><strong>Bs. {{ $item->preciodesc }}</strong></spa </div>
                                                         <a href=""></a>
                                                 </div>
                                             </div>
