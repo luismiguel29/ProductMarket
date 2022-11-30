@@ -24,31 +24,26 @@ class ProductoVilmaController extends Controller
      */
     public function index(Request $request)
     {
-        $productos = Producto::join('categoria', 'producto.id_categoria', '=', 'categoria.idcategoria')->select('producto.idproducto', 'producto.nombre', 'producto.precio', 'producto.preciodesc', 'producto.stock', 'categoria.nombre as catnombre', 'producto.fechainicio', 'producto.fechafin', 'producto.url')->orderBy('nombre', 'ASC')->paginate(5);
+        $productos = Producto::join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.idproducto', 'producto.nombre', 'producto.precio','producto.preciodesc','producto.stock','categoria.nombre as catnombre','producto.fechainicio','producto.fechafin','producto.url') -> orderBy('nombre','ASC')->paginate(5);
         return view('Proveedor.Verlistaproductos', compact('productos'));
+        
     }
 
-    public function lista($id)
-    {
+    public function lista($id){
         $verificar = DatosNegocio::where('idnegocio', $id)->first();
-        $productos = Producto::where('id_negocio', $id)->orderBy('nombre', 'ASC')->paginate(5);
+        $productos = Producto::where('id_negocio', $id)-> orderBy('nombre','ASC')->paginate(5);
         return view('Proveedor.Verlistaproductos', compact('productos', 'verificar'));
     }
 
     public function arrayPaginator($array, $request)
     {
-        $page = $request->input('page', 1);
+        $page = $request -> input('page', 1);
         $perPage = 5;
 
         $offset = ($page * $perPage) - $perPage;
 
-        return new LengthAwarePaginator(
-            array_slice($array, $offset, $perPage, true),
-            count($array),
-            $perPage,
-            $page,
-            ['path' => $request->url(), 'query' => $request->query()]
-        );
+        return new LengthAwarePaginator(array_slice($array, $offset, $perPage, true), count($array), $perPage, $page,
+            ['path' => $request->url(), 'query' => $request->query()]);
     }
     /**
      * Show the form for creating a new resource.
@@ -57,8 +52,8 @@ class ProductoVilmaController extends Controller
      */
     public function getByCategory($category)
     {
-        $productos = Producto::where('id_categoria', $category)->orderBy('nombre', 'ASC')->paginate(8);
-        $categoryName = Categoria::where('idcategoria', $category)->first();
+        $productos = Producto::where('id_categoria', $category)->orderBy('nombre','ASC')->paginate(8);
+        $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('cliente.listarefrescos', compact('productos', 'categoryName'));
     }
 
@@ -85,20 +80,20 @@ class ProductoVilmaController extends Controller
     public function show($category)
     {
 
-        $carros = CarritoModel::all();
-        $auxarr = array();
-        $total = 0;
-        foreach ($carros as $carro) {
+        $carros = CarritoModel::all();  
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
             $producto = Producto::find($carro->idproducto);
             $producto->cantidad = ($carro->cantidad);
             $producto->idcarrito = ($carro->idcarrito);
             json_encode($producto);
-            array_unshift($auxarr, $producto);
-            $total = (($carro->cantidad) * ($producto->preciodesc)) + $total;
+            array_unshift($auxarr, $producto);             
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
         }
 
-        $productos = Producto::where('id_categoria', $category)->orderBy('nombre', 'ASC')->paginate(8);
-        $categoryName = Categoria::where('idcategoria', $category)->first();
+        $productos = Producto::where('id_categoria', $category)->orderBy('nombre','ASC')->paginate(8);
+        $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('/Cliente/listarefrescos', compact('productos', 'categoryName', 'auxarr', 'total'));
     }
 
@@ -111,10 +106,10 @@ class ProductoVilmaController extends Controller
     public function edit($id, $idneg)
     {
         $verificar = DatosNegocio::where('idnegocio', $idneg)->first();
-        $producto = Producto::find($id);
+        $producto =Producto::find($id);
         $categoria = DB::table('categoria')
-            ->orderByRaw('nombre ASC')
-            ->get();
+        ->orderByRaw('nombre ASC')
+        ->get();
         return view('registrar', compact('producto', 'categoria', 'verificar'));
     }
 
@@ -136,27 +131,23 @@ class ProductoVilmaController extends Controller
             return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         } else {
             $producto = Producto::find($id);
-            if ($request->file('url_img') != null) {
+            if($request->file('url_img')!= null){
                 $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
-                $producto->url = $url;
+                $producto->url=$url;
             }
-            $producto->id_categoria = $request->input('categoria');
-            $producto->id_negocio = $idneg;
-            $producto->nombre = $request->input('nombreprod');
-            $producto->precio = $request->input('precio');
-            $producto->preciodesc = $request->input('preciodesc');
-            $producto->stock = $request->input('stockprod');
-            $producto->fechaven = $request->input('fechavenprod');
-            $producto->fechainicio = $request->input('fechainiciopromo');
-            $producto->fechafin = $request->input('fechafinpromo');
-            $producto->descripcion = $request->input('descripprod');
-
-            $producto->save();
-
-            $verificar = DatosNegocio::where('idnegocio', $id)->first();
-            $productos = Producto::where('id_negocio', $id)->orderBy('nombre', 'ASC')->paginate(5);
-            return view('Proveedor.Verlistaproductos', compact('productos', 'verificar'));
-            //return redirect()->with('message', '¡Edicion de datos exitoso!!!!!!!');
+                $producto->id_categoria = $request->input('categoria');
+                $producto->id_negocio = $idneg;
+                $producto->nombre = $request->input('nombreprod');
+                $producto->precio = $request->input('precio');
+                $producto->preciodesc = $request->input('preciodesc');
+                $producto->stock = $request->input('stockprod');
+                $producto->fechaven = $request->input('fechavenprod');
+                $producto->fechainicio = $request->input('fechainiciopromo');
+                $producto->fechafin = $request->input('fechafinpromo');
+                $producto->descripcion = $request->input('descripprod');
+                
+                $producto->save();
+                return back()->with('message', '¡Edicion de datos exitoso!!!!!!!');
         }
     }
 
@@ -168,7 +159,8 @@ class ProductoVilmaController extends Controller
      */
     public function destroy(Request $request)
     {
-        $producto = Producto::find($request->id)->delete();
+        $producto=Producto::find($request->id)->delete();
         return back();
     }
 }
+
