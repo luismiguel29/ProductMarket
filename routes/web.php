@@ -12,6 +12,8 @@ use App\Http\Controllers\ProductoLuisController;
 use App\Http\Controllers\ListanegociosController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\AdriController;
+use App\Http\Controllers\BuscadorController;
+
 
 
 /*
@@ -115,6 +117,12 @@ Route::resource('/listanegocio', ListanegociosController::class);
 Route::get('/editarProducto/{id}/{idneg}', [ProductoVilmaController::class, 'edit'])->name('editarProductos');
 Route::delete('/eliminarProducto', [ProductoVilmaController::class, 'destroy'])->name('eliminarProductos');
 Route::put('/updateproducto/{id}/{idneg}', [ProductoVilmaController::class, 'update'])->name('producto.update');
+
+
+
+Route::resource('/cliente/search', BuscadorController::class);
+/*buscar es una variable para enviar datos */
+Route::get('/buscar', 'App\Http\Controllers\BuscadorController@search')->name('buscar');
 
 
 
