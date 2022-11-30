@@ -61,6 +61,10 @@ body{
 .col .card .card-img-top{
     width: 100%;
     height: 250px;
+    border-left: white 20px solid;
+    border-right: white 20px solid;
+    border-top: white 20px solid;
+    border-bottom: white 20px solid;
 }
 
 .lis{
