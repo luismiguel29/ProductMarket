@@ -41,14 +41,15 @@
                 </button> --}}
             </div>
 
-           <!-- 
+   
             <div class="busqueda">
           <form class="example" action="{{route('buscar')}}">
             <input type="text" placeholder="Encuentra Lo Que Buscas de forma Rapida" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
-               -->
+
+
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
