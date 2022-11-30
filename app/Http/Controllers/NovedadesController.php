@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\CarritoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -16,6 +17,19 @@ class NovedadesController extends Controller
      */
     public function index()
     {
+
+        $carros = CarritoModel::all(); 
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $producto->cantidad = ($carro->cantidad);
+            $producto->idcarrito = ($carro->idcarrito);
+            json_encode($producto);
+            array_unshift($auxarr, $producto);             
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
+
 
         $categoria = DB::table('categoria')
             ->orderByRaw('nombre ASC')
@@ -43,7 +57,7 @@ class NovedadesController extends Controller
         }
 
 
-        return view('/Cliente/novedades', compact('a', 'categoria'));
+        return view('/Cliente/novedades', compact('a', 'categoria', 'auxarr', 'total'));
     }
 
     /**

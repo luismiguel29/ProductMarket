@@ -23,6 +23,10 @@
             <button type="submit" class="btn btn-primary">Registrar</button>
     </div>
 
+    <div>
+        
+    </div>
+
 
 
 

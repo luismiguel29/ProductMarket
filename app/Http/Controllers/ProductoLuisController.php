@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Carrito;
 use App\Models\Producto;
 use App\Models\Categoria;
+use App\Models\CarritoModel;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,6 +20,9 @@ class ProductoLuisController extends Controller
      */
     public function index()
     {
+        // return view('layouts.template');
+        $categoria = Categoria::all();
+        return $categoria;
     }
 
     /**
@@ -28,7 +32,8 @@ class ProductoLuisController extends Controller
      */
     public function create()
     {
-        //
+        $categoria = Categoria::all();
+        return $categoria;
     }
 
     /**
@@ -60,10 +65,24 @@ class ProductoLuisController extends Controller
      */
     public function show($idproducto)
     {
+
+        $carros = CarritoModel::all(); 
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $producto->cantidad = ($carro->cantidad);
+            $producto->idcarrito = ($carro->idcarrito);
+            json_encode($producto);
+            array_unshift($auxarr, $producto);             
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
+
+
         $producto = Producto::where('idproducto', $idproducto)->first();
         $categoria = Categoria::where('idcategoria', $producto->id_categoria)->first();
         $negocio = DatosNegocio::where('idnegocio', $producto->id_negocio)->first();
-        return view('/Cliente/informacionproducto', compact('producto', 'categoria', 'negocio'));
+        return view('/Cliente/informacionproducto', compact('producto', 'categoria', 'negocio', 'auxarr', 'total'));
         //return [$producto, $categoria];
     }
 
