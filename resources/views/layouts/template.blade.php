@@ -40,7 +40,7 @@
 
             
             <div class="busqueda">
-          <form class="example" action="{{asset('buscar')}}">
+          <form class="example" action="{{route('buscar')}}">
             <input type="text" placeholder="Encuentra Lo Que Buscas de forma Rapida" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>

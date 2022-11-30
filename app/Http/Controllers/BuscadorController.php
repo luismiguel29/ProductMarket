@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\CarritoModel;
+use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -32,16 +34,28 @@ class BuscadorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function search(Request $request){
+
+        $carros = CarritoModel::all();  
+        $auxarr = array(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $producto->cantidad = ($carro->cantidad);
+            $producto->idcarrito = ($carro->idcarrito);
+            json_encode($producto);
+            array_unshift($auxarr, $producto);             
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
         
         $productos = Producto::select()
                 ->where('nombre', 'LIKE', '%'.$request->input('search').'%')
                 ->get();
         
         if (count($productos) == 0){
-            return view('cliente.search', compact('productos'))
+            return view('cliente.search', compact('productos', 'auxarr', 'total'))
             ->with('message', 'No hay resultados que mostrar');
         } else{
-            return view('cliente.search', compact('productos'))
+            return view('cliente.search', compact('productos', 'auxarr', 'total'))
             ->with('Producto', $productos);
         }
     }
