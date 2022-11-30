@@ -52,10 +52,10 @@ class BuscadorController extends Controller
                 ->get();
         
         if (count($productos) == 0){
-            return view('cliente.search', compact('productos', 'auxarr', 'total'))
+            return view('/Cliente/search', compact('productos', 'auxarr', 'total'))
             ->with('message', 'No hay resultados que mostrar');
         } else{
-            return view('cliente.search', compact('productos', 'auxarr', 'total'))
+            return view('/Cliente/search', compact('productos', 'auxarr', 'total'))
             ->with('Producto', $productos);
         }
     }

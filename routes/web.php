@@ -72,6 +72,10 @@ Route::get('/ventana', function () {
     return view('ventana');
 });
 
+Route::get('/Cliente/search', function () {
+    return view('/Cliente/search');
+});
+
 //Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
 //Route::put('/editar', [App\Http\Controllers\NegocioAnd::class, 'update'])->name('updatedatos');
 //Route::edit('/editar', [App\Http\Controllers\NegocioAnd::class, 'edit'])->name('editardatos');
