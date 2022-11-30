@@ -29,7 +29,7 @@
 
         <section class="d-flex flex-column align-self-center gap-4 order-2 order-md-1">
             <a href="{{ route('datosNego.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5 btnb" style="">Editar</a>
-            <a class="btn btn-dark fs-5  btnb">Registrar producto</a>
+            <a href="{{ route('categoria.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5  btnb">Registrar producto</a>
             <a href="{{route('lista', $verificar->idnegocio)}}" class="btn btn-dark fs-5  btnb">Ver productos</a>
             <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
@@ -174,7 +174,7 @@
                             <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
                             <div class="d-flex justify-content-evenly ">
                                 <button type="submit" class="btn btn-dark fs-5 ">Registrar</button>
-                                <a type="button" href="proveedor/paginaprincipal"
+                                <a type="button" href="{{ route('login.show', $verificar->idnegocio) }}"
                                     class="btn btn-dark fs-5">Cancelar</a>
                             </div>
 
