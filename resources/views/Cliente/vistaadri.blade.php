@@ -6,25 +6,25 @@
     <div class="d-flex justify-content-around" style="padding-top: 52px;">
 
         <div class="card mb-5" style="width: 25rem;">
-        
+
             <div class="card-header" style="background:#FFD507; padding: 25px;"></div>
 
             <div class="card-body text-dark card-custom-p">
-    
+
                 <form action="{{route('login.store')}}" method="post" class="row g-3" id="formulario" enctype="multipart/form-data"> <!--mt-3-->
                     @csrf
                     <h5 class="text-center fs-5">Bienvenido a Product Market</h5>
 
                     <!--------------------------------------------------->
-                    
-                    @if (session('alerta')) 
+
+                    @if (session('alerta'))
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <strong>{{ session('alerta') }}</strong>
                             <button type="button" class="btn-close" data-bs-dismiss="alert"
                                 aria-label="Close"></button>
                         </div>
-                    @endif 
-                    
+                    @endif
+
                     <!--------------------------------------------------->
 
                     <div class="col-12">
@@ -34,7 +34,7 @@
 
                     <div class="col-12">
                         <label for="contraseña" class="form-label">Contraseña</label>
-                        <input type="text" name="password" class="form-control" id="" value="" required >
+                        <input type="password" name="password" class="form-control" id="" value="" required >
                     </div>
 
                     <div class="d-flex justify-content-evenly">
@@ -52,7 +52,7 @@
                 </form>
 
             </div>
-            
+
         </div>
 
     </div>
