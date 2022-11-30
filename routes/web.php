@@ -29,7 +29,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test',function(){
+Route::get('/test', function () {
     return view('test');
 });
 
@@ -45,6 +45,7 @@ Route::get('/templa', function () {
     return view('/layouts/template');
 });
 
+Route::post('/registro/{id}', 'App\Http\Controllers\ProductoController@registro')->name('registro');
 Route::resource('/producto', ProductoController::class);
 
 Route::get('/editar', function () {
@@ -62,8 +63,8 @@ Route::get('/menu2', function () {
     return view('menu2');
 });
 
-
-Route::resource('/datosNego',NegocioAnd::class);
+Route::get('/datosNegocio/{id}', 'App\Http\Controllers\NegocioAnd@index')->name('datosNegocio');
+Route::resource('/datosNego', NegocioAnd::class);
 
 Route::get('/ventana', function () {
     return view('ventana');
@@ -72,9 +73,10 @@ Route::get('/ventana', function () {
 //Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
 //Route::put('/editar', [App\Http\Controllers\NegocioAnd::class, 'update'])->name('updatedatos');
 //Route::edit('/editar', [App\Http\Controllers\NegocioAnd::class, 'edit'])->name('editardatos');
-Route::get('/proveedor/listaproducto', [ProductoVilmaController::class,'index']  ) -> name('listaproducto');
-Route::get('proveedor/paginaprincipal', function (){
-    return view('Proveedor.PaginaPrincipal');
+Route::get('/proveedor/listaproducto', [ProductoVilmaController::class, 'index'])->name('listaproducto');
+Route::get('/lista/{id}', 'App\Http\Controllers\ProductoVilmaController@lista')->name('lista');
+Route::get('/proveedor/paginaprincipal', function () {
+    return view('/Proveedor/PaginaPrincipal');
 })->name('paginaprincipal');
 
 Route::resource('/verproductos', ProductoVilmaController::class);
@@ -83,42 +85,42 @@ Route::resource('/prueba', ProductoPruebaController::class);
 
 Route::resource('/categoria', CategoriaController::class);
 
-Route::resource('/userTemplate',NegocioAnd::class);
+Route::resource('/userTemplate', NegocioAnd::class);
 
-Route::resource('/novedades',NovedadesController::class);
+Route::resource('/novedades', NovedadesController::class);
 
 
 Route::get('/cliente/listarefrescos', function () {
     return view('Cliente.listarefrescos');
-})->name ('listarefrescos');
+})->name('listarefrescos');
 
-Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class,'getByCategory']);
+Route::get('/verproductos/categoria/{category}', [ProductoVilmaController::class, 'getByCategory']);
 
 Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 
 
-Route::resource('/registroNegocio',RegistroController::class);
+Route::resource('/registroNegocio', RegistroController::class);
 
 
 
-Route::resource('/login',AdriController::class);
+Route::resource('/login', AdriController::class);
 
 Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');
 Route::post('/addcarrito/{id}', 'App\Http\Controllers\ProductoLuisController@store')->name('addcarrito');
 Route::get('/car', 'App\Http\Controllers\ProductoLuisController@index')->name('car');
 Route::resource('informacion', ProductoLuisController::class);
 
-Route::resource('/listanegocio',ListanegociosController::class);
+Route::resource('/listanegocio', ListanegociosController::class);
 
-Route::get('/editarProducto/{id}', [ProductoVilmaController::class,'edit'])->name('editarProductos');
-Route::delete('/eliminarProducto',[ProductoVilmaController::class,'destroy'])->name('eliminarProductos');
-Route::put('/updateproducto/{id}',[ProductoVilmaController::class,'update'])->name('producto.update');
+Route::get('/editarProducto/{id}/{idneg}', [ProductoVilmaController::class, 'edit'])->name('editarProductos');
+Route::delete('/eliminarProducto', [ProductoVilmaController::class, 'destroy'])->name('eliminarProductos');
+Route::put('/updateproducto/{id}/{idneg}', [ProductoVilmaController::class, 'update'])->name('producto.update');
 
 
 
-Route::resource('/carrito',CarritoController::class);
+Route::resource('/carrito', CarritoController::class);
 
-Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class,'incrementarCantidad'])->name("incrementarCantidad");
-Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class,'decrementarCantidad'])->name("decrementarCantidad");
-Route::get('/eliminar/{id}', [App\Http\Controllers\CarritoController::class,'eliminarProducto'])->name("eliminarProducto");
-Route::get('/endC', [App\Http\Controllers\CarritoController::class,'finCompra'])->name("finCompra");
+Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class, 'incrementarCantidad'])->name("incrementarCantidad");
+Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class, 'decrementarCantidad'])->name("decrementarCantidad");
+Route::get('/eliminar/{id}', [App\Http\Controllers\CarritoController::class, 'eliminarProducto'])->name("eliminarProducto");
+Route::get('/endC', [App\Http\Controllers\CarritoController::class, 'finCompra'])->name("finCompra");

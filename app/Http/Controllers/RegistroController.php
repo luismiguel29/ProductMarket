@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\DatosNegocio;
-use App\Models\CarritoModel;
 use App\Models\Producto;
+use App\Models\CarritoModel;
+use App\Models\DatosNegocio;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class RegistroController extends Controller
 {
@@ -30,7 +32,8 @@ class RegistroController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            //'url' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
         $nombre = DatosNegocio::select('*')
@@ -38,7 +41,7 @@ class RegistroController extends Controller
             ->exists();
 
         if($validator->fails()){
-            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         }else if ($nombre) {
             return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {

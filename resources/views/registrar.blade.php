@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column">
     <header>
-        <img src="./style/logo.png" width="60px" alt="Logo de ProductMarket">
+        <img src="{{ asset('Imagenes/logo.png') }}" width="60px" alt="Logo de ProductMarket">
     </header>
 
     <div class="d-flex justify-content-evenly flex-column flex-md-row" style="padding-top: 50px;">
@@ -28,9 +28,9 @@
         </section>-->
 
         <section class="d-flex flex-column align-self-center gap-4 order-2 order-md-1">
-            <a href="{{route('datosNego.index')}}" class="btn btn-dark fs-5 btnb" style="">Editar</a>
-            <a href="categoria" class="btn btn-dark fs-5  btnb">Registrar producto</a>
-            <a href="proveedor/listaproducto" class="btn btn-dark fs-5  btnb">Ver productos</a>
+            <a href="{{ route('datosNego.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5 btnb" style="">Editar</a>
+            <a class="btn btn-dark fs-5  btnb">Registrar producto</a>
+            <a href="{{route('lista', $verificar->idnegocio)}}" class="btn btn-dark fs-5  btnb">Ver productos</a>
             <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
         </section>
 
@@ -44,7 +44,7 @@
         
                     <h5 class="text-center fs-5">Información del producto</h5>
                         {{-- @include('components.flash_alerts') --}}
-                        <form action="{{ isset($producto)? route('producto.update',['id'=>$producto->idproducto]): route('producto.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ isset($producto)? route('producto.update',['id'=>$producto->idproducto, 'idneg'=>$verificar->idnegocio]): route('registro', $verificar->idnegocio) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @if(isset($producto))
                                 @method('put')

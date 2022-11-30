@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\CarritoModel;
+use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -26,6 +27,12 @@ class ProductoVilmaController extends Controller
         $productos = Producto::join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.idproducto', 'producto.nombre', 'producto.precio','producto.preciodesc','producto.stock','categoria.nombre as catnombre','producto.fechainicio','producto.fechafin','producto.url') -> orderBy('nombre','ASC')->paginate(5);
         return view('Proveedor.Verlistaproductos', compact('productos'));
         
+    }
+
+    public function lista($id){
+        $verificar = DatosNegocio::where('idnegocio', $id)->first();
+        $productos = Producto::where('id_negocio', $id)-> orderBy('nombre','ASC')->paginate(5);
+        return view('Proveedor.Verlistaproductos', compact('productos', 'verificar'));
     }
 
     public function arrayPaginator($array, $request)
@@ -96,13 +103,14 @@ class ProductoVilmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $idneg)
     {
+        $verificar = DatosNegocio::where('idnegocio', $idneg)->first();
         $producto =Producto::find($id);
         $categoria = DB::table('categoria')
         ->orderByRaw('nombre ASC')
         ->get();
-        return view('registrar', compact('producto', 'categoria'));
+        return view('registrar', compact('producto', 'categoria', 'verificar'));
     }
 
     /**
@@ -112,14 +120,15 @@ class ProductoVilmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $idneg)
     {
         $validator = Validator::make($request->all(), [
-            'url_img' => 'nullable|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            //'url_img' => 'nullable|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url_img' => 'nullable|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
         if ($validator->fails()) {
-            return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         } else {
             $producto = Producto::find($id);
             if($request->file('url_img')!= null){
@@ -127,7 +136,7 @@ class ProductoVilmaController extends Controller
                 $producto->url=$url;
             }
                 $producto->id_categoria = $request->input('categoria');
-                $producto->id_negocio = 1;
+                $producto->id_negocio = $idneg;
                 $producto->nombre = $request->input('nombreprod');
                 $producto->precio = $request->input('precio');
                 $producto->preciodesc = $request->input('preciodesc');
@@ -138,7 +147,7 @@ class ProductoVilmaController extends Controller
                 $producto->descripcion = $request->input('descripprod');
                 
                 $producto->save();
-                return redirect('categoria')->with('message', '¡Edicion de datos exitoso!!!!!!!');
+                return back()->with('message', '¡Edicion de datos exitoso!!!!!!!');
         }
     }
 
@@ -151,7 +160,7 @@ class ProductoVilmaController extends Controller
     public function destroy(Request $request)
     {
         $producto=Producto::find($request->id)->delete();
-        return redirect()->route('listaproducto');
+        return back();
     }
 }
 

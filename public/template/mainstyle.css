@@ -83,3 +83,10 @@ small {
     width: 60px;
 }
 */
+
+.botonCompra{
+    text-align: center;
+}
+.header-carrito{
+    text-align: left;
+}

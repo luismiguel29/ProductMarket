@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\Validator;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class ProductoController extends Controller
 {
@@ -36,6 +37,41 @@ class ProductoController extends Controller
         //return $productos;
     }
 
+    public function registro(Request $request, $id)
+    {
+        /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
+        $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
+       */
+        $validator = Validator::make($request->all(), [
+            //'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 5maximo 600x600 px')->withInput();
+        } else {
+            $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+
+            /* $img = $request->file('url_img')->store('public/imagenes');
+    $url = Storage::url($img);  */
+
+            $producto = new Producto;
+            $producto->id_categoria = $request->input('categoria');
+            $producto->id_negocio = $id;
+            $producto->nombre = $request->input('nombreprod');
+            $producto->precio = $request->input('precio');
+            $producto->preciodesc = $request->input('preciodesc');
+            $producto->stock = $request->input('stockprod');
+            $producto->fechaven = $request->input('fechavenprod');
+            $producto->fechainicio = $request->input('fechainiciopromo');
+            $producto->fechafin = $request->input('fechafinpromo');
+            $producto->descripcion = $request->input('descripprod');
+            $producto->url = $url;
+            $producto->save();
+            return back()->with('message', '¡Registro exitoso!!!!!!!');
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -58,11 +94,12 @@ class ProductoController extends Controller
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
        */
         $validator = Validator::make($request->all(), [
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            //'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
+            'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
         if ($validator->fails()) {
-            return redirect('categoria')->with('alerta', 'Debe subir un archivo de imagen png,jpg de 500x500 o 600x600')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         } else {
             $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
 
@@ -82,7 +119,7 @@ class ProductoController extends Controller
             $producto->descripcion = $request->input('descripprod');
             $producto->url = $url;
             $producto->save();
-            return redirect('categoria')->with('message', '¡Registro exitoso!!!!!!!');
+            return back()->with('message', '¡Registro exitoso!!!!!!!');
         }
     }
 

@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     {{-- INICIO CARRITO DE COMPRAS --}}
     <div>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarRR"
