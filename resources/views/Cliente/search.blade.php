@@ -28,7 +28,7 @@
                 @if($productos-> isNotEmpty())
                         <div class="row row-cols-2">
                             @foreach ( $productos as $producto )
-                                <div class="col" >
+                                <a style="color: black" href="{{ route('info', $producto->idproducto) }}" class="col" >
                                     <div class="card" style="width: 18rem;">
                                     <div class="card-header" style="background-color: #000000" >
                                         <div style="color: #ffffff"><strong>Super oferta</strong></div>
@@ -46,7 +46,7 @@
                                         @endif
                                     </div>
                                     </div>
-                                </div>
+                                </a>
                             @endforeach
                         </div>
                  @else
