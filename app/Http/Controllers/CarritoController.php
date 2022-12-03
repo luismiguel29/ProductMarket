@@ -40,15 +40,16 @@ class CarritoController extends Controller
         $aux = CarritoModel::findOrFail($request->id); 
         $aux->increment('cantidad');
         $aux->save();
-        //return back();
-        return $aux->cantidad;
+        return back();
         //return redirect()->route(('carrito.index')); 
     }
     
     public function decrementarCantidad(Request $request){
         $aux = CarritoModel::findOrFail($request->id); 
-        $aux->decrement('cantidad');
-        $aux->save();
+        if(($aux->cantidad) > 1){
+            $aux->decrement('cantidad');
+            $aux->save();
+        }
         return back(); 
     }
 
