@@ -40,7 +40,8 @@ class CarritoController extends Controller
         $aux = CarritoModel::findOrFail($request->id); 
         $aux->increment('cantidad');
         $aux->save();
-        return back();
+        //return back();
+        return $aux->cantidad;
         //return redirect()->route(('carrito.index')); 
     }
     
