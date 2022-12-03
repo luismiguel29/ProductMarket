@@ -132,13 +132,17 @@
                                             </div>
                                             <div class="col-md-4 align-self-center">
                                                 <div class="d-flex justify-content-around">
+                                                    @if(($item->cantidad) > 0)
                                                     <a href="/decrementar/{{ $item->idcarrito }}"
                                                         class="fa-solid fa-square-minus fa-2x"
                                                         style="text-decoration: none;color:black"></a>
+                                                    @endif
                                                     <span style="font-size:20px">{{ $item->cantidad }}</span>
+                                                    @if(($item->cantidad) < ($item->stock))
                                                     <a href="/incrementar/{{ $item->idcarrito }}"
                                                         class="fa-solid fa-square-plus fa-2x"
                                                         style="text-decoration: none;color:black"></a>
+                                                    @endif
 
 
                                                     <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
