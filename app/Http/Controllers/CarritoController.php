@@ -43,7 +43,7 @@ class CarritoController extends Controller
             $aux->increment('cantidad');
             $aux->save();
         }
-        return back();
+        return previous();
         //return redirect()->route(('carrito.index')); 
     }
     
