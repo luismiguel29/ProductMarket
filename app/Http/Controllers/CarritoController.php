@@ -64,6 +64,6 @@ class CarritoController extends Controller
 
     public function finCompra(){
         CarritoModel::truncate();
-        return back();
+        return back()->with('message', 'Compra éxitosa');;
     }
 }

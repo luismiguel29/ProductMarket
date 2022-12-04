@@ -115,36 +115,22 @@
                 <div class="botonCompra">
                     <a href="/endC"
                         class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px" 
-                        style="font-size: 60px" data-bs-toggle="modal" data-bs-target="#borrar">Finalizar Compra</a>
+                        style="font-size: 60px">Finalizar Compra</a>
+
+                    @if (session('message')) 
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{ session('message') }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                    @endif
                 </div>
-                @include('finalizar')
 
             </div>
         @endif
-        <!---------------------->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Launch demo modal
-        </button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-        <!---------------------->
     </div>
     {{-- FIN CARRITO DE COMPRAS --}}
+
 </body>
 
 </html>
