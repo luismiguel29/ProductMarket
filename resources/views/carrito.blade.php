@@ -114,11 +114,11 @@
                 </div>-->
                 <div class="botonCompra">
                     <a href="/endC"
-                        class="btn btn-dark fs-5 {{-- btn-block --}}" 
-                        style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
+                        class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px" 
+                        style="font-size: 60px" data-bs-toggle="modal" data-bs-target="#borrar">Finalizar Compra</a>
                 </div>
 
-                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#borrar">
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#borrar">
                     textooo
                 </button>
                 @include('finalizar')
