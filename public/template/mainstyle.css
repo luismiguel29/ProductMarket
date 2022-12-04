@@ -131,10 +131,29 @@ form.example input[type=text] {
 font-display: none;
 width: 800px;
   }
-  @media only screen and (max-width: 768px) {
-    .example{
-        font-display: none;
-        width: 100%;
-  }
-  }
   
+
+  
+/* Para pantallas grandes hacemos que el formulario se despliegue con amplitud ya que disponemos de espacio en la barra de navegación, la busqueda se ejecuta con intro o pinchando en el icono de la lupa */
+@media (min-width:1200px) {
+    form.example input[type=text] { width: 80%; }
+}
+
+/* Para pantallas menores reducimos el campo de busqueda y hacemos que se despliegue cuando hacemos focus sobre el icono de la lupa. La busqueda se ejecuta con intro o pinchando de nuevo en el icono de la lupa */
+@media (max-width: 1200px) {
+    form.example input[type=text] {
+        width:80%;
+        padding: 10px;
+
+    }
+    form.example button {
+        width:auto;
+    }
+   
+}
+
+/* Para pantallas de smartphones ajustamos el ancho del campo de busqueda */
+@media (max-width: 375px) {
+    form.example input[type=text] { width: auto; }
+    .example{width: auto;}
+}
