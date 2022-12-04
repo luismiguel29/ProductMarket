@@ -53,7 +53,7 @@ class CarritoController extends Controller
             $aux->decrement('cantidad');
             $aux->save();
         }
-        //return back(); 
+        return back(); 
     }
 
     public function eliminarProducto($idcarrito){
