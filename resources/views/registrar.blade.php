@@ -102,7 +102,7 @@
                                 <label for="exampleInputPassword1" class="form-label">Categoria</label>
                                 <select name="categoria" class="form-select" aria-label="Default select example"
                                     required="">
-                                    <option selected>Selecione una categoria</option>
+                                    {{-- <option selected>Selecione una categoria</option> --}}
                                     @foreach ($categoria as $item)
                                         <option value="{{ $item->idcategoria }}" {{(isset($producto) && $producto->id_categoria ==$item->idcategoria)? 'selected':'' }}>{{ $item->nombre }}</option>
                                     @endforeach
