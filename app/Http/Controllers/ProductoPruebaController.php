@@ -39,7 +39,8 @@ class ProductoPruebaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos = DatosNegocio::all();
+        return $datos;
     }
 
     /**

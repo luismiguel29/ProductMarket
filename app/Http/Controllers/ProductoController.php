@@ -47,9 +47,14 @@ class ProductoController extends Controller
             'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
         ]);
 
+        $pre = $request->input('precio');
+        $predesc = $request->input('preciodesc');
+
         if ($validator->fails()) {
             return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de 5maximo 600x600 px')->withInput();
-        } else {
+        } else if($pre<=$predesc){
+            return back()->with('alerta', 'El precio AHORA debe ser menor a precio ANTES')->withInput();
+        }else{
             $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
 
             /* $img = $request->file('url_img')->store('public/imagenes');

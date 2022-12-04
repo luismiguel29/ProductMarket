@@ -24,7 +24,7 @@
     </div>
 
     <div>
-        
+        <h1>{{ route('prueba.store') }}</h1>
     </div>
 
 
