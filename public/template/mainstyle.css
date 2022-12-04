@@ -131,4 +131,10 @@ form.example input[type=text] {
 font-display: none;
 width: 800px;
   }
-
+  @media only screen and (max-width: 768px) {
+    .example{
+        font-display: none;
+        width: 100%;
+  }
+  }
+  
