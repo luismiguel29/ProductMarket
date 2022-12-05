@@ -39,14 +39,50 @@ class AdriController extends Controller
     return view('Cliente.vistaadri', compact('auxarr', 'total'));
   }
 
+  public function registro()
+  {
+    //-----------------------------------------------------
+    $carros = CarritoModel::all();
+    $auxarr = array();
+    $total = 0;
+    foreach ($carros as $carro) {
+      $producto = Producto::find($carro->idproducto);
+      $producto->cantidad = ($carro->cantidad);
+      $producto->idcarrito = ($carro->idcarrito);
+      json_encode($producto);
+      array_unshift($auxarr, $producto);
+      $total = (($carro->cantidad) * ($producto->preciodesc)) + $total;
+    }
+    //-----------------------------------------------------
+
+    $datos = DB::table('negocio');
+    /* return $datos; */
+    return view('Cliente.registroUsuario', compact('auxarr', 'total'));
+  }
+
+  public function registrarUser(Request $request)
+  {
+    $ver = DatosNegocio::where('email',$request->input('email'))->exists();
+    if ($ver) {
+      return back()->with('alerta', 'El correo electronico ya esta registrado!')->withInput();
+    } else if ($request->input('password') != $request->input('passwordrep')) {
+      return back()->with('alerta', 'Las contraseñas no coinciden!')->withInput();
+    } else {
+      $negocio = new DatosNegocio();
+      $negocio->email = $request->input('email');
+      $negocio->password = $request->input('password');
+      $negocio->save();
+      return back()->with('mensaje', 'Registro exitoso!');
+    }
+  }
+
   /**
    * Show the form for creating a new resource.
    *
    * @return \Illuminate\Http\Response
    */
-  public function create()
+  public function create(Request $request)
   {
-    
   }
 
   /**
@@ -67,7 +103,7 @@ class AdriController extends Controller
         return back()->with('alerta', 'Contraseña incorrecta!')->withInput();
       }
     } else {
-      return back()->with('alerta', 'Correo electronico incorrecto!');
+      return back()->with('alerta', 'Correo electronico no registrado!');
     }
   }
 
@@ -91,7 +127,6 @@ class AdriController extends Controller
    */
   public function edit($id)
   {
-    //
   }
 
   /**
