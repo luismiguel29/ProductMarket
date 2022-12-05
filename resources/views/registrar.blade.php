@@ -189,6 +189,10 @@
                         function preview() {
                             document.getElementById ("uno").src= URL.createObjectURL(event.target.files[0]);
                         }
+
+                        function cambiarfecha(){
+                            document.getElementById("fvenc")
+                        }
                         </script>
                 </div>
             </div>
