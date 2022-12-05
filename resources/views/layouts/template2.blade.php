@@ -43,11 +43,13 @@
 
    
             <div class="busqueda">
-          <form class="example" action="{{route('buscar')}}">
-            <input type="text" placeholder="Encuentra Lo Que Buscas de forma Rapida" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
+                <form class="example" action="{{route('buscar')}}">
+                    <input type="text" placeholder="Encuentra lo que buscas de forma rapida" name="search" required="" minlength="3"
+                                maxlength="30"
+                        onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32 )||( event.charCode == 13) )">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
 
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
