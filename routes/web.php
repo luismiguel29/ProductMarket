@@ -12,7 +12,8 @@ use App\Http\Controllers\ProductoLuisController;
 use App\Http\Controllers\ListanegociosController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\AdriController;
-
+use App\Http\Controllers\BuscadorController;
+use App\Models\DatosNegocio;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,14 @@ Route::get('/ventana', function () {
     return view('ventana');
 });
 
+Route::get('/Cliente/search', function () {
+    return view('/Cliente/search');
+});
+
+Route::get('/Cliente/registroUsuario', function () {
+    return view('/Cliente/registroUsuario');
+});
+
 //Route::get('/editar', [App\Http\Controllers\NegocioAnd::class, 'index'])->name('editar');
 //Route::put('/editar', [App\Http\Controllers\NegocioAnd::class, 'update'])->name('updatedatos');
 //Route::edit('/editar', [App\Http\Controllers\NegocioAnd::class, 'edit'])->name('editardatos');
@@ -104,6 +113,8 @@ Route::resource('/registroNegocio', RegistroController::class);
 
 
 Route::resource('/login', AdriController::class);
+Route::get('/registroUsuario', 'App\Http\Controllers\AdriController@registro')->name('registroUsuario');
+Route::post('/registrarUser', 'App\Http\Controllers\AdriController@registrarUser')->name('registrarUser');
 
 Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');
 Route::post('/addcarrito/{id}', 'App\Http\Controllers\ProductoLuisController@store')->name('addcarrito');
@@ -118,7 +129,18 @@ Route::put('/updateproducto/{id}/{idneg}', [ProductoVilmaController::class, 'upd
 
 
 
+Route::resource('/cliente/search', BuscadorController::class);
+/*buscar es una variable para enviar datos */
+Route::get('/buscar', 'App\Http\Controllers\BuscadorController@search')->name('buscar');
+
+
+
 Route::resource('/carrito', CarritoController::class);
+
+Route::get('render', function () {
+    $otros = DatosNegocio::all()->first();
+    return view('ventana', compact('otros'));
+});
 
 Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class, 'incrementarCantidad'])->name("incrementarCantidad");
 Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class, 'decrementarCantidad'])->name("decrementarCantidad");

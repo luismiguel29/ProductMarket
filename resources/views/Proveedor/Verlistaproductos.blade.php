@@ -91,7 +91,7 @@
 
       <div class="d-flex justify-content-between align-items-start">
         <div style="width:70px"></div>{!!$productos->links()!!}
-        <a type="button" href="{{route('paginaprincipal')}}" class="btn btn-dark fs-5" style="width: 70px; height:38px">Salir</a>
+        <a type="button" href="{{ route('login.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5" style="width: 70px; height:38px">Salir</a>
       </div>
 
     </div>

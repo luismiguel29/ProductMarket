@@ -121,7 +121,7 @@
 
                         <div class="d-flex justify-content-evenly ">
                             <button type="submit" class="btn btn-dark fs-5 ">Guardar</button>
-                            <a href="proveedor/paginaprincipal" type="reset"
+                            <a href="{{ route('login.show', $verificar->idnegocio) }}" type="reset"
                                 class="btn btn-dark fs-5 ">Cancelar</a>
                         </div>
 

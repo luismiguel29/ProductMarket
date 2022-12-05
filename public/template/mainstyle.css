@@ -90,3 +90,70 @@ small {
 .header-carrito{
     text-align: left;
 }
+
+
+
+form.example input[type=text] {
+    max-width: 3000px;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #D9D9D9;
+    float: left;
+    width: 80%;
+    background: #D9D9D9;
+    color: black;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #D9D9D9;
+    color: black;
+    font-size: 17px;
+    border: 1px solid #D9D9D9;
+    
+  }
+ 
+  .busqueda{
+    position: center;
+    margin: 0 auto;
+    margin-bottom: auto;
+    padding-top: 6px;
+    align-content: center;
+    align-items: center;
+    
+  }
+  .busqueda,.example{
+    justify-content: center;
+  }
+  .example{
+font-display: none;
+width: 800px;
+  }
+  
+
+  
+/* Para pantallas grandes hacemos que el formulario se despliegue con amplitud ya que disponemos de espacio en la barra de navegación, la busqueda se ejecuta con intro o pinchando en el icono de la lupa */
+@media (min-width:1200px) {
+    form.example input[type=text] { width: 80%; }
+}
+
+/* Para pantallas menores reducimos el campo de busqueda y hacemos que se despliegue cuando hacemos focus sobre el icono de la lupa. La busqueda se ejecuta con intro o pinchando de nuevo en el icono de la lupa */
+@media (max-width: 1200px) {
+    form.example input[type=text] {
+        width:80%;
+        padding: 10px;
+
+    }
+    form.example button {
+        width:auto;
+    }
+   
+}
+
+/* Para pantallas de smartphones ajustamos el ancho del campo de busqueda */
+@media (max-width: 375px) {
+    form.example input[type=text] { width: auto; }
+    .example{width: auto;}
+}

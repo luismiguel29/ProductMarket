@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('template/mainstyle.css') }}">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    
     <title>Product Market</title>
 
 </head>
@@ -34,21 +34,24 @@
                     <!--<img src="./style/logo.png" class="logo">-->
                     <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
                 </a>
-                {{--  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+               {{--  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbarRR" aria-controls="offcanvasNavbaR">
                     <span class="fa-solid fa-cart-shopping fa-2x"></span>
 
                 </button> --}}
             </div>
 
-            <!--
+   
             <div class="busqueda">
-          <form class="example" action="{{ route('buscar') }}">
-            <input type="text" placeholder="Encuentra Lo Que Buscas de forma Rapida" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-               -->
+                <form class="example" action="{{route('buscar')}}">
+                    <input type="text" placeholder="Encuentra lo que buscas de forma rapida" name="search" required="" minlength="3"
+                                maxlength="30"
+                        onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32 )||( event.charCode == 13) )">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -78,14 +81,14 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbarRR" aria-controls="offcanvasNavbaR">
                     <span class="fa-solid fa-cart-shopping fa-2x"></span>
-
+            
                 </button>
                 <a href="{{ route('novedades.index') }}">
                     <!--<img src="./style/logo.png" class="logo">-->
-
+            
                 </a>
             </div>
-
+            
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarRR"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class=" header-carrito d-flex justify-content-between offcanvas-header">
@@ -99,7 +102,7 @@
                 </div>
 
 
-                @if ($total == 0)
+                @if($total == 0)
                     <div class="botonCompra">
                         <img src="{{ asset('editarAll/img/carritovacio.png') }}" style="width: 100px; height: 100px;">
                     </div>
@@ -107,8 +110,9 @@
                     <p class="fs-4 text-center">Tu carrito está vacio</p>
 
                     <div class="botonCompra">
-                        <a href="/novedades" class="btn btn-dark fs-5" style="width: 300px"
-                            style="font-size: 60px">ELEGIR PRODUCTOS</a>
+                        <a href="/novedades"
+                            class="btn btn-dark fs-5"
+                            style="width: 300px" style="font-size: 60px">ELEGIR PRODUCTOS</a>
                     </div>
                 @else
                     <div class="offcanvas-body">
@@ -154,26 +158,27 @@
                                         </div>
                                     </div>
                             </li>
-                @endforeach
-                </ul>
+                            @endforeach
+                        </ul>
 
-                <div class="d-flex justify-content-around">
-                    <h5><strong>TOTAL</strong></h5>
-                    <H5><strong>Bs. {{ $total }}</strong></H5>
-                </div>
-                <!--<div class="botonCompra">
+                        <div class="d-flex justify-content-around">
+                            <h5><strong>TOTAL</strong></h5>
+                            <H5><strong>Bs. {{ $total }}</strong></H5>
+                        </div>
+                        <!--<div class="botonCompra">
                             <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
                                 style="font-size: 60px" --}}>Finalizar Compra</button>
                         </div>-->
-                <div class="botonCompra">
-                    <a href="/endC" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
-                        style="font-size: 60px">Finalizar Compra</a>
-                </div>
+                        <div class="botonCompra">
+                            <a href="/endC"
+                                class="btn btn-dark fs-5 {{-- btn-block --}}" 
+                                style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
+                        </div>
 
+                    </div>
+                @endif
             </div>
-            @endif
-        </div>
-        <!------------------------------------------------------------------------->
+            <!------------------------------------------------------------------------->
     </nav>
 
 
@@ -193,29 +198,17 @@
     </body>
 
     <script type="text/javascript">
-        function mostrarPassword() {
-            var cambio = document.getElementById("txtPassword");
-            if (cambio.type == "password") {
-                cambio.type = "text";
-                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-            } else {
-                cambio.type = "password";
-                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-            }
-        }
+        function mostrarPassword(){
+                var cambio = document.getElementById("txtPassword");
+                if(cambio.type == "password"){
+                    cambio.type = "text";
+                    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+                }else{
+                    cambio.type = "password";
+                    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+                }
+            } 
 
-        function mostrarPasswordrep() {
-            var cambio = document.getElementById("txtPasswordrep");
-            if (cambio.type == "password") {
-                cambio.type = "text";
-                $('.icon2').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-            } else {
-                cambio.type = "password";
-                $('.icon2').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-            }
-        }
-
-    </script>
-
+        </script>
 
     </html>

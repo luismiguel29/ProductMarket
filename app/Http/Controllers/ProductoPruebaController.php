@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
+use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Producto;
 
 class ProductoPruebaController extends Controller
 {
@@ -15,10 +16,12 @@ class ProductoPruebaController extends Controller
      */
     public function index()
     {
-        $productos = DB::table('producto')
+        /* $productos = DB::table('producto')
         ->orderByRaw('nombre ASC')
         ->get();
-        return view('ventana',compact('productos'));
+        return view('ventana',compact('productos')); */
+        $datos = DatosNegocio::first();
+        return $datos;
     }
 
     /**
@@ -39,7 +42,8 @@ class ProductoPruebaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos = DatosNegocio::all();
+        return $datos;
     }
 
     /**

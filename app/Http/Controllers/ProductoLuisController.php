@@ -45,7 +45,11 @@ class ProductoLuisController extends Controller
     public function store(Request $request, $id)
     {
         $verprod = Carrito::where('idproducto', $id)->exists();
-        if ($verprod) {
+        $producto = Producto::findOrFail($id);
+        $cantidad = $producto->stock;
+        if ($cantidad==0) {
+            return back()->with('alerta', 'El producto ya no cuenta con STOCK disponible!');
+        }else if ($verprod) {
             return back()->with('alerta', 'El producto ya se encuentra en el carrito, agregue otro producto!');
         } else {
             $carrito = new Carrito;
@@ -53,6 +57,11 @@ class ProductoLuisController extends Controller
             $carrito->cantidad = 1;
             $carrito->idusuario = 1;
             $carrito->save();
+
+            $cantidad--;
+            $producto->stock = $cantidad;
+            $producto->save();
+
             return back()->with('mensaje', 'El producto se agrego correctamente al carrito!');
         }
     }
@@ -66,16 +75,16 @@ class ProductoLuisController extends Controller
     public function show($idproducto)
     {
 
-        $carros = CarritoModel::all(); 
-        $auxarr = array(); 
-        $total = 0; 
-        foreach ($carros as $carro) { 
+        $carros = CarritoModel::all();
+        $auxarr = array();
+        $total = 0;
+        foreach ($carros as $carro) {
             $producto = Producto::find($carro->idproducto);
             $producto->cantidad = ($carro->cantidad);
             $producto->idcarrito = ($carro->idcarrito);
             json_encode($producto);
-            array_unshift($auxarr, $producto);             
-            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+            array_unshift($auxarr, $producto);
+            $total = (($carro->cantidad) * ($producto->preciodesc)) + $total;
         }
 
 
