@@ -192,6 +192,7 @@
 
                         function cambiarfecha(){
                             document.getElementById("fvenc").min=event.target.value
+                            console.log(event.target);
                         }
                         </script>
                 </div>
