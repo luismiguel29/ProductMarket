@@ -123,7 +123,7 @@
                                 <input type="date" class="form-control" name="fechafinpromo" max="2023-01-22"
                                     value="{{isset($producto)? $producto->fechafin: old('fechafinpromo') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
-                                    echo $hoy; ?> id="ffin">
+                                    echo $hoy; ?> id="ffin" onchange="cambiarfecha()">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
