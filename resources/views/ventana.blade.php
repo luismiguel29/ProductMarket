@@ -15,17 +15,24 @@
 
 <body>
 
-    <div class="container">
+    {{-- <div class="container">
         <form action="{{ route('categoria.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="nombre" id="">
             <input type="file" name="file" id="">
             <button type="submit" class="btn btn-primary">Registrar</button>
-    </div>
+    </div> --}}
+
+    @php
+        
+    @endphp
 
     <div>
-        <h1>{{ route('prueba.store') }}</h1>
+        <h1 id="h1" >contenido</h1>
+        <button onclick="cambiar()" >Cambiar</button>
     </div>
+
+    
 
 
 
@@ -43,6 +50,14 @@
             </div>
         @endforeach
     </div> --}}
+
+
+    <script>
+        function cambiar(){
+            $stock = 
+            document.getElementById('h1').innerHTML="nuevo contenido";
+        }
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
