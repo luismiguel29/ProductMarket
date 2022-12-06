@@ -34,6 +34,7 @@ class CarritoController extends Controller
         $carrito = CarritoModel::findOrFail($idcarrito);
         $carrito->delete();
         return back();
+        return "sdfsd";
     }
 
     public function incrementarCantidad(Request $request){
