@@ -139,9 +139,12 @@
         $(".btnEliminar").click(function (e) {
             e.preventDefault();
             var id = $(this).attr("id");
+
+            var form = $(this).parents('form');
+            var url = form.attr('action');
             
             $.ajax({
-                url: 'carrito.destroy',
+                url: url,
                 method: 'POST',
                 data: $("#formEliminar").serialize()
             }).done(function(res){
