@@ -28,7 +28,7 @@
     @endphp
 
     <div>
-        <h1 id="h1" >contenido</h1>
+        <h1 id="h1" >{{ $otros->nombre}}</h1>
         <button onclick="cambiar()" >Cambiar</button>
     </div>
 
@@ -54,7 +54,6 @@
 
     <script>
         function cambiar(){
-            $stock = 
             document.getElementById('h1').innerHTML="nuevo contenido";
         }
     </script>

@@ -61,8 +61,8 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a href="/registroNegocio" class="nav-link active" aria-current="page"
-                                href="#">Registrar mi negocio</a>
+                            <a href="{{ route('registroUsuario') }}" class="nav-link active" aria-current="page"
+                                href="#">Registrarse</a>
                         </li>
 
                         <li class="nav-item">

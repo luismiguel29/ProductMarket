@@ -116,14 +116,14 @@
                                 <input type="date" class="form-control" name="fechainiciopromo" max="2023-01-22"
                                     value="{{isset($producto)? $producto->fechainicio: old('fechainiciopromo') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
-                                    echo $hoy; ?> id="fvenc">
+                                    echo $hoy; ?> id="fini">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha fin promo</label>
                                 <input type="date" class="form-control" name="fechafinpromo" max="2023-01-22"
                                     value="{{isset($producto)? $producto->fechafin: old('fechafinpromo') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
-                                    echo $hoy; ?> id="fvenc">
+                                    echo $hoy; ?> id="ffin" onchange="cambiarfecha()">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
@@ -188,6 +188,11 @@
                         }
                         function preview() {
                             document.getElementById ("uno").src= URL.createObjectURL(event.target.files[0]);
+                        }
+
+                        function cambiarfecha(){
+                            document.getElementById("fvenc").min=event.target.value
+                            console.log(event.target);
                         }
                         </script>
                 </div>

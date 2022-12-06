@@ -13,8 +13,7 @@ use App\Http\Controllers\ListanegociosController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\AdriController;
 use App\Http\Controllers\BuscadorController;
-
-
+use App\Models\DatosNegocio;
 
 /*
 |--------------------------------------------------------------------------
@@ -137,6 +136,11 @@ Route::get('/buscar', 'App\Http\Controllers\BuscadorController@search')->name('b
 
 
 Route::resource('/carrito', CarritoController::class);
+
+Route::get('render', function () {
+    $otros = DatosNegocio::all()->first();
+    return view('ventana', compact('otros'));
+});
 
 Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class, 'incrementarCantidad'])->name("incrementarCantidad");
 Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class, 'decrementarCantidad'])->name("decrementarCantidad");
