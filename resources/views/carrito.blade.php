@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('template/mainstyle.css') }}">
     <title>Document</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -95,6 +97,14 @@
                                                     value="Eliminar" style="border:none"> </button>
                                             </form>
 
+                                            <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
+                                                method="post" id="formEliminar">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" id="{{ $item->idcarrito }}" class="btnEliminar fa-solid fa-trash fa-2x"
+                                                    value="Eliminar" style="border:none"> </button>
+                                            </form>
+
                                         </div>
                                     </div>
 
@@ -122,6 +132,31 @@
         @endif
     </div>
     {{-- FIN CARRITO DE COMPRAS --}}
+
+
+<script>
+    $(document).ready(function() {
+        $(".btnEliminar").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+            
+            $.ajax({
+                url: 'carrito.destroy',
+                method: 'POST',
+                data: $("#formEliminar").serialize()
+            }).done(function(res){
+                alert(res);
+            });
+
+        });
+    });
+</script>
+
+
+
+
+
+
 
 </body>
 
