@@ -33,9 +33,8 @@ class CarritoController extends Controller
     public function destroy($idcarrito){
         $carrito = CarritoModel::findOrFail($idcarrito);
         $carrito->delete();
-        //return back();
-        return response()->json([
-        ]);  
+        return back();
+        //return response()->json([]);  
     }
 
     public function incrementarCantidad(Request $request){
