@@ -146,9 +146,59 @@
             $.ajax({
                 url: url,
                 method: 'POST',
-                data: $("#formEliminar").serialize()
-            }).done(function(res){
-                alert(res);
+                data: $("#formEliminar").serialize(),
+                
+                success: function(data){
+                    @foreach ($auxarr as $item)
+                            <div class="card mb-1" style="max-width:540px;">
+                                <div class="d-flex justify-content-center row g-0">
+                                    <div class="col-sm-4">
+                                        <img src="{{ $item->url }}" class="card-img-top">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card-body">
+                                            {{--  <span class="card-title"><b>Stock {{ $item->stock}}</b></span> --}}
+                                            <h6 class="card-title"><b>{{ $item->nombre }}</b></h6>
+                                            {{--  <span style="color:#5D5D5D">Antes <s>Bs.{{ $item->precio }}</s></span> --}}
+                                            <span><strong>Bs. {{ $item->preciodesc }}</strong></spa </div>
+                                                <a href=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 align-self-center">
+                                        <div class="d-flex justify-content-around">
+                                            <a href="/decrementar/{{ $item->idcarrito }}"
+                                                class="fa-solid fa-square-minus fa-2x"
+                                                style="text-decoration: none;color:black"></a>
+                                            <span style="font-size:20px">{{ $item->cantidad }}</span>
+                                            <a href="/incrementar/{{ $item->idcarrito }}"
+                                                class="fa-solid fa-square-plus fa-2x"
+                                                style="text-decoration: none;color:black"></a>
+
+
+                                            <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
+                                                method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="fa-solid fa-trash fa-2x"
+                                                    value="Eliminar" style="border:none"> </button>
+                                            </form>
+
+                                            <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
+                                                method="post" id="formEliminar">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" id="{{ $item->idcarrito }}" class="btnEliminar fa-solid fa-trash fa-2x"
+                                                    value="Eliminar" style="border:none"> </button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </li>
+                    @endforeach
+                }
             });
 
         });
@@ -160,7 +210,9 @@
 
 
 
-
 </body>
 
 </html>
+
+
+
