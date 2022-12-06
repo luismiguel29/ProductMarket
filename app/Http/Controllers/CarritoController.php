@@ -33,8 +33,8 @@ class CarritoController extends Controller
     public function destroy($idcarrito){
         $carrito = CarritoModel::findOrFail($idcarrito);
         $carrito->delete();
-        //return back();
-        return "sdfsd";
+        return back();
+        //return "sdfsd";
     }
 
     public function incrementarCantidad(Request $request){
