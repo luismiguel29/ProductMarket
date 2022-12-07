@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('template/mainstyle.css') }}">
     <title>Document</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -62,6 +64,7 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
                         @foreach ($auxarr as $item)
+                        <tr id="registro{{ $item->idcarrito }}">
                             <div class="card mb-1" style="max-width:540px;">
                                 <div class="d-flex justify-content-center row g-0">
                                     <div class="col-sm-4">
@@ -95,13 +98,22 @@
                                                     value="Eliminar" style="border:none"> </button>
                                             </form>
 
+                                            <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
+                                                method="post" id="formEliminar">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" id="{{ $item->idcarrito }}" class="btnEliminar fa-solid fa-trash fa-2x"
+                                                    value="Eliminar" style="border:none"> </button>
+                                            </form>
+
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
+                        </tr>
+                        @endforeach
                     </li>
-                    @endforeach
                 </ul>
 
                 <div class="d-flex justify-content-around">
@@ -122,6 +134,36 @@
         @endif
     </div>
     {{-- FIN CARRITO DE COMPRAS --}}
+
+
+<script>
+    $(document).ready(function() {
+        $(".btnEliminar").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+
+            var form = $(this).parents('form');
+            var url = form.attr('action');
+            
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: $("#formEliminar").serialize(),
+                
+                success: function(data){
+                    $("#registro" + id).hide('slow');
+                }
+            });
+
+        });
+    });
+</script>
+
+
+
+
+
+
 
 </body>
 
