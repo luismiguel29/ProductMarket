@@ -38,7 +38,7 @@
                         
                         <div class="col-12">
                             <div class="input-group">
-                                <input ID="txtPassword" type="Password" Class="form-control" name="password">
+                                <input ID="txtPassword" type="Password" Class="form-control" name="password" required>
                                 <span class="input-group-btn">
                                     <button id="show_password" class="btn btn-secondary" type="button" onclick="mostrarPassword()">
                                         <span class="fa fa-eye-slash icon"></span> </button>
