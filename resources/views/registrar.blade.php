@@ -191,8 +191,13 @@
                         }
 
                         function cambiarfecha(){
-                            document.getElementById("fvenc").min=event.target.value
-                            document.getElementById("fvenc").value=event.target.value
+                            var fvencimiento=document.getElementById("fvenc")
+                            fvencimiento.min=event.target.value
+                            var d1=new Date(fvencimiento.value)
+                            var d2=new Date(event.target.value)
+                            if(d1.getTime()< d2.getTime()){
+                                fvencimiento.value=event.target.value
+                            }
                         }
                         </script>
                 </div>
