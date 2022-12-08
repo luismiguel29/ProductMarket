@@ -84,6 +84,11 @@
                                 </a>
                             </form>
                         </div>
+                        {{-- <div class="">                            
+                            <a href="{{ route('login.show', $verificar->idnegocio) }}" class="nav-link active" aria-current="page">
+                                Ir a ventana Proveedor
+                            </a>
+                        </div> --}}
                         @endauth
 
 

@@ -117,6 +117,7 @@ Route::resource('/login', AdriController::class);
 Route::get('/registroUsuario', 'App\Http\Controllers\AdriController@registro')->name('registroUsuario');
 Route::post('/registrarUser', 'App\Http\Controllers\AdriController@registrarUser')->name('registrarUser');
 Route::post('/logout', 'App\Http\Controllers\AdriController@cerrar')->name('logout');
+Route::get('/volver', 'App\Http\Controllers\AdriController@volver')->name('volver');
 //Route::post('/login', 'App\Http\Controllers\AdriController@store');
 
 Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');

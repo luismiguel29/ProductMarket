@@ -139,6 +139,12 @@ class AdriController extends Controller
     }
   }
 
+  public function volver(Request $request)
+  {
+    $verificar = DatosNegocio::where('email', $request->input('email'))->where('password', $request->input('password'))->first();
+    return view('/Proveedor/PaginaPrincipal', compact('verificar'));
+  }
+
   /**
    * Display the specified resource.
    *
