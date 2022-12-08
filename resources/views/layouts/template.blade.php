@@ -57,20 +57,36 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a href="{{ route('registroUsuario') }}" class="nav-link active" aria-current="page"
-                                href="#">Registrarse</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a href="{{ route('login.index') }}" class="nav-link active" aria-current="page"
-                                href="#">Iniciar Sesion</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a href="/listanegocio" class="nav-link active" aria-current="page" href="#">Ver
-                                Negocios</a>
-                        </li>
+
+                        @guest
+                            <li class="nav-item">
+                                <a href="{{ route('registroUsuario') }}" class="nav-link active" aria-current="page"
+                                    href="#">Registrarse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('login.index') }}" class="nav-link active" aria-current="page"
+                                    href="#">Iniciar Sesion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/listanegocio" class="nav-link active" aria-current="page" href="#">Ver
+                                    Negocios</a>
+                            </li>
+                        @endguest
+
+                        @auth
+                        <div class="">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <a href="#" class="nav-link active" aria-current="page" onclick="this.closest('form').submit()">
+                                    Cerrar sesi&oacute;n
+                                </a>
+                            </form>
+                        </div>
+                        @endauth
+
+
                 </div>
             </div>
             <!------------------------------------------------------------------------->
@@ -214,7 +230,6 @@
                 $('.icon2').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
             }
         }
-
     </script>
 
 

@@ -28,7 +28,7 @@
     @endphp
 
     <div>
-        <h1 id="h1" >{{ $otros->nombre}}</h1>
+        <h1 id="h1" >hola mundo</h1>
         <button onclick="cambiar()" >Cambiar</button>
     </div>
 

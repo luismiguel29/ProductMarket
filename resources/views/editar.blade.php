@@ -35,7 +35,15 @@
             <button class="btn btn-dark fs-5 btnb">Editar</button>
             <a href="{{ route('categoria.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5 btnb">Registrar producto</a>
             <a href="{{route('lista', $verificar->idnegocio)}}" class="btn btn-dark fs-5 btnb">Ver productos</a>
-            <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
+            {{-- <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a> --}}
+            <div class="">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-dark fs-5" style="width:185px">
+                        Cerrar sesi&oacute;n
+                    </button>
+                </form>
+            </div>
         </section>
 
 
