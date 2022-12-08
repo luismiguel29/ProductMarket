@@ -16,6 +16,12 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> ['otros']]);
+    }
+
     public function index()
     {
         $categoria = DB::table('categoria')

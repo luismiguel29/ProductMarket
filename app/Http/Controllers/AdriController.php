@@ -22,7 +22,7 @@ class AdriController extends Controller
    */
   public function __construct()
   {
-    $this->middleware('auth', ['except' => ['store', 'index']]);
+    $this->middleware('auth', ['except' => ['store', 'index', 'registro', 'registrarUser']]);
   }
 
   public function index()
