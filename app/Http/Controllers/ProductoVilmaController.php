@@ -22,6 +22,12 @@ class ProductoVilmaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['only'=>['lista']]);
+    }
+
     public function index(Request $request)
     {
         $productos = Producto::join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.idproducto', 'producto.nombre',
