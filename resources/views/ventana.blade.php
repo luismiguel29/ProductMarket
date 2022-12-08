@@ -15,22 +15,14 @@
 
 <body>
 
-    {{-- <div class="container">
+    <div class="container">
         <form action="{{ route('categoria.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="text" name="nombre" id="">
-            <input type="file" name="file" id="">
+            <input type="email" name="email" id="">
+            <input type="password" name="password" id="">
             <button type="submit" class="btn btn-primary">Registrar</button>
-    </div> --}}
-
-    @php
-        
-    @endphp
-
-    <div>
-        <h1 id="h1" >hola mundo</h1>
-        <button onclick="cambiar()" >Cambiar</button>
     </div>
+
 
     
 
