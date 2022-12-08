@@ -42,11 +42,9 @@ class ProductoController extends Controller
         /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
        */
-        $validator = $request->validate([
+        $validator = Validator::make($request->all(), [
             //'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
             'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
-            'nombreprod'=>'max:50'
-        
         ]);
 
         $pre = $request->input('precio');
