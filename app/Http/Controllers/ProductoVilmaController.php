@@ -100,7 +100,7 @@ class ProductoVilmaController extends Controller
             $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
         }
 
-        $productos = Producto::where('id_categoria', $category)->orderBy('nombre','ASC')->paginate(8);
+        $productos = Producto::where('id_categoria', $category)->where('stock', '>', 0)->orderBy('nombre','ASC')->paginate(8);
         $categoryName= Categoria::where('idcategoria',$category)->first();
         return view('/Cliente/listarefrescos', compact('productos', 'categoryName', 'auxarr', 'total'));
     }
