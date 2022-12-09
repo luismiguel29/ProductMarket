@@ -130,33 +130,34 @@ class ProductoVilmaController extends Controller
      */
     public function update(Request $request, $id, $idneg)
     {
-        $validator = Validator::make($request->all(), [
-            //'url_img' => 'nullable|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
-            'url_img' => 'nullable|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
+        $request->validate([
+            'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
+            'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
+            'preciodesc' => 'lt:precio',
+        ], [
+            'nombreprod.regex' => 'El campo nombre solo puede tener letras',
+            'preciodesc.lt' => 'El precio AHORA debe ser menor a precio ANTES',
+            'url_img' => 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px'
         ]);
 
-        if ($validator->fails()) {
-            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
-        } else {
-            $producto = Producto::find($id);
-            if($request->file('url_img')!= null){
-                $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
-                $producto->url=$url;
-            }
-                $producto->id_categoria = $request->input('categoria');
-                $producto->id_negocio = $idneg;
-                $producto->nombre = $request->input('nombreprod');
-                $producto->precio = $request->input('precio');
-                $producto->preciodesc = $request->input('preciodesc');
-                $producto->stock = $request->input('stockprod');
-                $producto->fechaven = $request->input('fechavenprod');
-                $producto->fechainicio = $request->input('fechainiciopromo');
-                $producto->fechafin = $request->input('fechafinpromo');
-                $producto->descripcion = $request->input('descripprod');
-                
-                $producto->save();
-                return back()->with('message', '¡Edicion de datos exitoso!!!!!!!');
+        $producto = Producto::find($id);
+        if($request->file('url_img')!= null){
+            $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
+            $producto->url=$url;
         }
+            $producto->id_categoria = $request->input('categoria');
+            $producto->id_negocio = $idneg;
+            $producto->nombre = $request->input('nombreprod');
+            $producto->precio = $request->input('precio');
+            $producto->preciodesc = $request->input('preciodesc');
+            $producto->stock = $request->input('stockprod');
+            $producto->fechaven = $request->input('fechavenprod');
+            $producto->fechainicio = $request->input('fechainiciopromo');
+            $producto->fechafin = $request->input('fechafinpromo');
+            $producto->descripcion = $request->input('descripprod');
+            
+            $producto->save();
+            return back()->with('message', '¡Edicion de datos exitoso!!!!!!!');
     }
 
     /**
