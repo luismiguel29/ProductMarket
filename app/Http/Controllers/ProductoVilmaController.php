@@ -132,7 +132,7 @@ class ProductoVilmaController extends Controller
     {
         $request->validate([
             'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
+            'url_img' => 'nullable|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
             'preciodesc' => 'lt:precio',
         ], [
             'nombreprod.regex' => 'El campo nombre solo puede tener letras',
