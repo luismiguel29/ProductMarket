@@ -14,7 +14,16 @@
             {{-- <div class="my-3 mx-auto"><a class="btn btn-dark fs-5 " href="{{route('datosNego.show', $verificar->idnegocio)}}" style="width:185px">Editar</a></div> --}}
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="{{ route('categoria.show', $verificar->idnegocio) }}" style="width:185px">Registrar producto</a></div>
             <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="{{route('lista', $verificar->idnegocio)}}" style="width:185px">Ver productos</a></div>
-            <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="/novedades" style="width:185px">Cerrar sesi&oacute;n</a></div>
+            {{-- <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="/novedades" style="width:185px">Cerrar sesi&oacute;n</a></div> --}}
+            {{-- <div class="my-3 mx-auto"><a class="btn btn-dark fs-5" href="{{ route('logout') }}" style="width:185px">Cerrar sesi&oacute;n</a></div> --}}
+            <div class="my-3 mx-auto">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-dark fs-5" style="width:185px">
+                        Cerrar sesi&oacute;n
+                    </button>
+                </form>
+            </div>
             </div>
 
 

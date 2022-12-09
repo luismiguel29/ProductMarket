@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Vinkla\Hashids\Facades\Hashids;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -16,6 +18,11 @@ class NegocioAnd extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=>['otro']]);
+    }
 
     public function index()
     {
@@ -83,6 +90,7 @@ class NegocioAnd extends Controller
      */
     public function show($id)
     {
+        //$verificar = DatosNegocio::where('idnegocio', Hashids::decode($id))->first();
         $verificar = DatosNegocio::where('idnegocio', $id)->first();
         $dato = DatosNegocio::where('idnegocio', $id)->first();
         //return $dato;

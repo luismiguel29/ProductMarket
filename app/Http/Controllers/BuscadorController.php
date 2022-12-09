@@ -49,6 +49,7 @@ class BuscadorController extends Controller
         
         $productos = Producto::select()
                 ->where('nombre', 'LIKE', '%'.$request->input('search').'%')
+                ->where('stock', '>', 0)
                 ->get();
         
         if (count($productos) == 0){
