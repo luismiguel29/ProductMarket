@@ -62,15 +62,6 @@
                                         @endforeach
                                     </div>
                                 @endif --}}
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
 
 
                                 @if (session('message'))
@@ -92,6 +83,11 @@
                                     type="text" value="{{isset($producto)? $producto->nombre: old('nombreprod') }}"
                                     onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) )"
                                     minlength="3" maxlength="50">
+                                    @error('nombreprod')
+                                        <div class="text-danger">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                             </div>
 
 
@@ -107,6 +103,11 @@
                                 <input type="number" step="any" class="form-control" name="preciodesc"
                                     value="{{isset($producto)? $producto->preciodesc: old('preciodesc') }}" required="" id="pahora" min="1"
                                     max="1000">
+                                @error('preciodesc')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
@@ -180,6 +181,11 @@
                                 <input type="file" class="form-control" name="url_img" {{isset($producto)? "": "required"}} onchange="preview()"
                                     id="url_img" accept="image/*">
                                     <img style="max-width:200px"src="" alt="" id="uno"/>
+                                @error('url_img')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
