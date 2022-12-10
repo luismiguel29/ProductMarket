@@ -45,7 +45,7 @@ class CarritoController extends Controller
         }
         //return back();
         return response()->json([
-            'total' => $aux->cantidad
+            'totalDec' => $aux->cantidad
         ]);   
     }
 
@@ -56,8 +56,12 @@ class CarritoController extends Controller
             $aux->increment('cantidad');
             $aux->save();
         }
-        return back();
+        //return back();
         //return redirect()->route(('carrito.index')); 
+
+        return response()->json([
+            'totalInc' => $aux->cantidad
+        ]);  
     }
 
     public function eliminarProducto($idcarrito){
