@@ -97,7 +97,7 @@
                         <h5>{{ $producto->nombre }}</h5>
                         <span class="fa-brands fa-product-hunt"></span>
                         <span> <b> {{ $producto->descripcion }} </b></span><br>
-                        <span class="fa-solid fa-circle-dollar"></span>
+                        <span class="fa-sharp fa-solid fa-circle-dollar"></span>
                         <span  style="color: #7D7D7D"><b>Antes Bs. <s >{{ $producto->precio }}</s> / Ahora Bs.
                             {{ $producto->preciodesc }}</b>     </span><br>
                             <span class="fa-regular fa-calendar-clock"></span>
