@@ -131,7 +131,8 @@ class ProductoVilmaController extends Controller
     public function update(Request $request, $id, $idneg)
     {
         $request->validate([
-            'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
+            //'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
+            'nombreprod' => 'required|max:50',
             'url_img' => 'nullable|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
             'preciodesc' => 'lt:precio',
         ], [
