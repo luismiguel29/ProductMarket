@@ -64,7 +64,7 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
                         @foreach ($auxarr as $item)
-                        <tr id="registro{{ $item->idcarrito }}">
+                        <tr id="productoC{{ $item->idcarrito }}">
                             <div class="card mb-1" style="max-width:540px;">
                                 <div class="d-flex justify-content-center row g-0">
                                     <div class="col-sm-4">
@@ -151,7 +151,7 @@
                 data: $("#formEliminar").serialize(),
                 
                 success: function(data){
-                    $("#registro" + id).hide('slow');
+                    $("#productoC" + id).hide('slow');
                 }
             });
 
