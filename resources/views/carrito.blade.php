@@ -81,9 +81,10 @@
                                     </div>
                                     <div class="col-md-4 align-self-center">
                                         <div class="d-flex justify-content-around">
-                                            <a href="/decrementar/{{ $item->idcarrito }}"
+                                            
+                                            <!--<a href="/decrementar/{{ $item->idcarrito }}"
                                                 class="fa-solid fa-square-minus fa-2x"
-                                                style="text-decoration: none;color:black"></a>
+                                                style="text-decoration: none;color:black"></a>-->
 
                                             <form name="formDec" id="formDec" action="{{ route('decrementarCantidad', $item->idcarrito) }}" method="POST">
                                                 @csrf
@@ -95,9 +96,17 @@
                                             
                                             <span id="idCantidad" style="font-size:20px">{{ $item->cantidad }}</span>
                                             
-                                            <a href="/incrementar/{{ $item->idcarrito }}"
+                                            <!--<a href="/incrementar/{{ $item->idcarrito }}"
                                                 class="fa-solid fa-square-plus fa-2x"
-                                                style="text-decoration: none;color:black"></a>
+                                                style="text-decoration: none;color:black"></a>-->
+
+                                            <form name="formInc" id="formInc" action="{{ route('incrementarCantidad', $item->idcarrito) }}" method="POST">
+                                                @csrf
+                                                @method('GET')
+                                                <a href="#" id="{{ $item->idcarrito }}"
+                                                    class="btnInc fa-solid fa-square-plus fa-2x"
+                                                    style="text-decoration: none;color:black"></a>
+                                            </form>
 
 
                                             <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
@@ -171,7 +180,6 @@
                     //$('#ssAll').html(555);
                 }
             });
-
         });
 
 
@@ -188,10 +196,28 @@
                 data: $("#formDec").serialize(),
                 
                 success: function(data){
-                    $('#idCantidad').html(data.total);
+                    $('#idCantidad').html(data.totalDec);
                 }
             });
+        });
 
+
+        $(".btnInc").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+
+            var form = $(this).parents('form');
+            var url = form.attr('action');
+            
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: $("#formInc").serialize(),
+                
+                success: function(data){
+                    $('#idCantidad').html(data.totalInc);
+                }
+            });
         });
 
     });
