@@ -218,17 +218,27 @@
     </body>
 
     <script type="text/javascript">
-        function mostrarPassword(){
-                var cambio = document.getElementById("txtPassword");
-                if(cambio.type == "password"){
-                    cambio.type = "text";
-                    $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-                }else{
-                    cambio.type = "password";
-                    $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-                }
-            } 
+        function mostrarPassword() {
+            var cambio = document.getElementById("txtPassword");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        }
 
-        </script>
+        function mostrarPasswordrep() {
+            var cambio = document.getElementById("txtPasswordrep");
+            if (cambio.type == "password") {
+                cambio.type = "text";
+                $('.icon2').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+            } else {
+                cambio.type = "password";
+                $('.icon2').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+            }
+        }
+    </script>
 
     </html>
