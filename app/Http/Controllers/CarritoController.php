@@ -44,7 +44,9 @@ class CarritoController extends Controller
             $aux->save();
         }
         //return back();
-        return response()->json([]);   
+        return response()->json([
+            'total' => $aux->cantidad
+        ]);   
     }
 
     public function incrementarCantidad(Request $request){
