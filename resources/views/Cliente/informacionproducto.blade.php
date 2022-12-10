@@ -103,8 +103,8 @@
                             <h5><span style="color: #7D7D7D">Stock: {{ $producto->stock }}</span></h5>
                             <hr class="separador">
                             <h5>{{ $negocio->nombre }}</h5>
-                            <i class="fa-sharp fa-solid fa-location-dot">  <h5 >{{ $negocio->direccion }}</h5></i>
-                           
+                            <i class="fa-sharp fa-solid fa-location-dot fa-2x" style = "float: left"></i>
+                            <h5 >{{ $negocio->direccion }}</h5>
                             <h5><span style="color: #7D7D7D">Horario: {{ $negocio->horarioinicio }} -
                                     {{ $negocio->horariofin }}</span> </h5>
 
