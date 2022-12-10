@@ -212,8 +212,8 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalInc);
-                    //$('#idTotal').html(data.totalF); 
-                    $('#idTotal').html(Bs. data.totalF);
+                    $('#idTotal').html(data.totalF); 
+                    //$('#idTotal').html(Bs. data.totalF);
                 }
             });
         });
