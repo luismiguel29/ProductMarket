@@ -64,7 +64,7 @@
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
                         @foreach ($auxarr as $item)
-                        <tr id="registro{{ $item->idcarrito }}">
+                        <tr id="productoC{{ $item->idcarrito }}">
                             <div class="card mb-1" style="max-width:540px;">
                                 <div class="d-flex justify-content-center row g-0">
                                     <div class="col-sm-4">
@@ -84,7 +84,16 @@
                                             <a href="/decrementar/{{ $item->idcarrito }}"
                                                 class="fa-solid fa-square-minus fa-2x"
                                                 style="text-decoration: none;color:black"></a>
+
+                                            <form name="formDec" id="formDec" action="" method="POST">
+                                                @csrf
+                                                <a href="/decrementar/{{ $item->idcarrito }}" id="{{ $item->idcarrito }}"
+                                                    class="btnDec fa-solid fa-square-minus fa-2x"
+                                                    style="text-decoration: none;color:black"></a>
+                                            </form>
+                                            
                                             <span style="font-size:20px">{{ $item->cantidad }}</span>
+                                            
                                             <a href="/incrementar/{{ $item->idcarrito }}"
                                                 class="fa-solid fa-square-plus fa-2x"
                                                 style="text-decoration: none;color:black"></a>
@@ -130,6 +139,10 @@
                         style="font-size: 60px">Finalizar Compra</a>
                 </div>
 
+                <strong id="ssAll">
+                    ({{ $total }})
+                </strong> 
+
             </div>
         @endif
     </div>
@@ -138,6 +151,7 @@
 
 <script>
     $(document).ready(function() {
+
         $(".btnEliminar").click(function (e) {
             e.preventDefault();
             var id = $(this).attr("id");
@@ -151,11 +165,34 @@
                 data: $("#formEliminar").serialize(),
                 
                 success: function(data){
-                    $("#registro" + id).hide('slow');
+                    $("#productoC" + id).hide('slow');
+
+                    //$('#ssAll').html(555);
                 }
             });
 
         });
+
+
+        $(".btnDec").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+
+            var form = $(this).parents('form');
+            var url = "/decrementar/{{ $item->idcarrito }}";
+            
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: $("#formDec").serialize(),
+                
+                success: function(data){
+                    //$('#ssAll').html(555);
+                }
+            });
+
+        });
+
     });
 </script>
 

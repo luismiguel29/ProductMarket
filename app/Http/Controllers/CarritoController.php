@@ -33,8 +33,18 @@ class CarritoController extends Controller
     public function destroy($idcarrito){
         $carrito = CarritoModel::findOrFail($idcarrito);
         $carrito->delete();
-        return back();
-        //return response()->json([]);  
+        //return back();
+        return response()->json([]);  
+    }
+
+    public function decrementarCantidad(Request $request){
+        $aux = CarritoModel::findOrFail($request->id); 
+        if(($aux->cantidad) > 1){
+            $aux->decrement('cantidad');
+            $aux->save();
+        }
+        //return back();
+        return response()->json([]);   
     }
 
     public function incrementarCantidad(Request $request){
@@ -46,15 +56,6 @@ class CarritoController extends Controller
         }
         return back();
         //return redirect()->route(('carrito.index')); 
-    }
-    
-    public function decrementarCantidad(Request $request){
-        $aux = CarritoModel::findOrFail($request->id); 
-        if(($aux->cantidad) > 1){
-            $aux->decrement('cantidad');
-            $aux->save();
-        }
-        return back(); 
     }
 
     public function eliminarProducto($idcarrito){
