@@ -38,7 +38,7 @@
         aria-labelledby="offcanvasNavbarLabel">
         <div class=" header-carrito d-flex justify-content-between offcanvas-header">
             <div class="d-flex flex-column center">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tu carritooooo</h5>
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tu carrito</h5>
                 <span class="fa-solid fa-cart-shopping fa-2x"></span>
             </div>
 
@@ -130,6 +130,10 @@
                         style="font-size: 60px">Finalizar Compra</a>
                 </div>
 
+                <strong id="ssAll">
+                    ({{ $total }})
+                </strong> 
+
             </div>
         @endif
     </div>
@@ -152,6 +156,8 @@
                 
                 success: function(data){
                     $("#productoC" + id).hide('slow');
+
+                    $('#ssAll').html(555);
                 }
             });
 
