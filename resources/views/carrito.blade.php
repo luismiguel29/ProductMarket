@@ -84,7 +84,16 @@
                                             <a href="/decrementar/{{ $item->idcarrito }}"
                                                 class="fa-solid fa-square-minus fa-2x"
                                                 style="text-decoration: none;color:black"></a>
+
+                                            <form name="formDec" id="formDec" action="" method="POST">
+                                                @csrf
+                                                <a href="/decrementar/{{ $item->idcarrito }}" id="{{ $item->idcarrito }}"
+                                                    class="btnDec fa-solid fa-square-minus fa-2x"
+                                                    style="text-decoration: none;color:black"></a>
+                                            </form>
+                                            
                                             <span style="font-size:20px">{{ $item->cantidad }}</span>
+                                            
                                             <a href="/incrementar/{{ $item->idcarrito }}"
                                                 class="fa-solid fa-square-plus fa-2x"
                                                 style="text-decoration: none;color:black"></a>
@@ -142,6 +151,7 @@
 
 <script>
     $(document).ready(function() {
+
         $(".btnEliminar").click(function (e) {
             e.preventDefault();
             var id = $(this).attr("id");
@@ -157,11 +167,32 @@
                 success: function(data){
                     $("#productoC" + id).hide('slow');
 
-                    $('#ssAll').html(555);
+                    //$('#ssAll').html(555);
                 }
             });
 
         });
+
+
+        $(".btnDec").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+
+            var form = $(this).parents('form');
+            var url = form.attr('action');
+            
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: $("#formDec").serialize(),
+                
+                success: function(data){
+                    //$('#ssAll').html(555);
+                }
+            });
+
+        });
+
     });
 </script>
 
