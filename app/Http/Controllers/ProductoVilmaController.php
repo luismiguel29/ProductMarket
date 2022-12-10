@@ -131,11 +131,12 @@ class ProductoVilmaController extends Controller
     public function update(Request $request, $id, $idneg)
     {
         $request->validate([
-            'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
+            'nombreprod' => 'required|max:50',
+            'nombreprod' => 'required|regex:/^[a-zA-Z]+$/',
             'url_img' => 'nullable|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
             'preciodesc' => 'lt:precio',
         ], [
-            'nombreprod.max' => 'El campo nombre solo acepta 50 caracteres',
+            'nombreprod.required' => 'El campo nombre solo acepta 50 caracteres',
             'nombreprod.regex' => 'El campo nombre solo puede tener letras',
             'preciodesc.lt' => 'El precio AHORA debe ser menor a precio ANTES',
             'url_img' => 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px'
