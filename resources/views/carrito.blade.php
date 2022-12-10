@@ -87,6 +87,7 @@
 
                                             <form name="formDec" id="formDec" action="{{ route('decrementarCantidad', $item->idcarrito) }}" method="POST">
                                                 @csrf
+                                                @method('GET')
                                                 <a href="#" id="{{ $item->idcarrito }}"
                                                     class="btnDec fa-solid fa-square-minus fa-2x"
                                                     style="text-decoration: none;color:black"></a>
