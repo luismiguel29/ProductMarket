@@ -56,7 +56,7 @@ class CarritoController extends Controller
         //return back();
         return response()->json([
             'totalDec' => $aux->cantidad,
-            'totalF' => '3333'
+            'totalF' => $funTotal()
         ]);   
     }
 
@@ -71,7 +71,7 @@ class CarritoController extends Controller
         //return redirect()->route(('carrito.index')); 
         return response()->json([
             'totalInc' => $aux->cantidad,
-            'totalF' => '3333'
+            'totalF' => $funTotal()
         ]);  
     }
 
