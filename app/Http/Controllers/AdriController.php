@@ -47,6 +47,8 @@ class AdriController extends Controller
     return view('Cliente.vistaadri', compact('auxarr', 'total'));
   }
 
+  
+
   public function registro()
   {
     //-----------------------------------------------------

@@ -2,6 +2,10 @@
 
 @section('content')
     <!--d-flex justify-content-center align-items-center-->
+    @auth
+        <a href="{{ route('paginaprincipal') }}">Volver a pantalla de Proveedor</a>
+    @endauth
+    @guest
     <div class="d-flex justify-content-around" style="padding-top: 52px;">
 
         <div class="card mb-5" style="width: 25rem;">
@@ -74,4 +78,5 @@
         </div>
 
     </div>
+    @endguest
 @endsection
