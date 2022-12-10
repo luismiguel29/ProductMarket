@@ -8,11 +8,10 @@ use App\Models\CarritoModel;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 
@@ -38,8 +37,8 @@ class ProductoVilmaController extends Controller
     }
 
     public function lista($id){
-        $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
-        $productos = Producto::where('id_negocio', Crypt::decrypt($id))-> join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.idproducto', 'producto.nombre',
+        $verificar = DatosNegocio::where('idnegocio', $id)->first();
+        $productos = Producto::where('id_negocio', $id)-> join('categoria','producto.id_categoria', '=','categoria.idcategoria')-> select('producto.idproducto', 'producto.nombre',
         'producto.precio','producto.preciodesc','producto.stock','categoria.nombre as catnombre','producto.fechainicio','producto.fechafin','producto.url') -> orderBy('nombre','ASC')->paginate(5);
         return view('Proveedor.Verlistaproductos', compact('productos', 'verificar'));
     }
@@ -114,7 +113,7 @@ class ProductoVilmaController extends Controller
      */
     public function edit($id, $idneg)
     {
-        $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($idneg))->first();
+        $verificar = DatosNegocio::where('idnegocio', $idneg)->first();
         $producto =Producto::find($id);
         $categoria = DB::table('categoria')
         ->orderByRaw('nombre ASC')
@@ -132,13 +131,11 @@ class ProductoVilmaController extends Controller
     public function update(Request $request, $id, $idneg)
     {
         $request->validate([
-            'nombreprod' => 'required|max:50',
-            'nombreprod' => 'required|regex:/^[a-zA-Z]+$/',
+            'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
             'url_img' => 'nullable|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
             'preciodesc' => 'lt:precio',
         ], [
-            'nombreprod.max' => 'El campo nombre solo acepta 50 caracteres',
-            'nombreprod.regex' => 'El campo nombre solo puede tener letras',
+            'nombreprod.regex' => 'El campo nombre solo puede tener letras y no mas de 50 caracteres',
             'preciodesc.lt' => 'El precio AHORA debe ser menor a precio ANTES',
             'url_img' => 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px'
         ]);
@@ -149,7 +146,7 @@ class ProductoVilmaController extends Controller
             $producto->url=$url;
         }
             $producto->id_categoria = $request->input('categoria');
-            $producto->id_negocio = Crypt::decrypt($idneg);
+            $producto->id_negocio = $idneg;
             $producto->nombre = $request->input('nombreprod');
             $producto->precio = $request->input('precio');
             $producto->preciodesc = $request->input('preciodesc');
