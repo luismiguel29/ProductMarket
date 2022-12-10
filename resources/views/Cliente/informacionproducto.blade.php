@@ -94,7 +94,7 @@
 
                         {{-- capturamos los datos que se envian a la vista para luego mostrar la informacion del producto --}}
 
-                        <h4>{{ $producto->nombre }}</h4>
+                        <h4><b>{{ $producto->nombre }} </b></h4>
                         <span class="fa-brands fa-product-hunt"></span>
                         <span> <b> {{ $producto->descripcion }} </b></span><br>
                         <span class="fa-solid fa-circle-dollar-to-slot"></span>
