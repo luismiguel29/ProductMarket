@@ -54,9 +54,15 @@ class CarritoController extends Controller
             $aux->save();
         }
         //return back();
+        $carros = CarritoModel::all(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
         return response()->json([
             'totalDec' => $aux->cantidad,
-            'totalF' => '333'
+            'totalF' => $total
         ]);   
     }
 
@@ -69,9 +75,15 @@ class CarritoController extends Controller
         }
         //return back();
         //return redirect()->route(('carrito.index')); 
+        $carros = CarritoModel::all(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
         return response()->json([
             'totalInc' => $aux->cantidad,
-            'totalF' => '333'
+            'totalF' => $total
         ]);  
     }
 
