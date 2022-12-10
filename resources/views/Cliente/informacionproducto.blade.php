@@ -107,7 +107,7 @@
                             <span class="fa-sharp fa-solid fa-location-dot" ></span>
                             <span><b>{{ $negocio->direccion }}</b></span><br>
                             <span class="fa-solid fa-clock-three"></span>
-                            <span style="color: #7D7D7D">Horario: <b>{{ $negocio->horarioinicio }} -
+                            <span style="color: #7D7D7D"><b>Horario: {{ $negocio->horarioinicio }} -
                                 {{ $negocio->horariofin }}</b></span>
 
                             {{-- boton agregar a carrito que activa la accion del formulario para que se pueda gurdar el producto en el carrito --}}
