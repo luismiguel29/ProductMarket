@@ -9,8 +9,7 @@ use App\Models\Producto;
 
 class CarritoController extends Controller
 {
-    public function index() 
-    { 
+    public function index() { 
         $carros = CarritoModel::all(); 
 
         $auxarr = array(); 
@@ -29,6 +28,17 @@ class CarritoController extends Controller
         return view('/carrito', compact('auxarr', 'total','carros'));
     }
 
+    public function funTotal(){
+        $carros = CarritoModel::all(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
+        
+        return $total;
+    }
+
     
     public function destroy($idcarrito){
         $carrito = CarritoModel::findOrFail($idcarrito);
@@ -45,7 +55,8 @@ class CarritoController extends Controller
         }
         //return back();
         return response()->json([
-            'totalDec' => $aux->cantidad
+            'totalDec' => $aux->cantidad,
+            'totalF' => funTotal()
         ]);   
     }
 
@@ -58,9 +69,9 @@ class CarritoController extends Controller
         }
         //return back();
         //return redirect()->route(('carrito.index')); 
-
         return response()->json([
-            'totalInc' => $aux->cantidad
+            'totalInc' => $aux->cantidad,
+            'totalF' => funTotal()
         ]);  
     }
 

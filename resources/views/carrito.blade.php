@@ -137,7 +137,7 @@
 
                 <div class="d-flex justify-content-around">
                     <h5><strong>TOTAL</strong></h5>
-                    <H5><strong>Bs. {{ $total }}</strong></H5>
+                    <H5><strong id="idTotal">Bs. {{ $total }}</strong></H5>
                 </div>
                 <!--<div class="botonCompra">
                     <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
@@ -148,10 +148,6 @@
                         class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px" 
                         style="font-size: 60px">Finalizar Compra</a>
                 </div>
-
-                <strong id="ssAll">
-                    ({{ $total }})
-                </strong> 
 
             </div>
         @endif
@@ -197,6 +193,7 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalDec);
+                    $('#idTotal').html(data.totalF);
                 }
             });
         });
@@ -216,14 +213,14 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalInc);
+                    $('#idTotal').html(data.totalF);
                 }
             });
         });
 
+        
     });
 </script>
-
-
 
 
 
