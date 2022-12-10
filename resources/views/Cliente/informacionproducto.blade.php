@@ -94,13 +94,13 @@
 
                         {{-- capturamos los datos que se envian a la vista para luego mostrar la informacion del producto --}}
 
-                        <h5>{{ $producto->nombre }}</h5>
+                        <h4><b>{{ $producto->nombre }} </b></h4>
                         <span class="fa-brands fa-product-hunt"></span>
                         <span> <b> {{ $producto->descripcion }} </b></span><br>
-                        <span class="fa-solid fa-box-dollar"></span>
+                        <span class="fa-solid fa-circle-dollar-to-slot"></span>
                         <span  style="color: #7D7D7D"><b>Antes Bs. <s >{{ $producto->precio }}</s> / Ahora Bs.
                             {{ $producto->preciodesc }}</b>     </span><br>
-                            <span class="fa-regular fa-calendar-clock"></span>
+                            <span class="fa-regular fa-calendar-check"></span>
                             <span><b> Oferta hasta: {{ $producto->fechafin }}</b></span> <br>
                             <span class="fa-regular fa-calendar-days"></span>
                             <span style="color: #7D7D7D"><b> Fecha de venc: {{ $producto->fechaven }}</b></span><br>
