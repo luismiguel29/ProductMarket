@@ -104,7 +104,7 @@
                             <hr class="separador">
                             <h5>{{ $negocio->nombre }}</h5>
                             <span class="fa-sharp fa-solid fa-location-dot" ></span>
-                            <h5 >{{ $negocio->direccion }}</h5>
+                            <span >{{ $negocio->direccion }}</span>
                             <h5><span style="color: #7D7D7D">Horario: {{ $negocio->horarioinicio }} -
                                     {{ $negocio->horariofin }}</span> </h5>
 
