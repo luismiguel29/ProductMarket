@@ -192,7 +192,7 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalDec);
-                    //$('#idTotal').html(data.totalF);
+                    $('#idTotal').html(1000);
                 }
             });
         });
