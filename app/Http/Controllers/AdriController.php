@@ -7,6 +7,7 @@ use App\Models\Producto;
 use App\Models\adriLista;
 use App\Models\CarritoModel;
 use App\Models\DatosNegocio;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -70,23 +71,29 @@ class AdriController extends Controller
     return view('Cliente.registroUsuario', compact('auxarr', 'total'));
   }
 
-  public function registrarUser(Request $request)
+  public function registrarUser(Request $request, $id)
   {
+    $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
     $ver = DatosNegocio::where('email',$request->input('email'))->exists();
     if ($ver) {
-      return back()->with('alerta', 'El correo electronico ya esta registrado!')->withInput();
+      //return back()->with('alerta', 'El correo electronico ya esta registrado!')->withInput();
+      return view('Cliente.registroUsuario')->with('verificar', $verificar)->with('existe','El correo electronico ya esta registrado!');
+      //return redirect()->route('login.')
     } else if ($request->input('password') != $request->input('passwordrep')) {
-      return back()->with('alerta', 'Las contraseñas no coinciden!')->withInput();
+      return view('Cliente.registroUsuario')->with('verificar', $verificar)->with('existe','Las contraseñas no coinciden!');
     } else {
-      $negocio = new DatosNegocio();
+      $negocio = DatosNegocio::find(Crypt::decrypt($id));
       $negocio->email = $request->input('email');
       $negocio->password = $request->input('password');
       $negocio->save();
       User::create([
         'email' => $request->email,
         'password' => bcrypt($request->password),
-      ]);
-      return back()->with('mensaje', 'Registro exitoso!, puede iniciar sesión');
+      ]);      
+      //return back()->with('mensaje', 'Registro exitoso!, puede iniciar sesión');
+      //return redirect()->route('paginaprincipal', compact('verificar'))->with('mensaje', 'Registro exitoso!, puede iniciar sesión');
+      Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+      return view('Proveedor.Paginaproveedor', compact('verificar'));
     }
   }
 
