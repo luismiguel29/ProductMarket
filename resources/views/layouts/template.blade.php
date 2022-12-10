@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('template/mainstyle.css') }}">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <title>Product Market</title>
 
@@ -156,13 +157,23 @@
                                             </div>
                                             <div class="col-md-4 align-self-center">
                                                 <div class="d-flex justify-content-around">
-                                                    <a href="/decrementar/{{ $item->idcarrito }}"
-                                                        class="fa-solid fa-square-minus fa-2x"
-                                                        style="text-decoration: none;color:black"></a>
-                                                    <span style="font-size:20px">{{ $item->cantidad }}</span>
-                                                    <a href="/incrementar/{{ $item->idcarrito }}"
-                                                        class="fa-solid fa-square-plus fa-2x"
-                                                        style="text-decoration: none;color:black"></a>
+                                                    <form name="formDec" id="formDec" action="{{ route('decrementarCantidad', $item->idcarrito) }}" method="POST">
+                                                        @csrf
+                                                        @method('GET')
+                                                        <a href="#" id="{{ $item->idcarrito }}"
+                                                            class="btnDec fa-solid fa-square-minus fa-2x"
+                                                            style="text-decoration: none;color:black"></a>
+                                                    </form>
+                                                    
+                                                    <span id="idCantidad" style="font-size:20px">{{ $item->cantidad }}</span>
+                                                    
+                                                    <form name="formInc" id="formInc" action="{{ route('incrementarCantidad', $item->idcarrito) }}" method="POST">
+                                                        @csrf
+                                                        @method('GET')
+                                                        <a href="#" id="{{ $item->idcarrito }}"
+                                                            class="btnInc fa-solid fa-square-plus fa-2x"
+                                                            style="text-decoration: none;color:black"></a>
+                                                    </form>
 
 
                                                     <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
@@ -184,7 +195,7 @@
 
                 <div class="d-flex justify-content-around">
                     <h5><strong>TOTAL</strong></h5>
-                    <H5><strong>Bs. {{ $total }}</strong></H5>
+                    <H5><strong id="idTotal">Bs. {{ $total }}</strong></H5>
                 </div>
                 <!--<div class="botonCompra">
                             <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
@@ -212,10 +223,10 @@
 
     <div class="margen" style="background: #E3E9E6; min-height:700px">
         @yield('content') @section('content')
-        </div>
+    </div>
 
-        <div class="footer"></div>
-    </body>
+    <div class="footer"></div>
+</body>
 
     <script type="text/javascript">
         function mostrarPassword() {
@@ -242,4 +253,69 @@
     </script>
 
 
-    </html>
+
+<!------------------------------------------------------------------------->
+<script>
+    $(document).ready(function() {
+        
+        $(".btnEliminar").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+            var form = $(this).parents('form');
+            var url = form.attr('action');
+            
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: $("#formEliminar").serialize(),
+                
+                success: function(data){
+                    $("#productoC" + id).hide('slow');
+                    //$('#ssAll').html(555);
+                }
+            });
+        });
+
+
+        $(".btnDec").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+            var form = $(this).parents('form');
+            var url = form.attr('action');
+            
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: $("#formDec").serialize(),
+                
+                success: function(data){
+                    $('#idCantidad').html(data.totalDec);
+                    $('#idTotal').html(data.totalF);
+                }
+            });
+        });
+
+
+        $(".btnInc").click(function (e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+            var form = $(this).parents('form');
+            var url = form.attr('action');
+            
+            $.ajax({
+                url: url,
+                method: 'POST',
+                data: $("#formInc").serialize(),
+                
+                success: function(data){
+                    $('#idCantidad').html(data.totalInc);
+                    $('#idTotal').html(data.totalF); 
+                }
+            });
+        });
+        
+    });
+</script>
+<!------------------------------------------------------------------------->
+
+</html>
