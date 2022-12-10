@@ -61,12 +61,12 @@
 
 
                         @guest
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{ route('registroUsuario') }}" class="nav-link active" aria-current="page"
                                     href="#">Registrarse</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
-                                <a href="{{ route('registroUsuario') }}" class="nav-link active" aria-current="page"
+                                <a href="{{ route('registroNegocio.store') }}" class="nav-link active" aria-current="page"
                                     href="#">Registrar Negocio</a>
                             </li>
                             <li class="nav-item">

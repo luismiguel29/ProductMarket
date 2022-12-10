@@ -56,7 +56,8 @@ class RegistroController extends Controller
             $dato->save();
             $verificar = DatosNegocio::where('nombre', $request->nombre)->first();
             //return redirect()->route('registroNegocio');
-            return redirect()->with('message', 'Los datos se guardaron correctamente!');
+            //return redirect()->route('registroUsuario', compact('verificar'))->with('message', 'Los datos se guardaron correctamente!');
+            return view('Cliente.registroUsuario', compact('verificar'));
         } else {
             return back()->with('message', 'El horario de cierre debe ser mayor')->withInput();
         }
