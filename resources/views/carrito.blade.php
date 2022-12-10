@@ -85,7 +85,7 @@
                                                 class="fa-solid fa-square-minus fa-2x"
                                                 style="text-decoration: none;color:black"></a>
 
-                                            <form name="formDec" id="formDec" action="/decrementar/{{ $item->idcarrito }}" method="POST">
+                                            <form name="formDec" id="formDec" action="{{ route('decrementar', $item->idcarrito) }}" method="POST">
                                                 @csrf
                                                 <a href="#" id="{{ $item->idcarrito }}"
                                                     class="btnDec fa-solid fa-square-minus fa-2x"
