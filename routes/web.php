@@ -64,12 +64,13 @@ Route::get('/menu2', function () {
     return view('menu2');
 });
 
-Route::get('/datosNegocio/{id}', 'App\Http\Controllers\NegocioAnd@index')->name('datosNegocio');
+//Route::get('/datosNegocio/{id}', 'App\Http\Controllers\NegocioAnd@index')->name('datosNegocio');
+Route::get('/datosNegocio/{id}', ['uses'=>'App\Http\Controllers\NegocioAnd@show', 'as'=> 'datosnegocio']);
 Route::resource('/datosNego', NegocioAnd::class);
 
-Route::get('/ventana', function () {
+Route::get('/loginventana', function () {
     return view('ventana');
-});
+})->name('loginventana');
 
 Route::get('/Cliente/search', function () {
     return view('/Cliente/search');
@@ -97,6 +98,7 @@ Route::resource('/categoria', CategoriaController::class);
 Route::resource('/userTemplate', NegocioAnd::class);
 
 Route::resource('/novedades', NovedadesController::class);
+//Route::get('/novedades', 'App\Http\Controllers\NovedadesController@index')->name('novedades');
 
 
 Route::get('/cliente/listarefrescos', function () {
@@ -111,10 +113,13 @@ Route::get('/carrusel', 'App\Http\Controllers\CategoriaController@menu');
 Route::resource('/registroNegocio', RegistroController::class);
 
 
-
 Route::resource('/login', AdriController::class);
+Route::get('/loginsesion', 'App\Http\Controllers\AdriController@index2')->name('loginsesion');
 Route::get('/registroUsuario', 'App\Http\Controllers\AdriController@registro')->name('registroUsuario');
 Route::post('/registrarUser', 'App\Http\Controllers\AdriController@registrarUser')->name('registrarUser');
+Route::post('/logout', 'App\Http\Controllers\AdriController@cerrar')->name('logout');
+Route::get('/volver', 'App\Http\Controllers\AdriController@volver')->name('volver');
+//Route::post('/login', 'App\Http\Controllers\AdriController@store');
 
 Route::get('/info/{idproducto}', 'App\Http\Controllers\ProductoLuisController@show')->name('info');
 Route::post('/addcarrito/{id}', 'App\Http\Controllers\ProductoLuisController@store')->name('addcarrito');

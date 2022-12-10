@@ -33,9 +33,17 @@
 
         <section class="d-flex flex-column  align-self-center gap-4 mb-4 mb-md-0 order-2 order-md-1">
             <button class="btn btn-dark fs-5 btnb">Editar</button>
-            <a href="{{ route('categoria.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5 btnb">Registrar producto</a>
-            <a href="{{route('lista', $verificar->idnegocio)}}" class="btn btn-dark fs-5 btnb">Ver productos</a>
-            <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
+            <a href="{{ route('categoria.show', Crypt::encrypt($verificar->idnegocio)) }}" class="btn btn-dark fs-5 btnb">Registrar producto</a>
+            <a href="{{route('lista', Crypt::encrypt($verificar->idnegocio))}}" class="btn btn-dark fs-5 btnb">Ver productos</a>
+            {{-- <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a> --}}
+            <div class="">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-dark fs-5" style="width:185px">
+                        Cerrar sesi&oacute;n
+                    </button>
+                </form>
+            </div>
         </section>
 
 
@@ -47,7 +55,7 @@
 
                 <div class="card-body text-dark card-custom-p">
 
-                    <form action="{{ route('datosNego.update', $dato->idnegocio) }}" method="post" class="formularioEditar" enctype="multipart/form-data">
+                    <form action="{{ route('datosNego.update', Crypt::encrypt($dato->idnegocio)) }}" method="post" class="formularioEditar" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <h5 class="text-center fs-5">Editar datos del negocio</h5>
@@ -121,7 +129,7 @@
 
                         <div class="d-flex justify-content-evenly ">
                             <button type="submit" class="btn btn-dark fs-5 ">Guardar</button>
-                            <a href="{{ route('login.show', $verificar->idnegocio) }}" type="reset"
+                            <a href="{{ route('login.show', Crypt::encrypt($verificar->idnegocio)) }}" type="reset"
                                 class="btn btn-dark fs-5 ">Cancelar</a>
                         </div>
 

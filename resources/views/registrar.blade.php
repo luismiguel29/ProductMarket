@@ -28,10 +28,18 @@
         </section>-->
 
         <section class="d-flex flex-column align-self-center gap-4 order-2 order-md-1">
-            <a href="{{ route('datosNego.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5 btnb" style="">Editar</a>
-            <a href="{{ route('categoria.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5  btnb">Registrar producto</a>
-            <a href="{{route('lista', $verificar->idnegocio)}}" class="btn btn-dark fs-5  btnb">Ver productos</a>
-            <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a>
+            <a href="{{ route('datosNego.show', Crypt::encrypt($verificar->idnegocio)) }}" class="btn btn-dark fs-5 btnb" style="">Editar</a>
+            <a href="{{ route('categoria.show', Crypt::encrypt($verificar->idnegocio)) }}" class="btn btn-dark fs-5  btnb">Registrar producto</a>
+            <a href="{{route('lista', Crypt::encrypt($verificar->idnegocio))}}" class="btn btn-dark fs-5  btnb">Ver productos</a>
+            {{-- <a href="/novedades" class="btn btn-dark fs-5 btnb">Cerrar sesión</a> --}}
+            <div class="">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-dark fs-5" style="width:185px">
+                        Cerrar sesi&oacute;n
+                    </button>
+                </form>
+            </div>
         </section>
 
         <div class="d-flex justify-content-around order-1 order-md-2" style="padding-top: 20px;">
@@ -44,7 +52,7 @@
         
                     <h5 class="text-center fs-5">Información del producto</h5>
                         {{-- @include('components.flash_alerts') --}}
-                        <form action="{{ isset($producto)? route('producto.update',['id'=>$producto->idproducto, 'idneg'=>$verificar->idnegocio]): route('registro', $verificar->idnegocio) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ isset($producto)? route('producto.update',['id'=>$producto->idproducto, 'idneg'=>Crypt::encrypt($verificar->idnegocio)]): route('registro', Crypt::encrypt($verificar->idnegocio)) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @if(isset($producto))
                                 @method('put')
@@ -62,6 +70,8 @@
                                         @endforeach
                                     </div>
                                 @endif --}}
+
+
                                 @if (session('message'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         <strong>{{ session('message') }}</strong>
@@ -81,6 +91,11 @@
                                     type="text" value="{{isset($producto)? $producto->nombre: old('nombreprod') }}"
                                     onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32) )"
                                     minlength="3" maxlength="50">
+                                    @error('nombreprod')
+                                        <div class="text-danger">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                             </div>
 
 
@@ -96,6 +111,11 @@
                                 <input type="number" step="any" class="form-control" name="preciodesc"
                                     value="{{isset($producto)? $producto->preciodesc: old('preciodesc') }}" required="" id="pahora" min="1"
                                     max="1000">
+                                @error('preciodesc')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <div class="mb-3">
@@ -169,12 +189,17 @@
                                 <input type="file" class="form-control" name="url_img" {{isset($producto)? "": "required"}} onchange="preview()"
                                     id="url_img" accept="image/*">
                                     <img style="max-width:200px"src="" alt="" id="uno"/>
+                                @error('url_img')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
 
                             <!--<button type="submit" class="btn btn-secondary botton1">Registrar</button>-->
                             <div class="d-flex justify-content-evenly ">
                                 <button type="submit" class="btn btn-dark fs-5 ">Registrar</button>
-                                <a type="button" href="{{ route('login.show', $verificar->idnegocio) }}"
+                                <a type="button" href="{{ route('login.show', Crypt::encrypt($verificar->idnegocio)) }}"
                                     class="btn btn-dark fs-5">Cancelar</a>
                             </div>
 
@@ -191,8 +216,13 @@
                         }
 
                         function cambiarfecha(){
-                            document.getElementById("fvenc").min=event.target.value
-                            console.log(event.target);
+                            var fvencimiento=document.getElementById("fvenc")
+                            fvencimiento.min=event.target.value
+                            var d1=new Date(fvencimiento.value)
+                            var d2=new Date(event.target.value)
+                            if(d1.getTime()< d2.getTime()){
+                                fvencimiento.value=event.target.value
+                            }
                         }
                         </script>
                 </div>

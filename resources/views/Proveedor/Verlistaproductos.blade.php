@@ -48,7 +48,7 @@
               
                   <td>
                     <div class="d-flex justify-content-evenly">
-                      <a href="{{route('editarProductos',['id'=>$producto->idproducto, 'idneg'=>$verificar->idnegocio])}}" class="btn"><i data-feather="edit"></i></a>
+                      <a href="{{route('editarProductos',['id'=>$producto->idproducto, 'idneg'=>Crypt::encrypt($verificar->idnegocio)])}}" class="btn"><i data-feather="edit"></i></a>
                       <button class="btn delete-btn" data-bs-toggle="modal" data-id="{{$producto->idproducto}}" data-bs-target="#deleteModal"><i data-feather="trash-2" ></i></button>
                     </div>
                   </td>
@@ -91,7 +91,7 @@
 
       <div class="d-flex justify-content-between align-items-start">
         <div style="width:70px"></div>{!!$productos->links()!!}
-        <a type="button" href="{{ route('login.show', $verificar->idnegocio) }}" class="btn btn-dark fs-5" style="width: 70px; height:38px">Salir</a>
+        <a type="button" href="{{ route('login.show', Crypt::encrypt($verificar->idnegocio)) }}" class="btn btn-dark fs-5" style="width: 70px; height:38px">Salir</a>
       </div>
 
     </div>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Vinkla\Hashids\Facades\Hashids;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -16,6 +18,11 @@ class NegocioAnd extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=>['otro']]);
+    }
 
     public function index()
     {
@@ -83,8 +90,9 @@ class NegocioAnd extends Controller
      */
     public function show($id)
     {
-        $verificar = DatosNegocio::where('idnegocio', $id)->first();
-        $dato = DatosNegocio::where('idnegocio', $id)->first();
+        //$verificar = DatosNegocio::where('idnegocio', Hashids::decode($id))->first();
+        $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
+        $dato = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
         //return $dato;
         //return view('editar',compact('datos'));
         return view('editar', compact('dato', 'verificar'));
@@ -120,7 +128,7 @@ class NegocioAnd extends Controller
             return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         }else if ($request->input('horario1') < $request->input('horario2')) {
             $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
-            $datoup = DatosNegocio::findOrFail($id);
+            $datoup = DatosNegocio::findOrFail(Crypt::decrypt($id));
             $datoup->nombre = $request->input('nombre');
             $datoup->direccion = $request->input('direccion');
             $datoup->horarioinicio = $request->input('horario1');

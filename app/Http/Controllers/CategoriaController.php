@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Categoria;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
@@ -16,6 +18,12 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> ['store']]);
+    }
+
     public function index()
     {
         $categoria = DB::table('categoria')
@@ -65,11 +73,11 @@ class CategoriaController extends Controller
         /* $img = $request->file('categoria')->store('public/imagenes');
         $url = Storage::url($img); */
 
-        $url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+        //$url = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
 
-        $categoria = new Categoria;
-        $categoria->nombre = $request->input('nombre');
-        $categoria->url = $url;
+        $categoria = new User();
+        $categoria->email = $request->input('email');
+        $categoria->password = bcrypt($request->password);
         $categoria->save();
         //return redirect('ventana');
         return redirect()->back();
@@ -83,7 +91,7 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        $verificar = DatosNegocio::where('idnegocio', $id)->first();
+        $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
         $categoria = DB::table('categoria')
         ->orderByRaw('nombre ASC')
         ->get();
