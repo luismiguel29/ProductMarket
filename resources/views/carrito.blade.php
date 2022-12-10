@@ -93,7 +93,7 @@
                                                     style="text-decoration: none;color:black"></a>
                                             </form>
                                             
-                                            <span style="font-size:20px">{{ $item->cantidad }}</span>
+                                            <span id="idCantidad" style="font-size:20px">{{ $item->cantidad }}</span>
                                             
                                             <a href="/incrementar/{{ $item->idcarrito }}"
                                                 class="fa-solid fa-square-plus fa-2x"
@@ -188,7 +188,7 @@
                 data: $("#formDec").serialize(),
                 
                 success: function(data){
-                    //$('#ssAll').html(555);
+                    $('#idCantidad').html(data.total);
                 }
             });
 
