@@ -103,12 +103,12 @@
                             <h5><span style="color: #7D7D7D">Stock: {{ $producto->stock }}</span></h5>
                             <hr class="separador">
                             <span class="fa-sharp fa-solid fa-store"></span>
-                            <span>{{ $negocio->nombre }}</span>
+                            <span> <b>{{ $negocio->nombre }}</b></span> <br>
                             <span class="fa-sharp fa-solid fa-location-dot" ></span>
-                            <span><b>{{ $negocio->direccion }}</b></span>
-                            <span class="fa-solid fa-clock-three"></span>
-                            <h5><span style="color: #7D7D7D">Horario: {{ $negocio->horarioinicio }} -
-                                    {{ $negocio->horariofin }}</span> </h5>
+                            <span><b>{{ $negocio->direccion }}</b></span><br>
+                            <span class="fa-sharp fa-solid fa-clock"></span>
+                            <span style="color: #7D7D7D"><b>Horario: {{ $negocio->horarioinicio }} -
+                                {{ $negocio->horariofin }}</b></span>
 
                             {{-- boton agregar a carrito que activa la accion del formulario para que se pueda gurdar el producto en el carrito --}}
                             <div class="botonCarrito">

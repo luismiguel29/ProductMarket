@@ -76,7 +76,6 @@ class AdriController extends Controller
     $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
     $ver = DatosNegocio::where('email',$request->input('email'))->exists();
     if ($ver) {
-      //return back()->with('alerta', 'El correo electronico ya esta registrado!')->withInput();
       return view('Cliente.registroUsuario')->with('verificar', $verificar)->with('existe','El correo electronico ya esta registrado!');
       //return redirect()->route('login.')
     } else if ($request->input('password') != $request->input('passwordrep')) {
