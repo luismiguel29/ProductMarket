@@ -10,6 +10,7 @@ use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
 
@@ -153,7 +154,7 @@ class AdriController extends Controller
    */
   public function show($idneg)
   {
-    $verificar = DatosNegocio::where('idnegocio', $idneg)->first();
+    $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($idneg))->first();
     return view('/Proveedor/PaginaPrincipal', compact('verificar'));
   }
 
