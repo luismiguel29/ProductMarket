@@ -85,9 +85,9 @@
                                                 class="fa-solid fa-square-minus fa-2x"
                                                 style="text-decoration: none;color:black"></a>
 
-                                            <form name="formDec" id="formDec" action="" method="POST">
+                                            <form name="formDec" id="formDec" action="/decrementar/{{ $item->idcarrito }}" method="POST">
                                                 @csrf
-                                                <a href="/decrementar/{{ $item->idcarrito }}" id="{{ $item->idcarrito }}"
+                                                <a href="#" id="{{ $item->idcarrito }}"
                                                     class="btnDec fa-solid fa-square-minus fa-2x"
                                                     style="text-decoration: none;color:black"></a>
                                             </form>
@@ -179,7 +179,7 @@
             var id = $(this).attr("id");
 
             var form = $(this).parents('form');
-            var url = "/decrementar/{{ $item->idcarrito }}";
+            var url = form.attr('action');
             
             $.ajax({
                 url: url,
