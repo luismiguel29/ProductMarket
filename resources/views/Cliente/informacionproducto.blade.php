@@ -102,6 +102,7 @@
                             <h5><span style="color: #7D7D7D">Fecha de venc: {{ $producto->fechaven }}</span></h5>
                             <h5><span style="color: #7D7D7D">Stock: {{ $producto->stock }}</span></h5>
                             <hr class="separador">
+                            <span class="fa-sharp fa-solid fa-store"></span>
                             <h5>{{ $negocio->nombre }}</h5>
                             <span class="fa-sharp fa-solid fa-location-dot" ></span>
                             <span><b>{{ $negocio->direccion }}</b></span>
