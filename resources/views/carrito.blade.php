@@ -192,7 +192,7 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalDec);
-                    $('#idTotal').html(1000);
+                    $('#idTotal').html(data.totalF);
                 }
             });
         });
@@ -212,7 +212,7 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalInc);
-                    //$('#idTotal').html(data.totalF);
+                    $('#idTotal').html(data.totalF);
                 }
             });
         });
