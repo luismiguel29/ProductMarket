@@ -99,7 +99,7 @@
                         <span> <b> {{ $producto->descripcion }} </b></span><br>
                         <span class="fa-solid fa-circle-dollar"></span>
                         <span  style="color: #7D7D7D">Antes Bs. <s ><b>{{ $producto->precio }}</s> / Ahora Bs.
-                            {{ $producto->preciodesc }}</b>     </span>
+                            {{ $producto->preciodesc }}</b>     </span><br>
                             <span class="fa-solid fa-calendar-exclamation"></span>
                             <span><b> Oferta hasta: {{ $producto->fechafin }}</b></span> <br>
                             <span class="fa-regular fa-calendar-days"></span>
