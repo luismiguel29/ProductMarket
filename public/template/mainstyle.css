@@ -157,3 +157,7 @@ width: 800px;
     form.example input[type=text] { width: auto; }
     .example{width: auto;}
 }
+
+.description{
+    font-size: 20px;
+}
