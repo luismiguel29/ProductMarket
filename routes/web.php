@@ -116,7 +116,7 @@ Route::resource('/registroNegocio', RegistroController::class);
 Route::resource('/login', AdriController::class);
 Route::get('/loginsesion', 'App\Http\Controllers\AdriController@index2')->name('loginsesion');
 Route::get('/registroUsuario', 'App\Http\Controllers\AdriController@registro')->name('registroUsuario');
-Route::post('/registrarUser', 'App\Http\Controllers\AdriController@registrarUser')->name('registrarUser');
+Route::post('/registrarUser/{id}', 'App\Http\Controllers\AdriController@registrarUser')->name('registrarUser');
 Route::post('/logout', 'App\Http\Controllers\AdriController@cerrar')->name('logout');
 Route::get('/volver', 'App\Http\Controllers\AdriController@volver')->name('volver');
 //Route::post('/login', 'App\Http\Controllers\AdriController@store');

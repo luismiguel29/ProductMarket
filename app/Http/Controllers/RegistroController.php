@@ -41,9 +41,9 @@ class RegistroController extends Controller
             ->exists();
 
         if($validator->fails()){
-            return redirect('registroNegocio')->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
+            return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
         }else if ($nombre) {
-            return redirect('registroNegocio')->with('message', 'El nombre de negocio ya existe!')->withInput();
+            return back()->with('message', 'El nombre de negocio ya existe!')->withInput();
         } else if ($request->input('horarioA') < $request->input('horarioC')) {
             $url = Cloudinary::upload($request->file('url')->getRealPath())->getSecurePath();
             $dato = new DatosNegocio;
@@ -54,10 +54,12 @@ class RegistroController extends Controller
             $dato->horariofin = $request->input('horarioC');
             $dato->url = $url;
             $dato->save();
+            $verificar = DatosNegocio::where('nombre', $request->nombre)->first();
             //return redirect()->route('registroNegocio');
-            return redirect('registroNegocio')->with('message', 'Los datos se guardaron correctamente!');
+            //return redirect()->route('registroUsuario', compact('verificar'))->with('message', 'Los datos se guardaron correctamente!');
+            return view('Cliente.registroUsuario', compact('verificar'));
         } else {
-            return redirect('registroNegocio')->with('message', 'El horario de cierre debe ser mayor')->withInput();
+            return back()->with('message', 'El horario de cierre debe ser mayor')->withInput();
         }
     }
 }
