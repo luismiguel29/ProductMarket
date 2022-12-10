@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Categoria;
 use App\Models\DatosNegocio;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
@@ -90,7 +91,7 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        $verificar = DatosNegocio::where('idnegocio', $id)->first();
+        $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
         $categoria = DB::table('categoria')
         ->orderByRaw('nombre ASC')
         ->get();

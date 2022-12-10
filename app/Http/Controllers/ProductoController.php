@@ -6,6 +6,7 @@ use App\Models\Producto;
 use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -40,7 +41,8 @@ class ProductoController extends Controller
     public function registro(Request $request, $id)
     {
         $request->validate([
-            'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
+            //'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
+            'nombreprod' => 'required|max:50',
             'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
             'preciodesc' => 'lt:precio',
         ], [
@@ -59,7 +61,7 @@ class ProductoController extends Controller
         $url = Storage::url($img);  
         $producto = new Producto;
         $producto->id_categoria = $request->input('categoria');
-        $producto->id_negocio = $id;
+        $producto->id_negocio = Crypt::decrypt($id);
         $producto->nombre = $request->input('nombreprod');
         $producto->precio = $request->input('precio');
         $producto->preciodesc = $request->input('preciodesc');
