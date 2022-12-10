@@ -98,9 +98,9 @@
                         <span class="fa-brands fa-product-hunt"></span>
                         <span> <b> {{ $producto->descripcion }} </b></span><br>
                         <span class="fa-solid fa-circle-dollar"></span>
-                        <span  style="color: #7D7D7D">Antes Bs. <s ><b>{{ $producto->precio }}</s> / Ahora Bs.
+                        <span  style="color: #7D7D7D"><b>Antes Bs. <s >{{ $producto->precio }}</s> / Ahora Bs.
                             {{ $producto->preciodesc }}</b>     </span><br>
-                            <span class="fa-solid fa-calendar-exclamation"></span>
+                            <span class="fa-regular fa-calendar-clock"></span>
                             <span><b> Oferta hasta: {{ $producto->fechafin }}</b></span> <br>
                             <span class="fa-regular fa-calendar-days"></span>
                             <span style="color: #7D7D7D"><b> Fecha de venc: {{ $producto->fechaven }}</b></span><br>
