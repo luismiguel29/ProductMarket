@@ -135,7 +135,7 @@ class ProductoVilmaController extends Controller
             'url_img' => 'nullable|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
             'preciodesc' => 'lt:precio',
         ], [
-            'nombreprod.regex' => 'El campo nombre solo puede tener letras y no mas de 50 caracteres',
+            'nombreprod.regex' => 'El campo nombre solo puede tener letras',
             'preciodesc.lt' => 'El precio AHORA debe ser menor a precio ANTES',
             'url_img' => 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px'
         ]);
