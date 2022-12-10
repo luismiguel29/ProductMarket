@@ -66,6 +66,10 @@
                                     href="#">Registrarse</a>
                             </li>
                             <li class="nav-item">
+                                <a href="{{ route('registroUsuario') }}" class="nav-link active" aria-current="page"
+                                    href="#">Registrar Negocio</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('login.index') }}" class="nav-link active" aria-current="page"
                                     href="#">Iniciar Sesion</a>
                             </li>
