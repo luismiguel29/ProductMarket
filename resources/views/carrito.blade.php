@@ -172,7 +172,6 @@
                 
                 success: function(data){
                     $("#productoC" + id).hide('slow');
-
                     //$('#ssAll').html(555);
                 }
             });
@@ -193,7 +192,7 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalDec);
-                    $('#idTotal').html(data.totalF);
+                    //$('#idTotal').html(data.totalF);
                 }
             });
         });
@@ -213,7 +212,7 @@
                 
                 success: function(data){
                     $('#idCantidad').html(data.totalInc);
-                    $('#idTotal').html(data.totalF);
+                    //$('#idTotal').html(data.totalF);
                 }
             });
         });
