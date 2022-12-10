@@ -106,7 +106,7 @@
                             <span> <b>{{ $negocio->nombre }}</b></span> <br>
                             <span class="fa-sharp fa-solid fa-location-dot" ></span>
                             <span><b>{{ $negocio->direccion }}</b></span><br>
-                            <span class="fa-solid fa-clock-three"></span>
+                            <span class="fa-sharp fa-solid fa-clock"></span>
                             <span style="color: #7D7D7D"><b>Horario: {{ $negocio->horarioinicio }} -
                                 {{ $negocio->horariofin }}</b></span>
 
