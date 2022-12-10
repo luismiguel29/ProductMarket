@@ -179,7 +179,7 @@
             var id = $(this).attr("id");
 
             var form = $(this).parents('form');
-            var url = form.attr('action');
+            var url = "/decrementar/{{ $item->idcarrito }}";
             
             $.ajax({
                 url: url,
