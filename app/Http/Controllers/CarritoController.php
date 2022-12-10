@@ -37,6 +37,16 @@ class CarritoController extends Controller
         return response()->json([]);  
     }
 
+    public function decrementarCantidad(Request $request){
+        $aux = CarritoModel::findOrFail($request->id); 
+        if(($aux->cantidad) > 1){
+            $aux->decrement('cantidad');
+            $aux->save();
+        }
+        //return back();
+        return response()->json([]);   
+    }
+
     public function incrementarCantidad(Request $request){
         $aux = CarritoModel::findOrFail($request->id); 
         $pro = Producto::findOrFail($aux->idproducto); 
@@ -46,16 +56,6 @@ class CarritoController extends Controller
         }
         return back();
         //return redirect()->route(('carrito.index')); 
-    }
-    
-    public function decrementarCantidad(Request $request){
-        $aux = CarritoModel::findOrFail($request->id); 
-        if(($aux->cantidad) > 1){
-            $aux->decrement('cantidad');
-            $aux->save();
-        }
-        //return back();
-        return response()->json([]);   
     }
 
     public function eliminarProducto($idcarrito){
