@@ -17,6 +17,7 @@
         <!-- CSS -->
         {{-- <link rel="stylesheet" href="css/style.css"> --}}
         <link rel="stylesheet" href="{{ asset('slider/css/swiper-bundle.min.css') }}">
+        
     </head>
 
     <body>
@@ -58,6 +59,8 @@
             <div class="swiper-button-next"></div>
         </div>
         <br>
+
+        
 
     </body>
 
@@ -143,8 +146,12 @@
             </div>
             
         </div>
+
+        
         
     </section>
+
+    
 
 
 

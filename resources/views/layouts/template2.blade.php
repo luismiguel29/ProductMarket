@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="{{ asset('template/mainstyle.css') }}">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+
     <title>Product Market</title>
 
 </head>
@@ -34,18 +36,18 @@
                     <!--<img src="./style/logo.png" class="logo">-->
                     <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
                 </a>
-               {{--  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                {{--  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbarRR" aria-controls="offcanvasNavbaR">
                     <span class="fa-solid fa-cart-shopping fa-2x"></span>
 
                 </button> --}}
             </div>
 
-   
+
             <div class="busqueda">
-                <form class="example" action="{{route('buscar')}}">
-                    <input type="text" placeholder="Encuentra lo que buscas de forma rapida" name="search" required="" minlength="3"
-                                maxlength="30"
+                <form class="example" action="{{ route('buscar') }}">
+                    <input type="text" placeholder="Encuentra lo que buscas de forma rapida" name="search"
+                        required="" minlength="3" maxlength="30"
                         onkeypress="return ( (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32 )||( event.charCode == 13) )">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -80,15 +82,16 @@
                         @endguest
 
                         @auth
-                        <div class="">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <a href="#" class="nav-link active" aria-current="page" onclick="this.closest('form').submit()">
-                                    Cerrar sesi&oacute;n
-                                </a>
-                            </form>
-                        </div>
-                        {{-- <div class="">                            
+                            <div class="">
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <a href="#" class="nav-link active" aria-current="page"
+                                        onclick="this.closest('form').submit()">
+                                        Cerrar sesi&oacute;n
+                                    </a>
+                                </form>
+                            </div>
+                            {{-- <div class="">                            
                             <a href="{{ route('login.show', $verificar->idnegocio) }}" class="nav-link active" aria-current="page">
                                 Ir a ventana Proveedor
                             </a>
@@ -101,14 +104,14 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbarRR" aria-controls="offcanvasNavbaR">
                     <span class="fa-solid fa-cart-shopping fa-2x"></span>
-            
+
                 </button>
                 <a href="{{ route('novedades.index') }}">
                     <!--<img src="./style/logo.png" class="logo">-->
-            
+
                 </a>
             </div>
-            
+
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbarRR"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class=" header-carrito d-flex justify-content-between offcanvas-header">
@@ -122,7 +125,7 @@
                 </div>
 
 
-                @if($total == 0)
+                @if ($total == 0)
                     <div class="botonCompra">
                         <img src="{{ asset('editarAll/img/carritovacio.png') }}" style="width: 100px; height: 100px;">
                     </div>
@@ -130,9 +133,8 @@
                     <p class="fs-4 text-center">Tu carrito está vacio</p>
 
                     <div class="botonCompra">
-                        <a href="/novedades"
-                            class="btn btn-dark fs-5"
-                            style="width: 300px" style="font-size: 60px">ELEGIR PRODUCTOS</a>
+                        <a href="/novedades" class="btn btn-dark fs-5" style="width: 300px"
+                            style="font-size: 60px">ELEGIR PRODUCTOS</a>
                     </div>
                 @else
                     <div class="offcanvas-body">
@@ -154,12 +156,21 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4 align-self-center">
+
                                                 <div class="d-flex justify-content-around">
-                                                    <a href="/decrementar/{{ $item->idcarrito }}"
+                                                    {{-- <a href="/decrementar/{{ $item->idcarrito }}"
                                                         class="fa-solid fa-square-minus fa-2x"
-                                                        style="text-decoration: none;color:black"></a>
-                                                    <span style="font-size:20px">{{ $item->cantidad }}</span>
-                                                    <a href="/incrementar/{{ $item->idcarrito }}"
+                                                        style="text-decoration: none;color:black"></a> --}}
+                                                        <a onclick="remove({{ $item->idcarrito }});"
+                                                            class="fa-solid fa-square-minus fa-2x"
+                                                            style="text-decoration: none;color:black"></a>
+                                                    <span id="{{ $item->idcarrito }}"
+                                                        style="font-size:20px">{{ $item->cantidad }}</span>
+                                                    {{-- <a href="/incrementar/{{ $item->idcarrito }}"
+                                                        class="fa-solid fa-square-plus fa-2x"
+                                                        style="text-decoration: none;color:black"></a> --}}
+
+                                                    <a type="button" onclick="add({{ $item->idcarrito }});"
                                                         class="fa-solid fa-square-plus fa-2x"
                                                         style="text-decoration: none;color:black"></a>
 
@@ -178,33 +189,33 @@
                                         </div>
                                     </div>
                             </li>
-                            @endforeach
-                        </ul>
+                @endforeach
+                </ul>
 
-                        <div class="d-flex justify-content-around">
-                            <h5><strong>TOTAL</strong></h5>
-                            <H5><strong>Bs. {{ $total }}</strong></H5>
-                        </div>
-                        <!--<div class="botonCompra">
+                <div class="d-flex justify-content-around">
+                    <h5 ><strong>TOTAL</strong></h5>
+                    <H5 ><strong id="total">Bs. {{ $total }}</strong></H5>
+                </div>
+                <!--<div class="botonCompra">
                             <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
                                 style="font-size: 60px" --}}>Finalizar Compra</button>
                         </div>-->
-                        <div class="botonCompra">
-                            <a href="/endC"
-                                class="btn btn-dark fs-5 {{-- btn-block --}}" 
-                                style="width: 300px" style="font-size: 60px">Finalizar Compra</a>
-                        </div>
+                <div class="botonCompra">
+                    <a href="/endC" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
+                        style="font-size: 60px">Finalizar Compra</a>
+                </div>
 
-                    </div>
-                @endif
             </div>
-            <!------------------------------------------------------------------------->
+            @endif
+        </div>
+        <!------------------------------------------------------------------------->
     </nav>
 
 
 </header>
 
 <body class="d-flex flex-column">
+
     <h1></h1>
     <!-- <header>
         <img src="{{ asset('template/logo.png') }}" width="60px" alt="Logo de ProductMarket">
@@ -215,7 +226,46 @@
         </div>
 
         <div class="footer"></div>
+
     </body>
+
+    <script>
+        function add(idcar){
+                $(document).ready(function() {
+                $.ajax({
+                    url: '/incrementar',
+                    method: 'GET',
+                    data: {
+                        id: idcar,
+                        _token: $('input[name="_token"]').val()
+                    }
+                }).done(function(res) {
+                    $("#"+idcar+"").text(res.totalInc);
+                    $("#total").text(res.totalF);
+                    //alert(res);
+                });
+            });
+        }
+
+        function remove(idcar){
+                $(document).ready(function() {
+                $.ajax({
+                    url: '/decrementar',
+                    method: 'GET',
+                    data: {
+                        id: idcar,
+                        _token: $('input[name="_token"]').val()
+                    }
+                }).done(function(res) {
+                    $("#"+idcar+"").text(res.totalDec);
+                    $("#total").text(res.totalF);
+                    //alert(res);
+                });
+            });
+        }
+    </script>
+
+    
 
     <script type="text/javascript">
         function mostrarPassword() {

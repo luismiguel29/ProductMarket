@@ -84,7 +84,9 @@ class CarritoController extends Controller
         return response()->json([
             'totalInc' => $aux->cantidad,
             'totalF' => 'Bs. '. $total
-        ]);  
+        ]);
+        //return response()->json(['success'=>'99']);
+        //return "hola";
     }
 
     public function eliminarProducto($idcarrito){

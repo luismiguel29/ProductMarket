@@ -68,9 +68,9 @@ Route::get('/menu2', function () {
 Route::get('/datosNegocio/{id}', ['uses'=>'App\Http\Controllers\NegocioAnd@show', 'as'=> 'datosnegocio']);
 Route::resource('/datosNego', NegocioAnd::class);
 
-Route::get('/loginventana', function () {
+Route::get('/ventana', function () {
     return view('ventana');
-})->name('loginventana');
+})->name('ventana');
 
 Route::get('/Cliente/search', function () {
     return view('/Cliente/search');
@@ -147,7 +147,7 @@ Route::get('render', function () {
     return view('ventana', compact('otros'));
 });
 
-Route::get('/incrementar/{id}', [App\Http\Controllers\CarritoController::class, 'incrementarCantidad'])->name("incrementarCantidad");
-Route::get('/decrementar/{id}', [App\Http\Controllers\CarritoController::class, 'decrementarCantidad'])->name("decrementarCantidad");
+Route::get('/incrementar', [App\Http\Controllers\CarritoController::class, 'incrementarCantidad'])->name("incrementarCantidad");
+Route::get('/decrementar', [App\Http\Controllers\CarritoController::class, 'decrementarCantidad'])->name("decrementarCantidad");
 Route::get('/eliminar/{id}', [App\Http\Controllers\CarritoController::class, 'eliminarProducto'])->name("eliminarProducto");
 Route::get('/endC', [App\Http\Controllers\CarritoController::class, 'finCompra'])->name("finCompra");

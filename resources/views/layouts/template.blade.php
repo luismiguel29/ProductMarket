@@ -155,14 +155,21 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4 align-self-center">
+                                                
                                                 <div class="d-flex justify-content-around">
                                                     <a href="/decrementar/{{ $item->idcarrito }}"
                                                         class="fa-solid fa-square-minus fa-2x"
                                                         style="text-decoration: none;color:black"></a>
-                                                    <span style="font-size:20px">{{ $item->cantidad }}</span>
-                                                    <a href="/incrementar/{{ $item->idcarrito }}"
+                                                    <span id="cant" style="font-size:20px">{{ $item->cantidad }}</span>
+                                                    {{-- <a href="/incrementar/{{ $item->idcarrito }}"
                                                         class="fa-solid fa-square-plus fa-2x"
-                                                        style="text-decoration: none;color:black"></a>
+                                                        style="text-decoration: none;color:black"></a> --}}
+                                                        <form id="aumentar" action="{{ route('incrementarCantidad', $item->idcarrito) }}">
+                                                            
+                                                            <a href="#"
+                                                                class="fa-solid fa-square-plus fa-2x"
+                                                                style="text-decoration: none;color:black" onclick="document.getElementById('aumentar').submit()"></a>
+                                                        </form>
 
 
                                                     <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
@@ -215,6 +222,9 @@
     </div>
 
     <div class="footer"></div>
+
+    <script src="{{ asset('js/ajax-post.js')}}" defer></script>
+
 </body>
 
     <script type="text/javascript">

@@ -1,3 +1,6 @@
+@extends('layouts.template3')
+
+@section('content')
 <!doctype html>
 <html lang="en">
 
@@ -10,6 +13,9 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -24,7 +30,7 @@
     </div>
 
 
-    
+
 
 
 
@@ -44,11 +50,7 @@
     </div> --}}
 
 
-    <script>
-        function cambiar(){
-            document.getElementById('h1').innerHTML="nuevo contenido";
-        }
-    </script>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -58,6 +60,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '/incrementar',
+                method: 'GET',
+                data: {
+                    id: 1,
+                    _token: $('input[name="_token"]').val()
+                }
+            }).done(function(res) {
+                //$("#mostrar").text(res['negocioact'].nombre);
+                alert(res);
+            });
+        });
+    </script>
+
 </body>
 
 </html>
+
+@endsection
