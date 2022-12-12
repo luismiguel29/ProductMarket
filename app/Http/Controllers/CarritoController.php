@@ -98,10 +98,16 @@ class CarritoController extends Controller
         //return "hola";
     }
 
-    public function eliminarProducto($idcarrito){
-        $carrito = CarritoModel::findOrFail($idcarrito);
+    public function eliminarProducto(Request $request){
+        $carrito = CarritoModel::findOrFail($request->id);
         $carrito->delete();
-        return back(); 
+        $carros = CarritoModel::all(); 
+        $total = 0; 
+        foreach ($carros as $carro) { 
+            $producto = Producto::find($carro->idproducto);
+            $total = ( ($carro->cantidad) * ($producto->preciodesc) ) + $total; 
+        }
+        return response()->json(['totalF' => 'Bs. '. $total]);
     }
 
     public function finCompra(){

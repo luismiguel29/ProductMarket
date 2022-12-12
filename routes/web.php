@@ -149,5 +149,5 @@ Route::get('render', function () {
 
 Route::get('/incrementar', [App\Http\Controllers\CarritoController::class, 'incrementarCantidad'])->name("incrementarCantidad");
 Route::get('/decrementar', [App\Http\Controllers\CarritoController::class, 'decrementarCantidad'])->name("decrementarCantidad");
-Route::get('/eliminar/{id}', [App\Http\Controllers\CarritoController::class, 'eliminarProducto'])->name("eliminarProducto");
+Route::get('/eliminar', [App\Http\Controllers\CarritoController::class, 'eliminarProducto'])->name("eliminarProducto");
 Route::get('/endC', [App\Http\Controllers\CarritoController::class, 'finCompra'])->name("finCompra");

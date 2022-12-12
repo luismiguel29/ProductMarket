@@ -141,7 +141,7 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
                                 @foreach ($auxarr as $item)
-                                    <div class="card mb-1" style="max-width:540px;">
+                                    <div class="{{ $item->idcarrito }}" class="card mb-1" style="max-width:540px;">
                                         <div class="d-flex justify-content-center row g-0">
                                             <div class="col-sm-4">
                                                 <img src="{{ $item->url }}" class="card-img-top">
@@ -174,14 +174,18 @@
                                                         class="fa-solid fa-square-plus fa-2x"
                                                         style="text-decoration: none;color:black"></a>
 
+                                                        <a type="button" onclick="refrescar({{ $item->idcarrito }});"
+                                                            class="fa-solid fa-trash fa-2x"
+                                                            style="text-decoration: none;color:black"></a>
 
-                                                    <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
+
+                                                    {{-- <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="fa-solid fa-trash fa-2x"
                                                             value="Eliminar" style="border:none"> </button>
-                                                    </form>
+                                                    </form> --}}
 
                                                 </div>
                                             </div>
@@ -258,6 +262,23 @@
                     }
                 }).done(function(res) {
                     $("#"+idcar+"").text(res.totalDec);
+                    $("#total").text(res.totalF);
+                    //alert(res);
+                });
+            });
+        }
+
+        function refrescar(idcar){
+                $(document).ready(function() {
+                $.ajax({
+                    url: '/eliminar',
+                    method: 'GET',
+                    data: {
+                        id: idcar,
+                        _token: $('input[name="_token"]').val()
+                    }
+                }).done(function(res) {
+                    $("."+idcar+"").remove();
                     $("#total").text(res.totalF);
                     //alert(res);
                 });
