@@ -80,15 +80,16 @@
                         @endguest
 
                         @auth
-                        <div class="">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <a href="#" class="nav-link active" aria-current="page" onclick="this.closest('form').submit()">
-                                    Cerrar sesi&oacute;n
-                                </a>
-                            </form>
-                        </div>
-                        {{-- <div class="">                            
+                            <div class="">
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <a href="#" class="nav-link active" aria-current="page"
+                                        onclick="this.closest('form').submit()">
+                                        Cerrar sesi&oacute;n
+                                    </a>
+                                </form>
+                            </div>
+                            {{-- <div class="">                            
                             <a href="{{ route('login.show', $verificar->idnegocio) }}" class="nav-link active" aria-current="page">
                                 Ir a ventana Proveedor
                             </a>
@@ -155,21 +156,24 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-4 align-self-center">
-                                                
+
                                                 <div class="d-flex justify-content-around">
-                                                    <a href="/decrementar/{{ $item->idcarrito }}"
+                                                    {{-- <a href="/decrementar/{{ $item->idcarrito }}"
                                                         class="fa-solid fa-square-minus fa-2x"
                                                         style="text-decoration: none;color:black"></a>
-                                                    <span id="cant" style="font-size:20px">{{ $item->cantidad }}</span>
+                                                    <span id="cant" style="font-size:20px">{{ $item->cantidad }}</span> --}}
+                                                    <a onclick="remove({{ $item->idcarrito }});"
+                                                        class="fa-solid fa-square-minus fa-2x"
+                                                        style="text-decoration: none;color:black"></a>
+                                                    <span id="{{ $item->idcarrito }}"
+                                                        style="font-size:20px">{{ $item->cantidad }}</span>
                                                     {{-- <a href="/incrementar/{{ $item->idcarrito }}"
+                                                    class="fa-solid fa-square-plus fa-2x"
+                                                    style="text-decoration: none;color:black"></a> --}}
+
+                                                    <a type="button" onclick="add({{ $item->idcarrito }});"
                                                         class="fa-solid fa-square-plus fa-2x"
-                                                        style="text-decoration: none;color:black"></a> --}}
-                                                        <form id="aumentar" action="{{ route('incrementarCantidad', $item->idcarrito) }}">
-                                                            
-                                                            <a href="#"
-                                                                class="fa-solid fa-square-plus fa-2x"
-                                                                style="text-decoration: none;color:black" onclick="document.getElementById('aumentar').submit()"></a>
-                                                        </form>
+                                                        style="text-decoration: none;color:black"></a>
 
 
                                                     <form action="{{ route('carrito.destroy', $item->idcarrito) }}"
@@ -219,13 +223,49 @@
 
     <div class="margen" style="background: #E3E9E6; min-height:700px">
         @yield('content') @section('content')
-    </div>
+        </div>
 
-    <div class="footer"></div>
+        <div class="footer"></div>
 
-    <script src="{{ asset('js/ajax-post.js')}}" defer></script>
+        <script src="{{ asset('js/ajax-post.js') }}" defer></script>
 
-</body>
+    </body>
+
+    <script>
+        function add(idcar) {
+            $(document).ready(function() {
+                $.ajax({
+                    url: '/incrementar',
+                    method: 'GET',
+                    data: {
+                        id: idcar,
+                        _token: $('input[name="_token"]').val()
+                    }
+                }).done(function(res) {
+                    $("#" + idcar + "").text(res.totalInc);
+                    $("#total").text(res.totalF);
+                    //alert(res);
+                });
+            });
+        }
+
+        function remove(idcar) {
+            $(document).ready(function() {
+                $.ajax({
+                    url: '/decrementar',
+                    method: 'GET',
+                    data: {
+                        id: idcar,
+                        _token: $('input[name="_token"]').val()
+                    }
+                }).done(function(res) {
+                    $("#" + idcar + "").text(res.totalDec);
+                    $("#total").text(res.totalF);
+                    //alert(res);
+                });
+            });
+        }
+    </script>
 
     <script type="text/javascript">
         function mostrarPassword() {
@@ -252,4 +292,4 @@
     </script>
 
 
-</html>
+    </html>
