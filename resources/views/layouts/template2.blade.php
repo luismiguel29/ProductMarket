@@ -161,7 +161,7 @@
                                                     {{-- <a href="/decrementar/{{ $item->idcarrito }}"
                                                         class="fa-solid fa-square-minus fa-2x"
                                                         style="text-decoration: none;color:black"></a> --}}
-                                                        <a onclick="remove({{ $item->idcarrito }});"
+                                                        <a type="button" onclick="remove({{ $item->idcarrito }});"
                                                             class="fa-solid fa-square-minus fa-2x"
                                                             style="text-decoration: none;color:black"></a>
                                                     <span id="{{ $item->idcarrito }}"
