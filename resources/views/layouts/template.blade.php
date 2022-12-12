@@ -195,7 +195,7 @@
 
                 <div class="d-flex justify-content-around">
                     <h5><strong>TOTAL</strong></h5>
-                    <H5><strong>Bs. {{ $total }}</strong></H5>
+                    <H5><strong id="total">Bs. {{ $total }}</strong></H5>
                 </div>
                 <!--<div class="botonCompra">
                             <button type="submit" class="btn btn-dark fs-5 {{-- btn-block --}}" style="width: 300px"
