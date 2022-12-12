@@ -8,6 +8,8 @@ use App\Models\DatosNegocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+
 
 
 
@@ -34,6 +36,11 @@ class BuscadorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function search(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'nombre' => 'required|max:50',
+        ]);
+
 
         $carros = CarritoModel::all();  
         $auxarr = array(); 
