@@ -49,9 +49,12 @@ class CarritoController extends Controller
 
     public function decrementarCantidad(Request $request){
         $aux = CarritoModel::findOrFail($request->id); 
+        $pro = Producto::findOrFail($aux->idproducto); 
         if(($aux->cantidad) > 1){
             $aux->decrement('cantidad');
             $aux->save();
+            $pro->increment('stock');
+            $pro->save();
         }
         //return back();
         $carros = CarritoModel::all(); 
@@ -69,9 +72,15 @@ class CarritoController extends Controller
     public function incrementarCantidad(Request $request){
         $aux = CarritoModel::findOrFail($request->id); 
         $pro = Producto::findOrFail($aux->idproducto); 
-        if(($aux->cantidad) < ($pro->stock)){
+        /* if(($aux->cantidad) < ($pro->stock)){
             $aux->increment('cantidad');
             $aux->save();
+        } */
+        if($pro->stock > 0){
+            $aux->increment('cantidad');
+            $aux->save();
+            $pro->decrement('stock');
+            $pro->save();
         }
         //return back();
         //return redirect()->route(('carrito.index')); 
