@@ -62,8 +62,8 @@ class ProductoController extends Controller
         $predesc = $request->input('preciodesc');
         $url = Cloudinary::upload($request->file('url_img')->getRealPath())->getSecurePath();
 
-        $img = $request->file('url_img')->store('public/imagenes');
-        $url = Storage::url($img);  
+        /* $img = $request->file('url_img')->store('public/imagenes');
+        $url = Storage::url($img);  */ 
         $producto = new Producto;
         $producto->id_categoria = $request->input('categoria');
         $producto->id_negocio = Crypt::decrypt($id);
