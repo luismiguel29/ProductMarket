@@ -41,6 +41,10 @@ class ProductoController extends Controller
     public function registro(Request $request, $id)
     {
         $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
+        $producto =Producto::find($id);
+        $categoria = DB::table('categoria')
+        ->orderByRaw('nombre ASC')
+        ->get();
         $request->validate([
             //'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
             'nombreprod' => 'required|max:50',
