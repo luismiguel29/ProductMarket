@@ -77,8 +77,8 @@ class ProductoController extends Controller
         $producto->descripcion = $request->input('descripprod');
         $producto->url = $url;
         $producto->save();
-        //return back()->with('message', '¡Registro exitoso!!!!!!!');
-        return view('registrar', compact('producto', 'categoria', 'verificar'))->with('message', 'Registro exitoso!!!!!!');
+        return back()->with('message', '¡Registro exitoso!!!!!!!');
+        //return view('registrar', compact('producto', 'categoria', 'verificar'))->with('message', 'Registro exitoso!!!!!!');
     }
 
     /**
