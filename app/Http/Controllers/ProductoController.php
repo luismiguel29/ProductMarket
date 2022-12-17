@@ -40,6 +40,7 @@ class ProductoController extends Controller
 
     public function registro(Request $request, $id)
     {
+        $verificar = DatosNegocio::where('idnegocio', Crypt::decrypt($id))->first();
         $request->validate([
             //'nombreprod' => 'required|max:50|regex:/^[a-zA-Z]+$/',
             'nombreprod' => 'required|max:50',
@@ -72,7 +73,8 @@ class ProductoController extends Controller
         $producto->descripcion = $request->input('descripprod');
         $producto->url = $url;
         $producto->save();
-        return back()->with('message', '¡Registro exitoso!!!!!!!');
+        //return back()->with('message', '¡Registro exitoso!!!!!!!');
+        return view('registrar', compact('verificar'))->with('message', 'Registro exitoso!!!!!!');
     }
 
     /**
