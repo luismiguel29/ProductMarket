@@ -74,9 +74,7 @@
 
                                 @if (session('message'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        <span id="confirmacion">
-                                            {{ session('message') }}
-                                        </span>
+                                        <strong>{{ session('message') }}</strong>
                                         <button type="button" class="btn-close" data-bs-dismiss="alert"
                                             aria-label="Close"></button>
                                     </div>
