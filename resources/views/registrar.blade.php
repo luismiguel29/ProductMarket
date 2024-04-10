@@ -133,21 +133,21 @@
                             <!--update date-->
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha inicio promo</label>
-                                <input type="date" class="form-control" name="fechainiciopromo" max="2023-01-22"
+                                <input type="date" class="form-control" name="fechainiciopromo" 
                                     value="{{isset($producto)? $producto->fechainicio: old('fechainiciopromo') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
                                     echo $hoy; ?> id="fini">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha fin promo</label>
-                                <input type="date" class="form-control" name="fechafinpromo" max="2023-01-22"
+                                <input type="date" class="form-control" name="fechafinpromo" 
                                     value="{{isset($producto)? $producto->fechafin: old('fechafinpromo') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
                                     echo $hoy; ?> id="ffin" onchange="cambiarfecha()">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fecha vencimiento</label>
-                                <input type="date" class="form-control" name="fechavenprod" max="2023-01-22"
+                                <input type="date" class="form-control" name="fechavenprod"
                                     value="{{isset($producto)? $producto->fechaven: old('fechavenprod') }}" required=""
                                     placeholder="Introduce una fecha" required min=<?php $hoy = date('Y-m-d');
                                     echo $hoy; ?> id="fvenc">

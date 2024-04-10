@@ -102,10 +102,10 @@ class ProductoController extends Controller
         /* DB::select('call regprod(?,?,?,?,?,?,?)',array($request->idneg,$request->nombreprod,
         $request->precionormal,$request->preciodesc,$request->stockprod,$request->fechavenprod,$request->descripprod));
        */
-        $validator = Validator::make($request->all(), [
+      //  $validator = Validator::make($request->all(), [
             //'url_img' => 'required|image|mimes:png,jpg|dimensions:min_width=500,min_height=500,max_width=600,max_height=600',
-            'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
-        ]);
+           // 'url_img' => 'required|image|mimes:png,jpg|dimensions:max_width=600,max_height=600',
+        //]);
 
         if ($validator->fails()) {
             return back()->with('alerta', 'Debe subir un archivo de imagen png,jpg de maximo 600x600 px')->withInput();
